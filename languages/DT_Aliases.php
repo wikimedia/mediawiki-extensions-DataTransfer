@@ -69,6 +69,13 @@ $specialPageAliases['fa'] = array(
 	'ViewXML' => array( 'مشاهده_اکس‌ام‌ال' ),
 );
 
+/** Finnish (Suomi) */
+$specialPageAliases['fi'] = array(
+	'ImportCSV' => array( 'Tuo_CSV' ),
+	'ImportXML' => array( 'Tuo_XML' ),
+	'ViewXML' => array( 'Näytä_XML' ),
+);
+
 /** French (Français) */
 $specialPageAliases['fr'] = array(
 	'ImportCSV' => array( 'Importer_CVS', 'ImporterCVS' ),
@@ -103,6 +110,8 @@ $specialPageAliases['hu'] = array(
 
 /** Interlingua (Interlingua) */
 $specialPageAliases['ia'] = array(
+	'ImportCSV' => array( 'Importar_CSV' ),
+	'ImportXML' => array( 'Importar_XML' ),
 	'ViewXML' => array( 'Visualisar_XML' ),
 );
 
@@ -120,6 +129,8 @@ $specialPageAliases['it'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
+	'ImportCSV' => array( 'CSVインポート' ),
+	'ImportXML' => array( 'XMLインポート' ),
 	'ViewXML' => array( 'XML表示', 'ＸＭＬ表示' ),
 );
 
