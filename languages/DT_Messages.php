@@ -493,7 +493,7 @@ $messages['de'] = array(
 	'dt_import_editsummary' => '$1-Import',
 	'dt_import_importing' => 'Importiere …',
 	'dt_import_success' => '$1 {{PLURAL:$1|Seite|Seiten}} werden aus der $2-Datei importiert.',
-	'importcsv' => 'CSV importieren',
+	'importcsv' => 'CSV-Datei importieren',
 	'dt_importcsv_badheader' => 'Fehler: Der Kopf der Spalte $1, „$2“, muss entweder „$3“, „$4“ oder im Format „Vorlagenname[Feldname]“ sein',
 	'right-datatransferimport' => 'Daten importieren',
 );
