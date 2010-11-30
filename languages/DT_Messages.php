@@ -901,6 +901,7 @@ $messages['he'] = array(
 	'importxml' => 'ייבוא XML',
 	'dt_import_selectfile' => 'אנא בחרו את קובץ ה־$1 לייבוא:',
 	'dt_import_encodingtype' => 'סוג הקידוד',
+	'dt_import_summarydesc' => 'תקציר היבוא:',
 	'dt_import_editsummary' => 'ייבוא $1',
 	'dt_import_importing' => 'בתהליכי ייבוא...',
 	'dt_import_success' => '{{PLURAL:$1|דף אחד ייוצר|$1 דפים ייוצרו}} מקובץ ה־$2.',
