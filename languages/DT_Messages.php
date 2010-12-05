@@ -665,6 +665,15 @@ $messages['eu'] = array(
 	'right-datatransferimport' => 'Datuak inportatu',
 );
 
+/** Persian (فارسی)
+ * @author Mjbmr
+ */
+$messages['fa'] = array(
+	'dt_xml_template' => 'الگو',
+	'dt_xml_name' => 'نام',
+	'dt_xml_title' => 'عنوان',
+);
+
 /** Finnish (Suomi)
  * @author Centerlink
  * @author Crt
