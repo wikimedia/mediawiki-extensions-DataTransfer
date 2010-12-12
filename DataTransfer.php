@@ -31,6 +31,7 @@ $dtgIP = dirname( __FILE__ );
 ##
 
 // register all special pages and other classes
+$wgAutoloadClasses['DTUtils'] = $dtgIP . '/includes/DT_Utils.php';
 $wgSpecialPages['ViewXML'] = 'DTViewXML';
 $wgAutoloadClasses['DTViewXML'] = $dtgIP . '/specials/DT_ViewXML.php';
 $wgSpecialPages['ImportXML'] = 'DTImportXML';
