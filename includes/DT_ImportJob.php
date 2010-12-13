@@ -30,6 +30,10 @@ class DTImportJob extends Job {
 			wfProfileOut( __METHOD__ );
 			return false;
 		}
+		$for_pages_that_exist = $this->params['for_pages_that_exist'];
+		if ( $for_pages_that_exist == 'skip' && $this->title->exists() ) {
+			return true;
+		}
 
 		// change global $wgUser variable to the one specified by
 		// the job only for the extent of this import
@@ -37,6 +41,9 @@ class DTImportJob extends Job {
 		$actual_user = $wgUser;
 		$wgUser = User::newFromId( $this->params['user_id'] );
 		$text = $this->params['text'];
+		if ( $for_pages_that_exist == 'append' ) {
+			$text = $article->getContent() . "\n" . $text;
+		}
 		$edit_summary = $this->params['edit_summary'];
 		$article->doEdit( $text, $edit_summary );
 		$wgUser = $actual_user;
@@ -44,4 +51,3 @@ class DTImportJob extends Job {
 		return true;
 	}
 }
-
