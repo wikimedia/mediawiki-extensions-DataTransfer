@@ -29,26 +29,35 @@ class DTImportXML extends SpecialPage {
 		}
 
 		if ( $wgRequest->getCheck( 'import_file' ) ) {
-			$text = "<p>" . wfMsg( 'dt_import_importing' ) . "</p>\n";
-			$source = ImportStreamSource::newFromUpload( "xml_file" );
-			$text .= self::modifyPages( $source );
+			$text = DTUtils::printImportingMessage();
+			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
+			// handling changed in MW 1.17
+			if ( $uploadResult instanceof Status ) {
+				$source = $uploadResult->value;
+			} else {
+				$source = $uploadResult;
+			}
+			$importSummary = $wgRequest->getVal( 'import_summary' );
+			$forPagesThatExist = $wgRequest->getVal( 'pagesThatExist' );
+			$text .= self::modifyPages( $source, $importSummary, $forPagesThatExist );
 		} else {
-			$select_file_label = wfMsg( 'dt_import_selectfile', 'XML' );
-			$import_button = wfMsg( 'import-interwiki-submit' );
-			$text = <<<END
-	<p>$select_file_label</p>
-	<form enctype="multipart/form-data" action="" method="post">
-	<p><input type="file" name="xml_file" size="25" /></p>
-	<p><input type="Submit" name="import_file" value="$import_button"></p>
-	</form>
+			$formText = DTUtils::printFileSelector( 'XML' );
+			$formText .= DTUtils::printExistingPagesHandling();
+			$formText .= DTUtils::printImportSummaryInput( 'XML' );
+			$formText .= DTUtils::printSubmitButton();
+			$text = "\t" . Xml::tags( 'form',
+				array(
+					'enctype' => 'multipart/form-data',
+					'action' => '',
+					'method' => 'post'
+				), $formText ) . "\n";
 
-END;
 		}
 
 		$wgOut->addHTML( $text );
 	}
 
-	function modifyPages( $source ) {
+	function modifyPages( $source, $editSummary, $forPagesThatExist ) {
 		$text = "";
 		$xml_parser = new DTXMLParser( $source );
 		$xml_parser->doParse();
@@ -56,7 +65,8 @@ END;
 		$job_params = array();
 		global $wgUser;
 		$job_params['user_id'] = $wgUser->getId();
-		$job_params['edit_summary'] = wfMsgForContent( 'dt_import_editsummary', 'XML' );
+		$job_params['edit_summary'] = $editSummary;
+		$job_params['for_pages_that_exist'] = $forPagesThatExist;
 
 		foreach ( $xml_parser->mPages as $page ) {
 			$title = Title::newFromText( $page->getName() );
