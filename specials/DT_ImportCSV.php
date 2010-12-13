@@ -71,8 +71,8 @@ class DTImportCSV extends SpecialPage {
 		}
 
 		if ( $wgRequest->getCheck( 'import_file' ) ) {
-			$text = "<p>" . wfMsg( 'dt_import_importing' ) . "</p>\n";
-			$source = ImportStreamSource::newFromUpload( "csv_file" );
+			$text = DTUtils::printImportingMessage();
+			$source = ImportStreamSource::newFromUpload( "file_name" );
 			if ( !$source->isOK() ) {
 				$text .= $wgOut->parse( $source->getWikiText() );
 			} else {
@@ -83,30 +83,35 @@ class DTImportCSV extends SpecialPage {
 					$text .= $error_msg;
 				} else {
 					$importSummary = $wgRequest->getVal( 'import_summary' );
-					$text .= self::modifyPages( $pages, $importSummary );
+					$forPagesThatExist = $wgRequest->getVal( 'pagesThatExist' );
+					$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
 				}
 			}
 		} else {
-			$select_file_label = wfMsg( 'dt_import_selectfile', 'CSV' );
-			$encoding_type_label = wfMsg( 'dt_import_encodingtype' );
-			$import_summary_label = wfMsg( 'dt_import_summarydesc' );
-			$default_summary = wfMsgForContent( 'dt_import_editsummary', 'CSV' );
-			$import_button = wfMsg( 'import-interwiki-submit' );
-			$text = <<<END
-	<p>$select_file_label</p>
-	<form enctype="multipart/form-data" action="" method="post">
-	<p><input type="file" name="csv_file" size="25" /></p>
-	<p>$encoding_type_label: <select name="encoding">
-	<option selected value="utf8">UTF-8</option>
-	<option value="utf16">UTF-16</option>
-	</select></p>
-	<p>$import_summary_label
-	<input type="text" id="wpSummary" class="mw-summary" name="import_summary" value="$default_summary" />
-	</p>
-	<p><input type="Submit" name="import_file" value="$import_button"></p>
-	</form>
-
-END;
+			$formText = DTUtils::printFileSelector( 'CSV' );
+			$utf8OptionText = "\t" . Xml::element( 'option',
+				array(
+					'selected' => 'selected',
+					'value' => 'utf8'
+				), 'UTF-8' ) . "\n";
+			$utf16OptionText = "\t" . Xml::element( 'option',
+				array(
+					'value' => 'utf16'
+				), 'UTF-16' ) . "\n";
+			$encodingSelectText = Xml::tags( 'select',
+				array( 'name' => 'encoding' ), 
+				"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
+			$formText .= "\t" . Xml::tags( 'p', null, wfMsg( 'dt_import_encodingtype', 'CSV' ) . " " . $encodingSelectText ) . "\n";
+			$formText .= "\t" .  '<hr style="margin: 10px 0 10px 0" />' . "\n";
+			$formText .= DTUtils::printExistingPagesHandling();
+			$formText .= DTUtils::printImportSummaryInput( 'CSV' );
+			$formText .= DTUtils::printSubmitButton();
+			$text = "\t" . Xml::tags( 'form',
+				array(
+					'enctype' => 'multipart/form-data',
+					'action' => '',
+					'method' => 'post'
+				), $formText ) . "\n";
 		}
 
 		$wgOut->addHTML( $text );
@@ -167,7 +172,7 @@ END;
 		}
 	}
 
-	function modifyPages( $pages, $editSummary ) {
+	function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
 		global $wgUser, $wgLang;
 		
 		$text = "";
@@ -175,6 +180,7 @@ END;
 		$jobParams = array();
 		$jobParams['user_id'] = $wgUser->getId();
 		$jobParams['edit_summary'] = $editSummary;
+		$jobParams['for_pages_that_exist'] = $forPagesThatExist;
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			if ( is_null( $title ) ) {
