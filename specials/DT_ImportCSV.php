@@ -72,13 +72,27 @@ class DTImportCSV extends SpecialPage {
 
 		if ( $wgRequest->getCheck( 'import_file' ) ) {
 			$text = DTUtils::printImportingMessage();
-			$source = ImportStreamSource::newFromUpload( "file_name" );
-			if ( !$source->isOK() ) {
-				$text .= $wgOut->parse( $source->getWikiText() );
+			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
+			// handling changed in MW 1.17
+			$uploadError = null;
+			if ( $uploadResult instanceof Status ) {
+				if ( $uploadResult->isOK() ) {
+					$source = $uploadResult->value;
+				} else {
+					$uploadError = $wgOut->parse( $uploadResult->getWikiText() );
+				}
+			} elseif ( $uploadResult instanceof WikiErrorMsg ) {
+				$uploadError = $uploadResult->getMessage();
+			} else {
+				$source = $uploadResult;
+			}
+
+			if ( !is_null( $uploadError ) ) {
+				$text .= $uploadError;
 			} else {
 				$encoding = $wgRequest->getVal( 'encoding' );
 				$pages = array();
-				$error_msg = self::getCSVData( $source->value->mHandle, $encoding, $pages );
+				$error_msg = self::getCSVData( $source->mHandle, $encoding, $pages );
 				if ( ! is_null( $error_msg ) ) {
 					$text .= $error_msg;
 				} else {
