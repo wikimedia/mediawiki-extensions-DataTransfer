@@ -1170,6 +1170,7 @@ $messages['it'] = array(
  * @author Aotake
  * @author Fryed-peach
  * @author JtFuruhata
+ * @author Ohgi
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -1191,6 +1192,8 @@ $messages['ja'] = array(
 	'importxml' => 'XMLインポート',
 	'dt_import_selectfile' => 'インポートする $1 ファイルを選択してください:',
 	'dt_import_encodingtype' => 'エンコーディング方式:',
+	'dt_import_forexisting' => 'すでに存在するページの場合：',
+	'dt_import_skipexisting' => 'スキップ',
 	'dt_import_summarydesc' => '移入の概要：',
 	'dt_import_editsummary' => '$1 のインポート',
 	'dt_import_importing' => 'インポート中…',
@@ -1805,6 +1808,10 @@ $messages['pt-br'] = array(
 	'importxml' => 'Importar XML',
 	'dt_import_selectfile' => 'Por favor selecione o arquivo $1 para importar:',
 	'dt_import_encodingtype' => 'Codificação:',
+	'dt_import_forexisting' => 'Para páginas que já existem:',
+	'dt_import_overwriteexisting' => 'Sobrescrever o conteúdo existente',
+	'dt_import_skipexisting' => 'Pular',
+	'dt_import_appendtoexisting' => 'Adicionar ao conteúdo existente',
 	'dt_import_summarydesc' => 'Resumo da importação:',
 	'dt_import_editsummary' => 'Importação de $1',
 	'dt_import_importing' => 'Importando...',
