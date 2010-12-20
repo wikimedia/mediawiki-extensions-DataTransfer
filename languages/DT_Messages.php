@@ -78,6 +78,7 @@ Used as XML tag name.',
 Used as XML tag name.',
 	'dt_import_selectfile' => '$1 is the file format: either CSV or XML',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
+	'dt_import_skipexisting' => '{{Identical|Skip}}',
 	'dt_import_editsummary' => '$1 is the file format: either CSV or XML',
 	'dt_import_success' => 'Parameters:
 * $1 is the number of pages
