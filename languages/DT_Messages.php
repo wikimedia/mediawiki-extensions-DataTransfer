@@ -515,13 +515,6 @@ $messages['de'] = array(
 	'right-datatransferimport' => 'Daten importieren',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
- * @author Imre
- */
-$messages['de-formal'] = array(
-	'dt_viewxml_docu' => 'Bitte wählen Sie aus, welche Kategorien und Namensräume im XML-Format angezeigt werden sollen.',
-);
-
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
@@ -721,6 +714,7 @@ $messages['fi'] = array(
 	'importxml' => 'XML-tuonti',
 	'dt_import_selectfile' => 'Valitse $1-tiedosto tuotavaksi:',
 	'dt_import_encodingtype' => 'Merkistötyyppi:',
+	'dt_import_skipexisting' => 'Ohita',
 	'dt_import_summarydesc' => 'Tuonnin yhteenveto',
 	'dt_import_editsummary' => '$1-tuonti',
 	'dt_import_importing' => 'Tuodaan...',
