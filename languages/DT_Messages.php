@@ -1529,6 +1529,10 @@ $messages['nl'] = array(
 	'importxml' => 'XML importeren',
 	'dt_import_selectfile' => 'Selecteer het te importeren bestand van het type $1:',
 	'dt_import_encodingtype' => 'Coderingstype:',
+	'dt_import_forexisting' => "Voor pagina's die al bestaan:",
+	'dt_import_overwriteexisting' => 'Bestaande inhoud overschrijven',
+	'dt_import_skipexisting' => 'Overslaan',
+	'dt_import_appendtoexisting' => 'Toevoegen aan bestaande inhoud',
 	'dt_import_summarydesc' => 'Samenvatting van de import:',
 	'dt_import_editsummary' => '$1-import',
 	'dt_import_importing' => 'Bezig met importeren…',
@@ -2250,6 +2254,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Arturyatsko
  * @author Prima klasy4na
+ * @author Тест
  */
 $messages['uk'] = array(
 	'datatransfer-desc' => 'Дозволяє імпортувати та експортувати дані, які містяться в викликах шаблонів',
@@ -2270,6 +2275,10 @@ $messages['uk'] = array(
 	'importxml' => 'Імпорт XML',
 	'dt_import_selectfile' => 'Будь ласка, виберіть файл $1 для імпорту:',
 	'dt_import_encodingtype' => 'Тип кодування:',
+	'dt_import_forexisting' => 'Для сторінок, які вже існують:',
+	'dt_import_overwriteexisting' => 'Перезаписати існуючий вміст',
+	'dt_import_skipexisting' => 'Пропустити',
+	'dt_import_appendtoexisting' => 'Додати до існуючого вмісту',
 	'dt_import_summarydesc' => 'Опис імпорту:',
 	'dt_import_editsummary' => 'імпорт $1',
 	'dt_import_importing' => 'Імпорт ...',
