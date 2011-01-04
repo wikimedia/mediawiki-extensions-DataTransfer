@@ -121,6 +121,7 @@ $messages['af'] = array(
 	'importxml' => 'Laai XML',
 	'dt_import_selectfile' => 'Kies die $1 lêer om te laai:',
 	'dt_import_encodingtype' => 'Enkoderingstipe:',
+	'dt_import_skipexisting' => 'Slaan oor',
 	'dt_import_editsummary' => '$1-laai',
 	'dt_import_importing' => 'Besig om te laai...',
 	'dt_import_success' => '$1 {{PLURAL:$1|bladsy|bladsye}} sal geskep word vanaf die lêer $2.',
@@ -1979,6 +1980,7 @@ $messages['sl'] = array(
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
+ * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
  * @author Михајло Анђелковић
@@ -1990,7 +1992,7 @@ $messages['sr-ec'] = array(
 	'dt_viewxml_simplifiedformat' => 'Поједностављени формат',
 	'dt_xml_namespace' => 'Именски простор',
 	'dt_xml_pages' => 'Чланци',
-	'dt_xml_page' => 'Страница',
+	'dt_xml_page' => 'Страна',
 	'dt_xml_template' => 'Шаблон',
 	'dt_xml_field' => 'Поље',
 	'dt_xml_name' => 'Име',
