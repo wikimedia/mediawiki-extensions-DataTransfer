@@ -435,6 +435,13 @@ $messages['ca'] = array(
 	'right-datatransferimport' => 'Importa les dades',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'dt_xml_template' => 'Куцкеп',
+);
+
 /** Czech (Česky)
  * @author Jkjk
  * @author Matěj Grabovský
