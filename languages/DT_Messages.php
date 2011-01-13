@@ -1990,7 +1990,7 @@ $messages['sl'] = array(
 	'dt_xml_page' => 'Stran',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2003,7 +2003,7 @@ $messages['sr-ec'] = array(
 	'dt_viewxml_simplifiedformat' => 'Поједностављени формат',
 	'dt_xml_namespace' => 'Именски простор',
 	'dt_xml_pages' => 'Чланци',
-	'dt_xml_page' => 'Страна',
+	'dt_xml_page' => 'Страница',
 	'dt_xml_template' => 'Шаблон',
 	'dt_xml_field' => 'Поље',
 	'dt_xml_name' => 'Име',
@@ -2017,8 +2017,9 @@ $messages['sr-ec'] = array(
 	'right-datatransferimport' => 'Увези податке',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
+ * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'viewxml' => 'Vidi XML',
@@ -2027,7 +2028,7 @@ $messages['sr-el'] = array(
 	'dt_viewxml_simplifiedformat' => 'Pojednostavljeni format',
 	'dt_xml_namespace' => 'Imenski prostor',
 	'dt_xml_pages' => 'Članci',
-	'dt_xml_page' => 'Strana',
+	'dt_xml_page' => 'Stranica',
 	'dt_xml_template' => 'Šablon',
 	'dt_xml_field' => 'Polje',
 	'dt_xml_name' => 'Ime',
