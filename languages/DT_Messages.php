@@ -2394,20 +2394,23 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Liangent
+ * @author Mark85296341
  */
 $messages['zh-hant'] = array(
 	'datatransfer-desc' => '允許根據模板的要求導入導出結構化的數據',
-	'viewxml' => '查看XML',
+	'viewxml' => '檢視XML',
 	'dt_viewxml_docu' => '請在下列分類、名稱空間中選擇，以使用XML格式查看。',
 	'dt_viewxml_categories' => '分類',
 	'dt_viewxml_namespaces' => '名稱空間',
 	'dt_viewxml_simplifiedformat' => '簡化格式',
 	'dt_xml_namespace' => '名稱空間',
+	'dt_xml_pages' => '頁面',
 	'dt_xml_page' => '頁面',
+	'dt_xml_template' => '模板',
 	'dt_xml_name' => '名稱',
 	'dt_xml_title' => '標題',
 	'dt_xml_id' => 'ID',
-	'dt_xml_freetext' => '自由文本',
+	'dt_xml_freetext' => '自由文字',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
