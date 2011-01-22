@@ -272,7 +272,7 @@ $messages['be'] = array(
 	'dt_xml_template' => 'Шаблон',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -1311,7 +1311,7 @@ $messages['ksh'] = array(
 	'right-datatransferimport' => 'Daate empoteere',
 );
 
-/** Cornish (Kernewek)
+/** Cornish (Kernowek)
  * @author Kernoweger
  * @author Kw-Moon
  */
@@ -2418,6 +2418,7 @@ $messages['zh-hant'] = array(
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
+ * @author Pbdragonwang
  * @author Roc michael
  */
 $messages['zh-tw'] = array(
@@ -2434,14 +2435,18 @@ $messages['zh-tw'] = array(
 	'dt_xml_field' => '欄位',
 	'dt_xml_name' => '名稱',
 	'dt_xml_title' => '標題(Title)',
+	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => '隨意文字',
 	'importxml' => '匯入XML',
 	'dt_import_selectfile' => '請選取$1檔以供匯入',
+	'dt_import_encodingtype' => '編碼類型',
+	'dt_import_summarydesc' => '輸入的摘要',
 	'dt_import_editsummary' => '匯入$1',
 	'dt_import_importing' => '匯入中...',
 	'dt_import_success' => '將從該$2檔匯入$1{{PLURAL:$1|頁面頁面}}。',
 	'importcsv' => '匯入CSV檔',
 	'dt_importcsv_badheader' => "錯誤：$1欄位的標題「$2」或必須為「$3」，「$4」或表單「模板名稱[欄位名稱]」<br />
 Error: the column $1 header, '$2', must be either '$3', '$4' or of the form 'template_name[field_name]'",
+	'right-datatransferimport' => '輸入資料',
 );
 
