@@ -927,11 +927,12 @@ $messages['haw'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotemliss
  * @author YaronSh
  */
 $messages['he'] = array(
-	'datatransfer-desc' => 'אפשרות לייבוא ולייצוא נתונים מבניים הנכללים בהכללות של תבניות',
+	'datatransfer-desc' => 'אפשרות לייבא ולייצא נתונים בתבניות',
 	'viewxml' => 'הצגת XML',
 	'dt_viewxml_docu' => 'אנא בחרו את מרחבי השם והקטגוריות אותם תרצו להציג בפורמט XML.',
 	'dt_viewxml_categories' => 'קטגוריות',
@@ -946,16 +947,20 @@ $messages['he'] = array(
 	'dt_xml_title' => 'כותרת',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'טקסט חופשי',
-	'importxml' => 'ייבוא XML',
-	'dt_import_selectfile' => 'אנא בחרו את קובץ ה־$1 לייבוא:',
+	'importxml' => 'יבוא XML',
+	'dt_import_selectfile' => 'אנא בחרו את קובץ ה־$1 ליבוא:',
 	'dt_import_encodingtype' => 'סוג הקידוד:',
+	'dt_import_forexisting' => 'עבור הדפים שכבר קיימים:',
+	'dt_import_overwriteexisting' => 'לדרוס את התוכן הקיים',
+	'dt_import_skipexisting' => 'לדלג',
+	'dt_import_appendtoexisting' => 'לצרף את התוכן הקיים',
 	'dt_import_summarydesc' => 'תקציר היבוא:',
-	'dt_import_editsummary' => 'ייבוא $1',
-	'dt_import_importing' => 'בתהליכי ייבוא...',
+	'dt_import_editsummary' => 'יבוא $1',
+	'dt_import_importing' => 'מתבצע יבוא...',
 	'dt_import_success' => '{{PLURAL:$1|דף אחד ייוצר|$1 דפים ייוצרו}} מקובץ ה־$2.',
-	'importcsv' => 'ייבוא CSV',
+	'importcsv' => 'יבוא CSV',
 	'dt_importcsv_badheader' => "שגיאה: כותרת העמודה $1, '$2', חייבת להיות או '$3', '$4' או מהצורה 'שם_התבנית[שם_השדה]'",
-	'right-datatransferimport' => 'ייבוא נתונים',
+	'right-datatransferimport' => 'יבוא נתונים',
 );
 
 /** Hindi (हिन्दी)
