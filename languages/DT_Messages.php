@@ -1316,6 +1316,16 @@ $messages['ksh'] = array(
 	'right-datatransferimport' => 'Daate empoteere',
 );
 
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'dt_xml_page' => 'Rûpel',
+	'dt_xml_name' => 'Nav',
+	'dt_xml_title' => 'Sernav',
+	'dt_import_summarydesc' => 'Kurteya împortê:',
+);
+
 /** Cornish (Kernowek)
  * @author Kernoweger
  * @author Kw-Moon
