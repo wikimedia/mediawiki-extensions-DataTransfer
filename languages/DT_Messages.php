@@ -1459,6 +1459,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Junaidpv
  * @author Praveenp
  * @author Shijualex
  */
@@ -1479,6 +1480,8 @@ $messages['ml'] = array(
 	'importxml' => 'എക്സ്.എം.എൽ. ഇറക്കുമതി',
 	'dt_import_selectfile' => 'ദയവായി ഇറക്കുമതിക്കായി $1 പ്രമാണം തിരഞ്ഞെടുക്കുക:',
 	'dt_import_encodingtype' => 'എൻ‌കോഡിങ് തരം:',
+	'dt_import_forexisting' => 'നിലവിലുള്ള താളുകൾക്ക് വേണ്ടി:',
+	'dt_import_appendtoexisting' => 'നിലവിലുള്ള ഉള്ളടക്കത്തോട് കൂട്ടിച്ചേർക്കുക',
 	'dt_import_summarydesc' => 'ഇറക്കുമതിയുടെ സംഗ്രഹം:',
 	'dt_import_editsummary' => '$1 ഇറക്കുമതി',
 	'dt_import_importing' => 'ഇറക്കുമതി ചെയ്യുന്നു...',
