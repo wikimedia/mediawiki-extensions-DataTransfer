@@ -1539,6 +1539,13 @@ $messages['myv'] = array(
 	'dt_xml_title' => 'Конякс',
 );
 
+/** Mazanderani (مازِرونی)
+ * @author محک
+ */
+$messages['mzn'] = array(
+	'dt_viewxml_categories' => 'رج‌ئون',
+);
+
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  */
