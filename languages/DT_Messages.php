@@ -1398,6 +1398,15 @@ $messages['lt'] = array(
 	'dt_viewxml_categories' => 'Kategorijos',
 );
 
+/** Latgalian (Latgaļu)
+ * @author Dark Eagle
+ */
+$messages['ltg'] = array(
+	'dt_viewxml_namespaces' => 'Vuordu pluoti',
+	'dt_xml_namespace' => 'Vuordu pluots',
+	'dt_xml_pages' => 'Puslopys',
+);
+
 /** Latvian (Latviešu)
  * @author GreenZeb
  */
