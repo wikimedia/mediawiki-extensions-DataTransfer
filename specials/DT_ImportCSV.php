@@ -57,7 +57,6 @@ class DTImportCSV extends SpecialPage {
 	public function DTImportCSV() {
 		global $wgLanguageCode;
 		parent::__construct( 'ImportCSV' );
-		
 	}
 
 	function execute( $query ) {
@@ -89,18 +88,22 @@ class DTImportCSV extends SpecialPage {
 
 			if ( !is_null( $uploadError ) ) {
 				$text .= $uploadError;
-			} else {
-				$encoding = $wgRequest->getVal( 'encoding' );
-				$pages = array();
-				$error_msg = self::getCSVData( $source->mHandle, $encoding, $pages );
-				if ( ! is_null( $error_msg ) ) {
-					$text .= $error_msg;
-				} else {
-					$importSummary = $wgRequest->getVal( 'import_summary' );
-					$forPagesThatExist = $wgRequest->getVal( 'pagesThatExist' );
-					$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
-				}
+				$wgOut->addHTML( $text );
+				return;
 			}
+
+			$encoding = $wgRequest->getVal( 'encoding' );
+			$pages = array();
+			$error_msg = self::getCSVData( $source->mHandle, $encoding, $pages );
+			if ( ! is_null( $error_msg ) ) {
+				$text .= $error_msg;
+				$wgOut->addHTML( $text );
+				return;
+			}
+
+			$importSummary = $wgRequest->getVal( 'import_summary' );
+			$forPagesThatExist = $wgRequest->getVal( 'pagesThatExist' );
+			$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
 		} else {
 			$formText = DTUtils::printFileSelector( 'CSV' );
 			$utf8OptionText = "\t" . Xml::element( 'option',
@@ -157,6 +160,17 @@ class DTImportCSV extends SpecialPage {
 			}
 		}
 		fclose( $csv_file );
+
+		// Get rid of the "byte order mark", if it's there - this is
+		// a three-character string sometimes put at the beginning
+		// of files to indicate its encoding.
+		// Code copied from:
+		// http://www.dotvoid.com/2010/04/detecting-utf-bom-byte-order-mark/
+		$byteOrderMark = pack( "CCC", 0xef, 0xbb, 0xbf );
+		if ( 0 == strncmp( $table[0][0], $byteOrderMark, 3 ) ) {
+			$table[0][0] = substr( $table[0][0], 3 );
+		}
+
 		// check header line to make sure every term is in the
 		// correct format
 		$title_label =  wfMsgForContent( 'dt_xml_title' );
