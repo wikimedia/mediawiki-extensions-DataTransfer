@@ -405,13 +405,13 @@ function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
 }
 
 function doSpecialViewXML() {
-	global $wgOut, $wgRequest, $wgUser, $wgCanonicalNamespaceNames, $wgContLang;
+	global $wgOut, $wgRequest, $wgUser, $wgContLang;
 	$skin = $wgUser->getSkin();
 	$namespace_labels = $wgContLang->getNamespaces();
 	$category_label = $namespace_labels[NS_CATEGORY];
 	$template_label = $namespace_labels[NS_TEMPLATE];
 	$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
-	$namespace_str = wfMsg( 'dt_xml_namespace' );
+	$namespace_str = str_replace( ' ', '_', wfMsg( 'dt_xml_namespace' ) );
 	$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
 
 	$form_submitted = false;
@@ -455,7 +455,7 @@ function doSpecialViewXML() {
 		 		if ( $ns == 0 ) {
 					$ns_name = "Main";
 				} else {
-					$ns_name = $wgCanonicalNamespaceNames[$ns];
+					$ns_name = MWNamespace::getCanonicalName( $ns );
 				}
 				if ( $simplified_format )
 					$text .= '<' . str_replace( ' ', '_', $ns_name ) . ">\n";
@@ -495,9 +495,9 @@ END;
 		$namespaces = getNamespacesList();
 		foreach ( $namespaces as $namespace ) {
 			if ( $namespace == 0 ) {
-				$ns_name = "Main";
+				$ns_name = wfMsgHtml( 'blanknamespace' );
 			} else {
-				$ns_name = $wgCanonicalNamespaceNames["$namespace"];
+				$ns_name = htmlspecialchars( $wgContLang->getFormattedNsText( $namespace ) );
 			}
 			$ns_name = str_replace( '_', ' ', $ns_name );
 			$text .= "<input type=\"checkbox\" name=\"namespaces[$namespace]\" /> $ns_name <br />\n";
