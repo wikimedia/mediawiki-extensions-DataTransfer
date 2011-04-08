@@ -7,7 +7,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-class DTPage  {
+class DTPage {
 	var $mName;
 	var $mTemplates;
 	var $mFreeText;
@@ -119,7 +119,7 @@ class DTImportCSV extends SpecialPage {
 				array( 'name' => 'encoding' ), 
 				"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
 			$formText .= "\t" . Xml::tags( 'p', null, wfMsg( 'dt_import_encodingtype', 'CSV' ) . " " . $encodingSelectText ) . "\n";
-			$formText .= "\t" .  '<hr style="margin: 10px 0 10px 0" />' . "\n";
+			$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 			$formText .= DTUtils::printExistingPagesHandling();
 			$formText .= DTUtils::printImportSummaryInput( 'CSV' );
 			$formText .= DTUtils::printSubmitButton();
@@ -169,12 +169,15 @@ class DTImportCSV extends SpecialPage {
 		$byteOrderMark = pack( "CCC", 0xef, 0xbb, 0xbf );
 		if ( 0 == strncmp( $table[0][0], $byteOrderMark, 3 ) ) {
 			$table[0][0] = substr( $table[0][0], 3 );
+			// If there were quotation marks around this value,
+			// they didn't get removed, so remove them now.
+			$table[0][0] = trim( $table[0][0], '"' );
 		}
 
 		// check header line to make sure every term is in the
 		// correct format
-		$title_label =  wfMsgForContent( 'dt_xml_title' );
-		$free_text_label =  wfMsgForContent( 'dt_xml_freetext' );
+		$title_label = wfMsgForContent( 'dt_xml_title' );
+		$free_text_label = wfMsgForContent( 'dt_xml_freetext' );
 		foreach ( $table[0] as $i => $header_val ) {
 			if ( $header_val !== $title_label && $header_val !== $free_text_label &&
 				! preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $header_val ) ) {
@@ -219,7 +222,7 @@ class DTImportCSV extends SpecialPage {
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
 		Job::batchInsert( $jobs );
-		$text .= wfMsgExt( 'dt_import_success', array( 'parse' ),  $wgLang->formatNum( count( $jobs ) ), 'CSV' );
+		$text .= wfMsgExt( 'dt_import_success', array( 'parse' ), $wgLang->formatNum( count( $jobs ) ), 'CSV' );
 
 		return $text;
 	}
