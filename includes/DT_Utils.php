@@ -7,6 +7,16 @@
  */
 class DTUtils  {
 
+	/*
+	 * Loads messages only for MediaWiki versions that need it (< 1.16)
+	 */
+	public static function loadMessages() {
+		global $wgVersion;
+		if ( version_compare( $wgVersion, '1.16', '<' ) ) {
+			wfLoadExtensionMessages( 'SemanticForms' );
+		}
+	}
+
 	static function printImportingMessage() {
 		return "\t" . Xml::element( 'p', null, wfMsg( 'dt_import_importing' ) ) . "\n";
 	}
