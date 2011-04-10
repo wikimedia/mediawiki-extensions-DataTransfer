@@ -15,7 +15,7 @@ class DTImportXML extends SpecialPage {
 	public function DTImportXML() {
 		global $wgLanguageCode;
 		parent::__construct( 'ImportXML' );
-		
+		DTUtils::loadMessages();
 	}
 
 	function execute( $query ) {
