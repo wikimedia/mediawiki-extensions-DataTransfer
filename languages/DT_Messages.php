@@ -436,7 +436,7 @@ $messages['ca'] = array(
 	'dt_import_success' => '$1 {{PLURAL:$1|pàgina|pàgines}} es crearan des del fitxer $2.',
 	'importcsv' => 'Importa un CSV',
 	'dt_importcsv_badheader' => "Error: la capçalera de la columna $1, '$2', ha de ser o bé '$3', '$4' o bé de la forma 'template_name[field_name]'",
-	'right-datatransferimport' => 'Importa les dades',
+	'right-datatransferimport' => 'Importar dades',
 );
 
 /** Chechen (Нохчийн)
