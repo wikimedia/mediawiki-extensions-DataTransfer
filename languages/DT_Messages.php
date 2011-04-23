@@ -1817,6 +1817,7 @@ $messages['ps'] = array(
 	'dt_xml_template' => 'کينډۍ',
 	'dt_xml_name' => 'نوم',
 	'dt_xml_title' => 'سرليک',
+	'dt_xml_id' => 'پېژند',
 	'dt_xml_freetext' => 'خپلواکه متن',
 );
 
