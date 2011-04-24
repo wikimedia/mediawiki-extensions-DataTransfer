@@ -1528,6 +1528,13 @@ $messages['mr'] = array(
 	'importxml' => 'एक्सएमएल आयात करा',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'dt_xml_title' => 'Tajuk',
+);
+
 /** Mirandese (Mirandés)
  * @author Malafaya
  */
