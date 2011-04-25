@@ -185,6 +185,7 @@ $messages['an'] = array(
 
 /** Arabic (العربية)
  * @author Meno25
+ * @author Mutarjem horr
  * @author OsamaK
  */
 $messages['ar'] = array(
@@ -206,6 +207,11 @@ $messages['ar'] = array(
 	'importxml' => 'استيراد XML',
 	'dt_import_selectfile' => 'من فضلك اختر ملف $1 للاستيراد:',
 	'dt_import_encodingtype' => 'نوع الترميز:',
+	'dt_import_forexisting' => 'لصفحات موجودة مسبقاّ :',
+	'dt_import_overwriteexisting' => 'أكتب على المحتوى الموجود',
+	'dt_import_skipexisting' => 'أقفز',
+	'dt_import_appendtoexisting' => 'إلحاق بالمحتوى الموجود',
+	'dt_import_summarydesc' => 'موجز الاستيراد :',
 	'dt_import_editsummary' => 'استيراد $1',
 	'dt_import_importing' => 'جاري الاستيراد...',
 	'dt_import_success' => 'سوف تُنشأ {{PLURAL:$1||صفحة واحدة|صفحتين|$1 صفحات|$1 صفحة}} من ملف $2.',
