@@ -270,6 +270,17 @@ $messages['arz'] = array(
 	'dt_import_success' => '$1 {{PLURAL:$1|صفحه|صفحه}} ح يتعملو من الفايل $2.',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'dt_viewxml_categories' => 'Kateqoriyalar',
+	'dt_xml_pages' => 'Səhifələr',
+	'dt_xml_page' => 'Səhifə',
+	'dt_xml_template' => 'Şablon',
+	'dt_xml_name' => 'Ad',
+);
+
 /** Belarusian (Беларуская)
  * @author Тест
  */
@@ -1554,6 +1565,7 @@ $messages['mwl'] = array(
 $messages['myv'] = array(
 	'dt_viewxml_categories' => 'Категорият',
 	'dt_viewxml_namespaces' => 'Лем потмот',
+	'dt_xml_namespace' => 'Лемпотмо',
 	'dt_xml_page' => 'Лопа',
 	'dt_xml_template' => 'Лопа парцун',
 	'dt_xml_field' => 'Пакся',
