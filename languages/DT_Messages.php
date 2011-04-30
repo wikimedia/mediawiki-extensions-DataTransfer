@@ -349,6 +349,37 @@ $messages['bg'] = array(
 	'right-datatransferimport' => 'Внасяне на данни',
 );
 
+/** Bengali (বাংলা)
+ * @author Wikitanvir
+ */
+$messages['bn'] = array(
+	'viewxml' => 'এক্সএমএল দেখাও',
+	'dt_viewxml_categories' => 'বিষয়শ্রেণীসমূহ',
+	'dt_viewxml_namespaces' => 'নামস্থানসমূহ',
+	'dt_viewxml_simplifiedformat' => 'সাধারণকৃত কাঠামো',
+	'dt_xml_namespace' => 'নামস্থান',
+	'dt_xml_pages' => 'পাতা',
+	'dt_xml_page' => 'পাতা',
+	'dt_xml_template' => 'টেম্পলেট',
+	'dt_xml_field' => 'ফিল্ড',
+	'dt_xml_name' => 'নাম',
+	'dt_xml_title' => 'শিরোনাম',
+	'dt_xml_id' => 'আইডি',
+	'dt_xml_freetext' => 'মুক্ত লেখা',
+	'importxml' => 'এক্সএমএল আমদানি',
+	'dt_import_selectfile' => 'অনুগ্রহ করে আমদানির জন্য $1 ফাইল নির্বাচন করুন:',
+	'dt_import_encodingtype' => 'এনকোডিংয়ের ধরন:',
+	'dt_import_forexisting' => 'যে পাতাগুলো ইতিমধ্যেই আছে তার জন্য:',
+	'dt_import_overwriteexisting' => 'বিদ্যমান বিষয়সমূহ প্রতিস্থাপন করো',
+	'dt_import_skipexisting' => 'উপেক্ষা করো',
+	'dt_import_summarydesc' => 'আমদানির সারাংশ',
+	'dt_import_editsummary' => '$1 আমদানি',
+	'dt_import_importing' => 'আমদানি হচ্ছে...',
+	'dt_import_success' => '$2টি ফাইল থেকে $1টি {{PLURAL:$1|পাতা|পাতা}} তৈরি করা হবে।',
+	'importcsv' => 'সিএসভি আমদানি',
+	'right-datatransferimport' => 'উপাত্ত আমদানি',
+);
+
 /** Breton (Brezhoneg)
  * @author Fohanno
  * @author Fulup
@@ -485,6 +516,9 @@ $messages['cs'] = array(
 	'importxml' => 'Importovat XML',
 	'dt_import_selectfile' => 'Prosím vyberte $1 soubor k importu:',
 	'dt_import_encodingtype' => 'Typ kódování:',
+	'dt_import_overwriteexisting' => 'Přepsat stávající obsah',
+	'dt_import_skipexisting' => 'Přeskočit',
+	'dt_import_appendtoexisting' => 'Připojit ke stávajícímu obsahu',
 	'dt_import_summarydesc' => 'Shrnutí importu:',
 	'dt_import_editsummary' => 'import $1',
 	'dt_import_importing' => 'Probíhá import...',
@@ -795,14 +829,35 @@ $messages['fr'] = array(
 
 /** Franco-Provençal (Arpetan)
  * @author Cedric31
+ * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'viewxml' => 'Vêre XML',
 	'dt_viewxml_categories' => 'Catègories',
 	'dt_viewxml_namespaces' => 'Èspâços de noms',
+	'dt_viewxml_simplifiedformat' => 'Format simplifiâ',
 	'dt_xml_namespace' => 'Èspâço de noms',
 	'dt_xml_pages' => 'Pâges',
 	'dt_xml_page' => 'Pâge',
 	'dt_xml_template' => 'Modèlo',
+	'dt_xml_field' => 'Champ',
+	'dt_xml_name' => 'Nom',
+	'dt_xml_title' => 'Titro',
+	'dt_xml_id' => 'Numerô',
+	'dt_xml_freetext' => 'Tèxto abado',
+	'importxml' => 'Importar un XML',
+	'dt_import_selectfile' => 'Volyéd chouèsir lo fichiér $1 a importar :',
+	'dt_import_encodingtype' => 'Tipo d’encodâjo :',
+	'dt_import_forexisting' => 'Por les pâges qu’ègzistont ja :',
+	'dt_import_overwriteexisting' => 'Ècllafar lo contegnu ègzistent',
+	'dt_import_skipexisting' => 'Passar',
+	'dt_import_appendtoexisting' => 'Apondre u contegnu ègzistent',
+	'dt_import_summarydesc' => 'Rèsumâ de l’importacion :',
+	'dt_import_editsummary' => 'Importacion de $1',
+	'dt_import_importing' => 'Importacion en cors...',
+	'dt_import_success' => '$1 {{PLURAL:$1|pâge serat fêta|pâges seront fêtes}} dês lo fichiér $2.',
+	'importcsv' => 'Importar des balyês CSV',
+	'right-datatransferimport' => 'Importar des balyês',
 );
 
 /** Western Frisian (Frysk)
@@ -2206,6 +2261,7 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Chaduvari
  * @author Veeven
  */
 $messages['te'] = array(
@@ -2220,6 +2276,14 @@ $messages['te'] = array(
 	'dt_xml_title' => 'శీర్షిక',
 	'dt_xml_id' => 'ఐడీ',
 	'dt_xml_freetext' => 'స్వేచ్ఛా పాఠ్యం',
+	'dt_import_appendtoexisting' => 'ఈసరికే ఉన్న కంటెంటు వెనుక చేర్చు',
+	'dt_import_summarydesc' => 'దిగుమతి సారాంశం:',
+	'dt_import_editsummary' => '$1 దిగుమతి',
+	'dt_import_importing' => 'దిగుమతి చేస్తున్నాం...',
+	'dt_import_success' => 'ఫైలు $2 నుండి $1 {{PLURAL:$1|పేజీ|పేజీలు}} సృష్టించబడతాయి.',
+	'importcsv' => 'CSV ని దిగుమతి చెయ్యి',
+	'dt_importcsv_badheader' => "లోపం: నిలువు వరుస $1 శీర్షం, '$2', '$3' అయినా లేక  '$4' అయినా ఉండాలి. లేదా 'template_name[field_name]' రూపంలో అయినా ఉండాలి",
+	'right-datatransferimport' => 'డేటాను దిగుమతి చెయ్యి',
 );
 
 /** Tetum (Tetun)
@@ -2228,6 +2292,7 @@ $messages['te'] = array(
 $messages['tet'] = array(
 	'dt_viewxml_categories' => 'Kategoria sira',
 	'dt_xml_namespace' => 'Espasu pájina nian',
+	'dt_xml_pages' => 'Pájina sira',
 	'dt_xml_page' => 'Pájina',
 	'dt_xml_name' => 'Naran',
 	'dt_xml_title' => 'Títulu:',
