@@ -1889,8 +1889,10 @@ $messages['pms'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'viewxml' => 'XML کتل',
 	'dt_viewxml_categories' => 'وېشنيزې',
 	'dt_viewxml_namespaces' => 'نوم-تشيالونه',
+	'dt_viewxml_simplifiedformat' => 'ساده بڼه',
 	'dt_xml_namespace' => 'نوم-تشيال',
 	'dt_xml_pages' => 'مخونه',
 	'dt_xml_page' => 'مخ',
