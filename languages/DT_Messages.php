@@ -2206,6 +2206,7 @@ $messages['su'] = array(
  * @author Lejonel
  * @author M.M.S.
  * @author Per
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'datatransfer-desc' => 'Tillåter import och export av data som finns i mallanrop',
@@ -2226,6 +2227,7 @@ $messages['sv'] = array(
 	'importxml' => 'Importera XML',
 	'dt_import_selectfile' => 'Vänligen välj $1-filen som skall importeras:',
 	'dt_import_encodingtype' => 'Teckenkodningstyp:',
+	'dt_import_skipexisting' => 'Hoppa över',
 	'dt_import_editsummary' => '$1-importering',
 	'dt_import_importing' => 'Importerar...',
 	'dt_import_success' => '$1 {{PLURAL:$1|sida|sidor}} kommer skapas från $2-filen.',
