@@ -488,7 +488,7 @@ END;
 		$categories = getCategoriesList();
 		foreach ( $categories as $category ) {
 			$title = Title::makeTitle( NS_CATEGORY, $category );
-			$link = $skin->makeLinkObj( $title, $title->getText() );
+			$link = $skin->makeLinkObj( $title, htmlspecialchars( $title->getText() ) );
 			$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
 		}
 		$text .= "<h2>" . wfMsg( 'dt_viewxml_namespaces' ) . "</h2>\n";
