@@ -22,6 +22,8 @@ $specialPageAliases['af'] = array(
 
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = array(
+	'ImportCSV' => array( 'استيراد_سي_إس_في' ),
+	'ImportXML' => array( 'استيراد_إكس_إم_إل' ),
 	'ViewXML' => array( 'عرض_إكس_إم_إل' ),
 );
 
@@ -32,6 +34,8 @@ $specialPageAliases['arz'] = array(
 
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
+	'ImportCSV' => array( 'EnporzhiañCSV' ),
+	'ImportXML' => array( 'EnporzhiañXML' ),
 	'ViewXML' => array( 'GweletXML' ),
 );
 
@@ -90,7 +94,7 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
-	'ViewXML' => array( 'Ver XML' ),
+	'ViewXML' => array( 'Ver_XML' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -101,6 +105,13 @@ $specialPageAliases['gsw'] = array(
 /** Gujarati (ગુજરાતી) */
 $specialPageAliases['gu'] = array(
 	'ViewXML' => array( 'XMLજુઓ' ),
+);
+
+/** Haitian (Kreyòl ayisyen) */
+$specialPageAliases['ht'] = array(
+	'ImportCSV' => array( 'EnpòteCSV' ),
+	'ImportXML' => array( 'EnpòteXML' ),
+	'ViewXML' => array( 'WèXML' ),
 );
 
 /** Hungarian (Magyar) */
@@ -162,6 +173,8 @@ $specialPageAliases['lb'] = array(
 
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
+	'ImportCSV' => array( 'УвезиCSV' ),
+	'ImportXML' => array( 'УвезиXML' ),
 	'ViewXML' => array( 'ВидиXML' ),
 );
 
@@ -196,6 +209,8 @@ $specialPageAliases['nl'] = array(
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $specialPageAliases['no'] = array(
+	'ImportCSV' => array( 'Importer_CSV' ),
+	'ImportXML' => array( 'Importer_XML' ),
 	'ViewXML' => array( 'Vis_XML' ),
 );
 
@@ -253,6 +268,8 @@ $specialPageAliases['tl'] = array(
 
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
+	'ImportCSV' => array( 'CSVAktar', 'CSVİçeAktar' ),
+	'ImportXML' => array( 'XMLAktar', 'XMLİçeAktar' ),
 	'ViewXML' => array( 'XMLGör' ),
 );
 
@@ -266,6 +283,20 @@ $specialPageAliases['tt-cyrl'] = array(
 /** Vèneto (Vèneto) */
 $specialPageAliases['vec'] = array(
 	'ViewXML' => array( 'VardaXML' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'ImportCSV' => array( 'Nhập_CSV' ),
+	'ImportXML' => array( 'Nhập_XML' ),
+	'ViewXML' => array( 'Xem_XML' ),
+);
+
+/** Simplified Chinese (‪中文(简体)‬) */
+$specialPageAliases['zh-hans'] = array(
+	'ImportCSV' => array( '导入CSV' ),
+	'ImportXML' => array( '导入XML' ),
+	'ViewXML' => array( '查看XML' ),
 );
 
 /**
