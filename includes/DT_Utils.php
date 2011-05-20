@@ -13,7 +13,7 @@ class DTUtils  {
 	public static function loadMessages() {
 		global $wgVersion;
 		if ( version_compare( $wgVersion, '1.16', '<' ) ) {
-			wfLoadExtensionMessages( 'SemanticForms' );
+			wfLoadExtensionMessages( 'DataTransfer' );
 		}
 	}
 
