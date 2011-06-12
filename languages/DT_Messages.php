@@ -2523,6 +2523,7 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
+ * @author Hydra
  */
 $messages['zh-hans'] = array(
 	'datatransfer-desc' => '允许根据模板的要求导入导出结构化的数据',
@@ -2540,6 +2541,18 @@ $messages['zh-hans'] = array(
 	'dt_xml_title' => '标题',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => '自由文本',
+	'importxml' => '导入 XML',
+	'dt_import_selectfile' => '请选择 $1 要导入的文件：',
+	'dt_import_encodingtype' => '编码类型：',
+	'dt_import_forexisting' => '对于已经存在的页面：',
+	'dt_import_overwriteexisting' => '覆盖现有内容',
+	'dt_import_skipexisting' => '跳过',
+	'dt_import_appendtoexisting' => '追加到现有内容',
+	'dt_import_summarydesc' => '导入摘要：',
+	'dt_import_editsummary' => '$1 导入',
+	'dt_import_importing' => '正在导入...',
+	'importcsv' => '导入 CSV',
+	'right-datatransferimport' => '导入数据',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
