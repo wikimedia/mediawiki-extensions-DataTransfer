@@ -1637,9 +1637,10 @@ $messages['mzn'] = array(
 
 /** Nahuatl (Nāhuatl)
  * @author Fluence
+ * @author Teòtlalili
  */
 $messages['nah'] = array(
-	'dt_viewxml_categories' => 'Neneuhcāyōtl',
+	'dt_viewxml_categories' => 'Tlaìxmatkàtlàlilòtl',
 	'dt_viewxml_namespaces' => 'Tōcātzin',
 	'dt_xml_namespace' => 'Tōcātzin',
 	'dt_xml_page' => 'Zāzanilli',
