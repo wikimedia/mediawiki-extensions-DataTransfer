@@ -1604,7 +1604,12 @@ $messages['mr'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'dt_xml_page' => 'Laman',
+	'dt_xml_name' => 'Nama',
 	'dt_xml_title' => 'Tajuk',
+	'dt_import_importing' => 'Sedang mengimport...',
+	'importcsv' => 'Import CSV',
+	'right-datatransferimport' => 'Import data',
 );
 
 /** Mirandese (Mirandés)
