@@ -1609,7 +1609,7 @@ $messages['ms'] = array(
 	'dt_xml_title' => 'Tajuk',
 	'dt_import_importing' => 'Sedang mengimport...',
 	'importcsv' => 'Import CSV',
-	'right-datatransferimport' => 'Import data',
+	'right-datatransferimport' => 'Mengimport data',
 );
 
 /** Mirandese (Mirandés)
