@@ -1604,7 +1604,9 @@ $messages['mr'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'dt_viewxml_categories' => 'Kategori',
 	'dt_xml_page' => 'Laman',
+	'dt_xml_template' => 'Templat',
 	'dt_xml_name' => 'Nama',
 	'dt_xml_title' => 'Tajuk',
 	'dt_import_importing' => 'Sedang mengimport...',
@@ -2233,6 +2235,7 @@ $messages['sv'] = array(
 	'importxml' => 'Importera XML',
 	'dt_import_selectfile' => 'Vänligen välj $1-filen som skall importeras:',
 	'dt_import_encodingtype' => 'Teckenkodningstyp:',
+	'dt_import_overwriteexisting' => 'Skriv över existerande innehåll',
 	'dt_import_skipexisting' => 'Hoppa över',
 	'dt_import_editsummary' => '$1-importering',
 	'dt_import_importing' => 'Importerar...',
