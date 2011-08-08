@@ -2533,15 +2533,16 @@ $messages['yi'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
  * @author Hydra
+ * @author PhiLiP
  */
 $messages['zh-hans'] = array(
 	'datatransfer-desc' => '允许根据模板的要求导入导出结构化的数据',
 	'viewxml' => '查看XML',
-	'dt_viewxml_docu' => '请在下列分类、名称空间中选择，以使用XML格式查看。',
+	'dt_viewxml_docu' => '请选择要使用XML格式查看的分类和名字空间。',
 	'dt_viewxml_categories' => '分类',
-	'dt_viewxml_namespaces' => '名称空间',
+	'dt_viewxml_namespaces' => '名字空间',
 	'dt_viewxml_simplifiedformat' => '简化格式',
-	'dt_xml_namespace' => '名称空间',
+	'dt_xml_namespace' => '名字空间',
 	'dt_xml_pages' => '页面',
 	'dt_xml_page' => '页面',
 	'dt_xml_template' => '模板',
