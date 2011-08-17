@@ -1811,7 +1811,7 @@ $messages['or'] = array(
 	'dt_import_editsummary' => '$1 ଆମଦାନୀ',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
