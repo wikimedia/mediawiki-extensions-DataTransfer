@@ -272,13 +272,18 @@ $messages['arz'] = array(
 
 /** Azerbaijani (Azərbaycanca)
  * @author Cekli829
+ * @author Vago
  */
 $messages['az'] = array(
 	'dt_viewxml_categories' => 'Kateqoriyalar',
+	'dt_viewxml_namespaces' => 'Adlar fəzaları',
+	'dt_xml_namespace' => 'Adlar fəzası',
 	'dt_xml_pages' => 'Səhifələr',
 	'dt_xml_page' => 'Səhifə',
 	'dt_xml_template' => 'Şablon',
 	'dt_xml_name' => 'Ad',
+	'dt_xml_title' => 'Başlıq',
+	'dt_xml_id' => 'ID',
 );
 
 /** Belarusian (Беларуская)
