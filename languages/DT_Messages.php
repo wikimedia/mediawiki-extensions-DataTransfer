@@ -1804,11 +1804,12 @@ $messages['oc'] = array(
 
 /** Oriya (ଓଡ଼ିଆ)
  * @author Odisha1
+ * @author Psubhashish
  */
 $messages['or'] = array(
 	'dt_xml_pages' => 'ପୃଷ୍ଠା',
 	'dt_xml_page' => 'ପୃଷ୍ଠା',
-	'dt_xml_template' => 'ଟେମ୍ପଲେଟ',
+	'dt_xml_template' => 'ଛାଞ୍ଚ',
 	'dt_xml_field' => 'କ୍ଷେତ୍ର',
 	'dt_xml_name' => 'ନାମ',
 	'dt_xml_title' => 'ନାଆଁ',
