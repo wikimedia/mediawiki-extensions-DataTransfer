@@ -1812,7 +1812,7 @@ $messages['or'] = array(
 	'dt_xml_template' => 'ଛାଞ୍ଚ',
 	'dt_xml_field' => 'କ୍ଷେତ୍ର',
 	'dt_xml_name' => 'ନାମ',
-	'dt_xml_title' => 'ନାଆଁ',
+	'dt_xml_title' => 'ଶିରୋନାମା',
 	'dt_xml_id' => 'ପରିଚୟ',
 	'dt_import_editsummary' => '$1 ଆମଦାନୀ',
 );
