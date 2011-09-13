@@ -197,6 +197,8 @@ $specialPageAliases['mt'] = array(
 
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
+	'ImportCSV' => array( 'CSV_invoeren' ),
+	'ImportXML' => array( 'XML_invoeren' ),
 	'ViewXML' => array( 'XML_bekieken' ),
 );
 
@@ -231,8 +233,8 @@ $specialPageAliases['pt'] = array(
 
 /** Romanian (Română) */
 $specialPageAliases['ro'] = array(
-	'ImportCSV' => array( 'Import_CSV', 'ImportCSV' ),
-	'ImportXML' => array( 'Import_XML', 'ImportXML' ),
+	'ImportCSV' => array( 'Import_CSV' ),
+	'ImportXML' => array( 'Import_XML' ),
 	'ViewXML' => array( 'Vizualizare_XML' ),
 );
 
@@ -253,6 +255,8 @@ $specialPageAliases['sq'] = array(
 
 /** Swedish (Svenska) */
 $specialPageAliases['sv'] = array(
+	'ImportCSV' => array( 'Importera_CSV' ),
+	'ImportXML' => array( 'Importera_XML' ),
 	'ViewXML' => array( 'Visa_XML' ),
 );
 
@@ -273,7 +277,7 @@ $specialPageAliases['tr'] = array(
 	'ViewXML' => array( 'XMLGör' ),
 );
 
-/** Татарча (Татарча) */
+/** Tatar (Cyrillic script) (Татарча) */
 $specialPageAliases['tt-cyrl'] = array(
 	'ImportCSV' => array( 'CSV_импорт' ),
 	'ImportXML' => array( 'XML_импорт' ),
@@ -296,6 +300,13 @@ $specialPageAliases['vi'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'ImportCSV' => array( '导入CSV' ),
 	'ImportXML' => array( '导入XML' ),
+	'ViewXML' => array( '查看XML' ),
+);
+
+/** Traditional Chinese (‪中文(繁體)‬) */
+$specialPageAliases['zh-hant'] = array(
+	'ImportCSV' => array( '導入CSV' ),
+	'ImportXML' => array( '導入XML' ),
 	'ViewXML' => array( '查看XML' ),
 );
 
