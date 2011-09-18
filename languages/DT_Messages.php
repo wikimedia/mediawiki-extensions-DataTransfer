@@ -2148,8 +2148,28 @@ $messages['sk'] = array(
  * @author Dbc334
  */
 $messages['sl'] = array(
+	'viewxml' => 'Ogled XML',
+	'dt_viewxml_categories' => 'Kategorije',
+	'dt_viewxml_namespaces' => 'Imenski prostori',
+	'dt_viewxml_simplifiedformat' => 'Poenostavljena oblika',
+	'dt_xml_namespace' => 'Imenski prostor',
 	'dt_xml_pages' => 'Strani',
 	'dt_xml_page' => 'Stran',
+	'dt_xml_template' => 'Predloga',
+	'dt_xml_field' => 'Polje',
+	'dt_xml_name' => 'Ime',
+	'dt_xml_title' => 'Naslov',
+	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'Prosto besedilo',
+	'importxml' => 'Uvozi XML',
+	'dt_import_encodingtype' => 'Vrsta kodiranja:',
+	'dt_import_forexisting' => 'Za že obstoječe strani:',
+	'dt_import_skipexisting' => 'Preskoči',
+	'dt_import_summarydesc' => 'Povzetek uvoza:',
+	'dt_import_editsummary' => 'uvoz $1',
+	'dt_import_importing' => 'Uvažanje ...',
+	'importcsv' => 'Uvozi CSV',
+	'right-datatransferimport' => 'Uvoz podatkov',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
