@@ -1807,6 +1807,7 @@ $messages['oc'] = array(
  * @author Psubhashish
  */
 $messages['or'] = array(
+	'dt_viewxml_categories' => 'ଶ୍ରେଣୀସମୂହ',
 	'dt_xml_pages' => 'ପୃଷ୍ଠା',
 	'dt_xml_page' => 'ପୃଷ୍ଠା',
 	'dt_xml_template' => 'ଛାଞ୍ଚ',
@@ -2172,7 +2173,7 @@ $messages['sl'] = array(
 	'right-datatransferimport' => 'Uvoz podatkov',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2190,7 +2191,7 @@ $messages['sr-ec'] = array(
 	'dt_xml_field' => 'Поље',
 	'dt_xml_name' => 'Име',
 	'dt_xml_title' => 'Наслов',
-	'dt_xml_id' => 'ID',
+	'dt_xml_id' => 'ИБ',
 	'dt_xml_freetext' => 'Слободан текст',
 	'importxml' => 'Увези XML',
 	'dt_import_editsummary' => '$1 увоз',
