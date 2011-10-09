@@ -50,6 +50,7 @@ $messages['en'] = array(
  * @author Purodha
  * @author Raymond
  * @author Siebrand
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'datatransfer-desc' => 'Extension description displayed on [[Special:Version]].',
@@ -88,7 +89,7 @@ Used as XML tag name.',
 *$2 is the value found for the $1th colomn in the first line of the CSV file
 *$3 is the title label
 *$4 is a free text label',
-	'right-datatransferimport' => '{{doc-right}}',
+	'right-datatransferimport' => '{{doc-right|datatransferimport}}',
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
@@ -2185,7 +2186,7 @@ $messages['sr-ec'] = array(
 	'dt_viewxml_namespaces' => 'Именски простори',
 	'dt_viewxml_simplifiedformat' => 'Поједностављени формат',
 	'dt_xml_namespace' => 'Именски простор',
-	'dt_xml_pages' => 'Чланци',
+	'dt_xml_pages' => 'Странице',
 	'dt_xml_page' => 'Страница',
 	'dt_xml_template' => 'Шаблон',
 	'dt_xml_field' => 'Поље',
