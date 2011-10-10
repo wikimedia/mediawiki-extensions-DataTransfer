@@ -2150,6 +2150,7 @@ $messages['sk'] = array(
  * @author Dbc334
  */
 $messages['sl'] = array(
+	'datatransfer-desc' => 'Omogoča uvažanje in izvažanje podatkov iz klicev predlog',
 	'viewxml' => 'Ogled XML',
 	'dt_viewxml_categories' => 'Kategorije',
 	'dt_viewxml_namespaces' => 'Imenski prostori',
@@ -2164,13 +2165,18 @@ $messages['sl'] = array(
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'Prosto besedilo',
 	'importxml' => 'Uvozi XML',
+	'dt_import_selectfile' => 'Prosimo, izberite datoteko $1 za uvoz:',
 	'dt_import_encodingtype' => 'Vrsta kodiranja:',
 	'dt_import_forexisting' => 'Za že obstoječe strani:',
+	'dt_import_overwriteexisting' => 'Prepiši obstoječo vsebino',
 	'dt_import_skipexisting' => 'Preskoči',
+	'dt_import_appendtoexisting' => 'Dodaj obstoječi vsebini',
 	'dt_import_summarydesc' => 'Povzetek uvoza:',
 	'dt_import_editsummary' => 'uvoz $1',
 	'dt_import_importing' => 'Uvažanje ...',
+	'dt_import_success' => 'Iz datoteke $2 bom ustvaril $1 {{PLURAL:$1|stran|strani}}.',
 	'importcsv' => 'Uvozi CSV',
+	'dt_importcsv_badheader' => "Napaka: glava stolpca $1, '$2', mora biti '$3', '$4' ali oblike 'template_name[field_name]'",
 	'right-datatransferimport' => 'Uvoz podatkov',
 );
 
