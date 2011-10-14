@@ -111,7 +111,7 @@ function getSubpagesForPageGrouping( $page_name, $relation_name ) {
 }
 
 
-/*
+/**
  * Get all the pages that belong to a category and all its subcategories,
  * down a certain number of levels - heavily based on SMW's
  * SMWInlineQuery::includeSubcategories()
