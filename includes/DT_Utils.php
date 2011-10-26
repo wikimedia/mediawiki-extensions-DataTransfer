@@ -7,7 +7,7 @@
  */
 class DTUtils  {
 
-	/*
+	/**
 	 * Loads messages only for MediaWiki versions that need it (< 1.16)
 	 */
 	public static function loadMessages() {
