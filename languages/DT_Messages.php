@@ -2152,6 +2152,7 @@ $messages['sk'] = array(
 $messages['sl'] = array(
 	'datatransfer-desc' => 'Omogoča uvažanje in izvažanje podatkov iz klicev predlog',
 	'viewxml' => 'Ogled XML',
+	'dt_viewxml_docu' => 'Prosimo, izberite med naslednjimi kategorijami in imenskimi prostori za ogled v obliki XML.',
 	'dt_viewxml_categories' => 'Kategorije',
 	'dt_viewxml_namespaces' => 'Imenski prostori',
 	'dt_viewxml_simplifiedformat' => 'Poenostavljena oblika',
