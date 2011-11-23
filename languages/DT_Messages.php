@@ -1407,7 +1407,7 @@ $messages['ksh'] = array(
 	'right-datatransferimport' => 'Daate empoteere',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -2208,7 +2208,7 @@ $messages['sr-ec'] = array(
 	'right-datatransferimport' => 'Увези податке',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -2361,7 +2361,7 @@ $messages['tet'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -2374,7 +2374,7 @@ $messages['tg-cyrl'] = array(
 	'dt_xml_freetext' => 'Матни дилхоҳ',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2475,7 +2475,7 @@ $messages['tr'] = array(
 	'right-datatransferimport' => 'Verileri içe aktarır',
 );
 
-/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
+/** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
