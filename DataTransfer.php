@@ -18,7 +18,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Data Transfer',
 	'version'        => DATA_TRANSFER_VERSION,
 	'author'         => 'Yaron Koren',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Data_Transfer',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Data_Transfer',
 	'descriptionmsg' => 'datatransfer-desc',
 );
 
