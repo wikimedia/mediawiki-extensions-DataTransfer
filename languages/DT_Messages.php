@@ -2629,10 +2629,23 @@ $messages['zh-hant'] = array(
 	'dt_xml_pages' => '頁面',
 	'dt_xml_page' => '頁面',
 	'dt_xml_template' => '模板',
+	'dt_xml_field' => '事件',
 	'dt_xml_name' => '名稱',
 	'dt_xml_title' => '標題',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => '自由文字',
+	'importxml' => '導入 XML',
+	'dt_import_selectfile' => '請選擇 $1 要導入的文件：',
+	'dt_import_encodingtype' => '編碼類型：',
+	'dt_import_forexisting' => '對於已經存在的頁面：',
+	'dt_import_overwriteexisting' => '覆蓋現有內容',
+	'dt_import_skipexisting' => '跳過',
+	'dt_import_appendtoexisting' => '追加到現有內容',
+	'dt_import_summarydesc' => '導入摘要：',
+	'dt_import_editsummary' => '$1 導入',
+	'dt_import_importing' => '正在導入...',
+	'importcsv' => '導入 CSV',
+	'right-datatransferimport' => '導入數據',
 );
 
 /** Chinese (Taiwan) (‪中文(台灣)‬)
