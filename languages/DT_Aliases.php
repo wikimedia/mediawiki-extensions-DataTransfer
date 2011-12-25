@@ -94,6 +94,8 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
+	'ImportCSV' => array( 'Importar_CSV' ),
+	'ImportXML' => array( 'Importar_XML' ),
 	'ViewXML' => array( 'Ver_XML' ),
 );
 
@@ -195,6 +197,13 @@ $specialPageAliases['mt'] = array(
 	'ViewXML' => array( 'UriXML' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'ImportCSV' => array( 'Importer_CSV' ),
+	'ImportXML' => array( 'Importer_XML' ),
+	'ViewXML' => array( 'Vis_XML' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
 	'ImportCSV' => array( 'CSV_invoeren' ),
@@ -207,13 +216,6 @@ $specialPageAliases['nl'] = array(
 	'ImportCSV' => array( 'CSVImporteren' ),
 	'ImportXML' => array( 'XMLImporteren' ),
 	'ViewXML' => array( 'XMLBekijken' ),
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['nb'] = array(
-	'ImportCSV' => array( 'Importer_CSV' ),
-	'ImportXML' => array( 'Importer_XML' ),
-	'ViewXML' => array( 'Vis_XML' ),
 );
 
 /** Occitan (Occitan) */
@@ -238,7 +240,7 @@ $specialPageAliases['ro'] = array(
 	'ViewXML' => array( 'Vizualizare_XML' ),
 );
 
-/** Sanskrit (संस्कृत) */
+/** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
 	'ViewXML' => array( 'XMLपश्यति' ),
 );
@@ -309,8 +311,3 @@ $specialPageAliases['zh-hant'] = array(
 	'ImportXML' => array( '導入XML' ),
 	'ViewXML' => array( '查看XML' ),
 );
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
