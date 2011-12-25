@@ -64,7 +64,7 @@ global $wgLanguageCode;
 dtfInitContentLanguage($wgLanguageCode);
 
 $wgExtensionMessagesFiles['DataTransfer'] = $dtgIP . '/languages/DT_Messages.php';
-$wgExtensionAliasesFiles['DataTransfer'] = $dtgIP . '/languages/DT_Aliases.php';
+$wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
 
 /**********************************************/
 /***** language settings                  *****/
