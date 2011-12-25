@@ -1741,7 +1741,7 @@ $messages['nn'] = array(
  * @author Jon Harald Søby
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'datatransfer-desc' => 'Gjør det mulig å importere og eksportere data som finnes i maloppkallinger',
 	'viewxml' => 'Se XML',
 	'dt_viewxml_docu' => 'Velg blant følgende kategorier og navnerom for å se dem i XML-format',

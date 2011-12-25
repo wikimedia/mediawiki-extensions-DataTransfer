@@ -210,7 +210,7 @@ $specialPageAliases['nl'] = array(
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['no'] = array(
+$specialPageAliases['nb'] = array(
 	'ImportCSV' => array( 'Importer_CSV' ),
 	'ImportXML' => array( 'Importer_XML' ),
 	'ViewXML' => array( 'Vis_XML' ),
