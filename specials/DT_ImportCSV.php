@@ -55,9 +55,7 @@ class DTImportCSV extends SpecialPage {
 	 * Constructor
 	 */
 	public function DTImportCSV() {
-		global $wgLanguageCode;
 		parent::__construct( 'ImportCSV' );
-		DTUtils::loadMessages();
 	}
 
 	function execute( $query ) {
