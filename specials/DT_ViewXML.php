@@ -497,14 +497,14 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
 END;
 			$text .= "<p>" . wfMsg( 'dt_viewxml_docu' ) . "</p>\n";
 			$text .= "<h2>" . wfMsg( 'dt_viewxml_categories' ) . "</h2>\n";
-			$categories = getCategoriesList();
+			$categories = self::getCategoriesList();
 			foreach ( $categories as $category ) {
 				$title = Title::makeTitle( NS_CATEGORY, $category );
 				$link = $skin->makeLinkObj( $title, $title->getText() );
 				$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
 			}
 			$text .= "<h2>" . wfMsg( 'dt_viewxml_namespaces' ) . "</h2>\n";
-			$namespaces = getNamespacesList();
+			$namespaces = self::getNamespacesList();
 			foreach ( $namespaces as $namespace ) {
 				if ( $namespace == 0 ) {
 					$ns_name = wfMsgHtml( 'blanknamespace' );
