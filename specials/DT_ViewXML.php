@@ -5,8 +5,6 @@
  * @author Yaron Koren
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 class DTViewXML extends SpecialPage {
 
 	/**
@@ -18,103 +16,110 @@ class DTViewXML extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
-		doSpecialViewXML( $query );
+		self::doSpecialViewXML( $query );
 	}
-}
 
-function getCategoriesList() {
-	global $wgContLang, $dtgContLang;
-	$dt_props = $dtgContLang->getPropertyLabels();
-	$exclusion_cat_name = str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
-	$exclusion_cat_full_name = $wgContLang->getNSText( NS_CATEGORY ) . ':' . $exclusion_cat_name;
-	$dbr = wfGetDB( DB_SLAVE );
-	$categorylinks = $dbr->tableName( 'categorylinks' );
-	$res = $dbr->query( "SELECT DISTINCT cl_to FROM $categorylinks" );
-	$categories = array();
-	while ( $row = $dbr->fetchRow( $res ) ) {
-		$cat_name = $row[0];
-		// add this category to the list, if it's not the
-		// "Excluded from XML" category, and it's not a child of that
-		// category
-		if ( $cat_name != $exclusion_cat_name ) {
-			$title = Title::newFromText( $cat_name, NS_CATEGORY );
-			$parent_categories = $title->getParentCategoryTree( array() );
-			if ( ! treeContainsElement( $parent_categories, $exclusion_cat_full_name ) )
-				$categories[] = $cat_name;
+	static function getCategoriesList() {
+		global $wgContLang, $dtgContLang;
+		$dt_props = $dtgContLang->getPropertyLabels();
+		$exclusion_cat_name = str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
+		$exclusion_cat_full_name = $wgContLang->getNSText( NS_CATEGORY ) . ':' . $exclusion_cat_name;
+		$dbr = wfGetDB( DB_SLAVE );
+		$categorylinks = $dbr->tableName( 'categorylinks' );
+		$res = $dbr->query( "SELECT DISTINCT cl_to FROM $categorylinks" );
+		$categories = array();
+		while ( $row = $dbr->fetchRow( $res ) ) {
+			$cat_name = $row[0];
+			// Add this category to the list, if it's not the
+			// "Excluded from XML" category, and it's not a child
+			// of that category.
+			if ( $cat_name != $exclusion_cat_name ) {
+				$title = Title::newFromText( $cat_name, NS_CATEGORY );
+				$parent_categories = $title->getParentCategoryTree( array() );
+				if ( ! self::treeContainsElement( $parent_categories, $exclusion_cat_full_name ) )
+					$categories[] = $cat_name;
+			}
 		}
+		$dbr->freeResult( $res );
+		sort( $categories );
+		return $categories;
 	}
-	$dbr->freeResult( $res );
-	sort( $categories );
-	return $categories;
-}
 
-function getNamespacesList() {
-	$dbr = wfGetDB( DB_SLAVE );
-	$page = $dbr->tableName( 'page' );
-	$res = $dbr->query( "SELECT DISTINCT page_namespace FROM $page" );
-	$namespaces = array();
-	while ( $row = $dbr->fetchRow( $res ) ) {
-		$namespaces[] = $row[0];
+	function getNamespacesList() {
+		$dbr = wfGetDB( DB_SLAVE );
+		$page = $dbr->tableName( 'page' );
+		$res = $dbr->query( "SELECT DISTINCT page_namespace FROM $page" );
+		$namespaces = array();
+		while ( $row = $dbr->fetchRow( $res ) ) {
+			$namespaces[] = $row[0];
+		}
+		$dbr->freeResult( $res );
+		return $namespaces;
 	}
-	$dbr->freeResult( $res );
-	return $namespaces;
-}
 
-function getGroupings() {
-  global $dtgContLang;
+	function getGroupings() {
+		global $dtgContLang, $smwgIP;
 
-  global $smwgIP;
-  if ( ! isset( $smwgIP ) ) {
-    return array();
-  } else {
-    $groupings = array();
-    $store = smwfGetStore();
-    $grouping_prop = SMWPropertyValue::makeProperty( '_DT_XG' );
-    $grouped_props = $store->getAllPropertySubjects( $grouping_prop );
-    foreach ( $grouped_props as $grouped_prop ) {
-      $res = $store->getPropertyValues( $grouped_prop, $grouping_prop );
-      $num = count( $res );
-      if ( $num > 0 ) {
-        $grouping_label = $res[0]->getShortWikiText();
-        $groupings[] = array( $grouped_prop, $grouping_label );
-      }
-    }
-    return $groupings;
-  }
-}
-
-function getSubpagesForPageGrouping( $page_name, $relation_name ) {
-	$dbr = wfGetDB( DB_SLAVE );
-	$smw_relations = $dbr->tableName( 'smw_relations' );
-	$smw_attributes = $dbr->tableName( 'smw_attributes' );
-	$res = $dbr->query( "SELECT subject_title FROM $smw_relations WHERE object_title = '$page_name' AND relation_title = '$relation_name'" );
-	$subpages = array();
-	while ( $row = $dbr->fetchRow( $res ) ) {
-		$subpage_name = $row[0];
-		$query_subpage_name = str_replace( "'", "\'", $subpage_name );
-		// get the display order
-		$res2 = $dbr->query( "SELECT value_num FROM $smw_attributes WHERE subject_title = '$query_subpage_name' AND attribute_title = 'Display_order'" );
-		if ( $row2 = $dbr->fetchRow( $res2 ) ) {
-			$display_order = $row2[0];
+		if ( ! isset( $smwgIP ) ) {
+			return array();
 		} else {
-			$display_order = - 1;
+			$groupings = array();
+			$store = smwfGetStore();
+			// SMWDIProperty was added in SMW 1.6
+			if ( class_exists( 'SMWDIProperty' ) ) {
+				$grouping_prop = SMWDIProperty::newFromUserLabel( '_DT_XG' );
+			} else {
+				$grouping_prop = SMWPropertyValue::makeProperty( '_DT_XG' );
+			}
+			$grouped_props = $store->getAllPropertySubjects( $grouping_prop );
+			foreach ( $grouped_props as $grouped_prop ) {
+				$res = $store->getPropertyValues( $grouped_prop, $grouping_prop );
+				$num = count( $res );
+				if ( $num > 0 ) {
+					if ( class_exists( 'SMWDIProperty' ) ) {
+						$grouping_label = $res[0]->getSortKey();
+					} else {
+						$grouping_label = $res[0]->getShortWikiText();
+					}
+					$groupings[] = array( $grouped_prop, $grouping_label );
+				}
+			}
+			return $groupings;
 		}
-		$dbr->freeResult( $res2 );
-		// HACK - page name is the key, display order is the value
-		$subpages[$subpage_name] = $display_order;
 	}
-	$dbr->freeResult( $res );
-	uasort( $subpages, "cmp" );
-	return array_keys( $subpages );
-}
+
+	static function getSubpagesForPageGrouping( $page_name, $relation_name ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$smw_relations = $dbr->tableName( 'smw_relations' );
+		$smw_attributes = $dbr->tableName( 'smw_attributes' );
+		$res = $dbr->query( "SELECT subject_title FROM $smw_relations WHERE object_title = '$page_name' AND relation_title = '$relation_name'" );
+		$subpages = array();
+		while ( $row = $dbr->fetchRow( $res ) ) {
+			$subpage_name = $row[0];
+			$query_subpage_name = str_replace( "'", "\'", $subpage_name );
+			// get the display order
+			$res2 = $dbr->query( "SELECT value_num FROM $smw_attributes WHERE subject_title = '$query_subpage_name' AND attribute_title = 'Display_order'" );
+			if ( $row2 = $dbr->fetchRow( $res2 ) ) {
+				$display_order = $row2[0];
+			} else {
+				$display_order = - 1;
+			}
+			$dbr->freeResult( $res2 );
+			// HACK - page name is the key, display order is the value
+			$subpages[$subpage_name] = $display_order;
+		}
+		$dbr->freeResult( $res );
+		uasort( $subpages, "cmp" );
+		return array_keys( $subpages );
+	}
 
 
-/**
+/*
  * Get all the pages that belong to a category and all its subcategories,
  * down a certain number of levels - heavily based on SMW's
  * SMWInlineQuery::includeSubcategories()
  */
-  function getPagesForCategory( $top_category, $num_levels ) {
+  static function getPagesForCategory( $top_category, $num_levels ) {
     if ( 0 == $num_levels ) return $top_category;
 
     $db = wfGetDB( DB_SLAVE );
@@ -159,7 +164,7 @@ function getSubpagesForPageGrouping( $page_name, $relation_name ) {
   }
 
 /*
-function getPagesForCategory($category) {
+static function getPagesForCategory($category) {
 	$dbr = wfGetDB( DB_SLAVE );
 	$categorylinks = $dbr->tableName( 'categorylinks' );
 	$res = $dbr->query("SELECT cl_from FROM $categorylinks WHERE cl_to = '$category'");
@@ -172,7 +177,7 @@ function getPagesForCategory($category) {
 }
 */
 
-function getPagesForNamespace( $namespace ) {
+static function getPagesForNamespace( $namespace ) {
 	$dbr = wfGetDB( DB_SLAVE );
 	$page = $dbr->tableName( 'page' );
 	$res = $dbr->query( "SELECT page_id FROM $page WHERE page_namespace = '$namespace'" );
@@ -184,28 +189,28 @@ function getPagesForNamespace( $namespace ) {
 	return $titles;
 }
 
-/**
- * Helper function for getXMLForPage()
- */
-function treeContainsElement( $tree, $element ) {
-	// escape out if there's no tree (i.e., category)
-	if ( $tree == null )
-		return false;
+	/**
+	 * Helper function for getXMLForPage()
+	 */
+	static function treeContainsElement( $tree, $element ) {
+		// escape out if there's no tree (i.e., category)
+		if ( $tree == null )
+			return false;
 
-	foreach ( $tree as $node => $child_tree ) {
-		if ( $node === $element ) {
-			return true;
-		} elseif ( count( $child_tree ) > 0 ) {
-			if ( treeContainsElement( $child_tree, $element ) ) {
+		foreach ( $tree as $node => $child_tree ) {
+			if ( $node === $element ) {
 				return true;
+			} elseif ( count( $child_tree ) > 0 ) {
+				if ( self::treeContainsElement( $child_tree, $element ) ) {
+					return true;
+				}
 			}
 		}
+		// no match found
+		return false;
 	}
-	// no match found
-	return false;
-}
 
-function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
+static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
   if ( $depth > 5 ) { return ""; }
 
   global $wgContLang, $dtgContLang;
@@ -225,11 +230,12 @@ function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
   $dt_props = $dtgContLang->getPropertyLabels();
   // $exclusion_category = $title->newFromText($dt_props[DT_SP_IS_EXCLUDED_FROM_XML], NS_CATEGORY);
   $exclusion_category = $wgContLang->getNSText( NS_CATEGORY ) . ':' . str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
-  if ( treeContainsElement( $parent_categories, $exclusion_category ) )
+  if ( self::treeContainsElement( $parent_categories, $exclusion_category ) )
     return "";
   $article = new Article( $title );
   $page_title = str_replace( '"', '&quot;', $title->getText() );
   $page_title = str_replace( '&', '&amp;', $page_title );
+  $page_namespace = $title->getNamespace();
   if ( $simplified_format )
     $text = "<$page_str><$id_str>{$article->getID()}</$id_str><$title_str>$page_title</$title_str>\n";
   else
@@ -376,11 +382,16 @@ function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
     $store = smwfGetStore();
     foreach ( $groupings as $pair ) {
       list( $property_page, $grouping_label ) = $pair;
-      $wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $page_title );
       $options = new SMWRequestOptions();
       $options->sort = "subject_title";
       // get actual property from the wiki-page of the property
-      $property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
+      if ( class_exists( 'SMWDIProperty' ) ) {
+        $wiki_page = new SMWDIWikiPage( $page_title, $page_namespace, null );
+        $property = SMWDIProperty::newFromUserLabel( $property_page->getTitle()->getText() );
+      } else {
+        $wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $page_title );
+        $property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
+      }
       $res = $store->getPropertySubjects( $property, $wiki_page, $options );
       $num = count( $res );
       if ( $num > 0 ) {
@@ -388,7 +399,7 @@ function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
         $text .= "<$grouping_label>\n";
         foreach ( $res as $subject ) {
           $subject_title = $subject->getTitle();
-          $text .= getXMLForPage( $subject_title, $simplified_format, $groupings, $depth + 1 );
+          $text .= self::getXMLForPage( $subject_title, $simplified_format, $groupings, $depth + 1 );
         }
         $text .= "</$grouping_label>\n";
       }
@@ -402,108 +413,113 @@ function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
   return $text;
 }
 
-function doSpecialViewXML() {
-	global $wgOut, $wgRequest, $wgUser, $wgContLang;
-	$skin = $wgUser->getSkin();
-	$namespace_labels = $wgContLang->getNamespaces();
-	$category_label = $namespace_labels[NS_CATEGORY];
-	$template_label = $namespace_labels[NS_TEMPLATE];
-	$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
-	$namespace_str = str_replace( ' ', '_', wfMsg( 'dt_xml_namespace' ) );
-	$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
+	static function doSpecialViewXML() {
+		global $wgOut, $wgRequest, $wgUser, $wgContLang;
 
-	$form_submitted = false;
-	$page_titles = array();
-	$cats = $wgRequest->getArray( 'categories' );
-	$nses = $wgRequest->getArray( 'namespaces' );
-	if ( count( $cats ) > 0 || count( $nses ) > 0 ) {
-		$form_submitted = true;
-	}
+		$skin = $wgUser->getSkin();
+		$namespace_labels = $wgContLang->getNamespaces();
+		$category_label = $namespace_labels[NS_CATEGORY];
+		$template_label = $namespace_labels[NS_TEMPLATE];
+		$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
+		$namespace_str = str_replace( ' ', '_', wfMsg( 'dt_xml_namespace' ) );
+		$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
 
-	if ( $form_submitted ) {
-		$wgOut->disable();
-
-		// Cancel output buffering and gzipping if set
-		// This should provide safer streaming for pages with history
-		wfResetOutputBuffers();
-		header( "Content-type: application/xml; charset=utf-8" );
-
-		$groupings = getGroupings();
-		$simplified_format = $wgRequest->getVal( 'simplified_format' );
-		$text = "<$pages_str>";
-		if ( $cats ) {
-			foreach ( $cats as $cat => $val ) {
-				if ( $simplified_format )
-					$text .= '<' . str_replace( ' ', '_', $cat ) . ">\n";
-				else
-					$text .= "<$category_label $name_str=\"$cat\">\n";
-				$titles = getPagesForCategory( $cat, 10 );
-				foreach ( $titles as $title ) {
-					$text .= getXMLForPage( $title, $simplified_format, $groupings );
-				}
-				if ( $simplified_format )
-					$text .= '</' . str_replace( ' ', '_', $cat ) . ">\n";
-				else
-					$text .= "</$category_label>\n";
-			}
+		$form_submitted = false;
+		$page_titles = array();
+		$cats = $wgRequest->getArray( 'categories' );
+		$nses = $wgRequest->getArray( 'namespaces' );
+		if ( count( $cats ) > 0 || count( $nses ) > 0 ) {
+			$form_submitted = true;
 		}
 
-		if ( $nses ) {
-			foreach ( $nses as $ns => $val ) {
-		 		if ( $ns == 0 ) {
-					$ns_name = "Main";
-				} else {
-					$ns_name = MWNamespace::getCanonicalName( $ns );
+		if ( $form_submitted ) {
+			$wgOut->disable();
+
+			// Cancel output buffering and gzipping if set
+			// This should provide safer streaming for pages with history
+			wfResetOutputBuffers();
+			header( "Content-type: application/xml; charset=utf-8" );
+
+			$groupings = self::getGroupings();
+			$simplified_format = $wgRequest->getVal( 'simplified_format' );
+			$text = "<$pages_str>";
+			if ( $cats ) {
+				foreach ( $cats as $cat => $val ) {
+					if ( $simplified_format )
+						$text .= '<' . str_replace( ' ', '_', $cat ) . ">\n";
+					else
+						$text .= "<$category_label $name_str=\"$cat\">\n";
+					$titles = self::getPagesForCategory( $cat, 10 );
+					foreach ( $titles as $title ) {
+						$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+					}
+					if ( $simplified_format ) {
+						$text .= '</' . str_replace( ' ', '_', $cat ) . ">\n";
+					} else {
+						$text .= "</$category_label>\n";
+					}
 				}
-				if ( $simplified_format )
-					$text .= '<' . str_replace( ' ', '_', $ns_name ) . ">\n";
-				else
-					$text .= "<$namespace_str $name_str=\"$ns_name\">\n";
-				$titles = getPagesForNamespace( $ns );
-				foreach ( $titles as $title ) {
-					$text .= getXMLForPage( $title, $simplified_format, $groupings );
-				}
-				if ( $simplified_format )
-					$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
-				else
-					$text .= "</$namespace_str>\n";
 			}
-		}
-		$text .= "</$pages_str>";
-		print $text;
-	} else {
-		// set 'title' as hidden field, in case there's no URL niceness
-		global $wgContLang;
-		$mw_namespace_labels = $wgContLang->getNamespaces();
-		$special_namespace = $mw_namespace_labels[NS_SPECIAL];
-		$text = <<<END
+
+			if ( $nses ) {
+				foreach ( $nses as $ns => $val ) {
+			 		if ( $ns == 0 ) {
+						$ns_name = "Main";
+					} else {
+						$ns_name = MWNamespace::getCanonicalName( $ns );
+					}
+					if ( $simplified_format ) {
+						$text .= '<' . str_replace( ' ', '_', $ns_name ) . ">\n";
+					} else {
+						$text .= "<$namespace_str $name_str=\"$ns_name\">\n";
+					}
+					$titles = self::getPagesForNamespace( $ns );
+					foreach ( $titles as $title ) {
+						$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+					}
+					if ( $simplified_format )
+						$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
+					else
+						$text .= "</$namespace_str>\n";
+				}
+			}
+			$text .= "</$pages_str>";
+			print $text;
+		} else {
+			// set 'title' as hidden field, in case there's no URL niceness
+			global $wgContLang;
+			$mw_namespace_labels = $wgContLang->getNamespaces();
+			$special_namespace = $mw_namespace_labels[NS_SPECIAL];
+			$text = <<<END
 	<form action="" method="get">
 	<input type="hidden" name="title" value="$special_namespace:ViewXML">
 
 END;
-		$text .= "<p>" . wfMsg( 'dt_viewxml_docu' ) . "</p>\n";
-		$text .= "<h2>" . wfMsg( 'dt_viewxml_categories' ) . "</h2>\n";
-		$categories = getCategoriesList();
-		foreach ( $categories as $category ) {
-			$title = Title::makeTitle( NS_CATEGORY, $category );
-			$link = $skin->makeLinkObj( $title, htmlspecialchars( $title->getText() ) );
-			$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
-		}
-		$text .= "<h2>" . wfMsg( 'dt_viewxml_namespaces' ) . "</h2>\n";
-		$namespaces = getNamespacesList();
-		foreach ( $namespaces as $namespace ) {
-			if ( $namespace == 0 ) {
-				$ns_name = wfMsgHtml( 'blanknamespace' );
-			} else {
-				$ns_name = htmlspecialchars( $wgContLang->getFormattedNsText( $namespace ) );
+			$text .= "<p>" . wfMsg( 'dt_viewxml_docu' ) . "</p>\n";
+			$text .= "<h2>" . wfMsg( 'dt_viewxml_categories' ) . "</h2>\n";
+			$categories = getCategoriesList();
+			foreach ( $categories as $category ) {
+				$title = Title::makeTitle( NS_CATEGORY, $category );
+				$link = $skin->makeLinkObj( $title, $title->getText() );
+				$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
 			}
-			$ns_name = str_replace( '_', ' ', $ns_name );
-			$text .= "<input type=\"checkbox\" name=\"namespaces[$namespace]\" /> $ns_name <br />\n";
-		}
-		$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMsg( 'dt_viewxml_simplifiedformat' ) . "</p>\n";
-		$text .= "<input type=\"submit\" value=\"" . wfMsg( 'viewxml' ) . "\">\n";
-		$text .= "</form>\n";
+			$text .= "<h2>" . wfMsg( 'dt_viewxml_namespaces' ) . "</h2>\n";
+			$namespaces = getNamespacesList();
+			foreach ( $namespaces as $namespace ) {
+				if ( $namespace == 0 ) {
+					$ns_name = wfMsgHtml( 'blanknamespace' );
+				} else {
+					$ns_name = htmlspecialchars( $wgContLang->getFormattedNsText( $namespace ) );
+				}
+				$ns_name = str_replace( '_', ' ', $ns_name );
+				$text .= "<input type=\"checkbox\" name=\"namespaces[$namespace]\" /> $ns_name <br />\n";
+			}
+			$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMsg( 'dt_viewxml_simplifiedformat' ) . "</p>\n";
+			$text .= "<input type=\"submit\" value=\"" . wfMsg( 'viewxml' ) . "\">\n";
+			$text .= "</form>\n";
 
-		$wgOut->addHTML( $text );
+			$wgOut->addHTML( $text );
+		}
 	}
+
 }
