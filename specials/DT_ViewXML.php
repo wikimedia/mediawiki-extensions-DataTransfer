@@ -45,7 +45,7 @@ class DTViewXML extends SpecialPage {
 		return $categories;
 	}
 
-	function getNamespacesList() {
+	static function getNamespacesList() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page = $dbr->tableName( 'page' );
 		$res = $dbr->query( "SELECT DISTINCT page_namespace FROM $page" );
@@ -57,7 +57,7 @@ class DTViewXML extends SpecialPage {
 		return $namespaces;
 	}
 
-	function getGroupings() {
+	static function getGroupings() {
 		global $dtgContLang, $smwgIP;
 
 		if ( ! isset( $smwgIP ) ) {
