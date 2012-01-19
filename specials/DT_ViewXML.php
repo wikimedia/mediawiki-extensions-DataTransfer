@@ -177,17 +177,17 @@ static function getPagesForCategory($category) {
 }
 */
 
-static function getPagesForNamespace( $namespace ) {
-	$dbr = wfGetDB( DB_SLAVE );
-	$page = $dbr->tableName( 'page' );
-	$res = $dbr->query( "SELECT page_id FROM $page WHERE page_namespace = '$namespace'" );
-	$titles = array();
-	while ( $row = $dbr->fetchRow( $res ) ) {
-		$titles[] = Title::newFromID( $row[0] );
+	static function getPagesForNamespace( $namespace ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$page = $dbr->tableName( 'page' );
+		$res = $dbr->query( "SELECT page_id FROM $page WHERE page_namespace = '$namespace'" );
+		$titles = array();
+		while ( $row = $dbr->fetchRow( $res ) ) {
+			$titles[] = Title::newFromID( $row[0] );
+		}
+		$dbr->freeResult( $res );
+		return $titles;
 	}
-	$dbr->freeResult( $res );
-	return $titles;
-}
 
 	/**
 	 * Helper function for getXMLForPage()
