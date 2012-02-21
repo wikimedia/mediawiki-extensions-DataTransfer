@@ -678,6 +678,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Imre
  * @author Locos epraix
@@ -704,6 +705,10 @@ $messages['es'] = array(
 	'importxml' => 'Importar XML',
 	'dt_import_selectfile' => 'Por favor seleccione el archivo $1 a importar:',
 	'dt_import_encodingtype' => 'Tipo de codificación:',
+	'dt_import_forexisting' => 'Para las páginas que ya existen:',
+	'dt_import_overwriteexisting' => 'Sobrescribir el contenido existente',
+	'dt_import_skipexisting' => 'Omitir',
+	'dt_import_appendtoexisting' => 'Anexar al contenido existente',
 	'dt_import_summarydesc' => 'Resumen de importación:',
 	'dt_import_editsummary' => '$1 importación',
 	'dt_import_importing' => 'Importando...',
