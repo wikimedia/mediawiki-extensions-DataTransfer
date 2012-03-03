@@ -804,6 +804,7 @@ $messages['fi'] = array(
  * @author IAlex
  * @author Peter17
  * @author PieRRoMaN
+ * @author Verdy p
  * @author Zetud
  */
 $messages['fr'] = array(
@@ -820,7 +821,7 @@ $messages['fr'] = array(
 	'dt_xml_field' => 'Champ',
 	'dt_xml_name' => 'Nom',
 	'dt_xml_title' => 'Titre',
-	'dt_xml_id' => 'ID',
+	'dt_xml_id' => 'Identifiant',
 	'dt_xml_freetext' => 'Texte libre',
 	'importxml' => 'Import en XML',
 	'dt_import_selectfile' => 'Veuillez sélectionner le fichier $1 à importer :',
