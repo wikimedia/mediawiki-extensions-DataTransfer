@@ -1359,9 +1359,11 @@ $messages['km'] = array(
 
 /** Kannada (ಕನ್ನಡ)
  * @author Nayvik
+ * @author VASANTH S.N.
  */
 $messages['kn'] = array(
 	'dt_viewxml_categories' => 'ವರ್ಗಗಳು',
+	'dt_viewxml_namespaces' => 'ನಾಮವರ್ಗಗಳು',
 	'dt_xml_namespace' => 'ನಾಮವರ್ಗ',
 	'dt_xml_pages' => 'ಪುಟಗಳು',
 	'dt_xml_page' => 'ಪುಟ',
