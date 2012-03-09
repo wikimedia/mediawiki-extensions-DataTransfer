@@ -1049,6 +1049,7 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
 	'datatransfer-desc' => 'टेम्प्लेट कॉल में उपलब्ध डाटाकी आयात-निर्यात करने की अनुमति देता हैं',
@@ -1059,7 +1060,7 @@ $messages['hi'] = array(
 	'dt_viewxml_simplifiedformat' => 'आसान फॉरमैट',
 	'dt_xml_namespace' => 'नामस्थान',
 	'dt_xml_page' => 'पन्ना',
-	'dt_xml_field' => 'फिल्ड़',
+	'dt_xml_field' => 'फ़ील्ड',
 	'dt_xml_name' => 'नाम',
 	'dt_xml_title' => 'शीर्षक',
 	'dt_xml_id' => 'आईडी',
@@ -2590,6 +2591,7 @@ $messages['yi'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
  * @author Hydra
+ * @author Linforest
  * @author PhiLiP
  */
 $messages['zh-hans'] = array(
@@ -2618,7 +2620,9 @@ $messages['zh-hans'] = array(
 	'dt_import_summarydesc' => '导入摘要：',
 	'dt_import_editsummary' => '$1 导入',
 	'dt_import_importing' => '正在导入...',
+	'dt_import_success' => '将依据此$2文件创建$1个{{PLURAL:$1|个页面|个页面}}。',
 	'importcsv' => '导入 CSV',
+	'dt_importcsv_badheader' => "错误：第$1列的标题'$2'必须为'$3'、或者'$4'、或者采取'模板名称[字段名称]'的形式",
 	'right-datatransferimport' => '导入数据',
 );
 
