@@ -1429,9 +1429,10 @@ $messages['ku-latn'] = array(
 /** Cornish (Kernowek)
  * @author Kernoweger
  * @author Kw-Moon
+ * @author Nrowe
  */
 $messages['kw'] = array(
-	'dt_viewxml_categories' => 'Classys',
+	'dt_viewxml_categories' => 'Klassys',
 	'dt_xml_page' => 'Folen',
 );
 
