@@ -584,6 +584,13 @@ $messages['de'] = array(
 	'right-datatransferimport' => 'Daten importieren',
 );
 
+/** Zazaki (Zazaki)
+ * @author Mirzali
+ */
+$messages['diq'] = array(
+	'dt_xml_name' => 'Name',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
