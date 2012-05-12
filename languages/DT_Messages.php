@@ -1762,6 +1762,7 @@ $messages['nl'] = array(
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'datatransfer-desc' => 'Gjer det mogleg å importera og eksportera data i maloppkallingar',
@@ -2391,7 +2392,7 @@ $messages['tg-cyrl'] = array(
 	'dt_xml_freetext' => 'Матни дилхоҳ',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2492,7 +2493,7 @@ $messages['tr'] = array(
 	'right-datatransferimport' => 'Verileri içe aktarır',
 );
 
-/** Uyghur (Latin script) (Uyghurche‎)
+/** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
