@@ -32,6 +32,11 @@ $specialPageAliases['arz'] = array(
 	'ViewXML' => array( 'عرض_XML' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'ViewXML' => array( 'Itihi_XML' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'ImportCSV' => array( 'EnporzhiañCSV' ),
@@ -101,7 +106,7 @@ $specialPageAliases['gl'] = array(
 
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
-	'ViewXML' => array( 'Lueg XML' ),
+	'ViewXML' => array( 'Lueg_XML' ),
 );
 
 /** Gujarati (ગુજરાતી) */
@@ -157,6 +162,13 @@ $specialPageAliases['ksh'] = array(
 	'ImportCSV' => array( 'CSV_Empotteere' ),
 	'ImportXML' => array( 'XML_Empoteere' ),
 	'ViewXML' => array( 'XML_beloore' ),
+);
+
+/** Cornish (Kernowek) */
+$specialPageAliases['kw'] = array(
+	'ImportCSV' => array( 'YmperthiCSV' ),
+	'ImportXML' => array( 'YmperthiXML' ),
+	'ViewXML' => array( 'GwelesXML' ),
 );
 
 /** Ladino (Ladino) */
