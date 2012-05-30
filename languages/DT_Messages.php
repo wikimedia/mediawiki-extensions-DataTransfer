@@ -1991,6 +1991,7 @@ $messages['pt'] = array(
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  * @author Giro720
+ * @author Jaideraf
  */
 $messages['pt-br'] = array(
 	'datatransfer-desc' => 'Permite a importação e exportação de dados contidos em chamadas de predefinições',
@@ -2020,7 +2021,7 @@ $messages['pt-br'] = array(
 	'dt_import_importing' => 'Importando...',
 	'dt_import_success' => '$1 {{PLURAL:$1|página será importada|páginas serão importadas}} do arquivo $2.',
 	'importcsv' => 'Importar CSV',
-	'dt_importcsv_badheader' => "Erro: o cabeçalho da coluna $1, '$2', deve ser '$3', ou '$4' ou da forma 'nome_modelo[nome_campo]'",
+	'dt_importcsv_badheader' => "Erro: o cabeçalho da coluna $1, '$2', deve ser '$3', ou '$4' ou da forma 'nome_da_predefinição[nome_do_campo]'",
 	'right-datatransferimport' => 'Importar dados',
 );
 
