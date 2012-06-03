@@ -1988,7 +1988,7 @@ $messages['pt'] = array(
 	'right-datatransferimport' => 'Importar dados',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author Eduardo.mps
  * @author Giro720
  * @author Jaideraf
