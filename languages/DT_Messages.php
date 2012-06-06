@@ -1279,6 +1279,7 @@ $messages['it'] = array(
  * @author Fryed-peach
  * @author JtFuruhata
  * @author Ohgi
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -1300,7 +1301,7 @@ $messages['ja'] = array(
 	'importxml' => 'XMLインポート',
 	'dt_import_selectfile' => 'インポートする $1 ファイルを選択してください:',
 	'dt_import_encodingtype' => 'エンコーディング方式:',
-	'dt_import_forexisting' => 'すでに存在するページの場合：',
+	'dt_import_forexisting' => '既存のページの場合：',
 	'dt_import_overwriteexisting' => '既存の内容に上書き',
 	'dt_import_skipexisting' => 'スキップ',
 	'dt_import_appendtoexisting' => '既存の内容に追加',
