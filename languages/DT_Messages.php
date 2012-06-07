@@ -1283,9 +1283,9 @@ $messages['it'] = array(
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'datatransfer-desc' => 'テンプレート呼び出しに関わるデータのインポートおよびエクスポートを可能にする',
-	'viewxml' => 'XML表示',
-	'dt_viewxml_docu' => 'XML形式で表示するカテゴリや名前空間を以下から選択してください。',
+	'datatransfer-desc' => 'テンプレート呼び出しに含まれるデータをインポートおよびエクスポートできるようにする',
+	'viewxml' => 'XMLを表示',
+	'dt_viewxml_docu' => 'XML 形式で表示するカテゴリや名前空間を以下から選択してください。',
 	'dt_viewxml_categories' => 'カテゴリ',
 	'dt_viewxml_namespaces' => '名前空間',
 	'dt_viewxml_simplifiedformat' => '簡易形式',
@@ -1298,20 +1298,20 @@ $messages['ja'] = array(
 	'dt_xml_title' => 'タイトル',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => '自由形式テキスト',
-	'importxml' => 'XMLインポート',
-	'dt_import_selectfile' => 'インポートする $1 ファイルを選択してください:',
-	'dt_import_encodingtype' => 'エンコーディング方式:',
+	'importxml' => 'XMLをインポート',
+	'dt_import_selectfile' => 'インポートする $1 ファイルを選択してください：',
+	'dt_import_encodingtype' => 'エンコーディング方式：',
 	'dt_import_forexisting' => '既存のページの場合：',
 	'dt_import_overwriteexisting' => '既存の内容に上書き',
 	'dt_import_skipexisting' => 'スキップ',
 	'dt_import_appendtoexisting' => '既存の内容に追加',
-	'dt_import_summarydesc' => '移入の概要：',
+	'dt_import_summarydesc' => 'インポートの概要：',
 	'dt_import_editsummary' => '$1 のインポート',
-	'dt_import_importing' => 'インポート中…',
-	'dt_import_success' => '$2ファイルから$1{{PLURAL:$1|ページ}}がインポートされます。',
-	'importcsv' => 'CSVのインポート',
-	'dt_importcsv_badheader' => 'エラー: 列 $1 のヘッダ「$2」は、「$3」もしくは「$4」であるか、または「テンプレート名[フィールド名]」という形式になっていなければなりません。',
-	'right-datatransferimport' => 'データをインポートする',
+	'dt_import_importing' => 'インポート中...',
+	'dt_import_success' => '$2 ファイルから $1 {{PLURAL:$1|ページ}}が作成されます。',
+	'importcsv' => 'CSVをインポート',
+	'dt_importcsv_badheader' => 'エラー：列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります。',
+	'right-datatransferimport' => 'データをインポート',
 );
 
 /** Javanese (Basa Jawa)
