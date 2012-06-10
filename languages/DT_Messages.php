@@ -1283,7 +1283,7 @@ $messages['it'] = array(
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'datatransfer-desc' => 'テンプレート呼び出しに含まれるデータをインポートおよびエクスポートできるようにする',
+	'datatransfer-desc' => 'テンプレート呼び出しに含まれるデータの取り込みおよび書き出しができるようにする',
 	'viewxml' => 'XMLを表示',
 	'dt_viewxml_docu' => 'XML 形式で表示するカテゴリや名前空間を以下から選択してください。',
 	'dt_viewxml_categories' => 'カテゴリ',
@@ -1298,20 +1298,20 @@ $messages['ja'] = array(
 	'dt_xml_title' => 'タイトル',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => '自由形式テキスト',
-	'importxml' => 'XMLをインポート',
-	'dt_import_selectfile' => 'インポートする $1 ファイルを選択してください：',
+	'importxml' => 'XMLを取り込む',
+	'dt_import_selectfile' => '取り込む $1 ファイルを選択してください：',
 	'dt_import_encodingtype' => 'エンコーディング方式：',
 	'dt_import_forexisting' => '既存のページの場合：',
 	'dt_import_overwriteexisting' => '既存の内容に上書き',
 	'dt_import_skipexisting' => 'スキップ',
 	'dt_import_appendtoexisting' => '既存の内容に追加',
-	'dt_import_summarydesc' => 'インポートの概要：',
-	'dt_import_editsummary' => '$1 のインポート',
-	'dt_import_importing' => 'インポート中...',
+	'dt_import_summarydesc' => '取り込みの要約：',
+	'dt_import_editsummary' => '$1 の取り込み',
+	'dt_import_importing' => '取り込み中...',
 	'dt_import_success' => '$2 ファイルから $1 {{PLURAL:$1|ページ}}が作成されます。',
-	'importcsv' => 'CSVをインポート',
+	'importcsv' => 'CSVを取り込む',
 	'dt_importcsv_badheader' => 'エラー：列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります。',
-	'right-datatransferimport' => 'データをインポート',
+	'right-datatransferimport' => 'データを取り込む',
 );
 
 /** Javanese (Basa Jawa)
@@ -1428,7 +1428,9 @@ $messages['ksh'] = array(
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'dt_xml_pages' => 'Rûpel',
 	'dt_xml_page' => 'Rûpel',
+	'dt_xml_template' => 'Şablon',
 	'dt_xml_name' => 'Nav',
 	'dt_xml_title' => 'Sernav',
 	'dt_import_summarydesc' => 'Kurteya împortê:',
