@@ -238,7 +238,7 @@ $messages['arc'] = array(
 	'right-datatransferimport' => 'ܡܥܠܢܘܬܐ ܕܓܠܝܬ̈ܐ',
 );
 
-/** Araucanian (Mapudungun)
+/** Araucanian (mapudungun)
  * @author Remember the dot
  */
 $messages['arn'] = array(
@@ -271,7 +271,7 @@ $messages['arz'] = array(
 	'dt_import_success' => '$1 {{PLURAL:$1|صفحه|صفحه}} ح يتعملو من الفايل $2.',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author Vago
  */
@@ -287,7 +287,7 @@ $messages['az'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Тест
  */
 $messages['be'] = array(
@@ -332,7 +332,7 @@ $messages['be-tarask'] = array(
 	'right-datatransferimport' => 'імпарт зьвестак',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -386,7 +386,7 @@ $messages['bn'] = array(
 	'right-datatransferimport' => 'উপাত্ত আমদানি',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fohanno
  * @author Fulup
  * @author Gwendal
@@ -424,7 +424,7 @@ $messages['br'] = array(
 	'right-datatransferimport' => 'Enporzhiañ roadennoù',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -459,7 +459,7 @@ $messages['bs'] = array(
 	'right-datatransferimport' => 'Uvoz podataka',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
@@ -500,7 +500,7 @@ $messages['ce'] = array(
 	'dt_xml_template' => 'Куцкеп',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Jkjk
  * @author Matěj Grabovský
  */
@@ -533,7 +533,7 @@ $messages['cs'] = array(
 	'right-datatransferimport' => 'Importovat data',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Jon Harald Søby
  */
 $messages['da'] = array(
@@ -626,7 +626,7 @@ $messages['dsb'] = array(
 	'right-datatransferimport' => 'Daty importěrowaś',
 );
 
-/** Ewe (Eʋegbe) */
+/** Ewe (eʋegbe) */
 $messages['ee'] = array(
 	'dt_xml_page' => 'Axa',
 );
@@ -684,7 +684,7 @@ $messages['eo'] = array(
 	'right-datatransferimport' => 'Importi datenojn',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  * @author Crazymadlover
  * @author Imre
@@ -725,7 +725,7 @@ $messages['es'] = array(
 	'right-datatransferimport' => 'Importar datos',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Pikne
  */
@@ -740,7 +740,7 @@ $messages['et'] = array(
 	'dt_xml_name' => 'Nimi',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author Kobazulo
  */
 $messages['eu'] = array(
@@ -769,7 +769,7 @@ $messages['fa'] = array(
 	'dt_xml_title' => 'عنوان',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Centerlink
  * @author Crt
  * @author Nike
@@ -805,7 +805,7 @@ $messages['fi'] = array(
 	'right-datatransferimport' => 'Tuoda tiedot',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Grondin
  * @author IAlex
@@ -846,7 +846,7 @@ $messages['fr'] = array(
 	'right-datatransferimport' => 'Importer des données',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author Cedric31
  * @author ChrisPtDe
  */
@@ -1074,7 +1074,7 @@ $messages['hi'] = array(
 	'dt_xml_freetext' => 'मुक्त पाठ',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  */
 $messages['hr'] = array(
@@ -1118,7 +1118,7 @@ $messages['hsb'] = array(
 	'right-datatransferimport' => 'Daty importować',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Glanthor Reviol
  */
@@ -1150,7 +1150,7 @@ $messages['hu'] = array(
 	'right-datatransferimport' => 'Adatok importálása',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1241,7 +1241,7 @@ $messages['io'] = array(
 	'dt_xml_title' => 'Titulo',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author S.Örvarr.S
  */
 $messages['is'] = array(
@@ -1249,7 +1249,7 @@ $messages['is'] = array(
 	'dt_xml_page' => 'Síða',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author BrokenArrow
  * @author Darth Kule
@@ -1436,7 +1436,7 @@ $messages['ku-latn'] = array(
 	'dt_import_summarydesc' => 'Kurteya împortê:',
 );
 
-/** Cornish (Kernowek)
+/** Cornish (kernowek)
  * @author Kernoweger
  * @author Kw-Moon
  * @author Nrowe
@@ -1489,14 +1489,14 @@ $messages['li'] = array(
 	'dt_xml_page' => 'Pagina',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Tomasdd
  */
 $messages['lt'] = array(
 	'dt_viewxml_categories' => 'Kategorijos',
 );
 
-/** Latgalian (Latgaļu)
+/** Latgalian (latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
@@ -1505,7 +1505,7 @@ $messages['ltg'] = array(
 	'dt_xml_pages' => 'Puslopys',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author GreenZeb
  */
 $messages['lv'] = array(
@@ -1530,7 +1530,7 @@ $messages['mhr'] = array(
 	'dt_xml_page' => 'Лаштык',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1595,7 +1595,7 @@ $messages['ml'] = array(
 	'importcsv' => 'സി.എസ്.വി. ഇറക്കുമതി',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -1761,7 +1761,7 @@ $messages['nl'] = array(
 	'right-datatransferimport' => 'Gegevens importeren',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -1794,7 +1794,7 @@ $messages['nn'] = array(
 	'right-datatransferimport' => 'Importer data',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -1863,7 +1863,7 @@ $messages['pdc'] = array(
 	'dt_xml_title' => 'Titel',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author McMonster
  * @author Sp5uhe
  * @author Wpedzich
@@ -1954,7 +1954,7 @@ $messages['ps'] = array(
 	'dt_xml_freetext' => 'خپلواکه متن',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  * @author Lijealso
  * @author Malafaya
@@ -2028,7 +2028,7 @@ $messages['pt-br'] = array(
 	'right-datatransferimport' => 'Importar dados',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author KlaudiuMihaila
  * @author Stelistcristi
  */
@@ -2052,7 +2052,7 @@ $messages['ro'] = array(
 	'right-datatransferimport' => 'Importă date',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -2074,7 +2074,7 @@ $messages['roa-tara'] = array(
 	'importxml' => "'Mborte XML",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Ferrer
  * @author Innv
  * @author Александр Сигачёв
@@ -2130,7 +2130,7 @@ $messages['rue'] = array(
 	'importxml' => 'Імпортовати XML',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  */
 $messages['scn'] = array(
@@ -2138,7 +2138,7 @@ $messages['scn'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
@@ -2168,7 +2168,7 @@ $messages['sk'] = array(
 	'right-datatransferimport' => 'Importovať údaje',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -2203,7 +2203,7 @@ $messages['sl'] = array(
 	'right-datatransferimport' => 'Uvoz podatkov',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2230,7 +2230,7 @@ $messages['sr-ec'] = array(
 	'right-datatransferimport' => 'Увези податке',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -2279,7 +2279,7 @@ $messages['su'] = array(
 	'dt_viewxml_namespaces' => 'Ngaranspasi',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Fluff
  * @author Gabbe.g
  * @author Lejonel
@@ -2370,7 +2370,7 @@ $messages['te'] = array(
 	'right-datatransferimport' => 'డేటాను దిగుమతి చెయ్యి',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -2383,7 +2383,7 @@ $messages['tet'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -2396,7 +2396,7 @@ $messages['tg-cyrl'] = array(
 	'dt_xml_freetext' => 'Матни дилхоҳ',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2504,7 +2504,7 @@ $messages['ug-latn'] = array(
 	'dt_xml_page' => 'Bet',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Arturyatsko
  * @author Prima klasy4na
@@ -2601,7 +2601,7 @@ $messages['yi'] = array(
 	'dt_xml_title' => 'טיטל',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Gaoxuewei
  * @author Hydra
  * @author Linforest
@@ -2639,7 +2639,7 @@ $messages['zh-hans'] = array(
 	'right-datatransferimport' => '导入数据',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Liangent
  * @author Mark85296341
  */
