@@ -2297,6 +2297,7 @@ $messages['su'] = array(
  * @author Lejonel
  * @author M.M.S.
  * @author Per
+ * @author Rotsee
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -2318,8 +2319,11 @@ $messages['sv'] = array(
 	'importxml' => 'Importera XML',
 	'dt_import_selectfile' => 'Vänligen välj $1-filen som skall importeras:',
 	'dt_import_encodingtype' => 'Teckenkodningstyp:',
+	'dt_import_forexisting' => 'För sidor som redan finns:',
 	'dt_import_overwriteexisting' => 'Skriv över existerande innehåll',
 	'dt_import_skipexisting' => 'Hoppa över',
+	'dt_import_appendtoexisting' => 'Lägg till efter befintligt innehåll',
+	'dt_import_summarydesc' => 'Sammanfattning av importen:',
 	'dt_import_editsummary' => '$1-importering',
 	'dt_import_importing' => 'Importerar...',
 	'dt_import_success' => '$1 {{PLURAL:$1|sida|sidor}} kommer skapas från $2-filen.',
