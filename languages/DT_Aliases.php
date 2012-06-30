@@ -32,6 +32,13 @@ $specialPageAliases['arz'] = array(
 	'ViewXML' => array( 'عرض_XML' ),
 );
 
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'ImportCSV' => array( 'CSV_আমদানি' ),
+	'ImportXML' => array( 'XML_আমদানি' ),
+	'ViewXML' => array( 'XML_পৰিদৰ্শন' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'ViewXML' => array( 'Itihi_XML' ),
@@ -104,7 +111,7 @@ $specialPageAliases['frp'] = array(
 	'ViewXML' => array( 'Vêre_lo_XML', 'VêreLoXML' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'ImportCSV' => array( 'Importar_CSV' ),
 	'ImportXML' => array( 'Importar_XML' ),
