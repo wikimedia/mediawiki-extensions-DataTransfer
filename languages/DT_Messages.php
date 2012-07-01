@@ -172,7 +172,7 @@ $messages['am'] = array(
 	'dt_xml_title' => 'አርዕስት',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  * @author Remember the dot
  */
@@ -295,7 +295,7 @@ $messages['be'] = array(
 	'dt_xml_template' => 'Шаблон',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -591,7 +591,7 @@ $messages['diq'] = array(
 	'dt_xml_name' => 'Name',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -895,7 +895,7 @@ $messages['ga'] = array(
 	'dt_xml_namespace' => 'Ainmspás',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Alma
  * @author Toliño
  */
@@ -1083,7 +1083,7 @@ $messages['hr'] = array(
 	'dt_xml_page' => 'Stranica',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -2123,7 +2123,7 @@ $messages['ru'] = array(
 	'right-datatransferimport' => 'импорт информации',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
@@ -2332,7 +2332,7 @@ $messages['sv'] = array(
 	'right-datatransferimport' => 'Importera data',
 );
 
-/** Silesian (Ślůnski)
+/** Silesian (ślůnski)
  * @author Herr Kriss
  */
 $messages['szl'] = array(
