@@ -1440,6 +1440,7 @@ $messages['ksh'] = array(
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'dt_viewxml_categories' => 'Kategorî',
 	'dt_xml_pages' => 'Rûpel',
 	'dt_xml_page' => 'Rûpel',
 	'dt_xml_template' => 'Şablon',
