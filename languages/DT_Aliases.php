@@ -113,9 +113,9 @@ $specialPageAliases['frp'] = array(
 
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
-	'ImportCSV' => array( 'Importar_CSV' ),
-	'ImportXML' => array( 'Importar_XML' ),
-	'ViewXML' => array( 'Ver_XML' ),
+	'ImportCSV' => array( 'Importar_o_CSV' ),
+	'ImportXML' => array( 'Importar_o_XML' ),
+	'ViewXML' => array( 'Ver_o_XML' ),
 );
 
 /** Swiss German (Alemannisch) */
