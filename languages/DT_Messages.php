@@ -588,6 +588,7 @@ $messages['de'] = array(
  * @author Mirzali
  */
 $messages['diq'] = array(
+	'dt_viewxml_categories' => 'Kategoriy',
 	'dt_xml_name' => 'Name',
 );
 
