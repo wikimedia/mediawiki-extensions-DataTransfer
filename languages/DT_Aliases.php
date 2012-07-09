@@ -302,7 +302,7 @@ $specialPageAliases['sw'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'ViewXML' => array( 'Tingnan ang XML' ),
+	'ViewXML' => array( 'Tingnan_ang_XML' ),
 );
 
 /** Turkish (Türkçe) */

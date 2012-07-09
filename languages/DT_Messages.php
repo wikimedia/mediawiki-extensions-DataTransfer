@@ -1504,10 +1504,20 @@ $messages['li'] = array(
 );
 
 /** Lithuanian (lietuvių)
+ * @author Eitvys200
  * @author Tomasdd
  */
 $messages['lt'] = array(
+	'viewxml' => 'Žiūrėti XML',
 	'dt_viewxml_categories' => 'Kategorijos',
+	'dt_xml_pages' => 'Puslapiai',
+	'dt_xml_page' => 'Puslapis',
+	'dt_xml_template' => 'Šablonas',
+	'dt_xml_field' => 'Laukas',
+	'dt_xml_name' => 'Vardas',
+	'dt_xml_title' => 'Pavadinimas',
+	'dt_xml_id' => 'ID',
+	'dt_import_skipexisting' => 'Praleisti',
 );
 
 /** Latgalian (latgaļu)
