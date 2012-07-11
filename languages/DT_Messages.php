@@ -493,7 +493,7 @@ $messages['ca'] = array(
 	'right-datatransferimport' => 'Importar dades',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -1546,7 +1546,7 @@ $messages['lv'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -1671,7 +1671,7 @@ $messages['mwl'] = array(
 	'dt_xml_page' => 'Páigina',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -1706,8 +1706,7 @@ $messages['nah'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
