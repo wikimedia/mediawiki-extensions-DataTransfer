@@ -585,11 +585,21 @@ $messages['de'] = array(
 );
 
 /** Zazaki (Zazaki)
+ * @author Erdemaslancan
  * @author Mirzali
  */
 $messages['diq'] = array(
+	'viewxml' => "XML'i bıvin",
 	'dt_viewxml_categories' => 'Kategoriy',
+	'dt_viewxml_namespaces' => 'Cayê namey',
+	'dt_xml_pages' => 'Peley',
+	'dt_xml_page' => 'Pele',
+	'dt_xml_template' => 'Şablon',
 	'dt_xml_name' => 'Name',
+	'dt_xml_title' => 'Sername',
+	'dt_import_skipexisting' => 'Çerme',
+	'dt_import_editsummary' => '$1 azerede',
+	'dt_import_importing' => 'Dano azere...',
 );
 
 /** Lower Sorbian (dolnoserbski)
