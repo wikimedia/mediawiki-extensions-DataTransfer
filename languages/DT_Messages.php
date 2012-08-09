@@ -775,9 +775,18 @@ $messages['eu'] = array(
  * @author Mjbmr
  */
 $messages['fa'] = array(
+	'viewxml' => 'مشاهده XML',
+	'dt_viewxml_categories' => 'رده‌ها',
+	'dt_viewxml_namespaces' => 'فضاهای نام',
+	'dt_xml_namespace' => 'فضای نام',
+	'dt_xml_pages' => 'صفحه‌ها',
+	'dt_xml_page' => 'صفحه',
 	'dt_xml_template' => 'الگو',
+	'dt_xml_field' => 'زمینه',
 	'dt_xml_name' => 'نام',
 	'dt_xml_title' => 'عنوان',
+	'dt_xml_id' => 'شناسه',
+	'dt_import_skipexisting' => 'پرش',
 );
 
 /** Finnish (suomi)
@@ -2079,6 +2088,7 @@ $messages['ro'] = array(
 	'dt_xml_title' => 'Titlu',
 	'dt_xml_id' => 'ID',
 	'importxml' => 'Importă XML',
+	'dt_import_skipexisting' => 'Omite',
 	'dt_import_summarydesc' => 'Descrierea importului:',
 	'dt_import_importing' => 'Importare...',
 	'importcsv' => 'Importă CSV',
@@ -2169,6 +2179,19 @@ $messages['rue'] = array(
 $messages['scn'] = array(
 	'dt_xml_name' => 'Nomu',
 	'dt_xml_id' => 'ID',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'dt_viewxml_categories' => 'ප්‍රවර්ගයන්',
+	'dt_xml_namespace' => 'නාමඅවකාශය',
+	'dt_xml_pages' => 'පිටු',
+	'dt_xml_page' => 'පිටුව',
+	'dt_xml_template' => 'සැකිල්ල',
+	'dt_xml_name' => 'නම',
+	'dt_import_skipexisting' => 'මඟ හරින්න',
 );
 
 /** Slovak (slovenčina)
