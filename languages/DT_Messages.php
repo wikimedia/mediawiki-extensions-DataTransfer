@@ -749,6 +749,7 @@ $messages['et'] = array(
 	'dt_xml_page' => 'Lehekülg',
 	'dt_xml_template' => 'Mall',
 	'dt_xml_name' => 'Nimi',
+	'dt_xml_title' => 'Pealkiri',
 );
 
 /** Basque (euskara)
@@ -1359,6 +1360,24 @@ $messages['jv'] = array(
 	'dt_xml_title' => 'Irah-irahan (judhul)',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'Tèks Bébas',
+);
+
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'dt_viewxml_categories' => 'კატეგორიები',
+	'dt_viewxml_namespaces' => 'სახელთა სივრცეები',
+	'dt_xml_namespace' => 'სახელთა სივრცე',
+	'dt_xml_pages' => 'გვერდები',
+	'dt_xml_page' => 'გვერდი',
+	'dt_xml_template' => 'თარგი',
+	'dt_xml_field' => 'ველი',
+	'dt_xml_name' => 'სახელი',
+	'dt_xml_title' => 'სათაური',
+	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'თავისუფალი ტექსტი',
+	'dt_import_skipexisting' => 'გამოტოვება',
 );
 
 /** Khmer (ភាសាខ្មែរ)
