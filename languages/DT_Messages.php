@@ -201,7 +201,7 @@ $messages['ar'] = array(
 	'dt_xml_page' => 'صفحة',
 	'dt_xml_template' => 'قالب',
 	'dt_xml_field' => 'حقل',
-	'dt_xml_name' => 'اسم',
+	'dt_xml_name' => 'الاسم',
 	'dt_xml_title' => 'عنوان',
 	'dt_xml_id' => 'رقم',
 	'dt_xml_freetext' => 'نص حر',
@@ -1702,6 +1702,39 @@ $messages['ms'] = array(
 	'right-datatransferimport' => 'Mengimport data',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'viewxml' => 'Ara XML',
+	'dt_viewxml_docu' => "Jekk jogħġbok agħżel fost il-kategoriji u l-ispazji tal-isem segwenti sabiex tarahom f'format XML.",
+	'dt_viewxml_categories' => 'Kategoriji',
+	'dt_viewxml_namespaces' => 'Spazji tal-isem',
+	'dt_viewxml_simplifiedformat' => 'Format simplifikat',
+	'dt_xml_namespace' => 'Spazju tal-isem',
+	'dt_xml_pages' => 'Paġni',
+	'dt_xml_page' => 'Paġna',
+	'dt_xml_template' => 'Mudell',
+	'dt_xml_field' => 'Qasam',
+	'dt_xml_name' => 'Isem',
+	'dt_xml_title' => 'Titlu',
+	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'Test ħieles',
+	'importxml' => 'Importa XML',
+	'dt_import_selectfile' => 'Jekk jogħġbok agħżel il-fajl $1 li tixtieq timporta:',
+	'dt_import_encodingtype' => "Tip ta' kodifikar:",
+	'dt_import_forexisting' => 'Għal paġni li diġà jeżistu:',
+	'dt_import_overwriteexisting' => "Erġa' ikteb fuq kontenut eżistenti",
+	'dt_import_skipexisting' => 'Aqbeż',
+	'dt_import_appendtoexisting' => 'Żid mal-kontenut eżistenti',
+	'dt_import_summarydesc' => 'Sommarju tal-importazzjoni:',
+	'dt_import_editsummary' => 'Importazzjoni $1',
+	'dt_import_importing' => 'Qiegħed timporta...',
+	'dt_import_success' => '$1 {{PLURAL:$1|paġna|paġni}} se jinħolqu mill-fajl $2.',
+	'importcsv' => 'Importa CSV',
+	'dt_importcsv_badheader' => "Żball: l-intestazzjoni tal-kolonna \$1, \"\$2\", trid tkun waħda minn dawn il-valuri: '\$3', '\$4' jew fil-format ta' 'isem_mudell[isem_qasam]'",
+);
+
 /** Mirandese (Mirandés)
  * @author Malafaya
  */
@@ -2013,6 +2046,7 @@ $messages['ps'] = array(
 	'dt_xml_title' => 'سرليک',
 	'dt_xml_id' => 'پېژند',
 	'dt_xml_freetext' => 'خپلواکه متن',
+	'dt_import_skipexisting' => 'تېرېدل',
 );
 
 /** Portuguese (português)
@@ -2205,12 +2239,15 @@ $messages['scn'] = array(
  */
 $messages['si'] = array(
 	'dt_viewxml_categories' => 'ප්‍රවර්ගයන්',
+	'dt_viewxml_namespaces' => 'නාමඅවකාශයන්',
 	'dt_xml_namespace' => 'නාමඅවකාශය',
 	'dt_xml_pages' => 'පිටු',
 	'dt_xml_page' => 'පිටුව',
 	'dt_xml_template' => 'සැකිල්ල',
 	'dt_xml_name' => 'නම',
+	'dt_xml_title' => 'ශීර්ෂය',
 	'dt_import_skipexisting' => 'මඟ හරින්න',
+	'dt_import_importing' => 'ආයාත කරමින්...',
 );
 
 /** Slovak (slovenčina)
@@ -2404,6 +2441,7 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Shanmugamp7
  * @author TRYPPN
  * @author Trengarasu
  * @author Ulmo
@@ -2416,11 +2454,21 @@ $messages['ta'] = array(
 	'dt_xml_pages' => 'பக்கங்கள்',
 	'dt_xml_page' => 'பக்கம்',
 	'dt_xml_template' => 'வார்ப்புரு',
+	'dt_xml_field' => 'புலம்',
 	'dt_xml_name' => 'பெயர்',
 	'dt_xml_title' => 'தலைப்பு',
 	'dt_xml_id' => 'அடையாளம்',
 	'dt_xml_freetext' => 'எந்த கட்டுப்பாடும் இல்லா சொற்றொடர்',
+	'importxml' => 'XML இறக்குமதி செய்',
+	'dt_import_selectfile' => 'தயவுசெய்து  $1 கோப்பை இறக்குமதிக்காக தேர்வுசெய்யவும்:',
+	'dt_import_forexisting' => 'ஏற்கனவே உள்ள பக்கங்களுக்கு:',
+	'dt_import_overwriteexisting' => 'தற்போதுள்ள உள்ளடக்கத்தை அழித்தெழுது',
+	'dt_import_skipexisting' => 'தவிர்',
+	'dt_import_appendtoexisting' => 'ஏற்கனவே உள்ள உள்ளடக்கத்துடன் இணை',
+	'dt_import_summarydesc' => 'இறக்குமதிச் சுருக்கம்:',
+	'dt_import_editsummary' => '$1 இறக்குமதி',
 	'dt_import_importing' => 'இறக்குமதியாகிறது...',
+	'dt_import_success' => '$2 கோப்பிலிருந்து $1 {{PLURAL:$1|பக்கம்|பக்கங்கள்}} உருவாக்கப்படும்.',
 );
 
 /** Telugu (తెలుగు)
