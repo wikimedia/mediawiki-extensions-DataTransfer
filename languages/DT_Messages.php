@@ -2238,16 +2238,21 @@ $messages['scn'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'viewxml' => 'XML නරඹන්න',
 	'dt_viewxml_categories' => 'ප්‍රවර්ගයන්',
 	'dt_viewxml_namespaces' => 'නාමඅවකාශයන්',
 	'dt_xml_namespace' => 'නාමඅවකාශය',
 	'dt_xml_pages' => 'පිටු',
 	'dt_xml_page' => 'පිටුව',
 	'dt_xml_template' => 'සැකිල්ල',
+	'dt_xml_field' => 'ක්ෂේත්‍රය',
 	'dt_xml_name' => 'නම',
 	'dt_xml_title' => 'ශීර්ෂය',
+	'dt_xml_id' => 'හැඳුනුම',
+	'dt_xml_freetext' => 'නිදහස් පාඨය',
 	'dt_import_skipexisting' => 'මඟ හරින්න',
 	'dt_import_importing' => 'ආයාත කරමින්...',
+	'right-datatransferimport' => 'දත්ත ආයාත කරන්න',
 );
 
 /** Slovak (slovenčina)
@@ -2441,12 +2446,14 @@ $messages['szl'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author Shanmugamp7
  * @author TRYPPN
  * @author Trengarasu
  * @author Ulmo
  */
 $messages['ta'] = array(
+	'viewxml' => 'XML ஐப் பார்',
 	'dt_viewxml_categories' => 'பகுப்புகள்',
 	'dt_viewxml_namespaces' => 'பெயர்வெளிகள்',
 	'dt_viewxml_simplifiedformat' => 'எளிதாக்கப்பட்ட வடிவம்',
