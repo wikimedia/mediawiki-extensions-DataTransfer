@@ -2451,6 +2451,7 @@ $messages['szl'] = array(
  * @author TRYPPN
  * @author Trengarasu
  * @author Ulmo
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'viewxml' => 'XML ஐப் பார்',
@@ -2476,6 +2477,7 @@ $messages['ta'] = array(
 	'dt_import_editsummary' => '$1 இறக்குமதி',
 	'dt_import_importing' => 'இறக்குமதியாகிறது...',
 	'dt_import_success' => '$2 கோப்பிலிருந்து $1 {{PLURAL:$1|பக்கம்|பக்கங்கள்}} உருவாக்கப்படும்.',
+	'right-datatransferimport' => 'தரவுகளை ஏற்றுமதி செய்யவும்',
 );
 
 /** Telugu (తెలుగు)
