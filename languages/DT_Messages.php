@@ -595,6 +595,7 @@ $messages['diq'] = array(
 	'dt_xml_pages' => 'Peley',
 	'dt_xml_page' => 'Pele',
 	'dt_xml_template' => 'Şablon',
+	'dt_xml_field' => 'Ca',
 	'dt_xml_name' => 'Name',
 	'dt_xml_title' => 'Sername',
 	'dt_import_skipexisting' => 'Çerme',
@@ -911,9 +912,16 @@ $messages['fy'] = array(
 
 /** Irish (Gaeilge)
  * @author Alison
+ * @author පසිඳු කාවින්ද
  */
 $messages['ga'] = array(
+	'dt_viewxml_categories' => 'Catagóirí',
 	'dt_xml_namespace' => 'Ainmspás',
+	'dt_xml_pages' => 'Leathanaigh',
+	'dt_xml_page' => 'Leathanach',
+	'dt_xml_template' => 'Teimpléad',
+	'dt_xml_name' => 'Ainm',
+	'dt_xml_title' => 'Teideal',
 );
 
 /** Galician (galego)
