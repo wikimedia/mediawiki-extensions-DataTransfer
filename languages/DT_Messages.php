@@ -755,10 +755,13 @@ $messages['et'] = array(
 
 /** Basque (euskara)
  * @author Kobazulo
+ * @author පසිඳු කාවින්ද
  */
 $messages['eu'] = array(
 	'viewxml' => 'XML ikusi',
 	'dt_viewxml_categories' => 'Kategoriak',
+	'dt_viewxml_namespaces' => 'Izen-tarteak',
+	'dt_xml_namespace' => 'Izen-tartea',
 	'dt_xml_pages' => 'Orrialdeak',
 	'dt_xml_page' => 'Orrialdea',
 	'dt_xml_template' => 'Txantiloia',
@@ -2689,6 +2692,7 @@ $messages['uk'] = array(
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  * @author Vinhtantran
+ * @author පසිඳු කාවින්ද
  */
 $messages['vi'] = array(
 	'datatransfer-desc' => 'Cho phép nhập xuất dữ liệu có cấu trúc được chứa trong lời gọi bản mẫu',
@@ -2709,6 +2713,7 @@ $messages['vi'] = array(
 	'importxml' => 'Nhập XML',
 	'dt_import_selectfile' => 'Xin hãy chọn tập tin $1 để nhập:',
 	'dt_import_encodingtype' => 'Bảng mã:',
+	'dt_import_skipexisting' => 'Bỏ qua',
 	'dt_import_editsummary' => 'Nhập $1',
 	'dt_import_importing' => 'Đang nhập…',
 	'dt_import_success' => '{{PLURAL:$1|Trang|$1 trang}} sẽ được nhập từ tập tin $2.',
