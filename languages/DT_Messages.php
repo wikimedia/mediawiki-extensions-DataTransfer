@@ -1717,6 +1717,7 @@ $messages['ms'] = array(
  * @author Chrisportelli
  */
 $messages['mt'] = array(
+	'datatransfer-desc' => "Tippermetti l-importazzjoni u l-esportazzjoni ta' dejta li tinsab f'sejħiet ta' mudelli",
 	'viewxml' => 'Ara XML',
 	'dt_viewxml_docu' => "Jekk jogħġbok agħżel fost il-kategoriji u l-ispazji tal-isem segwenti sabiex tarahom f'format XML.",
 	'dt_viewxml_categories' => 'Kategoriji',
@@ -1744,6 +1745,7 @@ $messages['mt'] = array(
 	'dt_import_success' => '$1 {{PLURAL:$1|paġna|paġni}} se jinħolqu mill-fajl $2.',
 	'importcsv' => 'Importa CSV',
 	'dt_importcsv_badheader' => "Żball: l-intestazzjoni tal-kolonna \$1, \"\$2\", trid tkun waħda minn dawn il-valuri: '\$3', '\$4' jew fil-format ta' 'isem_mudell[isem_qasam]'",
+	'right-datatransferimport' => 'Jimporta d-dejta',
 );
 
 /** Mirandese (Mirandés)
@@ -2687,6 +2689,23 @@ $messages['uk'] = array(
 	'importcsv' => 'Імпорт CSV',
 	'dt_importcsv_badheader' => 'Помилка. Заголовок колонки №$1 «$2» повинен бути або «$3», або «$4», або у формі «template_name[field_name]»',
 	'right-datatransferimport' => 'Імпорт даних',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'dt_viewxml_categories' => 'زمرہ جات',
+	'dt_viewxml_namespaces' => 'فضاہائےنام',
+	'dt_xml_namespace' => 'نیم سپیس',
+	'dt_xml_pages' => 'صفحات',
+	'dt_xml_page' => 'صفحہ',
+	'dt_xml_template' => 'سانچے',
+	'dt_xml_field' => 'میدان',
+	'dt_xml_name' => 'نام',
+	'dt_xml_title' => 'عنوان',
+	'dt_import_skipexisting' => 'پر',
+	'right-datatransferimport' => 'درآمد کے اعداد و شمار',
 );
 
 /** Vietnamese (Tiếng Việt)
