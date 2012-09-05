@@ -592,8 +592,8 @@ $messages['diq'] = array(
 	'viewxml' => "XML'i bıvin",
 	'dt_viewxml_categories' => 'Kategoriy',
 	'dt_viewxml_namespaces' => 'Cayê namey',
-	'dt_xml_pages' => 'Peley',
-	'dt_xml_page' => 'Pele',
+	'dt_xml_pages' => 'Peri',
+	'dt_xml_page' => 'Per',
 	'dt_xml_template' => 'Şablon',
 	'dt_xml_field' => 'Ca',
 	'dt_xml_name' => 'Name',
@@ -2608,6 +2608,13 @@ $messages['tl'] = array(
 	'importcsv' => 'Angkatin ang CSV',
 	'dt_importcsv_badheader' => "Kamalian: ang patayong hanay ng paulong $1, '$2', ay dapat na '$3', '$4' o nasa pormang 'template_name[field_name]'",
 	'right-datatransferimport' => 'Angkatin ang dato',
+);
+
+/** толышә зывон (толышә зывон)
+ * @author Erdemaslancan
+ */
+$messages['tly'] = array(
+	'dt_xml_page' => 'Сәһифә',
 );
 
 /** Turkish (Türkçe)
