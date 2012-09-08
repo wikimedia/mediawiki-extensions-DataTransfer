@@ -161,8 +161,8 @@ $specialPageAliases['it'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
-	'ImportCSV' => array( 'CSVインポート' ),
-	'ImportXML' => array( 'XMLインポート' ),
+	'ImportCSV' => array( 'CSV取り込み', 'CSVインポート' ),
+	'ImportXML' => array( 'XML取り込み', 'XMLインポート' ),
 	'ViewXML' => array( 'XML表示', 'ＸＭＬ表示' ),
 );
 
