@@ -119,7 +119,7 @@ class DTXMLParser {
 
 	function in_start( $parser, $name, $attribs ) {
 		// $this->debug( "in_start $name" );
-		$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
+		$pages_str = str_replace( ' ', '_', wfMessage( 'dt_xml_pages' )->inContentLanguage()->text() );
 		if ( $name != $pages_str ) {
 			print( "Expected '$pages_str', got '$name'" );
 		}
@@ -128,9 +128,9 @@ class DTXMLParser {
 
 	function in_pages( $parser, $name, $attribs ) {
 		$this->debug( "in_pages $name" );
-		$page_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_page' ) );
+		$page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
 		if ( $name == $page_str ) {
-			$title_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_title' ) );
+			$title_str = str_replace( ' ', '_', wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
 			if ( array_key_exists( $title_str, $attribs ) ) {
 				$this->mCurPage = new DTWikiPage( $attribs[$title_str] );
 			xml_set_element_handler( $parser, "in_page", "out_page" );
@@ -144,18 +144,12 @@ class DTXMLParser {
 
 	function out_pages( $parser, $name ) {
 		$this->debug( "out_pages $name" );
-		$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
-/*
-		if( $name != $pages_str ) {
-			return $this->throwXMLerror( "Expected </pages>, got </$name>" );
-		}
-*/
 		xml_set_element_handler( $parser, "donothing", "donothing" );
 	}
 
 	function in_category( $parser, $name, $attribs ) {
 		$this->debug( "in_category $name" );
-		$page_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_page' ) );
+		$page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
 		if ( $name == $page_str ) {
 			if ( array_key_exists( $title_str, $attribs ) ) {
 				$this->mCurPage = new DTWikiPage( $attribs[$title_str] );
@@ -178,9 +172,9 @@ class DTXMLParser {
 
 	function in_page( $parser, $name, $attribs ) {
 		$this->debug( "in_page $name" );
-		$template_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_template' ) );
-		$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
-		$free_text_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_freetext' ) );
+		$template_str = str_replace( ' ', '_', wfMessage( 'dt_xml_template' )->inContentLanguage()->text() );
+		$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
+		$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
 		if ( $name == $template_str ) {
 			if ( array_key_exists( $name_str, $attribs ) ) {
 				$this->mCurTemplate = new DTWikiTemplate( $attribs[$name_str] );
@@ -198,7 +192,7 @@ class DTXMLParser {
 
 	function out_page( $parser, $name ) {
 		$this->debug( "out_page $name" );
-		$page_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_page' ) );
+		$page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
 		if ( $name != $page_str ) {
 			return $this->throwXMLerror( "Expected </$page_str>, got </$name>" );
 		}
@@ -208,9 +202,9 @@ class DTXMLParser {
 
 	function in_template( $parser, $name, $attribs ) {
 		$this->debug( "in_template $name" );
-		$field_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_field' ) );
+		$field_str = str_replace( ' ', '_', wfMessage( 'dt_xml_field' )->inContentLanguage()->text() );
 		if ( $name == $field_str ) {
-			$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
+			$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
 			if ( array_key_exists( $name_str, $attribs ) ) {
 				$this->mCurFieldName = $attribs[$name_str];
 			// $this->push( $name );
@@ -230,7 +224,7 @@ class DTXMLParser {
 
 	function out_template( $parser, $name ) {
 		$this->debug( "out_template $name" );
-		$template_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_template' ) );
+		$template_str = str_replace( ' ', '_', wfMessage( 'dt_xml_template' )->inContentLanguage()->text() );
 		if ( $name != $template_str ) {
 			return $this->throwXMLerror( "Expected </$template_str>, got </$name>" );
 		}
@@ -244,7 +238,7 @@ class DTXMLParser {
 
 	function out_field( $parser, $name ) {
 		$this->debug( "out_field $name" );
-		$field_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_field' ) );
+		$field_str = str_replace( ' ', '_', wfMessage( 'dt_xml_field' )->inContentLanguage()->text() );
 		if ( $name == $field_str ) {
 			$this->mCurTemplate->addField( $this->mCurFieldName, $this->mCurFieldValue );
 			$this->mCurFieldValue = '';
@@ -269,5 +263,4 @@ class DTXMLParser {
 	function freetext_value( $parser, $data ) {
 		$this->mCurPage->addFreeText( $data );
 	}
-
 }

@@ -128,7 +128,7 @@ function dtfInitUserLanguage( $langcode ) {
 function dtfInitProperties() {
 	global $dtgContLang;
 	$dt_props = $dtgContLang->getPropertyLabels();
-	SMWPropertyValue::registerProperty( '_DT_XG', '_str', $dt_props[DT_SP_HAS_XML_GROUPING], true );
+	SMWDIProperty::registerProperty( '_DT_XG', '_str', $dt_props[DT_SP_HAS_XML_GROUPING], true );
 	// TODO - this should set a "backup" English value as well,
 	// so that the phrase "Has XML grouping" works in all languages
 	return true;
@@ -139,7 +139,7 @@ function dtfInitProperties() {
  * extension
  */
 function dtfAddToAdminLinks( $admin_links_tree ) {
-	$import_export_section = $admin_links_tree->getSection( wfMsg( 'adminlinks_importexport' ) );
+	$import_export_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_importexport' )->text() );
 	$main_row = $import_export_section->getRow( 'main' );
 	$main_row->addItem( ALItem::newFromSpecialPage( 'ViewXML' ) );
 	$main_row->addItem( ALItem::newFromSpecialPage( 'ImportXML' ) );

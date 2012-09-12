@@ -59,16 +59,15 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	function execute( $query ) {
-		global $wgUser, $wgOut, $wgRequest;
 		$this->setHeaders();
 
-		if ( ! $wgUser->isAllowed( 'datatransferimport' ) ) {
-			global $wgOut;
-			$wgOut->permissionRequired( 'datatransferimport' );
-			return;
+		if ( ! $this->getUser()->isAllowed( 'datatransferimport' ) ) {
+			throw new PermissionsError( 'datatransferimport' );
 		}
 
-		if ( $wgRequest->getCheck( 'import_file' ) ) {
+		$out = $this->getOutput();
+		$request = $this->getRequest();
+		if ( $request->getCheck( 'import_file' ) ) {
 			$text = DTUtils::printImportingMessage();
 			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
 			// handling changed in MW 1.17
@@ -77,7 +76,7 @@ class DTImportCSV extends SpecialPage {
 				if ( $uploadResult->isOK() ) {
 					$source = $uploadResult->value;
 				} else {
-					$uploadError = $wgOut->parse( $uploadResult->getWikiText() );
+					$uploadError = $out->parse( $uploadResult->getWikiText() );
 				}
 			} elseif ( $uploadResult instanceof WikiErrorMsg ) {
 				$uploadError = $uploadResult->getMessage();
@@ -87,21 +86,21 @@ class DTImportCSV extends SpecialPage {
 
 			if ( !is_null( $uploadError ) ) {
 				$text .= $uploadError;
-				$wgOut->addHTML( $text );
+				$out->addHTML( $text );
 				return;
 			}
 
-			$encoding = $wgRequest->getVal( 'encoding' );
+			$encoding = $request->getVal( 'encoding' );
 			$pages = array();
 			$error_msg = self::getCSVData( $source->mHandle, $encoding, $pages );
 			if ( ! is_null( $error_msg ) ) {
 				$text .= $error_msg;
-				$wgOut->addHTML( $text );
+				$out->addHTML( $text );
 				return;
 			}
 
-			$importSummary = $wgRequest->getVal( 'import_summary' );
-			$forPagesThatExist = $wgRequest->getVal( 'pagesThatExist' );
+			$importSummary = $request->getVal( 'import_summary' );
+			$forPagesThatExist = $request->getVal( 'pagesThatExist' );
 			$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
 		} else {
 			$formText = DTUtils::printFileSelector( 'CSV' );
@@ -115,9 +114,9 @@ class DTImportCSV extends SpecialPage {
 					'value' => 'utf16'
 				), 'UTF-16' ) . "\n";
 			$encodingSelectText = Xml::tags( 'select',
-				array( 'name' => 'encoding' ), 
+				array( 'name' => 'encoding' ),
 				"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
-			$formText .= "\t" . Xml::tags( 'p', null, wfMsg( 'dt_import_encodingtype', 'CSV' ) . " " . $encodingSelectText ) . "\n";
+			$formText .= "\t" . Xml::tags( 'p', null, $this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText ) . "\n";
 			$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 			$formText .= DTUtils::printExistingPagesHandling();
 			$formText .= DTUtils::printImportSummaryInput( 'CSV' );
@@ -130,13 +129,12 @@ class DTImportCSV extends SpecialPage {
 				), $formText ) . "\n";
 		}
 
-		$wgOut->addHTML( $text );
+		$out->addHTML( $text );
 	}
-
 
 	static function getCSVData( $csv_file, $encoding, &$pages ) {
 		if ( is_null( $csv_file ) )
-			return wfMsg( 'emptyfile' );
+			return wfMessage( 'emptyfile' )->text();
 		$table = array();
 		if ( $encoding == 'utf16' ) {
 			// change encoding to UTF-8
@@ -175,12 +173,12 @@ class DTImportCSV extends SpecialPage {
 
 		// check header line to make sure every term is in the
 		// correct format
-		$title_label = wfMsgForContent( 'dt_xml_title' );
-		$free_text_label = wfMsgForContent( 'dt_xml_freetext' );
+		$title_label = wfMessage( 'dt_xml_title' )->inContentLanguage()->text();
+		$free_text_label = wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text();
 		foreach ( $table[0] as $i => $header_val ) {
 			if ( $header_val !== $title_label && $header_val !== $free_text_label &&
 				! preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $header_val ) ) {
-				$error_msg = wfMsg( 'dt_importcsv_badheader', $i, $header_val, $title_label, $free_text_label );
+				$error_msg = wfMessage( 'dt_importcsv_badheader', $i, $header_val, $title_label, $free_text_label )->text();
 				return $error_msg;
 			}
 		}
@@ -203,27 +201,24 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
-		global $wgUser, $wgLang;
-		
 		$text = "";
 		$jobs = array();
 		$jobParams = array();
-		$jobParams['user_id'] = $wgUser->getId();
+		$jobParams['user_id'] = $this->getUser()->getId();
 		$jobParams['edit_summary'] = $editSummary;
 		$jobParams['for_pages_that_exist'] = $forPagesThatExist;
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			if ( is_null( $title ) ) {
-				$text .= '<p>' . wfMsg( 'img-auth-badtitle', $page->getName() ) . "</p>\n";
+				$text .= '<p>' . $this->msg( 'img-auth-badtitle', $page->getName() )->text() . "</p>\n";
 				continue;
 			}
 			$jobParams['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
 		Job::batchInsert( $jobs );
-		$text .= wfMsgExt( 'dt_import_success', array( 'parse' ), $wgLang->formatNum( count( $jobs ) ), 'CSV' );
+		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'CSV' )->parseAsBlock();
 
 		return $text;
 	}
-
 }

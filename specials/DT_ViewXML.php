@@ -6,7 +6,6 @@
  */
 
 class DTViewXML extends SpecialPage {
-
 	/**
 	 * Constructor
 	 */
@@ -58,7 +57,7 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getGroupings() {
-		global $dtgContLang, $smwgIP;
+		global $smwgIP;
 
 		if ( ! isset( $smwgIP ) ) {
 			return array();
@@ -163,20 +162,6 @@ class DTViewXML extends SpecialPage {
     return $titles;
   }
 
-/*
-static function getPagesForCategory($category) {
-	$dbr = wfGetDB( DB_SLAVE );
-	$categorylinks = $dbr->tableName( 'categorylinks' );
-	$res = $dbr->query("SELECT cl_from FROM $categorylinks WHERE cl_to = '$category'");
-	$titles = array();
-	while ($row = $dbr->fetchRow($res)) {
-		$titles[] = Title::newFromID($row[0]);
-	}
-	$dbr->freeResult($res);
-	return $titles;
-}
-*/
-
 	static function getPagesForNamespace( $namespace ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$page = $dbr->tableName( 'page' );
@@ -194,8 +179,9 @@ static function getPagesForCategory($category) {
 	 */
 	static function treeContainsElement( $tree, $element ) {
 		// escape out if there's no tree (i.e., category)
-		if ( $tree == null )
+		if ( $tree == null ) {
 			return false;
+		}
 
 		foreach ( $tree as $node => $child_tree ) {
 			if ( $node === $element ) {
@@ -217,13 +203,12 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
 
   $namespace_labels = $wgContLang->getNamespaces();
   $template_label = $namespace_labels[NS_TEMPLATE];
-  $namespace_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_namespace' ) );
-  $page_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_page' ) );
-  $field_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_field' ) );
-  $name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
-  $title_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_title' ) );
-  $id_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_id' ) );
-  $free_text_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_freetext' ) );
+  $page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
+  $field_str = str_replace( ' ', '_', wfMessage( 'dt_xml_field' )->inContentLanguage()->text() );
+  $name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
+  $title_str = str_replace( ' ', '_', wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
+  $id_str = str_replace( ' ', '_', wfMessage( 'dt_xml_id' )->inContentLanguage()->text() );
+  $free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
 
   // if this page belongs to the exclusion category, exit
   $parent_categories = $title->getParentCategoryTree( array() );
@@ -236,10 +221,11 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
   $page_title = str_replace( '"', '&quot;', $title->getText() );
   $page_title = str_replace( '&', '&amp;', $page_title );
   $page_namespace = $title->getNamespace();
-  if ( $simplified_format )
+  if ( $simplified_format ) {
     $text = "<$page_str><$id_str>{$article->getID()}</$id_str><$title_str>$page_title</$title_str>\n";
-  else
+  } else {
     $text = "<$page_str $id_str=\"" . $article->getID() . "\" $title_str=\"" . $page_title . '" >';
+  }
 
   // traverse the page contents, one character at a time
   $uncompleted_curly_brackets = 0;
@@ -414,18 +400,15 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
 }
 
 	static function doSpecialViewXML() {
-		global $wgOut, $wgRequest, $wgUser, $wgContLang;
+		global $wgOut, $wgRequest, $wgContLang;
 
-		$skin = $wgUser->getSkin();
 		$namespace_labels = $wgContLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
-		$template_label = $namespace_labels[NS_TEMPLATE];
-		$name_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_name' ) );
-		$namespace_str = str_replace( ' ', '_', wfMsg( 'dt_xml_namespace' ) );
-		$pages_str = str_replace( ' ', '_', wfMsgForContent( 'dt_xml_pages' ) );
+		$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
+		$namespace_str = str_replace( ' ', '_', wfMessage( 'dt_xml_namespace' )->text() );
+		$pages_str = str_replace( ' ', '_', wfMessage( 'dt_xml_pages' )->inContentLanguage()->text() );
 
 		$form_submitted = false;
-		$page_titles = array();
 		$cats = $wgRequest->getArray( 'categories' );
 		$nses = $wgRequest->getArray( 'namespaces' );
 		if ( count( $cats ) > 0 || count( $nses ) > 0 ) {
@@ -495,31 +478,30 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
 	<input type="hidden" name="title" value="$special_namespace:ViewXML">
 
 END;
-			$text .= "<p>" . wfMsg( 'dt_viewxml_docu' ) . "</p>\n";
-			$text .= "<h2>" . wfMsg( 'dt_viewxml_categories' ) . "</h2>\n";
+			$text .= "<p>" . wfMessage( 'dt_viewxml_docu' )->text() . "</p>\n";
+			$text .= "<h2>" . wfMessage( 'dt_viewxml_categories' )->text() . "</h2>\n";
 			$categories = self::getCategoriesList();
 			foreach ( $categories as $category ) {
 				$title = Title::makeTitle( NS_CATEGORY, $category );
-				$link = $skin->makeLinkObj( $title, htmlspecialchars( $title->getText() ) );
+				$link = Linker::link( $title, htmlspecialchars( $title->getText() ) );
 				$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
 			}
-			$text .= "<h2>" . wfMsg( 'dt_viewxml_namespaces' ) . "</h2>\n";
+			$text .= "<h2>" . wfMessage( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
 			$namespaces = self::getNamespacesList();
 			foreach ( $namespaces as $namespace ) {
 				if ( $namespace == 0 ) {
-					$ns_name = wfMsgHtml( 'blanknamespace' );
+					$ns_name = wfMessage( 'blanknamespace' )->escaped();
 				} else {
 					$ns_name = htmlspecialchars( $wgContLang->getFormattedNsText( $namespace ) );
 				}
 				$ns_name = str_replace( '_', ' ', $ns_name );
 				$text .= "<input type=\"checkbox\" name=\"namespaces[$namespace]\" /> $ns_name <br />\n";
 			}
-			$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMsg( 'dt_viewxml_simplifiedformat' ) . "</p>\n";
-			$text .= "<input type=\"submit\" value=\"" . wfMsg( 'viewxml' ) . "\">\n";
+			$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMessage( 'dt_viewxml_simplifiedformat' )->text() . "</p>\n";
+			$text .= "<input type=\"submit\" value=\"" . wfMessage( 'viewxml' )->text() . "\">\n";
 			$text .= "</form>\n";
 
 			$wgOut->addHTML( $text );
 		}
 	}
-
 }
