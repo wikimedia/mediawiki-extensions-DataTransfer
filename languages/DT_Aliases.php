@@ -230,7 +230,7 @@ $specialPageAliases['mt'] = array(
 	'ViewXML' => array( 'UriXML' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'ImportCSV' => array( 'Importer_CSV' ),
 	'ImportXML' => array( 'Importer_XML' ),
@@ -331,14 +331,14 @@ $specialPageAliases['vi'] = array(
 	'ViewXML' => array( 'Xem_XML' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'ImportCSV' => array( '导入CSV' ),
 	'ImportXML' => array( '导入XML' ),
 	'ViewXML' => array( '查看XML' ),
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'ImportCSV' => array( '導入CSV' ),
 	'ImportXML' => array( '導入XML' ),
