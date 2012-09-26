@@ -2814,7 +2814,7 @@ $messages['zh-hans'] = array(
 	'right-datatransferimport' => '导入数据',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Liangent
  * @author Mark85296341
  */
@@ -2844,7 +2844,9 @@ $messages['zh-hant'] = array(
 	'dt_import_summarydesc' => '導入摘要：',
 	'dt_import_editsummary' => '$1 導入',
 	'dt_import_importing' => '正在導入...',
+	'dt_import_success' => '將依據此$2文件創建$1個{{PLURAL:$1|個頁面|個頁面}}。',
 	'importcsv' => '導入 CSV',
+	'dt_importcsv_badheader' => "錯誤：第$1列的標題'$2'必須為'$3'、或者'$4'、或者採取'模板名稱[字段名稱]'的形式",
 	'right-datatransferimport' => '導入數據',
 );
 
