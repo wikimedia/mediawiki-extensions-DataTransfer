@@ -238,7 +238,7 @@ $messages['arc'] = array(
 	'right-datatransferimport' => 'ܡܥܠܢܘܬܐ ܕܓܠܝܬ̈ܐ',
 );
 
-/** Araucanian (mapudungun)
+/** Mapuche (mapudungun)
  * @author Remember the dot
  */
 $messages['arn'] = array(
@@ -295,7 +295,7 @@ $messages['be'] = array(
 	'dt_xml_template' => 'Шаблон',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -1035,7 +1035,7 @@ $messages['gv'] = array(
 	'dt_xml_freetext' => 'Teks seyr',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'dt_xml_namespace' => 'Sararin suna',
 	'dt_xml_page' => 'Shafi',
@@ -1486,7 +1486,7 @@ $messages['ksh'] = array(
 	'right-datatransferimport' => 'Daate empoteere',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -1790,7 +1790,7 @@ $messages['nah'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -1868,7 +1868,7 @@ $messages['nl'] = array(
 	'right-datatransferimport' => 'Gegevens importeren',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -2333,7 +2333,7 @@ $messages['sl'] = array(
 	'right-datatransferimport' => 'Uvoz podatkov',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  * @author Sasa Stefanovic
  * @author Жељко Тодоровић
@@ -2360,7 +2360,7 @@ $messages['sr-ec'] = array(
 	'right-datatransferimport' => 'Увези податке',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -2776,7 +2776,7 @@ $messages['yi'] = array(
 	'dt_xml_title' => 'טיטל',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Gaoxuewei
  * @author Hydra
  * @author Linforest
