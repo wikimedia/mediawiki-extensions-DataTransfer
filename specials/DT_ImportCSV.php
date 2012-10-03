@@ -5,8 +5,6 @@
  * @author Yaron Koren
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) die();
-
 class DTPage {
 	var $mName;
 	var $mTemplates;
@@ -198,6 +196,8 @@ class DTImportCSV extends SpecialPage {
 			}
 			$pages[] = $page;
 		}
+
+		return '';
 	}
 
 	function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
