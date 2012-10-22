@@ -92,13 +92,6 @@ Used as XML tag name.',
 	'right-datatransferimport' => '{{doc-right|datatransferimport}}',
 );
 
-/** Faeag Rotuma (Faeag Rotuma)
- * @author Jose77
- */
-$messages['rtm'] = array(
-	'dt_viewxml_categories' => 'Katekori',
-);
-
 /** Afrikaans (Afrikaans)
  * @author Arnobarnard
  * @author Naudefj
@@ -520,7 +513,7 @@ $messages['cs'] = array(
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'Libovolný text',
 	'importxml' => 'Importovat XML',
-	'dt_import_selectfile' => 'Prosím vyberte $1 soubor k importu:',
+	'dt_import_selectfile' => 'Prosím vyberte $1 soubor k importu:', # Fuzzy
 	'dt_import_encodingtype' => 'Typ kódování:',
 	'dt_import_overwriteexisting' => 'Přepsat stávající obsah',
 	'dt_import_skipexisting' => 'Přeskočit',
@@ -638,7 +631,8 @@ $messages['dsb'] = array(
 	'right-datatransferimport' => 'Daty importěrowaś',
 );
 
-/** Ewe (eʋegbe) */
+/** Ewe (eʋegbe)
+ */
 $messages['ee'] = array(
 	'dt_xml_page' => 'Axa',
 );
@@ -1035,7 +1029,8 @@ $messages['gv'] = array(
 	'dt_xml_freetext' => 'Teks seyr',
 );
 
-/** Hausa (Hausa) */
+/** Hausa (Hausa)
+ */
 $messages['ha'] = array(
 	'dt_xml_namespace' => 'Sararin suna',
 	'dt_xml_page' => 'Shafi',
@@ -2183,6 +2178,13 @@ $messages['roa-tara'] = array(
 	'importxml' => "'Mborte XML",
 );
 
+/** Faeag Rotuma (Faeag Rotuma)
+ * @author Jose77
+ */
+$messages['rtm'] = array(
+	'dt_viewxml_categories' => 'Katekori',
+);
+
 /** Russian (русский)
  * @author Ferrer
  * @author Innv
@@ -2882,4 +2884,3 @@ $messages['zh-tw'] = array(
 Error: the column $1 header, '$2', must be either '$3', '$4' or of the form 'template_name[field_name]'",
 	'right-datatransferimport' => '輸入資料',
 );
-
