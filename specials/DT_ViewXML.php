@@ -313,7 +313,7 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
         } else {
           if ( $c == "|" || $c == "}" ) {
             if ( $field_has_name ) {
-              $field_value = str_replace( '&', '&amp;', $field_value );
+              $field_value = str_replace( array( '&', '<', '>' ), array( '&amp;', '&lt;', '&gt' ), $field_value );
               if ( $simplified_format ) {
                 $field_name = str_replace( ' ', '_', trim( $field_name ) );
                 $text .= "<" . $field_name . ">";
@@ -482,20 +482,22 @@ END;
 			$text .= "<h2>" . wfMessage( 'dt_viewxml_categories' )->text() . "</h2>\n";
 			$categories = self::getCategoriesList();
 			foreach ( $categories as $category ) {
+				$text .= Html::input( "categories[$category]", null, 'checkbox' );
 				$title = Title::makeTitle( NS_CATEGORY, $category );
 				$link = Linker::link( $title, htmlspecialchars( $title->getText() ) );
-				$text .= "<input type=\"checkbox\" name=\"categories[$category]\" /> $link <br />\n";
+				$text .= " $link<br />\n";
 			}
 			$text .= "<h2>" . wfMessage( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
 			$namespaces = self::getNamespacesList();
-			foreach ( $namespaces as $namespace ) {
-				if ( $namespace == 0 ) {
-					$ns_name = wfMessage( 'blanknamespace' )->escaped();
+			foreach ( $namespaces as $nsCode ) {
+				if ( $nsCode === '0' ) {
+					$nsName = wfMessage( 'blanknamespace' )->escaped();
 				} else {
-					$ns_name = htmlspecialchars( $wgContLang->getFormattedNsText( $namespace ) );
+					$nsName = htmlspecialchars( $wgContLang->getFormattedNsText( $nsCode ) );
+					if ( $nsName === '' ) continue;
 				}
-				$ns_name = str_replace( '_', ' ', $ns_name );
-				$text .= "<input type=\"checkbox\" name=\"namespaces[$namespace]\" /> $ns_name <br />\n";
+				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
+				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
 			$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMessage( 'dt_viewxml_simplifiedformat' )->text() . "</p>\n";
 			$text .= "<input type=\"submit\" value=\"" . wfMessage( 'viewxml' )->text() . "\">\n";
