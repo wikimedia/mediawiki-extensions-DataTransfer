@@ -313,7 +313,7 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
         } else {
           if ( $c == "|" || $c == "}" ) {
             if ( $field_has_name ) {
-              $field_value = str_replace( array( '&', '<', '>' ), array( '&amp;', '&lt;', '&gt' ), $field_value );
+              $field_value = str_replace( array( '&', '<', '>' ), array( '&amp;', '&lt;', '&gt;' ), $field_value );
               if ( $simplified_format ) {
                 $field_name = str_replace( ' ', '_', trim( $field_name ) );
                 $text .= "<" . $field_name . ">";
