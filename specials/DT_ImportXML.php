@@ -26,12 +26,7 @@ class DTImportXML extends SpecialPage {
 		if ( $request->getCheck( 'import_file' ) ) {
 			$text = DTUtils::printImportingMessage();
 			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
-			// handling changed in MW 1.17
-			if ( $uploadResult instanceof Status ) {
-				$source = $uploadResult->value;
-			} else {
-				$source = $uploadResult;
-			}
+			$source = $uploadResult->value;
 			$importSummary = $request->getVal( 'import_summary' );
 			$forPagesThatExist = $request->getVal( 'pagesThatExist' );
 			$text .= self::modifyPages( $source, $importSummary, $forPagesThatExist );
@@ -66,7 +61,12 @@ class DTImportXML extends SpecialPage {
 			$job_params['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $job_params );
 		}
-		Job::batchInsert( $jobs );
+		// MW 1.21+
+		if ( class_exists( 'JobQueueGroup' ) ) {
+			JobQueueGroup::singleton()->push( $jobs );
+		} else {
+			Job::batchInsert( $jobs );
+		}
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'XML' )
 			->parseAsBlock();
 		return $text;

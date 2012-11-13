@@ -68,25 +68,14 @@ class DTImportCSV extends SpecialPage {
 		if ( $request->getCheck( 'import_file' ) ) {
 			$text = DTUtils::printImportingMessage();
 			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
-			// handling changed in MW 1.17
-			$uploadError = null;
-			if ( $uploadResult instanceof Status ) {
-				if ( $uploadResult->isOK() ) {
-					$source = $uploadResult->value;
-				} else {
-					$uploadError = $out->parse( $uploadResult->getWikiText() );
-				}
-			} elseif ( $uploadResult instanceof WikiErrorMsg ) {
-				$uploadError = $uploadResult->getMessage();
-			} else {
-				$source = $uploadResult;
-			}
-
-			if ( !is_null( $uploadError ) ) {
+			if ( !$uploadResult->isOK() ) {
+				$uploadError = $out->parse( $uploadResult->getWikiText() );
 				$text .= $uploadError;
 				$out->addHTML( $text );
 				return;
 			}
+
+			$source = $uploadResult->value;
 
 			$encoding = $request->getVal( 'encoding' );
 			$pages = array();
@@ -131,13 +120,15 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	static function getCSVData( $csv_file, $encoding, &$pages ) {
-		if ( is_null( $csv_file ) )
+		if ( is_null( $csv_file ) ) {
 			return wfMessage( 'emptyfile' )->text();
+		}
+
 		$table = array();
 		if ( $encoding == 'utf16' ) {
-			// change encoding to UTF-8
+			// Change encoding to UTF-8.
 			// Starting with PHP 5.3 we could use str_getcsv(),
-			// which would save the tempfile hassle
+			// which would save the tempfile hassle.
 			$tempfile = tmpfile();
 			$csv_string = '';
 			while ( !feof( $csv_file ) ) {
@@ -197,7 +188,7 @@ class DTImportCSV extends SpecialPage {
 			$pages[] = $page;
 		}
 
-		return '';
+		return null;
 	}
 
 	function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
@@ -216,7 +207,12 @@ class DTImportCSV extends SpecialPage {
 			$jobParams['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
-		Job::batchInsert( $jobs );
+		// MW 1.21+
+		if ( class_exists( 'JobQueueGroup' ) ) {
+			JobQueueGroup::singleton()->push( $jobs );
+		} else {
+			Job::batchInsert( $jobs );
+		}
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'CSV' )->parseAsBlock();
 
 		return $text;
