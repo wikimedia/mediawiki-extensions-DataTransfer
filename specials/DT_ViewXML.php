@@ -113,54 +113,56 @@ class DTViewXML extends SpecialPage {
 	}
 
 
-/*
- * Get all the pages that belong to a category and all its subcategories,
- * down a certain number of levels - heavily based on SMW's
- * SMWInlineQuery::includeSubcategories()
- */
-  static function getPagesForCategory( $top_category, $num_levels ) {
-    if ( 0 == $num_levels ) return $top_category;
+	/*
+	 * Get all the pages that belong to a category and all its
+	 * subcategories, down a certain number of levels - heavily based
+	 * on SMW's SMWInlineQuery::includeSubcategories()
+	 */
+	static function getPagesForCategory( $top_category, $num_levels ) {
+		if ( 0 == $num_levels ) return $top_category;
 
-    $db = wfGetDB( DB_SLAVE );
-    $fname = "getPagesForCategory";
-    $categories = array( $top_category );
-    $checkcategories = array( $top_category );
-    $titles = array();
-    for ( $level = $num_levels; $level > 0; $level-- ) {
-      $newcategories = array();
-      foreach ( $checkcategories as $category ) {
-        $res = $db->select( // make the query
-          array( 'categorylinks', 'page' ),
-          array( 'page_id', 'page_title', 'page_namespace' ),
-          array( 'cl_from = page_id',
-          'cl_to = ' . $db->addQuotes( $category ) ),
-          $fname );
-        if ( $res ) {
-          while ( $res && $row = $db->fetchRow( $res ) ) {
-            if ( array_key_exists( 'page_title', $row ) ) {
-              $page_namespace = $row['page_namespace'];
-              if ( $page_namespace == NS_CATEGORY ) {
-                $new_category = $row[ 'page_title' ];
-                if ( !in_array( $new_category, $categories ) ) {
-                  $newcategories[] = $new_category;
-                }
-              } else {
-                $titles[] = Title::newFromID( $row['page_id'] );
-              }
-            }
-          }
-          $db->freeResult( $res );
-        }
-      }
-      if ( count( $newcategories ) == 0 ) {
-        return $titles;
-      } else {
-        $categories = array_merge( $categories, $newcategories );
-      }
-      $checkcategories = array_diff( $newcategories, array() );
-    }
-    return $titles;
-  }
+		$db = wfGetDB( DB_SLAVE );
+		$fname = "getPagesForCategory";
+		$categories = array( $top_category );
+		$checkcategories = array( $top_category );
+		$titles = array();
+		for ( $level = $num_levels; $level > 0; $level-- ) {
+			$newcategories = array();
+			foreach ( $checkcategories as $category ) {
+				$res = $db->select( // make the query
+					array( 'categorylinks', 'page' ),
+					array( 'page_id', 'page_title', 'page_namespace' ),
+					array( 'cl_from = page_id',
+						'cl_to = ' . $db->addQuotes( $category )
+					),
+					$fname
+				);
+				if ( $res ) {
+					while ( $row = $db->fetchRow( $res ) ) {
+						if ( array_key_exists( 'page_title', $row ) ) {
+							$page_namespace = $row['page_namespace'];
+							if ( $page_namespace == NS_CATEGORY ) {
+								$new_category = $row[ 'page_title' ];
+								if ( !in_array( $new_category, $categories ) ) {
+									$newcategories[] = $new_category;
+								}
+							} else {
+								$titles[] = Title::newFromID( $row['page_id'] );
+							}
+						}
+					}
+					$db->freeResult( $res );
+				}
+			}
+			if ( count( $newcategories ) == 0 ) {
+				return $titles;
+			} else {
+				$categories = array_merge( $categories, $newcategories );
+			}
+			$checkcategories = array_diff( $newcategories, array() );
+		}
+		return $titles;
+	}
 
 	static function getPagesForNamespace( $namespace ) {
 		$dbr = wfGetDB( DB_SLAVE );
