@@ -47,13 +47,14 @@ $messages['en'] = array(
  * @author EugeneZelenko
  * @author Fryed-peach
  * @author Jon Harald Søby
+ * @author Kghbln
  * @author Purodha
  * @author Raymond
  * @author Siebrand
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'datatransfer-desc' => 'Extension description displayed on [[Special:Version]].',
+	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=https://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
 	'dt_viewxml_categories' => '{{Identical|Categories}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
 	'dt_xml_namespace' => '{{Identical|Namespace}}
