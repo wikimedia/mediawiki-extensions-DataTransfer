@@ -50,11 +50,12 @@ $messages['en'] = array(
  * @author Kghbln
  * @author Purodha
  * @author Raymond
+ * @author Shirayuki
  * @author Siebrand
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=https://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
+	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=http://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
 	'dt_viewxml_categories' => '{{Identical|Categories}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
 	'dt_xml_namespace' => '{{Identical|Namespace}}
@@ -279,6 +280,13 @@ $messages['az'] = array(
 	'dt_xml_name' => 'Ad',
 	'dt_xml_title' => 'Başlıq',
 	'dt_xml_id' => 'ID',
+);
+
+/** تورکجه (تورکجه)
+ * @author Erdemaslancan
+ */
+$messages['azb'] = array(
+	'dt_viewxml_namespaces' => 'آدلار فضاسی:',
 );
 
 /** Belarusian (беларуская)
@@ -585,7 +593,7 @@ $messages['de'] = array(
 $messages['diq'] = array(
 	'viewxml' => "XML'i bıvin",
 	'dt_viewxml_categories' => 'Kategoriy',
-	'dt_viewxml_namespaces' => 'Cayê namey',
+	'dt_viewxml_namespaces' => 'Cayê namam',
 	'dt_xml_pages' => 'Peli',
 	'dt_xml_page' => 'Pele',
 	'dt_xml_template' => 'Şablon',
