@@ -278,6 +278,13 @@ $specialPageAliases['sa'] = array(
 	'ViewXML' => array( 'XMLपश्यति' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'ImportCSV' => array( 'ImportaCSV' ),
+	'ImportXML' => array( 'ImportaXML' ),
+	'ViewXML' => array( 'VediXML' ),
+);
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'ViewXML' => array( 'ZobraziťXML' ),
