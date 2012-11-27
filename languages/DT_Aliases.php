@@ -237,7 +237,7 @@ $specialPageAliases['nb'] = array(
 	'ViewXML' => array( 'Vis_XML' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'ImportCSV' => array( 'CSV_invoeren' ),
 	'ImportXML' => array( 'XML_invoeren' ),

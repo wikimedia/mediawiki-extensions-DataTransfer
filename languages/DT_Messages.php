@@ -805,6 +805,7 @@ $messages['fa'] = array(
 /** Finnish (suomi)
  * @author Centerlink
  * @author Crt
+ * @author Nedergard
  * @author Nike
  * @author Str4nd
  * @author Vililikku
@@ -828,7 +829,10 @@ $messages['fi'] = array(
 	'importxml' => 'XML-tuonti',
 	'dt_import_selectfile' => 'Valitse $1-tiedosto tuotavaksi:',
 	'dt_import_encodingtype' => 'Merkistötyyppi:',
+	'dt_import_forexisting' => 'Nykyisille sivuille:',
+	'dt_import_overwriteexisting' => 'Korvaa nykyinen sisältö',
 	'dt_import_skipexisting' => 'Ohita',
+	'dt_import_appendtoexisting' => 'Liitä nykyiseen sisältöön',
 	'dt_import_summarydesc' => 'Tuonnin yhteenveto',
 	'dt_import_editsummary' => '$1-tuonti',
 	'dt_import_importing' => 'Tuodaan...',
