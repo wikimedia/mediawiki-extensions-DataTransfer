@@ -187,8 +187,8 @@ $specialPageAliases['ksh'] = array(
 
 /** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
-	'ImportCSV' => array( 'YmperthiCSV' ),
-	'ImportXML' => array( 'YmperthiXML' ),
+	'ImportCSV' => array( 'YmperthyCSV' ),
+	'ImportXML' => array( 'YmperthyiXML' ),
 	'ViewXML' => array( 'GwelesXML' ),
 );
 
