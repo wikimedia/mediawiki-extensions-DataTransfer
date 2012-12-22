@@ -690,6 +690,7 @@ $messages['ee'] = array(
  * @author Consta
  * @author Crazymadlover
  * @author Omnipaedista
+ * @author ZaDiak
  */
 $messages['el'] = array(
 	'viewxml' => 'Προβολή XML',
@@ -706,6 +707,7 @@ $messages['el'] = array(
 	'dt_xml_freetext' => 'Ελεύθερο Κείμενο',
 	'importxml' => 'Εισαγωγή σε XML',
 	'dt_import_encodingtype' => 'Τύπος κωδικοποίησης',
+	'dt_import_skipexisting' => 'Παράβλεψη',
 	'dt_import_editsummary' => 'Εισαγωγή $1',
 	'dt_import_importing' => 'Εισάγεται...',
 	'importcsv' => 'Εισαγωγή CSV',
@@ -834,7 +836,15 @@ $messages['fa'] = array(
 	'dt_xml_name' => 'نام',
 	'dt_xml_title' => 'عنوان',
 	'dt_xml_id' => 'شناسه',
+	'dt_xml_freetext' => 'متن آزاد',
+	'importxml' => 'درون‌ریزی ایکس‌ام‌ال',
+	'dt_import_encodingtype' => 'نوع کدگذاری:',
 	'dt_import_skipexisting' => 'پرش',
+	'dt_import_summarydesc' => 'خلاصهٔ درون‌ریزی:',
+	'dt_import_editsummary' => 'درون‌ریزی $1',
+	'dt_import_importing' => 'در حال درون‌ریزی...',
+	'importcsv' => 'درون‌ریزی سی‌اس‌وی',
+	'right-datatransferimport' => 'درون‌ریزی داده‌ها',
 );
 
 /** Finnish (suomi)
@@ -1425,8 +1435,10 @@ $messages['jv'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
+	'viewxml' => 'XML-ის ხილვა',
 	'dt_viewxml_categories' => 'კატეგორიები',
 	'dt_viewxml_namespaces' => 'სახელთა სივრცეები',
+	'dt_viewxml_simplifiedformat' => 'გამარტივებული ფორმატი',
 	'dt_xml_namespace' => 'სახელთა სივრცე',
 	'dt_xml_pages' => 'გვერდები',
 	'dt_xml_page' => 'გვერდი',
@@ -1436,7 +1448,16 @@ $messages['ka'] = array(
 	'dt_xml_title' => 'სათაური',
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'თავისუფალი ტექსტი',
+	'importxml' => 'XML-ის იმპორტი',
+	'dt_import_selectfile' => 'გთხოვთ, აირჩიეთ $1 ფაილი იმპორტისათვის:',
+	'dt_import_encodingtype' => 'კოდირების ტიპი:',
+	'dt_import_forexisting' => 'გვერდებისათვის რომლებიც უკვე არსებობენ:',
 	'dt_import_skipexisting' => 'გამოტოვება',
+	'dt_import_summarydesc' => 'იმპორტის აღწერა:',
+	'dt_import_editsummary' => '$1-ის იმპორტი',
+	'dt_import_importing' => 'იმპორტირება...',
+	'importcsv' => 'CSV-ის იმპორტი',
+	'right-datatransferimport' => 'მონაცემების იმპორტირება',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -2186,6 +2207,7 @@ $messages['pt-br'] = array(
 
 /** Romanian (română)
  * @author KlaudiuMihaila
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
@@ -2201,9 +2223,12 @@ $messages['ro'] = array(
 	'dt_xml_name' => 'Nume',
 	'dt_xml_title' => 'Titlu',
 	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'Text liber',
 	'importxml' => 'Importă XML',
+	'dt_import_encodingtype' => 'Tipul de codificare:',
 	'dt_import_skipexisting' => 'Omite',
 	'dt_import_summarydesc' => 'Descrierea importului:',
+	'dt_import_editsummary' => 'Importare $1',
 	'dt_import_importing' => 'Importare...',
 	'importcsv' => 'Importă CSV',
 	'right-datatransferimport' => 'Importă date',
