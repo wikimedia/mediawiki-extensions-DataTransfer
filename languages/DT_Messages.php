@@ -371,6 +371,7 @@ $messages['be-tarask'] = array(
 
 /** Bulgarian (български)
  * @author DCLXVI
+ * @author පසිඳු කාවින්ද
  */
 $messages['bg'] = array(
 	'viewxml' => 'Преглед на XML',
@@ -387,6 +388,7 @@ $messages['bg'] = array(
 	'dt_xml_id' => 'Номер',
 	'dt_xml_freetext' => 'Свободен текст',
 	'importxml' => 'Внасяне на XML',
+	'dt_import_skipexisting' => 'Пропусни',
 	'dt_import_importing' => 'Внасяне...',
 	'importcsv' => 'Внасяне на CSV',
 	'right-datatransferimport' => 'Внасяне на данни',
@@ -572,14 +574,25 @@ $messages['cs'] = array(
 
 /** Danish (dansk)
  * @author Jon Harald Søby
+ * @author Tjernobyl
  */
 $messages['da'] = array(
+	'viewxml' => 'Vis XML',
 	'dt_viewxml_categories' => 'Kategorier',
+	'dt_viewxml_namespaces' => 'Navnerum',
+	'dt_viewxml_simplifiedformat' => 'Forenklet format',
 	'dt_xml_namespace' => 'Navnerum',
+	'dt_xml_pages' => 'Sider',
 	'dt_xml_page' => 'Side',
+	'dt_xml_template' => 'Skabelon',
+	'dt_xml_field' => 'Felt',
 	'dt_xml_name' => 'Navn',
 	'dt_xml_title' => 'Titel',
 	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'Fritekst',
+	'importxml' => 'Importer XML',
+	'dt_import_overwriteexisting' => 'Overskriv eksisterende indhold',
+	'dt_import_skipexisting' => 'Spring over',
 );
 
 /** German (Deutsch)
@@ -1333,10 +1346,17 @@ $messages['io'] = array(
 
 /** Icelandic (íslenska)
  * @author S.Örvarr.S
+ * @author පසිඳු කාවින්ද
  */
 $messages['is'] = array(
 	'dt_viewxml_namespaces' => 'Nafnrými',
+	'dt_xml_namespace' => 'Nafnrými',
+	'dt_xml_pages' => 'Síður',
 	'dt_xml_page' => 'Síða',
+	'dt_xml_field' => 'Svæði',
+	'dt_xml_name' => 'Nafn',
+	'dt_xml_title' => 'Titill',
+	'dt_import_skipexisting' => 'Sleppa',
 );
 
 /** Italian (italiano)
