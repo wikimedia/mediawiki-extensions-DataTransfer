@@ -809,6 +809,8 @@ $messages['et'] = array(
 	'dt_xml_template' => 'Mall',
 	'dt_xml_name' => 'Nimi',
 	'dt_xml_title' => 'Pealkiri',
+	'dt_import_importing' => 'Importimine...',
+	'right-datatransferimport' => 'Impordiandmed',
 );
 
 /** Basque (euskara)
@@ -2246,6 +2248,7 @@ $messages['ro'] = array(
 	'dt_xml_freetext' => 'Text liber',
 	'importxml' => 'Importă XML',
 	'dt_import_encodingtype' => 'Tipul de codificare:',
+	'dt_import_forexisting' => 'Pentru pagini care există deja:',
 	'dt_import_skipexisting' => 'Omite',
 	'dt_import_summarydesc' => 'Descrierea importului:',
 	'dt_import_editsummary' => 'Importare $1',
@@ -2354,6 +2357,7 @@ $messages['si'] = array(
 	'viewxml' => 'XML නරඹන්න',
 	'dt_viewxml_categories' => 'ප්‍රවර්ගයන්',
 	'dt_viewxml_namespaces' => 'නාමඅවකාශයන්',
+	'dt_viewxml_simplifiedformat' => 'සුළු කළ ආකෘතිය',
 	'dt_xml_namespace' => 'නාමඅවකාශය',
 	'dt_xml_pages' => 'පිටු',
 	'dt_xml_page' => 'පිටුව',
@@ -2363,8 +2367,13 @@ $messages['si'] = array(
 	'dt_xml_title' => 'ශීර්ෂය',
 	'dt_xml_id' => 'හැඳුනුම',
 	'dt_xml_freetext' => 'නිදහස් පාඨය',
+	'importxml' => 'XML ආයාත කරන්න',
+	'dt_import_encodingtype' => 'කේතීකරණ වර්ගය:',
 	'dt_import_skipexisting' => 'මඟ හරින්න',
+	'dt_import_summarydesc' => 'ආයාත කිරීමේ සාරාංශය:',
+	'dt_import_editsummary' => '$1 ආයාත කරන්න',
 	'dt_import_importing' => 'ආයාත කරමින්...',
+	'importcsv' => 'CSV ආයාත කරන්න',
 	'right-datatransferimport' => 'දත්ත ආයාත කරන්න',
 );
 
