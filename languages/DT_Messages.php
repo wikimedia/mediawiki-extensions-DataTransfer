@@ -807,8 +807,11 @@ $messages['et'] = array(
 	'dt_xml_pages' => 'Leheküljed',
 	'dt_xml_page' => 'Lehekülg',
 	'dt_xml_template' => 'Mall',
+	'dt_xml_field' => 'Väli',
 	'dt_xml_name' => 'Nimi',
 	'dt_xml_title' => 'Pealkiri',
+	'dt_xml_id' => 'ID',
+	'dt_import_skipexisting' => 'Jäta vahele',
 	'dt_import_importing' => 'Importimine...',
 	'right-datatransferimport' => 'Impordiandmed',
 );
@@ -1334,7 +1337,11 @@ $messages['id'] = array(
  */
 $messages['ig'] = array(
 	'dt_viewxml_categories' => 'Ébéanọr',
+	'dt_xml_pages' => 'Ihü',
+	'dt_xml_page' => 'Ihü',
 	'dt_xml_template' => 'Àtụ',
+	'dt_xml_name' => 'Áhà',
+	'dt_import_skipexisting' => 'Gáfè',
 );
 
 /** Ido (Ido)
@@ -2369,7 +2376,10 @@ $messages['si'] = array(
 	'dt_xml_freetext' => 'නිදහස් පාඨය',
 	'importxml' => 'XML ආයාත කරන්න',
 	'dt_import_encodingtype' => 'කේතීකරණ වර්ගය:',
+	'dt_import_forexisting' => 'දැනටමත් පවතින පිටු සඳහා:',
+	'dt_import_overwriteexisting' => 'පවතින අන්තර්ගතය අධිලිවීමකට ලක්කරන්න',
 	'dt_import_skipexisting' => 'මඟ හරින්න',
+	'dt_import_appendtoexisting' => 'පවත්නා අන්තර්ගතයට අමුණන්න',
 	'dt_import_summarydesc' => 'ආයාත කිරීමේ සාරාංශය:',
 	'dt_import_editsummary' => '$1 ආයාත කරන්න',
 	'dt_import_importing' => 'ආයාත කරමින්...',
