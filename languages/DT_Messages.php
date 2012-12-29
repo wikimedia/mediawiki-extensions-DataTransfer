@@ -1228,6 +1228,7 @@ $messages['hsb'] = array(
 
 /** Hungarian (magyar)
  * @author Dani
+ * @author Dj
  * @author Glanthor Reviol
  */
 $messages['hu'] = array(
@@ -1249,6 +1250,10 @@ $messages['hu'] = array(
 	'importxml' => 'XML importálás',
 	'dt_import_selectfile' => 'Kérlek válaszd ki az importálandó $1 fájlt:',
 	'dt_import_encodingtype' => 'Kódolás típusa:',
+	'dt_import_forexisting' => 'Már létező lapok esetén:',
+	'dt_import_overwriteexisting' => 'Meglévő tartalom felülírása',
+	'dt_import_skipexisting' => 'Kihagyás',
+	'dt_import_appendtoexisting' => 'Hozzáfűzés a meglévő tartalomhoz',
 	'dt_import_summarydesc' => 'Az importálás összefoglalója:',
 	'dt_import_editsummary' => '$1 importálás',
 	'dt_import_importing' => 'Importálás…',
@@ -1802,6 +1807,7 @@ $messages['mr'] = array(
  */
 $messages['ms'] = array(
 	'dt_viewxml_categories' => 'Kategori',
+	'dt_viewxml_namespaces' => 'Ruang nama',
 	'dt_xml_page' => 'Laman',
 	'dt_xml_template' => 'Templat',
 	'dt_xml_name' => 'Nama',
