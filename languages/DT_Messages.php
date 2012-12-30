@@ -324,6 +324,16 @@ $messages['azb'] = array(
 	'dt_viewxml_namespaces' => 'آدلار فضاسی:',
 );
 
+/** Bashkir (башҡортса)
+ * @author Ләйсән
+ */
+$messages['ba'] = array(
+	'dt_viewxml_categories' => 'Категориялар',
+	'dt_viewxml_namespaces' => 'Исем арауыҡтары',
+	'dt_import_skipexisting' => 'Ҡалдырып торорға',
+	'dt_import_importing' => 'Индереү',
+);
+
 /** Belarusian (беларуская)
  * @author Тест
  */
@@ -499,6 +509,7 @@ $messages['bs'] = array(
 );
 
 /** Catalan (català)
+ * @author Arnaugir
  * @author Jordi Roqué
  * @author SMP
  * @author Solde
@@ -523,6 +534,8 @@ $messages['ca'] = array(
 	'importxml' => 'Importa un XML',
 	'dt_import_selectfile' => 'Seleccioneu el fitxer $1 per importar:',
 	'dt_import_encodingtype' => 'Joc de caràcters:',
+	'dt_import_skipexisting' => 'Omet',
+	'dt_import_appendtoexisting' => 'Afegeix-ho al contingut existent',
 	'dt_import_summarydesc' => 'Resum de la importació:',
 	'dt_import_editsummary' => 'Importació $1',
 	'dt_import_importing' => "S'està important...",
@@ -2381,6 +2394,7 @@ $messages['si'] = array(
 	'dt_xml_id' => 'හැඳුනුම',
 	'dt_xml_freetext' => 'නිදහස් පාඨය',
 	'importxml' => 'XML ආයාත කරන්න',
+	'dt_import_selectfile' => 'ආයාත කිරීම සඳහා කරුණාකර $1 ගොනුව තෝරන්න:',
 	'dt_import_encodingtype' => 'කේතීකරණ වර්ගය:',
 	'dt_import_forexisting' => 'දැනටමත් පවතින පිටු සඳහා:',
 	'dt_import_overwriteexisting' => 'පවතින අන්තර්ගතය අධිලිවීමකට ලක්කරන්න',
