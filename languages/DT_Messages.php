@@ -1176,6 +1176,7 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Ansumang
  * @author Kaustubh
  * @author Siddhartha Ghai
  */
@@ -1187,12 +1188,17 @@ $messages['hi'] = array(
 	'dt_viewxml_namespaces' => 'नामस्थान',
 	'dt_viewxml_simplifiedformat' => 'आसान फॉरमैट',
 	'dt_xml_namespace' => 'नामस्थान',
+	'dt_xml_pages' => 'पृष्ठों',
 	'dt_xml_page' => 'पन्ना',
+	'dt_xml_template' => 'साँचा',
 	'dt_xml_field' => 'फ़ील्ड',
 	'dt_xml_name' => 'नाम',
 	'dt_xml_title' => 'शीर्षक',
 	'dt_xml_id' => 'आईडी',
 	'dt_xml_freetext' => 'मुक्त पाठ',
+	'dt_import_skipexisting' => 'छोड़ें',
+	'dt_import_editsummary' => '$1 आयात',
+	'right-datatransferimport' => 'डेटा आयात करें',
 );
 
 /** Croatian (hrvatski)
@@ -1819,14 +1825,34 @@ $messages['mr'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'datatransfer-desc' => 'Membolehkan pengimportan dan pengeksportan data yang terkandung dalam panggilan tempat',
+	'viewxml' => 'Paparkan XML',
+	'dt_viewxml_docu' => 'Sila pilih antara kategori-kategori dan ruang-ruang nama yang berikut untuk dipaparkan dalam format XML.',
 	'dt_viewxml_categories' => 'Kategori',
 	'dt_viewxml_namespaces' => 'Ruang nama',
+	'dt_viewxml_simplifiedformat' => 'Format ringkas',
+	'dt_xml_namespace' => 'Ruang nama',
+	'dt_xml_pages' => 'Halaman',
 	'dt_xml_page' => 'Laman',
 	'dt_xml_template' => 'Templat',
+	'dt_xml_field' => 'Medan',
 	'dt_xml_name' => 'Nama',
 	'dt_xml_title' => 'Tajuk',
+	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => 'Teks Bebas',
+	'importxml' => 'Import XML',
+	'dt_import_selectfile' => 'Sila pilih fail $1 yang hendak diimport:',
+	'dt_import_encodingtype' => 'Jenis pengekodan:',
+	'dt_import_forexisting' => 'Untuk halaman-halaman yang sedia ada:',
+	'dt_import_overwriteexisting' => 'Tulis ganti kandungan sedia ada',
+	'dt_import_skipexisting' => 'Langkau',
+	'dt_import_appendtoexisting' => 'Tambah kandungan sedia ada',
+	'dt_import_summarydesc' => 'Ringkasan pengimportan:',
+	'dt_import_editsummary' => 'Pengimportan $1',
 	'dt_import_importing' => 'Sedang mengimport...',
+	'dt_import_success' => '$1 halaman akan dibuat dari fail $2.',
 	'importcsv' => 'Import CSV',
+	'dt_importcsv_badheader' => "Ralat: pengatas lajur $1, '$2', mestilah sama ada '$3', '$4' atau dalam bentuk 'nama_templat[nama_medan]'",
 	'right-datatransferimport' => 'Mengimport data',
 );
 
@@ -2493,6 +2519,12 @@ $messages['sr-ec'] = array(
 	'dt_xml_id' => 'Назнака',
 	'dt_xml_freetext' => 'Слободан текст',
 	'importxml' => 'Увези XML',
+	'dt_import_encodingtype' => 'Врста кодирања:',
+	'dt_import_forexisting' => 'За странице које већ постоје:',
+	'dt_import_overwriteexisting' => 'Замени постојећи садржај',
+	'dt_import_skipexisting' => 'Прескочи',
+	'dt_import_appendtoexisting' => 'Додај у постојећи садржај',
+	'dt_import_summarydesc' => 'Опис увоза:',
 	'dt_import_editsummary' => '$1 увоз',
 	'dt_import_importing' => 'Увоз у току...',
 	'importcsv' => 'Увези CSV',
