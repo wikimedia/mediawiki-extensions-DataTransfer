@@ -74,11 +74,10 @@ Used as XML tag name.',
 Used as XML tag name.',
 	'dt_xml_title' => '{{Identical|Title}}
 Used as XML tag name.',
-	'dt_xml_id' => '{{Identical|ID}}
-
-Used as XML tag name.',
-	'dt_xml_freetext' => '{{Identical|Free text}}
-Used as XML tag name.',
+	'dt_xml_id' => 'Used as XML tag name.
+{{Identical|ID}}',
+	'dt_xml_freetext' => 'Used as XML tag name.
+{{Identical|Free text}}',
 	'dt_import_selectfile' => '$1 is the file format: either CSV or XML',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
 	'dt_import_skipexisting' => '{{Identical|Skip}}',
