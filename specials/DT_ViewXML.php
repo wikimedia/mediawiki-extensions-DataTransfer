@@ -373,16 +373,18 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
   global $smwgIP;
   if ( isset( $smwgIP ) ) {
     $store = smwfGetStore();
+    // Escaping is needed for SMWSQLStore3 - this may be a bug in SMW.
+    $escaped_page_title = str_replace( ' ', '_', $page_title );
     foreach ( $groupings as $pair ) {
       list( $property_page, $grouping_label ) = $pair;
       $options = new SMWRequestOptions();
       $options->sort = "subject_title";
       // get actual property from the wiki-page of the property
       if ( class_exists( 'SMWDIProperty' ) ) {
-        $wiki_page = new SMWDIWikiPage( $page_title, $page_namespace, null );
+        $wiki_page = new SMWDIWikiPage( $escaped_page_title, $page_namespace, null );
         $property = SMWDIProperty::newFromUserLabel( $property_page->getTitle()->getText() );
       } else {
-        $wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $page_title );
+        $wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $escaped_page_title );
         $property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
       }
       $res = $store->getPropertySubjects( $property, $wiki_page, $options );
