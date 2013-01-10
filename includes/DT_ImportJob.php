@@ -24,28 +24,49 @@ class DTImportJob extends Job {
 			return false;
 		}
 
-		$article = new Article( $this->title );
-		if ( !$article ) {
-			$this->error = 'dtImport: Article not found "' . $this->title->getPrefixedDBkey() . '"';
-			wfProfileOut( __METHOD__ );
-			return false;
+		if ( method_exists( 'WikiPage', 'getContent' ) ) {
+			$wikiPage = new WikiPage( $this->title );
+			if ( !$wikiPage ) {
+				$this->error = 'dtImport: Wiki page not found "' . $this->title->getPrefixedDBkey() . '"';
+				wfProfileOut( __METHOD__ );
+				return false;
+			}
+		} else {
+			$article = new Article( $this->title );
+			if ( !$article ) {
+				$this->error = 'dtImport: Article not found "' . $this->title->getPrefixedDBkey() . '"';
+				wfProfileOut( __METHOD__ );
+				return false;
+			}
 		}
 		$for_pages_that_exist = $this->params['for_pages_that_exist'];
 		if ( $for_pages_that_exist == 'skip' && $this->title->exists() ) {
 			return true;
 		}
 
-		// change global $wgUser variable to the one specified by
-		// the job only for the extent of this import
+		// Change global $wgUser variable to the one specified by
+		// the job only for the extent of this import.
 		global $wgUser;
 		$actual_user = $wgUser;
 		$wgUser = User::newFromId( $this->params['user_id'] );
 		$text = $this->params['text'];
 		if ( $for_pages_that_exist == 'append' && $this->title->exists() ) {
-			$text = $article->getContent() . "\n" . $text;
+			if ( method_exists( 'WikiPage', 'getContent' ) ) {
+				// MW >= 1.21
+				$existingText = $wikiPage->getContent()->getNativeData();
+			} else {
+				$existingText = $article->getContent();
+			}
+			$text = $existingText . "\n" . $text;
 		}
 		$edit_summary = $this->params['edit_summary'];
-		$article->doEdit( $text, $edit_summary );
+		if ( method_exists( 'WikiPage', 'getContent' ) ) {
+			$new_content = new WikitextContent( $text );
+			$wikiPage->doEditContent( $new_content, $edit_summary );
+
+		} else {
+			$article->doEdit( $text, $edit_summary );
+		}
 		$wgUser = $actual_user;
 		wfProfileOut( __METHOD__ );
 		return true;

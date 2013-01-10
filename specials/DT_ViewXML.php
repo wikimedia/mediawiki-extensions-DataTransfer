@@ -219,19 +219,24 @@ static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 
   $exclusion_category = $wgContLang->getNSText( NS_CATEGORY ) . ':' . str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
   if ( self::treeContainsElement( $parent_categories, $exclusion_category ) )
     return "";
-  $article = new Article( $title );
   $page_title = str_replace( '"', '&quot;', $title->getText() );
   $page_title = str_replace( '&', '&amp;', $page_title );
   $page_namespace = $title->getNamespace();
   if ( $simplified_format ) {
-    $text = "<$page_str><$id_str>{$article->getID()}</$id_str><$title_str>$page_title</$title_str>\n";
+    $text = "<$page_str><$id_str>{$title->getArticleID()}</$id_str><$title_str>$page_title</$title_str>\n";
   } else {
-    $text = "<$page_str $id_str=\"" . $article->getID() . "\" $title_str=\"" . $page_title . '" >';
+    $text = "<$page_str $id_str=\"" . $title->getArticleID() . "\" $title_str=\"" . $page_title . '" >';
   }
 
   // traverse the page contents, one character at a time
   $uncompleted_curly_brackets = 0;
-  $page_contents = $article->getContent();
+  if ( method_exists( 'WikiPage', 'getContent' ) ) {
+    $wiki_page = new WikiPage( $title );
+    $page_contents = $wiki_page->getContent()->getNativeData();
+  } else {
+    $article = new Article( $title );
+    $page_contents = $article->getContent();
+  }
   // escape out variables like "{{PAGENAME}}"
   $page_contents = str_replace( '{{PAGENAME}}', '&#123;&#123;PAGENAME&#125;&#125;', $page_contents );
   // escape out parser functions
