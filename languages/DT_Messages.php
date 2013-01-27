@@ -316,7 +316,7 @@ $messages['az'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** تورکجه (تورکجه)
+/** South Azerbaijani (تورکجه)
  * @author Erdemaslancan
  */
 $messages['azb'] = array(
