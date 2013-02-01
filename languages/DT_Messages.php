@@ -2328,6 +2328,11 @@ $messages['roa-tara'] = array(
 	'dt_xml_id' => 'Codece (ID)',
 	'dt_xml_freetext' => 'Teste libbere',
 	'importxml' => "'Mborte XML",
+	'dt_import_skipexisting' => 'Zumbe',
+	'dt_import_editsummary' => "'Mborte $1",
+	'dt_import_importing' => "Stoche a 'mborte...",
+	'importcsv' => "'Mborte CSV",
+	'right-datatransferimport' => "'Mborte date",
 );
 
 /** Faeag Rotuma (Faeag Rotuma)
