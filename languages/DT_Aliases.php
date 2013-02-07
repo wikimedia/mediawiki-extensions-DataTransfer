@@ -149,6 +149,8 @@ $specialPageAliases['ia'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $specialPageAliases['id'] = array(
+	'ImportCSV' => array( 'Impor_CSV', 'ImporCSV' ),
+	'ImportXML' => array( 'Impor_XML', 'ImporXML' ),
 	'ViewXML' => array( 'Lihat_XML', 'LihatXML' ),
 );
 
@@ -230,7 +232,7 @@ $specialPageAliases['mt'] = array(
 	'ViewXML' => array( 'UriXML' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'ImportCSV' => array( 'Importer_CSV' ),
 	'ImportXML' => array( 'Importer_XML' ),
