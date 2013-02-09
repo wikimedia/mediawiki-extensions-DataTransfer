@@ -714,6 +714,7 @@ $messages['ee'] = array(
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Crazymadlover
+ * @author Glavkos
  * @author Omnipaedista
  * @author ZaDiak
  */
@@ -721,7 +722,7 @@ $messages['el'] = array(
 	'viewxml' => 'Προβολή XML',
 	'dt_viewxml_categories' => 'Κατηγορίες',
 	'dt_viewxml_namespaces' => 'Περιοχές ονομάτων',
-	'dt_xml_namespace' => 'Περιοχή ονομάτων',
+	'dt_xml_namespace' => 'Ονοματοχώρος',
 	'dt_xml_pages' => 'Σελίδες',
 	'dt_xml_page' => 'Σελίδα',
 	'dt_xml_template' => 'Πρότυπο',
