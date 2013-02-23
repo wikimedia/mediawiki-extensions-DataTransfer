@@ -2829,6 +2829,15 @@ $messages['tr'] = array(
 	'right-datatransferimport' => 'Verileri içe aktarır',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'viewxml' => 'ⵥⵕ XML',
+	'dt_xml_name' => 'ⴰⵙⵙⴰⵖ',
+	'dt_xml_freetext' => 'ⴰⴹⵔⵉⵙ ⴰⴷⵔⴼ',
+);
+
 /** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
