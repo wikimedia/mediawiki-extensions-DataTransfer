@@ -58,22 +58,20 @@ $messages['qqq'] = array(
 	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=http://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
 	'dt_viewxml_categories' => '{{Identical|Categories}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
-	'dt_xml_namespace' => '{{Identical|Namespace}}
-Used as XML tag name.',
-	'dt_xml_pages' => '{{Identical|Pages}}
-
-Used as XML tag name.',
-	'dt_xml_page' => '{{Identical|Page}}
-Used as XML tag name.',
-	'dt_xml_template' => '{{Identical|Template}}
-Used as XML tag name.',
-	'dt_xml_field' => '{{Identical|Field}}
-Used as XML tag name.',
-	'dt_xml_name' => '{{Identical|Name}}
-
-Used as XML tag name.',
-	'dt_xml_title' => '{{Identical|Title}}
-Used as XML tag name.',
+	'dt_xml_namespace' => 'Used as XML tag name.
+{{Identical|Namespace}}',
+	'dt_xml_pages' => 'Used as XML tag name.
+{{Identical|Pages}}',
+	'dt_xml_page' => 'Used as XML tag name.
+{{Identical|Page}}',
+	'dt_xml_template' => 'Used as XML tag name.
+{{Identical|Template}}',
+	'dt_xml_field' => 'Used as XML tag name.
+{{Identical|Field}}',
+	'dt_xml_name' => 'Used as XML tag name.
+{{Identical|Name}}',
+	'dt_xml_title' => 'Used as XML tag name.
+{{Identical|Title}}',
 	'dt_xml_id' => 'Used as XML tag name.
 {{Identical|ID}}',
 	'dt_xml_freetext' => 'Used as XML tag name.
