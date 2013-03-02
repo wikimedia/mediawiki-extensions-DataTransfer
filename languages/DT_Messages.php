@@ -1723,6 +1723,13 @@ $messages['mhr'] = array(
 	'dt_xml_page' => 'Лаштык',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'dt_import_importing' => 'Mangimpor...',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
