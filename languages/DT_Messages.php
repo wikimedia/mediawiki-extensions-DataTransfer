@@ -549,6 +549,18 @@ $messages['ce'] = array(
 	'dt_xml_template' => 'Куцкеп',
 );
 
+/** Sorani Kurdish (کوردی)
+ * @author Calak
+ */
+$messages['ckb'] = array(
+	'dt_xml_pages' => 'پەڕەکان',
+	'dt_xml_page' => 'پەڕه‌',
+	'dt_xml_template' => 'داڕێژە',
+	'dt_xml_name' => 'ناو',
+	'dt_xml_title' => 'سەردێڕ',
+	'dt_xml_id' => 'پێناسە',
+);
+
 /** Czech (česky)
  * @author Jkjk
  * @author Matěj Grabovský
