@@ -72,6 +72,8 @@ $specialPageAliases['diq'] = array(
 
 /** Esperanto (Esperanto) */
 $specialPageAliases['eo'] = array(
+	'ImportCSV' => array( 'Enporti_CSV', 'Importi_CSV' ),
+	'ImportXML' => array( 'Enporti_XML', 'Importi_XML' ),
 	'ViewXML' => array( 'Montri_XML' ),
 );
 
