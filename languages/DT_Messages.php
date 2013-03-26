@@ -56,6 +56,7 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=http://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
+	'viewxml' => '{{doc-special|ViewXML|unlisted=1}}',
 	'dt_viewxml_categories' => '{{Identical|Categories}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
 	'dt_xml_namespace' => 'Used as XML tag name.
@@ -76,6 +77,7 @@ $messages['qqq'] = array(
 {{Identical|ID}}',
 	'dt_xml_freetext' => 'Used as XML tag name.
 {{Identical|Free text}}',
+	'importxml' => '{{doc-special|ImportXML|unlisted=1}}',
 	'dt_import_selectfile' => '$1 is the file format: either CSV or XML',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
 	'dt_import_skipexisting' => '{{Identical|Skip}}',
@@ -83,6 +85,7 @@ $messages['qqq'] = array(
 	'dt_import_success' => 'Parameters:
 * $1 is the number of pages
 * $2 is the file format: either CSV or XML',
+	'importcsv' => '{{doc-special|ImportCSV|unlisted=1}}',
 	'dt_importcsv_badheader' => 'The text "template_name[field_name]" can be translated.
 *$1 is a column number in the first row of the CVS file
 *$2 is the value found for the $1th colomn in the first line of the CSV file
