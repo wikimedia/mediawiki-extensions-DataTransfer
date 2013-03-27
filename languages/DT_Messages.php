@@ -1989,10 +1989,19 @@ $messages['nb'] = array(
 );
 
 /** Low German (Plattdüütsch)
+ * @author Joachim Mos
  * @author Slomox
  */
 $messages['nds'] = array(
+	'dt_viewxml_categories' => 'Kategorien',
+	'dt_viewxml_namespaces' => 'Naamrüüm',
+	'dt_xml_namespace' => 'Naamruum',
+	'dt_xml_pages' => 'Sieden',
+	'dt_xml_page' => 'Sied',
+	'dt_xml_template' => 'Vörlaag',
 	'dt_xml_name' => 'Naam',
+	'dt_xml_title' => 'Titel',
+	'dt_xml_id' => 'ID',
 );
 
 /** Dutch (Nederlands)
