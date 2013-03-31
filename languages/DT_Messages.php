@@ -57,8 +57,14 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'datatransfer-desc' => '{{Desc|name=Data Transfer|url=http://www.mediawiki.org/wiki/Extension:Data_Transfer}}',
 	'viewxml' => '{{doc-special|ViewXML|unlisted=1}}',
+	'dt_viewxml_docu' => 'Used as heading of the form.
+
+This message is followed by HTML <code><nowiki><h2></nowiki></code> heading {{msg-mw|Dt viewxml categories}}.',
 	'dt_viewxml_categories' => '{{Identical|Categories}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
+	'dt_viewxml_simplifiedformat' => 'Used as checkbox label in the "View XML" form.
+
+If enabled, the extension generates simplified XML.',
 	'dt_xml_namespace' => 'Used as XML tag name.
 {{Identical|Namespace}}',
 	'dt_xml_pages' => 'Used as XML tag name.
@@ -80,8 +86,22 @@ $messages['qqq'] = array(
 	'importxml' => '{{doc-special|ImportXML|unlisted=1}}',
 	'dt_import_selectfile' => '$1 is the file format: either CSV or XML',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
-	'dt_import_skipexisting' => '{{Identical|Skip}}',
+	'dt_import_forexisting' => 'This message is followed by the following radio boxes:
+* {{msg-mw|Dt import overwriteexisting}}
+* {{msg-mw|Dt import skipexisting}}
+* {{msg-mw|Dt import appendtoexisting}}',
+	'dt_import_overwriteexisting' => 'Used as label for the radiobox.
+{{Related|Dt import existing}}',
+	'dt_import_skipexisting' => 'Used as label for the radiobox.
+{{Related|Dt import existing}}
+{{Identical|Skip}}',
+	'dt_import_appendtoexisting' => 'Used as label for the radiobox.
+{{Related|Dt import existing}}',
+	'dt_import_summarydesc' => 'Used as label for the "Summary text of import" input box.
+
+The default value of the input box is {{msg-mw|Dt import editsummary}}.',
 	'dt_import_editsummary' => '$1 is the file format: either CSV or XML',
+	'dt_import_importing' => 'This message indicates the extension is currently importing a CSV file (or an XML file).',
 	'dt_import_success' => 'Parameters:
 * $1 is the number of pages
 * $2 is the file format: either CSV or XML',
