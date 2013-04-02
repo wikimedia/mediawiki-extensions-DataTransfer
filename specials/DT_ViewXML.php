@@ -508,7 +508,7 @@ END;
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
-			$text .= "<br /><p><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMessage( 'dt_viewxml_simplifiedformat' )->text() . "</p>\n";
+			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMessage( 'dt_viewxml_simplifiedformat' )->text() . "</label></p>\n";
 			$text .= "<input type=\"submit\" value=\"" . wfMessage( 'viewxml' )->text() . "\">\n";
 			$text .= "</form>\n";
 
