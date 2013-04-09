@@ -32,7 +32,7 @@ $specialPageAliases['arz'] = array(
 	'ViewXML' => array( 'عرض_XML' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'ImportCSV' => array( 'CSV_আমদানি' ),
 	'ImportXML' => array( 'XML_আমদানি' ),
