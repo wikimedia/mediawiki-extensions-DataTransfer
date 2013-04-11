@@ -101,7 +101,8 @@ If enabled, the extension generates simplified XML.',
 
 The default value of the input box is {{msg-mw|Dt import editsummary}}.',
 	'dt_import_editsummary' => '$1 is the file format: either CSV or XML',
-	'dt_import_importing' => 'This message indicates the extension is currently importing a CSV file (or an XML file).',
+	'dt_import_importing' => 'This message indicates the extension is currently importing a CSV file (or an XML file).
+{{Identical|Importing}}',
 	'dt_import_success' => 'Parameters:
 * $1 is the number of pages
 * $2 is the file format: either CSV or XML',
@@ -2381,11 +2382,15 @@ $messages['roa-tara'] = array(
 	'dt_import_selectfile' => "Pe piacere scacchia 'u file $1 da 'mbortà:",
 	'dt_import_encodingtype' => 'Tipe de codifeche:',
 	'dt_import_forexisting' => 'Pe le pàggene ca ggià esistene:',
+	'dt_import_overwriteexisting' => "Sovrascrive 'u condenute ca esiste",
 	'dt_import_skipexisting' => 'Zumbe',
+	'dt_import_appendtoexisting' => "'Nzicche a 'u condenute ca esiste",
 	'dt_import_summarydesc' => "Ripeloghe de l'imbortazione:",
 	'dt_import_editsummary' => "'Mborte $1",
 	'dt_import_importing' => "Stoche a 'mborte...",
+	'dt_import_success' => "$1 {{PLURAL:$1|pàgene|pàggene}} ca onna essere ccrejate da 'u file $2.",
 	'importcsv' => "'Mborte CSV",
+	'dt_importcsv_badheader' => "Errore: 'a testate d'a colonne $1, '$2', adda essere o '$3' o '$4' o une de le module 'template_name[field_name]'",
 	'right-datatransferimport' => "'Mborte date",
 );
 
