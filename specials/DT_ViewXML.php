@@ -198,215 +198,63 @@ class DTViewXML extends SpecialPage {
 		return false;
 	}
 
-static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
-  if ( $depth > 5 ) { return ""; }
 
-  global $wgContLang, $dtgContLang;
+	static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
+		if ( $depth > 5 ) { return ""; }
 
-  $namespace_labels = $wgContLang->getNamespaces();
-  $template_label = $namespace_labels[NS_TEMPLATE];
-  $page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
-  $field_str = str_replace( ' ', '_', wfMessage( 'dt_xml_field' )->inContentLanguage()->text() );
-  $name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
-  $title_str = str_replace( ' ', '_', wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
-  $id_str = str_replace( ' ', '_', wfMessage( 'dt_xml_id' )->inContentLanguage()->text() );
-  $free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
+		global $wgContLang, $dtgContLang;
 
-  // if this page belongs to the exclusion category, exit
-  $parent_categories = $title->getParentCategoryTree( array() );
-  $dt_props = $dtgContLang->getPropertyLabels();
-  // $exclusion_category = $title->newFromText($dt_props[DT_SP_IS_EXCLUDED_FROM_XML], NS_CATEGORY);
-  $exclusion_category = $wgContLang->getNSText( NS_CATEGORY ) . ':' . str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
-  if ( self::treeContainsElement( $parent_categories, $exclusion_category ) )
-    return "";
-  $page_title = str_replace( '"', '&quot;', $title->getText() );
-  $page_title = str_replace( '&', '&amp;', $page_title );
-  $page_namespace = $title->getNamespace();
-  if ( $simplified_format ) {
-    $text = "<$page_str><$id_str>{$title->getArticleID()}</$id_str><$title_str>$page_title</$title_str>\n";
-  } else {
-    $text = "<$page_str $id_str=\"" . $title->getArticleID() . "\" $title_str=\"" . $page_title . '" >';
-  }
+		// if this page belongs to the exclusion category, exit
+		$parent_categories = $title->getParentCategoryTree( array() );
+		$dt_props = $dtgContLang->getPropertyLabels();
+		// $exclusion_category = $title->newFromText($dt_props[DT_SP_IS_EXCLUDED_FROM_XML], NS_CATEGORY);
+		$exclusion_category = $wgContLang->getNSText( NS_CATEGORY ) . ':' . str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
+		if ( self::treeContainsElement( $parent_categories, $exclusion_category ) ) {
+			return "";
+		}
 
-  // traverse the page contents, one character at a time
-  $uncompleted_curly_brackets = 0;
-  if ( method_exists( 'WikiPage', 'getContent' ) ) {
-    $wiki_page = new WikiPage( $title );
-    $page_contents = $wiki_page->getContent()->getNativeData();
-  } else {
-    $article = new Article( $title );
-    $page_contents = $article->getContent();
-  }
-  // escape out variables like "{{PAGENAME}}"
-  $page_contents = str_replace( '{{PAGENAME}}', '&#123;&#123;PAGENAME&#125;&#125;', $page_contents );
-  // escape out parser functions
-  $page_contents = preg_replace( '/{{(#.+)}}/', '&#123;&#123;$1&#125;&#125;', $page_contents );
-  // escape out transclusions
-  $page_contents = preg_replace( '/{{(:.+)}}/', '&#123;&#123;$1&#125;&#125;', $page_contents );
-  // escape out variable names
-  $page_contents = str_replace( '{{{', '&#123;&#123;&#123;', $page_contents );
-  $page_contents = str_replace( '}}}', '&#125;&#125;&#125;', $page_contents );
-  // escape out tables
-  $page_contents = str_replace( '{|', '&#123;|', $page_contents );
-  $page_contents = str_replace( '|}', '|&#125;', $page_contents );
-  $free_text = "";
-  $free_text_id = 1;
-  $template_name = "";
-  $field_name = "";
-  $field_value = "";
-  $field_has_name = false;
-  for ( $i = 0; $i < strlen( $page_contents ); $i++ ) {
-    $c = $page_contents[$i];
-    if ( $uncompleted_curly_brackets == 0 ) {
-      if ( $c == "{" || $i == strlen( $page_contents ) - 1 ) {
-        if ( $i == strlen( $page_contents ) - 1 )
-          $free_text .= $c;
-        $uncompleted_curly_brackets++;
-        $free_text = trim( $free_text );
-        $free_text = str_replace( '&', '&amp;', $free_text );
-        $free_text = str_replace( '[', '&#91;', $free_text );
-        $free_text = str_replace( ']', '&#93;', $free_text );
-        $free_text = str_replace( '<', '&lt;', $free_text );
-        $free_text = str_replace( '>', '&gt;', $free_text );
-        if ( $free_text != "" ) {
-          $text .= "<$free_text_str id=\"$free_text_id\">$free_text</$free_text_str>";
-          $free_text = "";
-          $free_text_id++;
-        }
-      } elseif ( $c == "{" ) {
-        // do nothing
-      } else {
-        $free_text .= $c;
-      }
-    } elseif ( $uncompleted_curly_brackets == 1 ) {
-      if ( $c == "{" ) {
-        $uncompleted_curly_brackets++;
-        $creating_template_name = true;
-      } elseif ( $c == "}" ) {
-        $uncompleted_curly_brackets--;
-        // is this needed?
-        // if ($field_name != "") {
-        //  $field_name = "";
-        // }
-        if ( $page_contents[$i - 1] == '}' ) {
-          if ( $simplified_format )
-            $text .= "</" . $template_name . ">";
-          else
-            $text .= "</$template_label>";
-        }
-        $template_name = "";
-      }
-    } else { // 2 or greater - probably 2
-      if ( $c == "}" ) {
-        $uncompleted_curly_brackets--;
-      }
-      if ( $c == "{" ) {
-        $uncompleted_curly_brackets++;
-      } else {
-        if ( $creating_template_name ) {
-          if ( $c == "|" || $c == "}" ) {
-            $template_name = str_replace( ' ', '_', trim( $template_name ) );
-            $template_name = str_replace( '&', '&amp;', $template_name );
-            if ( $simplified_format ) {
-              $text .= "<" . $template_name . ">";
-            } else
-              $text .= "<$template_label $name_str=\"$template_name\">";
-            $creating_template_name = false;
-            $creating_field_name = true;
-            $field_id = 1;
-          } else {
-            $template_name .= $c;
-          }
-        } else {
-          if ( $c == "|" || $c == "}" ) {
-            if ( $field_has_name ) {
-              $field_value = str_replace( array( '&', '<', '>' ), array( '&amp;', '&lt;', '&gt;' ), $field_value );
-              if ( $simplified_format ) {
-                $field_name = str_replace( ' ', '_', trim( $field_name ) );
-                $text .= "<" . $field_name . ">";
-                $text .= trim( $field_value );
-                $text .= "</" . $field_name . ">";
-              } else {
-                $text .= "<$field_str $name_str=\"" . trim( $field_name ) . "\">";
-                $text .= trim( $field_value );
-                $text .= "</$field_str>";
-              }
-              $field_value = "";
-              $field_has_name = false;
-            } else {
-              // "field_name" is actually the value
-              if ( $simplified_format ) {
-                $field_name = str_replace( ' ', '_', $field_name );
-                // add "Field" to the beginning of the file name, since
-                // XML tags that are simply numbers aren't allowed
-                $text .= "<" . $field_str . '_' . $field_id . ">";
-                $text .= trim( $field_name );
-                $text .= "</" . $field_str . '_' . $field_id . ">";
-              } else {
-                $text .= "<$field_str $name_str=\"$field_id\">";
-                $text .= trim( $field_name );
-                $text .= "</$field_str>";
-              }
-              $field_id++;
-            }
-            $creating_field_name = true;
-            $field_name = "";
-          } elseif ( $c == "=" ) {
-            // handle case of = in value
-            if ( ! $creating_field_name ) {
-              $field_value .= $c;
-            } else {
-              $creating_field_name = false;
-              $field_has_name = true;
-            }
-          } elseif ( $creating_field_name ) {
-            $field_name .= $c;
-          } else {
-            $field_value .= $c;
-          }
-        }
-      }
-    }
-  }
+		$pageStructure = DTPageStructure::newFromTitle( $title );
+		$text = $pageStructure->toXML( $simplified_format );
 
-  // handle groupings, if any apply here; first check if SMW is installed
-  global $smwgIP;
-  if ( isset( $smwgIP ) ) {
-    $store = smwfGetStore();
-    // Escaping is needed for SMWSQLStore3 - this may be a bug in SMW.
-    $escaped_page_title = str_replace( ' ', '_', $page_title );
-    foreach ( $groupings as $pair ) {
-      list( $property_page, $grouping_label ) = $pair;
-      $options = new SMWRequestOptions();
-      $options->sort = "subject_title";
-      // get actual property from the wiki-page of the property
-      if ( class_exists( 'SMWDIProperty' ) ) {
-        $wiki_page = new SMWDIWikiPage( $escaped_page_title, $page_namespace, null );
-        $property = SMWDIProperty::newFromUserLabel( $property_page->getTitle()->getText() );
-      } else {
-        $wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $escaped_page_title );
-        $property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
-      }
-      $res = $store->getPropertySubjects( $property, $wiki_page, $options );
-      $num = count( $res );
-      if ( $num > 0 ) {
-        $grouping_label = str_replace( ' ', '_', $grouping_label );
-        $text .= "<$grouping_label>\n";
-        foreach ( $res as $subject ) {
-          $subject_title = $subject->getTitle();
-          $text .= self::getXMLForPage( $subject_title, $simplified_format, $groupings, $depth + 1 );
-        }
-        $text .= "</$grouping_label>\n";
-      }
-    }
-  }
+		// handle groupings, if any apply here; first check if SMW is installed
+		global $smwgIP;
+		if ( isset( $smwgIP ) ) {
+			$store = smwfGetStore();
+			$page_title = $title->getText();
+			$page_namespace = $title->getNamespace();
+			// Escaping is needed for SMWSQLStore3 - this may be a bug in SMW.
+			$escaped_page_title = str_replace( ' ', '_', $page_title );
+			foreach ( $groupings as $pair ) {
+				list( $property_page, $grouping_label ) = $pair;
+				$options = new SMWRequestOptions();
+				$options->sort = "subject_title";
+				// get actual property from the wiki-page of the property
+				if ( class_exists( 'SMWDIProperty' ) ) {
+					$wiki_page = new SMWDIWikiPage( $escaped_page_title, $page_namespace, null );
+					$property = SMWDIProperty::newFromUserLabel( $property_page->getTitle()->getText() );
+				} else {
+					$wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $escaped_page_title );
+					$property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
+				}
+				$res = $store->getPropertySubjects( $property, $wiki_page, $options );
+				$num = count( $res );
+				if ( $num > 0 ) {
+					$grouping_label = str_replace( ' ', '_', $grouping_label );
+					$text .= "<$grouping_label>\n";
+					foreach ( $res as $subject ) {
+						$subject_title = $subject->getTitle();
+						$text .= self::getXMLForPage( $subject_title, $simplified_format, $groupings, $depth + 1 );
+					}
+					$text .= "</$grouping_label>\n";
+				}
+			}
+		}
 
-  $text .= "</$page_str>\n";
-  // escape back the curly brackets that were escaped out at the beginning
-  $text = str_replace( '&amp;#123;', '{', $text );
-  $text = str_replace( '&amp;#125;', '}', $text );
-  return $text;
-}
+		// escape back the curly brackets that were escaped out at the beginning
+		$text = str_replace( '&amp;#123;', '{', $text );
+		$text = str_replace( '&amp;#125;', '}', $text );
+		return $text;
+	}
 
 	static function doSpecialViewXML() {
 		global $wgOut, $wgRequest, $wgContLang;
