@@ -568,9 +568,10 @@ $messages['ca'] = array(
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
-	'dt_xml_template' => 'Куцкеп',
+	'dt_xml_template' => 'Кеп',
 );
 
 /** Sorani Kurdish (کوردی)
