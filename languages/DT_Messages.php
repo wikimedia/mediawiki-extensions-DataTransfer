@@ -68,7 +68,7 @@ If enabled, the extension generates simplified XML.',
 	'dt_xml_namespace' => 'Used as XML tag name.
 {{Identical|Namespace}}',
 	'dt_xml_pages' => 'Used as XML tag name.
-{{Identical|Pages}}',
+{{Identical|Page}}',
 	'dt_xml_page' => 'Used as XML tag name.
 {{Identical|Page}}',
 	'dt_xml_template' => 'Used as XML tag name.
