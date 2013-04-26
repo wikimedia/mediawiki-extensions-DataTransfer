@@ -16,7 +16,7 @@ class DTPageComponent {
 
 	public static function newTemplate( $templateName ) {
 		$dtPageComponent = new DTPageComponent();
-		$dtPageComponent->mTemplateName = $templateName;
+		$dtPageComponent->mTemplateName = trim( $templateName );
 		$dtPageComponent->mIsTemplate = true;
 		$dtPageComponent->mFields = array();
 		self::$mUnnamedFieldCounter = 1;
@@ -93,7 +93,8 @@ class DTPageComponent {
 		} else {
 			$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
 			if ( $wgDataTransferViewXMLParseFreeText ) {
-				$freeText = $wgParser->parse( $this->mFreeText, $wgTitle, new ParserOptions() )->getText();
+				// Avoid table of contents and "edit" links
+				$freeText = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $this->mFreeText, $wgTitle, new ParserOptions() )->getText();
 			} else {
 				$freeText = $this->mFreeText;
 			}
