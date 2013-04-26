@@ -68,19 +68,19 @@ class DTPageComponent {
 					if ( is_numeric( $fieldName ) ) {
 						// add "Field" to the beginning of the file name, since
 						// XML tags that are simply numbers aren't allowed
-						$fieldName = $field_str . '_' . $fieldName;
+						$fieldTag = $field_str . '_' . $fieldName;
 					} else {
-						$fieldName = str_replace( ' ', '_', trim( $fieldName ) );
+						$fieldTag = str_replace( ' ', '_', trim( $fieldName ) );
 					}
 					$attrs = null;
 				} else {
-					$fieldName = $field_str;
+					$fieldTag = $field_str;
 					$attrs = array( $name_str => $fieldName );
 				}
 				if ( is_array( $fieldValue ) ) {
-					$bodyXML .= Xml::tags( $fieldName, $attrs, $fieldValueXML );
+					$bodyXML .= Xml::tags( $fieldTag, $attrs, $fieldValueXML );
 				} else {
-					$bodyXML .= Xml::element( $fieldName, $attrs, $fieldValue );
+					$bodyXML .= Xml::element( $fieldTag, $attrs, $fieldValue );
 				}
 			}
 
