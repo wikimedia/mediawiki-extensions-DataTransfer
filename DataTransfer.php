@@ -59,6 +59,10 @@ $dtgScriptPath = $wgScriptPath . '/extensions/DataTransfer';
 $wgGroupPermissions['sysop']['datatransferimport'] = true;
 $wgAvailableRights[] = 'datatransferimport';
 
+// Global settings
+$wgDataTransferViewXMLParseFields = false;
+$wgDataTransferViewXMLParseFreeText = true;
+
 // initialize content language
 require_once($dtgIP . '/languages/DT_Language.php');
 global $wgLanguageCode;

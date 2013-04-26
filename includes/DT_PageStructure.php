@@ -40,6 +40,10 @@ class DTPageComponent {
 	}
 
 	public function toXML( $isSimplified ) {
+		global $wgDataTransferViewXMLParseFields;
+		global $wgDataTransferViewXMLParseFreeText;
+		global $wgParser, $wgTitle;
+
 		if ( $this->mIsTemplate ) {
 			global $wgContLang;
 			$namespace_labels = $wgContLang->getNamespaces();
@@ -49,6 +53,9 @@ class DTPageComponent {
 
 			$bodyXML = '';
 			foreach ( $this->mFields as $fieldName => $fieldValue ) {
+				if ( $wgDataTransferViewXMLParseFields ) {
+					$fieldValue = $wgParser->parse( $fieldValue, $wgTitle, new ParserOptions() )->getText();
+				}
 				if ( is_numeric( $fieldName ) ) {
 					if ( $isSimplified ) {
 						// add "Field" to the beginning of the file name, since
@@ -75,7 +82,12 @@ class DTPageComponent {
 			}
 		} else {
 			$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
-			return XML::element( $free_text_str, array( 'id' => $this->mFreeTextID ), $this->mFreeText );
+			if ( $wgDataTransferViewXMLParseFreeText ) {
+				$freeText = $wgParser->parse( $this->mFreeText, $wgTitle, new ParserOptions() )->getText();
+			} else {
+				$freeText = $this->mFreeText;
+			}
+			return XML::element( $free_text_str, array( 'id' => $this->mFreeTextID ), $freeText );
 		}
 	}
 }
