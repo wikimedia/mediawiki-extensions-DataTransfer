@@ -61,7 +61,8 @@ class DTPageComponent {
 						$fieldValueXML .= $subComponent->toXML( $isSimplified );
 					}
 				} elseif ( $wgDataTransferViewXMLParseFields ) {
-					$fieldValue = $wgParser->parse( $fieldValue, $wgTitle, new ParserOptions() )->getText();
+					// Avoid table of contents and "edit" links
+					$fieldValue = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, new ParserOptions() )->getText();
 				}
 
 				if ( $isSimplified ) {
