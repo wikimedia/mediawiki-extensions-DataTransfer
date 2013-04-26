@@ -53,24 +53,34 @@ class DTPageComponent {
 
 			$bodyXML = '';
 			foreach ( $this->mFields as $fieldName => $fieldValue ) {
-				if ( $wgDataTransferViewXMLParseFields ) {
+				// If this field itself holds template calls,
+				// get the XML for those calls.
+				if ( is_array( $fieldValue ) ) {
+					$fieldValueXML = '';
+					foreach ( $fieldValue as $subComponent ) {
+						$fieldValueXML .= $subComponent->toXML( $isSimplified );
+					}
+				} elseif ( $wgDataTransferViewXMLParseFields ) {
 					$fieldValue = $wgParser->parse( $fieldValue, $wgTitle, new ParserOptions() )->getText();
 				}
-				if ( is_numeric( $fieldName ) ) {
-					if ( $isSimplified ) {
+
+				if ( $isSimplified ) {
+					if ( is_numeric( $fieldName ) ) {
 						// add "Field" to the beginning of the file name, since
 						// XML tags that are simply numbers aren't allowed
-						$bodyXML .= Xml::element( $field_str . '_' . $fieldName, null, $fieldValue );
+						$fieldName = $field_str . '_' . $fieldName;
 					} else {
-						$bodyXML .= Xml::element( $field_str, array( $name_str => $fieldName ), $fieldValue );
-					}
-				} else {
-					if ( $isSimplified ) {
 						$fieldName = str_replace( ' ', '_', trim( $fieldName ) );
-						$bodyXML .= Xml::element( $fieldName, null, $fieldValue );
-					} else {
-						$bodyXML .= Xml::element( $field_str, array( $name_str => $fieldName ) , $fieldValue );
 					}
+					$attrs = null;
+				} else {
+					$fieldName = $field_str;
+					$attrs = array( $name_str => $fieldName );
+				}
+				if ( is_array( $fieldValue ) ) {
+					$bodyXML .= Xml::tags( $fieldName, $attrs, $fieldValueXML );
+				} else {
+					$bodyXML .= Xml::element( $fieldName, $attrs, $fieldValue );
 				}
 			}
 
@@ -118,6 +128,27 @@ class DTPageStructure {
 			$page_contents = $article->getContent();
 		}
 
+		$pageStructure->parsePageContents( $page_contents );
+
+		// Now, go through the field values and see if any of them
+		// hold template calls - if any of them do, parse the value
+		// as if it's the full contents of a page, and add the
+		// resulting "components" to that field.
+		foreach ( $pageStructure->mComponents as $pageComponent ) {
+			if ( $pageComponent->mIsTemplate ) {
+				foreach ( $pageComponent->mFields as $fieldName => $fieldValue ) {
+					if ( strpos( $fieldValue, '{{' ) !== false ) {
+						$dummyPageStructure = new DTPageStructure();
+						$dummyPageStructure->parsePageContents( $fieldValue );
+						$pageComponent->mFields[$fieldName] = $dummyPageStructure->mComponents;
+					}
+				}
+			}
+		}
+		return $pageStructure;
+	}
+
+	public function parsePageContents( $page_contents ) {
 		// escape out variables like "{{PAGENAME}}"
 		$page_contents = str_replace( '{{PAGENAME}}', '&#123;&#123;PAGENAME&#125;&#125;', $page_contents );
 		// escape out parser functions
@@ -148,7 +179,7 @@ class DTPageStructure {
 					$free_text = trim( $free_text );
 					if ( $free_text != "" ) {
 						$freeTextComponent = DTPageComponent::newFreeText( $free_text );
-						$pageStructure->addComponent( $freeTextComponent );
+						$this->addComponent( $freeTextComponent );
 						$free_text = "";
 					}
 				} elseif ( $c == "{" ) {
@@ -167,16 +198,17 @@ class DTPageStructure {
 					//	$field_name = "";
 					// }
 					if ( $page_contents[$i - 1] == '}' ) {
-						$pageStructure->addComponent( $curTemplate );
+						$this->addComponent( $curTemplate );
 					}
 					$template_name = "";
 				}
-			} else { // 2 or greater - probably 2
+			} elseif ( $uncompleted_curly_brackets == 2 ) {
 				if ( $c == "}" ) {
 					$uncompleted_curly_brackets--;
 				}
 				if ( $c == "{" ) {
 					$uncompleted_curly_brackets++;
+					$field_value .= $c;
 				} else {
 					if ( $creating_template_name ) {
 						if ( $c == "|" || $c == "}" ) {
@@ -216,9 +248,15 @@ class DTPageStructure {
 						}
 					}
 				}
+			} else { // greater than 2
+				if ( $c == "}" ) {
+					$uncompleted_curly_brackets--;
+				} elseif ( $c == "{" ) {
+					$uncompleted_curly_brackets++;
+				}
+				$field_value .= $c;
 			}
 		}
-		return $pageStructure;
 	}
 
 	public function toXML( $isSimplified ) {
