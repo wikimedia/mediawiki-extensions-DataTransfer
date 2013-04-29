@@ -650,6 +650,7 @@ $messages['da'] = array(
  * @author Als-Holder
  * @author Kghbln
  * @author Krabina
+ * @author Metalhead64
  * @author Revolus
  * @author Umherirrender
  */
@@ -674,6 +675,7 @@ $messages['de'] = array(
 	'dt_import_encodingtype' => 'Zeichenkodierung:',
 	'dt_import_forexisting' => 'Im Fall von Seiten, die bereits vorhanden sind:',
 	'dt_import_overwriteexisting' => 'Vorhandenen Inhalt überschreiben',
+	'dt_import_mergeintoexisting' => 'Nur Felder überschreiben, die in der Datei beinhaltet sind.',
 	'dt_import_skipexisting' => 'Seite nicht importieren',
 	'dt_import_appendtoexisting' => 'Vorhandenen Inhalt ergänzen',
 	'dt_import_summarydesc' => 'Zusammenfassung zum Import:',
@@ -961,6 +963,7 @@ $messages['fi'] = array(
  * @author Crochet.david
  * @author Grondin
  * @author IAlex
+ * @author Metroitendo
  * @author Peter17
  * @author PieRRoMaN
  * @author Verdy p
@@ -987,6 +990,7 @@ $messages['fr'] = array(
 	'dt_import_encodingtype' => 'Type d’encodage:',
 	'dt_import_forexisting' => 'Pour les pages qui existent déjà :',
 	'dt_import_overwriteexisting' => 'Remplacer le contenu existant',
+	'dt_import_mergeintoexisting' => 'Remplacer uniquement les champs contenus dans le fichier',
 	'dt_import_skipexisting' => 'Passer',
 	'dt_import_appendtoexisting' => 'Ajouter au contenu existant',
 	'dt_import_summarydesc' => 'Résumé de l’import :',
