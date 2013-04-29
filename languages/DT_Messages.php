@@ -89,15 +89,18 @@ If enabled, the extension generates simplified XML.',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
 	'dt_import_forexisting' => 'This message is followed by the following radio boxes:
 * {{msg-mw|Dt import overwriteexisting}}
+* {{msg-mw|Dt import mergeintoexisting}}
 * {{msg-mw|Dt import skipexisting}}
 * {{msg-mw|Dt import appendtoexisting}}',
-	'dt_import_overwriteexisting' => 'Used as label for the radiobox.
-{{Related|Dt import existing}}',
-	'dt_import_skipexisting' => 'Used as label for the radiobox.
-{{Related|Dt import existing}}
+	'dt_import_overwriteexisting' => 'Used as label for the radiobutton.
+{{Related|Dt import forexisting}}',
+	'dt_import_mergeintoexisting' => 'Used as label for the radiobutton.
+{{Related|Dt import forexisting}}',
+	'dt_import_skipexisting' => 'Used as label for the radiobutton.
+{{Related|Dt import forexisting}}
 {{Identical|Skip}}',
-	'dt_import_appendtoexisting' => 'Used as label for the radiobox.
-{{Related|Dt import existing}}',
+	'dt_import_appendtoexisting' => 'Used as label for the radiobutton.
+{{Related|Dt import forexisting}}',
 	'dt_import_summarydesc' => 'Used as label for the "Summary text of import" input box.
 
 The default value of the input box is {{msg-mw|Dt import editsummary}}.',
