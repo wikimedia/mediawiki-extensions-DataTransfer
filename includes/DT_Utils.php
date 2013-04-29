@@ -36,6 +36,13 @@ END;
 				array(
 					'type' => 'radio',
 					'name' => 'pagesThatExist',
+					'value' => 'merge',
+				) ) . "\n" .
+			"\t" . wfMessage( 'dt_import_mergeintoexisting' )->text() . "<br />" . "\n\t" .
+			"\t" . Xml::element( 'input',
+				array(
+					'type' => 'radio',
+					'name' => 'pagesThatExist',
 					'value' => 'skip',
 				) ) . "\n" .
 			"\t" . wfMessage( 'dt_import_skipexisting' )->text() . "<br />" . "\n" .

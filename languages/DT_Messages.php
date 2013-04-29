@@ -32,6 +32,7 @@ $messages['en'] = array(
 	'dt_import_encodingtype'      => 'Encoding type:',
 	'dt_import_forexisting'       => 'For pages that already exist:',
 	'dt_import_overwriteexisting' => 'Overwrite existing content',
+	'dt_import_mergeintoexisting' => 'Overwrite only fields contained in the file',
 	'dt_import_skipexisting'      => 'Skip',
 	'dt_import_appendtoexisting'  => 'Append to existing content',
 	'dt_import_summarydesc'       => 'Summary of import:',

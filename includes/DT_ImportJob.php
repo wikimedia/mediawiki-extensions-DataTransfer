@@ -50,14 +50,23 @@ class DTImportJob extends Job {
 		$actual_user = $wgUser;
 		$wgUser = User::newFromId( $this->params['user_id'] );
 		$text = $this->params['text'];
-		if ( $for_pages_that_exist == 'append' && $this->title->exists() ) {
-			if ( method_exists( 'WikiPage', 'getContent' ) ) {
-				// MW >= 1.21
-				$existingText = $wikiPage->getContent()->getNativeData();
-			} else {
-				$existingText = $article->getContent();
+		if ( $this->title->exists() ) {
+			if ( $for_pages_that_exist == 'append' ) {
+				if ( method_exists( 'WikiPage', 'getContent' ) ) {
+					// MW >= 1.21
+					$existingText = $wikiPage->getContent()->getNativeData();
+				} else {
+					$existingText = $article->getContent();
+				}
+				$text = $existingText . "\n" . $text;
+			} elseif ( $for_pages_that_exist == 'merge' ) {
+				$existingPageStructure = DTPageStructure::newFromTitle( $this->title );
+				$newPageStructure = new DTPageStructure;
+				$newPageStructure->parsePageContents( $text );
+				$existingPageStructure->mergeInPageStructure( $newPageStructure );
+				return $existingPageStructure->toWikitext();
 			}
-			$text = $existingText . "\n" . $text;
+			// otherwise, $for_pages_that_exist == 'overwrite'
 		}
 		$edit_summary = $this->params['edit_summary'];
 		if ( method_exists( 'WikiPage', 'getContent' ) ) {

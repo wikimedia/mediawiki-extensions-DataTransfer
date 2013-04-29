@@ -39,6 +39,23 @@ class DTPageComponent {
 		$this->mFields[$fieldName] = trim( $fieldValue );
 	}
 
+	public function toWikitext() {
+		if ( $this->mIsTemplate ) {
+			$wikitext = '{{' . $this->mTemplateName;
+			foreach ( $this->mFields as $fieldName => $fieldValue ) {
+				if ( is_numeric( $fieldName ) ) {
+					$wikitext .= '|' . $fieldValue;
+				} else {
+					$wikitext .= "\n|$fieldName=$fieldValue";
+				}
+			}
+			$wikitext .= "\n}}";
+			return $wikitext;
+		} else {
+			return $this->mFreeText;
+		}
+	}
+
 	public function toXML( $isSimplified ) {
 		global $wgDataTransferViewXMLParseFields;
 		global $wgDataTransferViewXMLParseFreeText;
@@ -259,6 +276,67 @@ class DTPageStructure {
 				$field_value .= $c;
 			}
 		}
+	}
+
+	/**
+	 * Helper function for mergeInPageStructure().
+	 */
+	private function getSingleInstanceTemplates() {
+		$instancesPerTemplate = array();
+		foreach ( $this->mComponents as $pageComponent ) {
+			if ( $pageComponent->mIsTemplate ) {
+				$templateName = $pageComponent->mTemplateName;
+				if ( array_key_exists( $templateName, $instancesPerTemplate ) ) {
+					$instancesPerTemplate[$templateName]++;
+				} else {
+					$instancesPerTemplate[$templateName] = 1;
+				}
+			}
+		}
+
+		$singleInstanceTemplates = array();
+		foreach ( $instancesPerTemplate as $templateName => $instances ) {
+			if ( $instances == 1 ) {
+				$singleInstanceTemplates[] = $templateName;
+			}
+		}
+		return $singleInstanceTemplates;
+	}
+
+	private function getIndexOfTemplateName( $templateName ) {
+		foreach ( $this->mComponents as $i => $pageComponent ) {
+			if ( $pageComponent->mTemplateName == $templateName ) {
+				return $i;
+			}
+		}
+		return null;
+	}
+
+	public function mergeInPageStructure( $secondPageStructure ) {
+		// If there are any templates that have one instance in both
+		// pages, replace values for their fields with values from
+		// the second page.
+		$singleInstanceTemplatesHere = $this->getSingleInstanceTemplates();
+		$singleInstanceTemplatesThere = $secondPageStructure->getSingleInstanceTemplates();
+		$singleInstanceTemplatesInBoth = array_intersect( $singleInstanceTemplatesHere, $singleInstanceTemplatesThere );
+		foreach ( $secondPageStructure->mComponents as $pageComponent ) {
+			if ( in_array( $pageComponent->mTemplateName, $singleInstanceTemplatesInBoth ) ) {
+				$indexOfThisTemplate = $this->getIndexOfTemplateName( $pageComponent->mTemplateName );
+				foreach ( $pageComponent->mFields as $fieldName => $fieldValue ) {
+					$this->mComponents[$indexOfThisTemplate]->mFields[$fieldName] = $fieldValue;
+				}
+			} else {
+				$this->mComponents[] = $pageComponent;
+			}
+		}
+	}
+
+	public function toWikitext() {
+		$wikitext = '';
+		foreach ( $this->mComponents as $pageComponent ) {
+			$wikitext .= $pageComponent->toWikitext() . "\n";
+		}
+		return trim( $wikitext );
 	}
 
 	public function toXML( $isSimplified ) {
