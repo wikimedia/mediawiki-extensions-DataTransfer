@@ -64,7 +64,7 @@ class DTImportJob extends Job {
 				$newPageStructure = new DTPageStructure;
 				$newPageStructure->parsePageContents( $text );
 				$existingPageStructure->mergeInPageStructure( $newPageStructure );
-				return $existingPageStructure->toWikitext();
+				$text = $existingPageStructure->toWikitext();
 			}
 			// otherwise, $for_pages_that_exist == 'overwrite'
 		}
