@@ -268,7 +268,8 @@ class DTViewXML extends SpecialPage {
 		$form_submitted = false;
 		$cats = $wgRequest->getArray( 'categories' );
 		$nses = $wgRequest->getArray( 'namespaces' );
-		if ( count( $cats ) > 0 || count( $nses ) > 0 ) {
+		$requestedTitles = $wgRequest->getVal( 'titles' );
+		if ( count( $cats ) > 0 || count( $nses ) > 0 || $requestedTitles != null ) {
 			$form_submitted = true;
 		}
 
@@ -323,6 +324,20 @@ class DTViewXML extends SpecialPage {
 						$text .= "</$namespace_str>\n";
 				}
 			}
+
+			// The user can specify a set of page names to view
+			// the XML of, using a "titles=" parameter, separated
+			// by "|", in the manner of the MediaWiki API.
+			// Hm... perhaps all of Special:ViewXML should just
+			// be replaced by an API action?
+			if ( $requestedTitles ) {
+				$pageNames = explode( '|', $requestedTitles );
+				foreach ( $pageNames as $pageName ) {
+					$title = Title::newFromText( $pageName );
+					$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+				}
+			}
+
 			$text .= "</$pages_str>";
 			print $text;
 		} else {
