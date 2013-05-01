@@ -2067,6 +2067,7 @@ $messages['nl'] = array(
 	'dt_import_encodingtype' => 'Coderingstype:',
 	'dt_import_forexisting' => "Voor pagina's die al bestaan:",
 	'dt_import_overwriteexisting' => 'Bestaande inhoud overschrijven',
+	'dt_import_mergeintoexisting' => 'Alleen velden uit het bestand overschrijven',
 	'dt_import_skipexisting' => 'Overslaan',
 	'dt_import_appendtoexisting' => 'Toevoegen aan bestaande inhoud',
 	'dt_import_summarydesc' => 'Samenvatting van de import:',
