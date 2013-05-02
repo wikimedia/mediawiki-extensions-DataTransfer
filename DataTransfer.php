@@ -7,7 +7,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'DATA_TRANSFER_VERSION', '0.3.13' );
+define( 'DATA_TRANSFER_VERSION', '0.4' );
 
 // constants for special properties
 define( 'DT_SP_HAS_XML_GROUPING', 1 );
