@@ -1088,6 +1088,7 @@ $messages['gl'] = array(
 	'dt_import_encodingtype' => 'Tipo de codificación:',
 	'dt_import_forexisting' => 'Para páxinas que xa existen:',
 	'dt_import_overwriteexisting' => 'Sobrescribir o contido existente',
+	'dt_import_mergeintoexisting' => 'Sobrescribir só os campos contidos no ficheiro',
 	'dt_import_skipexisting' => 'Saltar',
 	'dt_import_appendtoexisting' => 'Engadir ao contido existente',
 	'dt_import_summarydesc' => 'Resumo da importación:',
