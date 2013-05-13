@@ -110,7 +110,8 @@ The default value of the input box is {{msg-mw|Dt import editsummary}}.',
 	'dt_import_success' => 'Parameters:
 * $1 is the number of pages
 * $2 is the file format: either CSV or XML',
-	'importcsv' => '{{doc-special|ImportCSV|unlisted=1}}',
+	'importcsv' => '{{doc-special|ImportCSV|unlisted=1}}
+CSV (comma separated value)',
 	'dt_importcsv_badheader' => 'The text "template_name[field_name]" can be translated.
 *$1 is a column number in the first row of the CVS file
 *$2 is the value found for the $1th colomn in the first line of the CSV file
@@ -1515,7 +1516,7 @@ $messages['ja'] = array(
 	'dt_import_editsummary' => '$1 の取り込み',
 	'dt_import_importing' => '取り込み中...',
 	'dt_import_success' => '$2 ファイルから $1 {{PLURAL:$1|ページ}}が作成されます。',
-	'importcsv' => 'CSVを取り込む',
+	'importcsv' => 'CSVの取り込み',
 	'dt_importcsv_badheader' => 'エラー: 列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります',
 	'right-datatransferimport' => 'データを取り込む',
 );
