@@ -1687,7 +1687,7 @@ $messages['kw'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'datatransfer-desc' => "Erlaabt et Daten déi an Opruffer vu schabloune benotzt ginn z'importéieren an z'exportéieren",
+	'datatransfer-desc' => "Erlaabt et Daten déi an Opruffer vu Schabloune benotzt ginn z'importéieren an z'exportéieren",
 	'viewxml' => 'XML weisen',
 	'dt_viewxml_docu' => 'Wielt w.e.g. ënnert dëse Kategorien an Nimmraim fir am XML-Format unzeweisen.',
 	'dt_viewxml_categories' => 'Kategorien',
@@ -1707,6 +1707,7 @@ $messages['lb'] = array(
 	'dt_import_encodingtype' => 'Encoding-Typ:',
 	'dt_import_forexisting' => 'Fir Säiten déi et scho gëtt:',
 	'dt_import_overwriteexisting' => 'Den Inhalt den et gëtt iwwerschreiwen',
+	'dt_import_mergeintoexisting' => 'Nëmme Felder iwwerschreiwen déi am Fichier dra sinn',
 	'dt_import_skipexisting' => 'Iwwersprangen',
 	'dt_import_appendtoexisting' => 'Bäi den Inhalt deen et gëtt derbäisetzen',
 	'dt_import_summarydesc' => 'Resumé vum Import:',
