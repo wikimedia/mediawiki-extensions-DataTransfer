@@ -1649,6 +1649,7 @@ $messages['ksh'] = array(
 	'dt_import_encodingtype' => 'Zoot Kodeerung för de Bohchshtahbe un Zeishe:',
 	'dt_import_forexisting' => 'För Sigge, di et ald jitt:',
 	'dt_import_overwriteexisting' => 'Övverschrieve, wat ald doh es',
+	'dt_import_mergeintoexisting' => 'Donn bloß Fälder övverschriive, di ald en dä Dattei schtonn',
 	'dt_import_skipexisting' => 'Övverjonn',
 	'dt_import_appendtoexisting' => 'An dat aanhange, wat ald doh es',
 	'dt_import_summarydesc' => 'Zesammefassung vun däm Empoot:',
