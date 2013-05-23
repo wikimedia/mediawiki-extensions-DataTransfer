@@ -2931,6 +2931,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Arturyatsko
  * @author Prima klasy4na
+ * @author Ата
  * @author Тест
  */
 $messages['uk'] = array(
@@ -2954,6 +2955,7 @@ $messages['uk'] = array(
 	'dt_import_encodingtype' => 'Тип кодування:',
 	'dt_import_forexisting' => 'Для сторінок, які вже існують:',
 	'dt_import_overwriteexisting' => 'Перезаписати існуючий вміст',
+	'dt_import_mergeintoexisting' => 'Перезаписати лише поля, що містяться у файлі',
 	'dt_import_skipexisting' => 'Пропустити',
 	'dt_import_appendtoexisting' => 'Додати до існуючого вмісту',
 	'dt_import_summarydesc' => 'Опис імпорту:',
