@@ -321,6 +321,7 @@ $messages['ast'] = array(
 	'dt_import_encodingtype' => 'Triba de codificación:',
 	'dt_import_forexisting' => 'Pa páxines que yá esisten:',
 	'dt_import_overwriteexisting' => 'Sobreescribir el conteníu esistente',
+	'dt_import_mergeintoexisting' => 'Sobrescribir sólo los campos conteníos nel ficheru',
 	'dt_import_skipexisting' => 'Saltar',
 	'dt_import_appendtoexisting' => 'Amestar al conteníu esistente',
 	'dt_import_summarydesc' => 'Resume de la importación:',
