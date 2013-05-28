@@ -61,7 +61,7 @@ $messages['qqq'] = array(
 	'dt_viewxml_docu' => 'Used as heading of the form.
 
 This message is followed by HTML <code><nowiki><h2></nowiki></code> heading {{msg-mw|Dt viewxml categories}}.',
-	'dt_viewxml_categories' => '{{Identical|Categories}}',
+	'dt_viewxml_categories' => '{{Identical|Category}}',
 	'dt_viewxml_namespaces' => '{{Identical|Namespaces}}',
 	'dt_viewxml_simplifiedformat' => 'Used as checkbox label in the "View XML" form.
 
