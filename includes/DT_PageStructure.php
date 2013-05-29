@@ -111,8 +111,16 @@ class DTPageComponent {
 		} else {
 			$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
 			if ( $wgDataTransferViewXMLParseFreeText ) {
-				// Avoid table of contents and "edit" links
-				$freeText = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $this->mFreeText, $wgTitle, new ParserOptions() )->getText();
+				$freeText = $this->mFreeText;
+				// Undo the escaping that happened before.
+				$freeText = str_replace( array( '&#123;', '&#125;' ), array( '{', '}' ), $freeText );
+				// Get rid of table of contents.
+				$mw = MagicWord::get( 'toc' );
+				if ( $mw->match( $freeText ) ) {
+					$freeText = $mw->replace( '', $freeText );
+				}
+				// Avoid "edit" links.
+				$freeText = $wgParser->parse( "__NOEDITSECTION__\n" . $freeText, $wgTitle, new ParserOptions() )->getText();
 			} else {
 				$freeText = $this->mFreeText;
 			}
