@@ -1908,6 +1908,7 @@ $messages['ms'] = array(
 	'dt_import_encodingtype' => 'Jenis pengekodan:',
 	'dt_import_forexisting' => 'Untuk halaman-halaman yang sedia ada:',
 	'dt_import_overwriteexisting' => 'Tulis ganti kandungan sedia ada',
+	'dt_import_mergeintoexisting' => 'Hanya tulis ganti medan-medan yang terkandung dalam fail',
 	'dt_import_skipexisting' => 'Langkau',
 	'dt_import_appendtoexisting' => 'Tambah kandungan sedia ada',
 	'dt_import_summarydesc' => 'Ringkasan pengimportan:',
