@@ -582,6 +582,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'dt_xml_page' => 'АгӀо',
 	'dt_xml_template' => 'Кеп',
 );
 
