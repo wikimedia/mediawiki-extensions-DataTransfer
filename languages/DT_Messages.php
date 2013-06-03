@@ -1998,7 +1998,7 @@ $messages['nah'] = array(
 	'dt_xml_id' => 'ID',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -2086,7 +2086,7 @@ $messages['nl'] = array(
 	'right-datatransferimport' => 'Gegevens importeren',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Gunnernett
  * @author Harald Khan
  * @author Jon Harald Søby
@@ -2149,7 +2149,7 @@ $messages['oc'] = array(
 	'right-datatransferimport' => 'Importar de donadas',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Odisha1
  * @author Psubhashish
  */
