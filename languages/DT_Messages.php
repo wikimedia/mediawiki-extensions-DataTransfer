@@ -824,6 +824,7 @@ $messages['eo'] = array(
  * @author Peter17
  * @author Sanbec
  * @author Translationista
+ * @author VegaDark
  */
 $messages['es'] = array(
 	'datatransfer-desc' => 'Permite importar y exportar datos contenidos en llamadas de plantilla',
@@ -846,6 +847,7 @@ $messages['es'] = array(
 	'dt_import_encodingtype' => 'Tipo de codificación:',
 	'dt_import_forexisting' => 'Para las páginas que ya existen:',
 	'dt_import_overwriteexisting' => 'Sobrescribir el contenido existente',
+	'dt_import_mergeintoexisting' => 'Sobreescribir solo los campos contenidos en el archivo',
 	'dt_import_skipexisting' => 'Omitir',
 	'dt_import_appendtoexisting' => 'Anexar al contenido existente',
 	'dt_import_summarydesc' => 'Resumen de importación:',
