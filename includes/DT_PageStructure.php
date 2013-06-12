@@ -143,7 +143,7 @@ class DTPageStructure {
 		DTPageComponent::$mFreeTextIDCounter = 1;
 	}
 
-	public function newFromTitle( $pageTitle ) {
+	public static function newFromTitle( $pageTitle ) {
 		$pageStructure = new DTPageStructure();
 		$pageStructure->mPageTitle = $pageTitle;
 
