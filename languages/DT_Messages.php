@@ -2579,6 +2579,7 @@ $messages['sl'] = array(
 	'dt_import_encodingtype' => 'Vrsta kodiranja:',
 	'dt_import_forexisting' => 'Za že obstoječe strani:',
 	'dt_import_overwriteexisting' => 'Prepiši obstoječo vsebino',
+	'dt_import_mergeintoexisting' => 'Prepiši samo polja iz datoteke',
 	'dt_import_skipexisting' => 'Preskoči',
 	'dt_import_appendtoexisting' => 'Dodaj obstoječi vsebini',
 	'dt_import_summarydesc' => 'Povzetek uvoza:',
