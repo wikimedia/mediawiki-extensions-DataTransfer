@@ -2676,6 +2676,7 @@ $messages['su'] = array(
 /** Swedish (svenska)
  * @author Fluff
  * @author Gabbe.g
+ * @author Jopparn
  * @author Lejonel
  * @author M.M.S.
  * @author Per
@@ -2703,6 +2704,7 @@ $messages['sv'] = array(
 	'dt_import_encodingtype' => 'Teckenkodningstyp:',
 	'dt_import_forexisting' => 'För sidor som redan finns:',
 	'dt_import_overwriteexisting' => 'Skriv över existerande innehåll',
+	'dt_import_mergeintoexisting' => 'Skriv endast över fält som finns i filen',
 	'dt_import_skipexisting' => 'Hoppa över',
 	'dt_import_appendtoexisting' => 'Lägg till efter befintligt innehåll',
 	'dt_import_summarydesc' => 'Sammanfattning av importen:',
