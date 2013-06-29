@@ -104,7 +104,9 @@ If enabled, the extension generates simplified XML.',
 	'dt_import_summarydesc' => 'Used as label for the "Summary text of import" input box.
 
 The default value of the input box is {{msg-mw|Dt import editsummary}}.',
-	'dt_import_editsummary' => '$1 is the file format: either CSV or XML',
+	'dt_import_editsummary' => 'Parameters:
+* $1 - the file format: either CSV or XML
+{{Identical|Import}}',
 	'dt_import_importing' => 'This message indicates the extension is currently importing a CSV file (or an XML file).
 {{Identical|Importing}}',
 	'dt_import_success' => 'Parameters:
