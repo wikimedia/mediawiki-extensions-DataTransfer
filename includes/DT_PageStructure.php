@@ -120,7 +120,7 @@ class DTPageComponent {
 					$freeText = $mw->replace( '', $freeText );
 				}
 				// Avoid "edit" links.
-				$freeText = $wgParser->parse( "__NOEDITSECTION__\n" . $freeText, $wgTitle, new ParserOptions() )->getText();
+				$freeText = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $freeText, $wgTitle, new ParserOptions() )->getText();
 			} else {
 				$freeText = $this->mFreeText;
 			}
@@ -130,7 +130,8 @@ class DTPageComponent {
 }
 
 /**
- * Class that holds the structure of a single wiki page.
+ * Class that holds the structure of a single wiki page. It is used for both
+ * turning wikitext into XML, and vice versa.
  *
  * @author Yaron Koren
  */
@@ -175,6 +176,10 @@ class DTPageStructure {
 		return $pageStructure;
 	}
 
+	/**
+	 * Parses the contents of a wiki page, turning template calls into
+	 * an arracy of DTPageComponent objects.
+	 */
 	public function parsePageContents( $page_contents ) {
 		// escape out variables like "{{PAGENAME}}"
 		$page_contents = str_replace( '{{PAGENAME}}', '&#123;&#123;PAGENAME&#125;&#125;', $page_contents );
@@ -320,6 +325,9 @@ class DTPageStructure {
 		return null;
 	}
 
+	/**
+	 * Used when doing a "merge" in an XML or CSV import.
+	 */
 	public function mergeInPageStructure( $secondPageStructure ) {
 		// If there are any templates that have one instance in both
 		// pages, replace values for their fields with values from
