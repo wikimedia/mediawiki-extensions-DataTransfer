@@ -402,6 +402,7 @@ $messages['be-tarask'] = array(
 	'dt_import_encodingtype' => 'Тып кадыроўкі:',
 	'dt_import_forexisting' => 'Для старонак якія ўжо існуюць:',
 	'dt_import_overwriteexisting' => 'Перазапісваць існуючы зьмест',
+	'dt_import_mergeintoexisting' => 'Перазапісваць толькі палі, што ўтрымліваюцца ў файле',
 	'dt_import_skipexisting' => 'Прапускаць',
 	'dt_import_appendtoexisting' => 'Далучаць да існуючага зьместу',
 	'dt_import_summarydesc' => 'Кароткае апісаньне імпарту:',
