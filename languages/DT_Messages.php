@@ -587,6 +587,7 @@ $messages['ca'] = array(
 $messages['ce'] = array(
 	'dt_xml_page' => 'АгӀо',
 	'dt_xml_template' => 'Кеп',
+	'dt_xml_title' => 'Корта',
 );
 
 /** Sorani Kurdish (کوردی)
@@ -632,6 +633,13 @@ $messages['cs'] = array(
 	'dt_import_success' => ' $1 {{PLURAL:$1|stránky|stránky|stránek}} bude vytvořeno z $2 souboru.',
 	'importcsv' => 'Import CSV',
 	'right-datatransferimport' => 'Importovat data',
+);
+
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'dt_xml_name' => 'имѧ',
 );
 
 /** Danish (dansk)
