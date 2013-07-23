@@ -3093,6 +3093,7 @@ $messages['yi'] = array(
  * @author Hydra
  * @author Linforest
  * @author PhiLiP
+ * @author Qiyue2001
  */
 $messages['zh-hans'] = array(
 	'datatransfer-desc' => '允许根据模板的要求导入导出结构化的数据',
@@ -3115,6 +3116,7 @@ $messages['zh-hans'] = array(
 	'dt_import_encodingtype' => '编码类型：',
 	'dt_import_forexisting' => '对于已经存在的页面：',
 	'dt_import_overwriteexisting' => '覆盖现有内容',
+	'dt_import_mergeintoexisting' => '覆盖只包含在文件中的字段',
 	'dt_import_skipexisting' => '跳过',
 	'dt_import_appendtoexisting' => '追加到现有内容',
 	'dt_import_summarydesc' => '导入摘要：',
