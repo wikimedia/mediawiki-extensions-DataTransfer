@@ -2320,12 +2320,13 @@ $messages['ps'] = array(
 /** Portuguese (português)
  * @author Hamilton Abreu
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  */
 $messages['pt'] = array(
 	'datatransfer-desc' => 'Permite importação e exportação de dados contidos em chamadas de predefinições',
 	'viewxml' => 'Ver XML',
-	'dt_viewxml_docu' => 'Por favor, seleccione de entre as categorias e espaços nominais seguintes para ver em formato XML.',
+	'dt_viewxml_docu' => 'Por favor, selecione de entre as categorias e espaços nominais seguintes para ver em formato XML.',
 	'dt_viewxml_categories' => 'Categorias',
 	'dt_viewxml_namespaces' => 'Espaços nominais',
 	'dt_viewxml_simplifiedformat' => 'Formato simplificado',
