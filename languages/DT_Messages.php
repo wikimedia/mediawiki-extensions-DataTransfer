@@ -1383,6 +1383,7 @@ $messages['ia'] = array(
 	'dt_import_encodingtype' => 'Typo de codification:',
 	'dt_import_forexisting' => 'Pro paginas que ja existe:',
 	'dt_import_overwriteexisting' => 'Superscriber le contento existente',
+	'dt_import_mergeintoexisting' => 'Superscriber solmente le campos continite in le file',
 	'dt_import_skipexisting' => 'Saltar',
 	'dt_import_appendtoexisting' => 'Adjunger al contento existente',
 	'dt_import_summarydesc' => 'Summario de importation:',
