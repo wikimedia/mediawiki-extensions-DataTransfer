@@ -830,6 +830,7 @@ $messages['eo'] = array(
 /** Spanish (español)
  * @author Armando-Martin
  * @author Crazymadlover
+ * @author Fitoschido
  * @author Imre
  * @author Locos epraix
  * @author Peter17
@@ -851,7 +852,7 @@ $messages['es'] = array(
 	'dt_xml_field' => 'Campo',
 	'dt_xml_name' => 'Nombre',
 	'dt_xml_title' => 'Título',
-	'dt_xml_id' => 'ID',
+	'dt_xml_id' => 'Id.',
 	'dt_xml_freetext' => 'Texto libre',
 	'importxml' => 'Importar XML',
 	'dt_import_selectfile' => 'Por favor seleccione el archivo $1 a importar:',
