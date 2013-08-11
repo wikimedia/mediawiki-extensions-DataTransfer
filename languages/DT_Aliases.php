@@ -56,6 +56,13 @@ $specialPageAliases['bs'] = array(
 	'ViewXML' => array( 'VidiXML' ),
 );
 
+/** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
+$specialPageAliases['cdo'] = array(
+	'ImportCSV' => array( '導底CSV' ),
+	'ImportXML' => array( '導底XML' ),
+	'ViewXML' => array( '看蜀看XML' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'ImportCSV' => array( 'CSV_importieren' ),
