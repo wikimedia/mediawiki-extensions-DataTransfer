@@ -3098,6 +3098,7 @@ $messages['yi'] = array(
  * @author Linforest
  * @author PhiLiP
  * @author Qiyue2001
+ * @author Shirayuki
  */
 $messages['zh-hans'] = array(
 	'datatransfer-desc' => '允许根据模板的要求导入导出结构化的数据',
@@ -3126,7 +3127,7 @@ $messages['zh-hans'] = array(
 	'dt_import_summarydesc' => '导入摘要：',
 	'dt_import_editsummary' => '$1 导入',
 	'dt_import_importing' => '正在导入...',
-	'dt_import_success' => '将依据此$2文件创建$1个{{PLURAL:$1|个页面|个页面}}。',
+	'dt_import_success' => '将依据此$2文件创建$1个{{PLURAL:$1|个页面}}。',
 	'importcsv' => '导入 CSV',
 	'dt_importcsv_badheader' => "错误：第$1列的标题'$2'必须为'$3'、或者'$4'、或者采取'模板名称[字段名称]'的形式",
 	'right-datatransferimport' => '导入数据',
