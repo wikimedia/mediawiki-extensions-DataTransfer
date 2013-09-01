@@ -77,6 +77,13 @@ $specialPageAliases['diq'] = array(
 	'ViewXML' => array( 'XMLBivin' ),
 );
 
+/** Greek (Ελληνικά) */
+$specialPageAliases['el'] = array(
+	'ImportCSV' => array( 'ΕισαγωγήCSV' ),
+	'ImportXML' => array( 'ΕισαγωγήXML' ),
+	'ViewXML' => array( 'ΠροβολήXML' ),
+);
+
 /** Esperanto (Esperanto) */
 $specialPageAliases['eo'] = array(
 	'ImportCSV' => array( 'Enporti_CSV', 'Importi_CSV' ),
