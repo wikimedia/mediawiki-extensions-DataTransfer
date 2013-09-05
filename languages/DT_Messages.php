@@ -85,7 +85,8 @@ If enabled, the extension generates simplified XML.',
 	'dt_xml_freetext' => 'Used as XML tag name.
 {{Identical|Free text}}',
 	'importxml' => '{{doc-special|ImportXML|unlisted=1}}',
-	'dt_import_selectfile' => '$1 is the file format: either CSV or XML',
+	'dt_import_selectfile' => 'Used as label for the File selector. Parameters:
+* $1 - the file format: either CSV or XML',
 	'dt_import_encodingtype' => 'The type of encoding for the file: either UTF-8 or UTF-16',
 	'dt_import_forexisting' => 'This message is followed by the following radio boxes:
 * {{msg-mw|Dt import overwriteexisting}}
