@@ -1716,11 +1716,12 @@ $messages['kw'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'datatransfer-desc' => "Erlaabt et Daten déi an Opruffer vu Schabloune benotzt ginn z'importéieren an z'exportéieren",
 	'viewxml' => 'XML weisen',
-	'dt_viewxml_docu' => 'Wielt w.e.g. ënnert dëse Kategorien an Nimmraim fir am XML-Format unzeweisen.',
+	'dt_viewxml_docu' => 'Wielt w.e.g. ënner dëse Kategorien an Nimmraim fir am XML-Format unzeweisen.',
 	'dt_viewxml_categories' => 'Kategorien',
 	'dt_viewxml_namespaces' => 'Nummraim',
 	'dt_viewxml_simplifiedformat' => 'Vereinfachte Format',
