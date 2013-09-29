@@ -2474,6 +2474,7 @@ $messages['rtm'] = array(
 /** Russian (русский)
  * @author Ferrer
  * @author Innv
+ * @author Okras
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -2497,6 +2498,7 @@ $messages['ru'] = array(
 	'dt_import_encodingtype' => 'Тип кодировки:',
 	'dt_import_forexisting' => 'Для страниц, которые уже существуют:',
 	'dt_import_overwriteexisting' => 'Переписать существующие данные',
+	'dt_import_mergeintoexisting' => 'Перезаписывать только поля, содержащиеся в файле',
 	'dt_import_skipexisting' => 'Пропустить',
 	'dt_import_appendtoexisting' => 'Добавить к существующим данным',
 	'dt_import_summarydesc' => 'Описание импорта:',
