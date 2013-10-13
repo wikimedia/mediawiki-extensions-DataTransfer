@@ -2364,11 +2364,12 @@ $messages['pt'] = array(
  * @author Eduardo.mps
  * @author Giro720
  * @author Jaideraf
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'datatransfer-desc' => 'Permite a importação e exportação de dados contidos em chamadas de predefinições',
 	'viewxml' => 'Ver XML',
-	'dt_viewxml_docu' => 'Por favor, selecione dentre as categorias e espaços nominais seguintes para ver em formato XML.',
+	'dt_viewxml_docu' => 'Selecione entre as categorias e espaços nominais a seguir para ver em formato XML.',
 	'dt_viewxml_categories' => 'Categorias',
 	'dt_viewxml_namespaces' => 'Espaços nominais',
 	'dt_viewxml_simplifiedformat' => 'Formato simplificado',
@@ -2382,7 +2383,7 @@ $messages['pt-br'] = array(
 	'dt_xml_id' => 'ID',
 	'dt_xml_freetext' => 'Free Text',
 	'importxml' => 'Importar XML',
-	'dt_import_selectfile' => 'Por favor selecione o arquivo $1 para importar:',
+	'dt_import_selectfile' => 'Selecione o arquivo $1 para importar:',
 	'dt_import_encodingtype' => 'Codificação:',
 	'dt_import_forexisting' => 'Para páginas que já existem:',
 	'dt_import_overwriteexisting' => 'Sobrescrever o conteúdo existente',
