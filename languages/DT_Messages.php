@@ -1647,6 +1647,20 @@ $messages['kn'] = array(
 	'dt_xml_title' => 'ಶೀರ್ಷಿಕೆ',
 );
 
+/** Korean (한국어)
+ * @author Daisy2002
+ */
+$messages['ko'] = array(
+	'dt_viewxml_namespaces' => '이름 공간',
+	'dt_xml_namespace' => '이름공간',
+	'dt_xml_pages' => '문서',
+	'dt_xml_template' => '틀',
+	'dt_xml_name' => '이름',
+	'dt_xml_title' => '제목',
+	'dt_xml_id' => 'ID',
+	'dt_import_encodingtype' => '인코딩 유형:',
+);
+
 /** Kinaray-a (Kinaray-a)
  * @author Jose77
  */
