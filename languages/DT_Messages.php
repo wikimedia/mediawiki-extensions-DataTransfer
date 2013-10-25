@@ -1931,13 +1931,16 @@ $messages['mr'] = array(
 	'dt_viewxml_namespaces' => 'नामविश्वे',
 	'dt_viewxml_simplifiedformat' => 'सोप्या प्रकारे',
 	'dt_xml_namespace' => 'नामविश्व',
+	'dt_xml_pages' => 'पाने',
 	'dt_xml_page' => 'पान',
+	'dt_xml_template' => 'साचा',
 	'dt_xml_field' => 'रकाना',
 	'dt_xml_name' => 'नाव',
 	'dt_xml_title' => 'शीर्षक',
 	'dt_xml_id' => 'क्रमांक (आयडी)',
 	'dt_xml_freetext' => 'मुक्त मजकूर',
 	'importxml' => 'एक्सएमएल आयात करा',
+	'dt_import_selectfile' => 'आयात करावयाची $1 संचिका निवडा:',
 );
 
 /** Malay (Bahasa Melayu)
