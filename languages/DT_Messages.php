@@ -1243,6 +1243,7 @@ $messages['he'] = array(
 	'dt_import_encodingtype' => 'סוג הקידוד:',
 	'dt_import_forexisting' => 'עבור הדפים שכבר קיימים:',
 	'dt_import_overwriteexisting' => 'לדרוס את התוכן הקיים',
+	'dt_import_mergeintoexisting' => 'לדרוס רק שדות שהקובץ מכיל',
 	'dt_import_skipexisting' => 'לדלג',
 	'dt_import_appendtoexisting' => 'לצרף את התוכן הקיים',
 	'dt_import_summarydesc' => 'תקציר היבוא:',
