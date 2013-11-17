@@ -1655,11 +1655,17 @@ $messages['ko'] = array(
 	'dt_viewxml_namespaces' => '이름 공간',
 	'dt_xml_namespace' => '이름공간',
 	'dt_xml_pages' => '문서',
+	'dt_xml_page' => '문서',
 	'dt_xml_template' => '틀',
+	'dt_xml_field' => '필드',
 	'dt_xml_name' => '이름',
 	'dt_xml_title' => '제목',
 	'dt_xml_id' => 'ID',
 	'dt_import_encodingtype' => '인코딩 유형:',
+	'dt_import_skipexisting' => '건너 뛰기',
+	'dt_import_appendtoexisting' => '기존 내용에 추가',
+	'dt_import_importing' => '가져오는 중...',
+	'right-datatransferimport' => '데이터 가져오기',
 );
 
 /** Kinaray-a (Kinaray-a)
