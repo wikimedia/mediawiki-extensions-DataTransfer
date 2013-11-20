@@ -1314,6 +1314,7 @@ $messages['hsb'] = array(
 	'dt_import_encodingtype' => 'Typ znamješkoweho koda:',
 	'dt_import_forexisting' => 'Za strony, kotrež hižo eksistuja:',
 	'dt_import_overwriteexisting' => 'Eksistowacy wobsah přepisać',
+	'dt_import_mergeintoexisting' => 'Jenož pola přepisać, kotrež su w dataji wobsahowane.',
 	'dt_import_skipexisting' => 'Přeskočić',
 	'dt_import_appendtoexisting' => 'K eksistowacemu wobsahej připowěsnyć',
 	'dt_import_summarydesc' => 'Zjeće importa:',
