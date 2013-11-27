@@ -586,6 +586,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'dt_viewxml_categories' => 'Категореш',
 	'dt_xml_page' => 'АгӀо',
 	'dt_xml_template' => 'Кеп',
 	'dt_xml_title' => 'Корта',
