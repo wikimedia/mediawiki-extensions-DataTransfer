@@ -756,6 +756,7 @@ $messages['dsb'] = array(
 	'dt_import_encodingtype' => 'Typ znamuškowego koda:',
 	'dt_import_forexisting' => 'Za boki, kótarež južo ekistěruju:',
 	'dt_import_overwriteexisting' => 'Eksistěrujuce wopśimjeśe pśepisaś',
+	'dt_import_mergeintoexisting' => 'Jano póla pśepisaś, kótarež su w dataji wopśimjone.',
 	'dt_import_skipexisting' => 'Pśeskócyś',
 	'dt_import_appendtoexisting' => 'K eksistěrujucemu wopśimjeśoju pśipowjesyś',
 	'dt_import_summarydesc' => 'Zespominanje importa:',
