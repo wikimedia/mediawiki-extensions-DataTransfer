@@ -604,7 +604,7 @@ $messages['ckb'] = array(
 	'dt_xml_id' => 'پێناسە',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Jkjk
  * @author Matěj Grabovský
  */
@@ -637,7 +637,7 @@ $messages['cs'] = array(
 	'right-datatransferimport' => 'Importovat data',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
