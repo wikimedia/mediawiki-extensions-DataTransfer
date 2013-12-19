@@ -1653,8 +1653,12 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author Daisy2002
+ * @author Yjs5497
  */
 $messages['ko'] = array(
+	'viewxml' => 'XML 보기',
+	'dt_viewxml_docu' => 'XML 형식으로 볼 카테고리와 이름공간을 선택하십시오.',
+	'dt_viewxml_categories' => '분류',
 	'dt_viewxml_namespaces' => '이름 공간',
 	'dt_xml_namespace' => '이름공간',
 	'dt_xml_pages' => '문서',
@@ -1664,10 +1668,16 @@ $messages['ko'] = array(
 	'dt_xml_name' => '이름',
 	'dt_xml_title' => '제목',
 	'dt_xml_id' => 'ID',
+	'dt_xml_freetext' => '자유 텍스트',
+	'importxml' => 'XML 가져오기',
 	'dt_import_encodingtype' => '인코딩 유형:',
+	'dt_import_overwriteexisting' => '기존 콘텐트를 덮어씁니다',
 	'dt_import_skipexisting' => '건너 뛰기',
 	'dt_import_appendtoexisting' => '기존 내용에 추가',
+	'dt_import_editsummary' => '$1 가져오기',
 	'dt_import_importing' => '가져오는 중...',
+	'dt_import_success' => '$1 {{PLURAL:$1|페이지}}가 $2 파일에서 만들어 질 것입니다.',
+	'importcsv' => 'CSV 가져오기',
 	'right-datatransferimport' => '데이터 가져오기',
 );
 
