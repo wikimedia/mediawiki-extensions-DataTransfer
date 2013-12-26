@@ -590,6 +590,7 @@ $messages['ce'] = array(
 	'dt_xml_page' => 'АгӀо',
 	'dt_xml_template' => 'Кеп',
 	'dt_xml_title' => 'Корта',
+	'dt_import_summarydesc' => 'Импортах лаьцна:',
 );
 
 /** Sorani Kurdish (کوردی)
