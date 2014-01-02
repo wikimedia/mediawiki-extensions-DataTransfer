@@ -932,12 +932,16 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Mjbmr
  */
 $messages['fa'] = array(
+	'datatransfer-desc' => 'اجازه برای واردات و صادرات اطلاعات حاوی الگوهای تماس',
 	'viewxml' => 'مشاهده XML',
+	'dt_viewxml_docu' => 'لطفاً برای مشاهده فرمت ایکس‌ام‌ال، از بین دسته‌بندی‌ها و فضاهای نامی زیر انتخاب کنید.',
 	'dt_viewxml_categories' => 'رده‌ها',
 	'dt_viewxml_namespaces' => 'فضاهای نام',
+	'dt_viewxml_simplifiedformat' => 'فرمت ساده شده',
 	'dt_xml_namespace' => 'فضای نام',
 	'dt_xml_pages' => 'صفحه‌ها',
 	'dt_xml_page' => 'صفحه',
@@ -948,12 +952,19 @@ $messages['fa'] = array(
 	'dt_xml_id' => 'شناسه',
 	'dt_xml_freetext' => 'متن آزاد',
 	'importxml' => 'درون‌ریزی ایکس‌ام‌ال',
+	'dt_import_selectfile' => 'لطفاً برای وارد کردن،پوشهٔ $1 را انتخاب کنید:',
 	'dt_import_encodingtype' => 'نوع کدگذاری:',
+	'dt_import_forexisting' => 'برای صفحاتی که در حال حاضر وجود دارند:',
+	'dt_import_overwriteexisting' => 'رونویسی محتوای موجود',
+	'dt_import_mergeintoexisting' => 'رونویسی فقط زمینه‌های شامل در پوشه',
 	'dt_import_skipexisting' => 'پرش',
+	'dt_import_appendtoexisting' => 'ضمیمه کردن به محتوای موجود',
 	'dt_import_summarydesc' => 'خلاصهٔ درون‌ریزی:',
 	'dt_import_editsummary' => 'درون‌ریزی $1',
 	'dt_import_importing' => 'در حال درون‌ریزی...',
+	'dt_import_success' => '$1 {{PLURAL:$1|page|pages}} از پوشهٔ $2 ایجاد خواهدشد.',
 	'importcsv' => 'درون‌ریزی سی‌اس‌وی',
+	'dt_importcsv_badheader' => "خطا: سر فصل ستون $1،$2، باید یا $3،$4 یا فرم 'template_name[field_name]' باشد",
 	'right-datatransferimport' => 'درون‌ریزی داده‌ها',
 );
 
