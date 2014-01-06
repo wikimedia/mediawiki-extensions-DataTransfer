@@ -2532,6 +2532,7 @@ $messages['rtm'] = array(
 /** Russian (русский)
  * @author Ferrer
  * @author Innv
+ * @author Lockal
  * @author Okras
  * @author Александр Сигачёв
  */
@@ -2562,7 +2563,7 @@ $messages['ru'] = array(
 	'dt_import_summarydesc' => 'Описание импорта:',
 	'dt_import_editsummary' => 'импорт $1',
 	'dt_import_importing' => 'Импортирование...',
-	'dt_import_success' => '$1 {{PLURAL:$1|страница была|страниц были|страницы были}} созданы из файла $2.', # Fuzzy
+	'dt_import_success' => '$1 {{PLURAL:$1|страница была|страниц были|страницы были}} созданы из файла $2.',
 	'importcsv' => 'Импорт CSV',
 	'dt_importcsv_badheader' => 'Ошибка. Заголовок колонки №$1 «$2» должен быть или «$3», или «$4», или в форме «template_name[field_name]»',
 	'right-datatransferimport' => 'импорт информации',
