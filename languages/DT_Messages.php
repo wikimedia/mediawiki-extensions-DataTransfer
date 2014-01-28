@@ -2097,6 +2097,7 @@ $messages['nah'] = array(
 );
 
 /** Norwegian Bokmål (norsk bokmål)
+ * @author Event
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -2120,6 +2121,7 @@ $messages['nb'] = array(
 	'dt_import_encodingtype' => 'Tegnkodingstype:',
 	'dt_import_forexisting' => 'For sider som allerede finnes:',
 	'dt_import_overwriteexisting' => 'Skriv over eksisterende innhold',
+	'dt_import_mergeintoexisting' => 'Overskriv bare felter som inngår i filen',
 	'dt_import_skipexisting' => 'Hopp over',
 	'dt_import_appendtoexisting' => 'Tilføy til eksisterende innhold',
 	'dt_import_summarydesc' => 'Importsammendrag:',
