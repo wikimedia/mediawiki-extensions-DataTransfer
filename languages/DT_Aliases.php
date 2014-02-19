@@ -30,7 +30,9 @@ $specialPageAliases['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
-	'ViewXML' => array( 'عرض_XML' ),
+	'ImportCSV' => array( 'استيراد_سى_اس_فى' ),
+	'ImportXML' => array( 'استيراد_اكس_ام_ال' ),
+	'ViewXML' => array( 'عرض_اكس_ام_ال' ),
 );
 
 /** Assamese (অসমীয়া) */
