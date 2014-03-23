@@ -2242,6 +2242,7 @@ $messages['oc'] = array(
 	'dt_import_selectfile' => "Seleccionatz lo fichièr $1 d'importar :",
 	'dt_import_encodingtype' => 'Tipe d’encodatge:',
 	'dt_import_skipexisting' => 'Passar',
+	'dt_import_summarydesc' => 'Resumit de l’impòrt :',
 	'dt_import_editsummary' => 'Importacion $1',
 	'dt_import_importing' => 'Impòrt en cors...',
 	'dt_import_success' => '$1 {{PLURAL:$1|pagina serà creada|paginas seràn creadas}} dempuèi lo fichièr $2.',
