@@ -7,7 +7,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'DATA_TRANSFER_VERSION', '0.4.1' );
+define( 'DATA_TRANSFER_VERSION', '0.5.0' );
 
 // constants for special properties
 define( 'DT_SP_HAS_XML_GROUPING', 1 );
@@ -68,6 +68,7 @@ require_once($dtgIP . '/languages/DT_Language.php');
 global $wgLanguageCode;
 dtfInitContentLanguage($wgLanguageCode);
 
+$wgMessagesDirs['DataTransfer'] = __DIR__ . '/languages/i18n';
 $wgExtensionMessagesFiles['DataTransfer'] = $dtgIP . '/languages/DT_Messages.php';
 $wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
 
