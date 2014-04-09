@@ -147,6 +147,13 @@ $specialPageAliases['gu'] = array(
 	'ViewXML' => array( 'XMLજુઓ' ),
 );
 
+/** Hawaiian (Hawai`i) */
+$specialPageAliases['haw'] = array(
+	'ImportCSV' => array( 'KākomoCSV', 'KakomoCSV' ),
+	'ImportXML' => array( 'KākomoXML', 'KakomoXML' ),
+	'ViewXML' => array( 'NānāXML', 'NanaXML' ),
+);
+
 /** Haitian (Kreyòl ayisyen) */
 $specialPageAliases['ht'] = array(
 	'ImportCSV' => array( 'EnpòteCSV' ),
