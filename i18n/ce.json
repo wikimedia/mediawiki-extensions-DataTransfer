@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Sasan700",
-            "Умар"
-        ]
-    },
-    "dt_viewxml_categories": "Категореш",
-    "dt_xml_page": "АгӀо",
-    "dt_xml_template": "Кеп",
-    "dt_xml_title": "Корта",
-    "dt_import_summarydesc": "Импортах лаьцна:"
+	"@metadata": {
+		"authors": [
+			"Sasan700",
+			"Умар"
+		]
+	},
+	"dt_viewxml_categories": "Категореш",
+	"dt_xml_page": "АгӀо",
+	"dt_xml_template": "Кеп",
+	"dt_xml_title": "Корта",
+	"dt_import_summarydesc": "Импортах лаьцна:"
 }
