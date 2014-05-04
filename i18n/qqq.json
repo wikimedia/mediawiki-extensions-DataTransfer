@@ -38,8 +38,8 @@
 	"dt_import_summarydesc": "Used as label for the \"Summary text of import\" input box.\n\nThe default value of the input box is {{msg-mw|Dt import editsummary}}.",
 	"dt_import_editsummary": "Parameters:\n* $1 - the file format: either CSV or XML\n{{Identical|Import}}",
 	"dt_import_importing": "This message indicates the extension is currently importing a CSV file (or an XML file).\n{{Identical|Importing}}",
-	"dt_import_success": "Parameters:\n* $1 is the number of pages\n* $2 is the file format: either CSV or XML",
+	"dt_import_success": "Parameters:\n* $1 - the number of pages\n* $2 - the file format: either CSV or XML",
 	"importcsv": "{{doc-special|ImportCSV|unlisted=1}}\nCSV (comma separated value)",
-	"dt_importcsv_badheader": "The text \"template_name[field_name]\" can be translated.\n*$1 is a column number in the first row of the CVS file\n*$2 is the value found for the $1th colomn in the first line of the CSV file\n*$3 is the title label\n*$4 is a free text label",
+	"dt_importcsv_badheader": "The text \"template_name[field_name]\" can be translated. Parameters:\n* $1 - a column number in the first row of the CVS file\n* $2 - the value found for the $1th column in the first line of the CSV file\n* $3 - the title label\n* $4 - a free text label",
 	"right-datatransferimport": "{{doc-right|datatransferimport}}"
 }
