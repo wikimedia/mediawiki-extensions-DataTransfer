@@ -4,7 +4,8 @@
 			"Hamilton Abreu",
 			"Lijealso",
 			"Luckas",
-			"Malafaya"
+			"Malafaya",
+			"Fúlvio"
 		]
 	},
 	"datatransfer-desc": "Permite importação e exportação de dados contidos em chamadas de predefinições",
@@ -27,6 +28,7 @@
 	"dt_import_encodingtype": "Tipo de codificação:",
 	"dt_import_forexisting": "Para páginas que já existem:",
 	"dt_import_overwriteexisting": "Sobrescrever o conteúdo existente",
+	"dt_import_mergeintoexisting": "Sobrescrever apenas os campos contidos no ficheiro",
 	"dt_import_skipexisting": "Saltar",
 	"dt_import_appendtoexisting": "Acrescentar ao conteúdo existente",
 	"dt_import_summarydesc": "Resumo da importação:",
