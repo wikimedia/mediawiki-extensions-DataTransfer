@@ -108,7 +108,7 @@ $specialPageAliases['eu'] = array(
 $specialPageAliases['fa'] = array(
 	'ImportCSV' => array( 'درون‌ریزی_سی‌اس‌وی' ),
 	'ImportXML' => array( 'درون‌ریزی_اکس‌ام‌ال' ),
-	'ViewXML' => array( 'مشاهده_اکس‌ام‌ال' ),
+	'ViewXML' => array( 'مشاهدهٔ_اکس‌ام‌ال' ),
 );
 
 /** Finnish (suomi) */
