@@ -154,6 +154,13 @@ $specialPageAliases['haw'] = array(
 	'ViewXML' => array( 'NānāXML', 'NanaXML' ),
 );
 
+/** Upper Sorbian (hornjoserbsce) */
+$specialPageAliases['hsb'] = array(
+	'ImportCSV' => array( 'CSV_importować' ),
+	'ImportXML' => array( 'XML_importować' ),
+	'ViewXML' => array( 'XML_pokazać' ),
+);
+
 /** Haitian (Kreyòl ayisyen) */
 $specialPageAliases['ht'] = array(
 	'ImportCSV' => array( 'EnpòteCSV' ),
