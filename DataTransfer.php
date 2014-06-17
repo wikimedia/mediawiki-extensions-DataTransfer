@@ -68,7 +68,7 @@ require_once($dtgIP . '/languages/DT_Language.php');
 global $wgLanguageCode;
 dtfInitContentLanguage($wgLanguageCode);
 
-$wgMessagesDirs['DataTransfer'] = __DIR__ . '/languages/i18n';
+$wgMessagesDirs['DataTransfer'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DataTransfer'] = $dtgIP . '/languages/DT_Messages.php';
 $wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
 
