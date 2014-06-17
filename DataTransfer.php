@@ -20,6 +20,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author'         => 'Yaron Koren',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Data_Transfer',
 	'descriptionmsg' => 'datatransfer-desc',
+	'license-name'   => 'GPL-2.0+'
 );
 
 ###
