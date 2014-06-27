@@ -29,6 +29,6 @@
 	"dt_import_importing": "Đang nhập…",
 	"dt_import_success": "{{PLURAL:$1|Trang|$1 trang}} sẽ được nhập từ tập tin $2.",
 	"importcsv": "Nhập CSV",
-	"dt_importcsv_badheader": "Lỗi: tên của cột $1, “$2”, phải là “$3” hay “$4”, hoặc phải theo hình dạng “tên_tiêu_bản[tên_trường]”",
+	"dt_importcsv_badheader": "Lỗi: tên của cột $1, “$2”, phải là “$3” hay “$4”, hoặc phải theo định dạng “tên_tiêu_bản[tên_trường]”",
 	"right-datatransferimport": "Nhập dữ liệu"
 }
