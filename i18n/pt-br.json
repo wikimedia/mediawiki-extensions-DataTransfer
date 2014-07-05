@@ -5,7 +5,8 @@
 			"Giro720",
 			"Jaideraf",
 			"555",
-			"Fabsouza1"
+			"Fabsouza1",
+			"Smmvinicius"
 		]
 	},
 	"datatransfer-desc": "Permite a importação e exportação de dados contidos em chamadas de predefinições",
@@ -17,7 +18,7 @@
 	"dt_xml_namespace": "Namespace",
 	"dt_xml_pages": "Páginas",
 	"dt_xml_page": "Página",
-	"dt_xml_template": "Predefinição",
+	"dt_xml_template": "Modelo",
 	"dt_xml_field": "Campo",
 	"dt_xml_name": "Name",
 	"dt_xml_title": "Title",
