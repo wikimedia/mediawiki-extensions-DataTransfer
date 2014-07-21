@@ -33,10 +33,12 @@
 	"dt_import_skipexisting": "Seite nicht importieren",
 	"dt_import_appendtoexisting": "Vorhandenen Inhalt ergänzen",
 	"dt_import_summarydesc": "Zusammenfassung zum Import:",
-	"dt_import_editsummary": "$1-Import",
+	"dt_import_editsummary": "{{ucfirst:$1}}-Import",
 	"dt_import_importing": "Importiere …",
 	"dt_import_success": "{{PLURAL:$1|Eine Seite|$1 Seiten}} werden aus der $2-Datei importiert.",
 	"importcsv": "CSV-Datei importieren",
+	"importspreadsheet": "Tabellenkalkulationsblatt importieren",
 	"dt_importcsv_badheader": "'''Fehler:''' Der Kopf der Spalte $1, „$2“, muss entweder „$3“, „$4“ oder im Format „Vorlagenname[Feldname]“ sein",
-	"right-datatransferimport": "Daten importieren"
+	"right-datatransferimport": "Daten importieren",
+	"dt_filetype_spreadsheet": "Tabellenkalkulationsblatt"
 }

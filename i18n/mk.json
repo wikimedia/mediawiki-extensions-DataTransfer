@@ -28,10 +28,12 @@
 	"dt_import_skipexisting": "Прескокни",
 	"dt_import_appendtoexisting": "Додај во постоечката содржина",
 	"dt_import_summarydesc": "Опис на увозот:",
-	"dt_import_editsummary": "Увоз на $1",
+	"dt_import_editsummary": "Увоз на {{ucfirst:$1}}",
 	"dt_import_importing": "Увезувам...",
 	"dt_import_success": "$1 {{PLURAL:$1|страница ќе биде создадена|страници ќе бидат создадени}} од $2 податотеката.",
 	"importcsv": "Увоз на CSV",
+	"importspreadsheet": "Увези табеларна пресметка",
 	"dt_importcsv_badheader": "Грешка: насловот на колона $1, „$2“, мора да биде или „$3“, или „$4“, или пак од обликот „template_name[field_name]“",
-	"right-datatransferimport": "Увезување податоци"
+	"right-datatransferimport": "Увезување податоци",
+	"dt_filetype_spreadsheet": "табеларна пресметка"
 }
