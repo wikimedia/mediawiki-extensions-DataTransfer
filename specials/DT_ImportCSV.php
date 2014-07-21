@@ -5,55 +5,13 @@
  * @author Yaron Koren
  */
 
-class DTPage {
-	var $mName;
-	var $mTemplates;
-	var $mFreeText;
-
-	public function DTPage() {
-		$this->mTemplates = array();
-	}
-
-	function setName( $name ) {
-		$this->mName = $name;
-	}
-
-	function getName() {
-		return $this->mName;
-	}
-
-	function addTemplateField( $template_name, $field_name, $value ) {
-		if ( ! array_key_exists( $template_name, $this->mTemplates ) ) {
-			$this->mTemplates[$template_name] = array();
-		}
-		$this->mTemplates[$template_name][$field_name] = $value;
-	}
-
-	function setFreeText( $free_text ) {
-		$this->mFreeText = $free_text;
-	}
-
-	function createText() {
-		$text = "";
-		foreach ( $this->mTemplates as $template_name => $fields ) {
-			$text .= '{{' . $template_name . "\n";
-			foreach ( $fields as $field_name => $val ) {
-				$text .= "|$field_name=$val\n";
-			}
-			$text .= '}}' . "\n";
-		}
-		$text .= $this->mFreeText;
-		return $text;
-	}
-}
-
 class DTImportCSV extends SpecialPage {
 
 	/**
 	 * Constructor
 	 */
-	public function DTImportCSV() {
-		parent::__construct( 'ImportCSV' );
+	public function __construct( $name='ImportCSV' ) {
+		parent::__construct( $name );
 	}
 
 	function execute( $query ) {
@@ -63,63 +21,75 @@ class DTImportCSV extends SpecialPage {
 			throw new PermissionsError( 'datatransferimport' );
 		}
 
-		$out = $this->getOutput();
-		$request = $this->getRequest();
-		if ( $request->getCheck( 'import_file' ) ) {
-			$text = DTUtils::printImportingMessage();
-			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
-			if ( !$uploadResult->isOK() ) {
-				$uploadError = $out->parse( $uploadResult->getWikiText() );
-				$text .= $uploadError;
-				$out->addHTML( $text );
-				return;
-			}
-
-			$source = $uploadResult->value;
-
-			$encoding = $request->getVal( 'encoding' );
-			$pages = array();
-			$error_msg = self::getCSVData( $source->mHandle, $encoding, $pages );
-			if ( ! is_null( $error_msg ) ) {
-				$text .= $error_msg;
-				$out->addHTML( $text );
-				return;
-			}
-
-			$importSummary = $request->getVal( 'import_summary' );
-			$forPagesThatExist = $request->getVal( 'pagesThatExist' );
-			$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
+		if ( $this->getRequest()->getCheck( 'import_file' ) ) {
+			$text = $this->importFromUploadAndModifyPages();
 		} else {
-			$formText = DTUtils::printFileSelector( 'CSV' );
-			$utf8OptionText = "\t" . Xml::element( 'option',
+			$text = $this->printForm();
+		}
+
+		$this->getOutput()->addHTML( $text );
+	}
+
+	protected function importFromUploadAndModifyPages () {
+
+		$text = DTUtils::printImportingMessage();
+		$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
+
+		if ( !$uploadResult->isOK() ) {
+			$uploadError = $this->getOutput()->parse( $uploadResult->getWikiText() );
+			$text .= $uploadError;
+			return $text;
+		}
+
+		$source = $uploadResult->value;
+
+		$encoding = $this->getRequest()->getVal( 'encoding' );
+		$pages = array();
+
+		$error_msg = $this->importFromFile( $source->mHandle, $encoding, $pages );
+
+		if ( ! is_null( $error_msg ) ) {
+			$text .= $error_msg;
+			return $text;
+		}
+
+		$importSummary = $this->getRequest()->getVal( 'import_summary' );
+		$forPagesThatExist = $this->getRequest()->getVal( 'pagesThatExist' );
+
+		$text .= self::modifyPages( $pages, $importSummary, $forPagesThatExist );
+
+		return $text;
+	}
+
+	protected function printForm() {
+		$formText = DTUtils::printFileSelector( $this->getFiletype() );
+		$utf8OptionText = "\t" . Xml::element( 'option',
 				array(
 					'selected' => 'selected',
 					'value' => 'utf8'
 				), 'UTF-8' ) . "\n";
-			$utf16OptionText = "\t" . Xml::element( 'option',
+		$utf16OptionText = "\t" . Xml::element( 'option',
 				array(
 					'value' => 'utf16'
 				), 'UTF-16' ) . "\n";
-			$encodingSelectText = Xml::tags( 'select',
+		$encodingSelectText = Xml::tags( 'select',
 				array( 'name' => 'encoding' ),
 				"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
-			$formText .= "\t" . Xml::tags( 'p', null, $this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText ) . "\n";
-			$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
-			$formText .= DTUtils::printExistingPagesHandling();
-			$formText .= DTUtils::printImportSummaryInput( 'CSV' );
-			$formText .= DTUtils::printSubmitButton();
-			$text = "\t" . Xml::tags( 'form',
+		$formText .= "\t" . Xml::tags( 'p', null, $this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText ) . "\n";
+		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
+		$formText .= DTUtils::printExistingPagesHandling();
+		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
+		$formText .= DTUtils::printSubmitButton();
+		$text = "\t" . Xml::tags( 'form',
 				array(
 					'enctype' => 'multipart/form-data',
 					'action' => '',
 					'method' => 'post'
 				), $formText ) . "\n";
-		}
-
-		$out->addHTML( $text );
+		return $text;
 	}
 
-	static function getCSVData( $csv_file, $encoding, &$pages ) {
+	protected function importFromFile( $csv_file, $encoding, &$pages ) {
 		if ( is_null( $csv_file ) ) {
 			return wfMessage( 'emptyfile' )->text();
 		}
@@ -160,12 +130,18 @@ class DTImportCSV extends SpecialPage {
 			$table[0][0] = trim( $table[0][0], '"' );
 		}
 
+		return $this->importFromArray( $table, $pages );
+
+	}
+
+	protected function importFromArray( $table, &$pages ) {
+
 		// check header line to make sure every term is in the
 		// correct format
 		$title_label = wfMessage( 'dt_xml_title' )->inContentLanguage()->text();
 		$free_text_label = wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text();
 		foreach ( $table[0] as $i => $header_val ) {
-			if ( $header_val !== $title_label && $header_val !== $free_text_label &&
+			if ( $header_val !== $title_label && $header_val !== $free_text_label && $header_val !== ''	&&
 				! preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $header_val ) ) {
 				$error_msg = wfMessage( 'dt_importcsv_badheader', $i, $header_val, $title_label, $free_text_label )->text();
 				return $error_msg;
@@ -175,7 +151,9 @@ class DTImportCSV extends SpecialPage {
 			if ( $i == 0 ) continue;
 			$page = new DTPage();
 			foreach ( $line as $j => $val ) {
-				if ( $val == '' ) continue;
+				if ( $val === '' || $table[0][$j] === '' ) {
+					continue;
+				}
 				if ( $table[0][$j] == $title_label ) {
 					$page->setName( $val );
 				} elseif ( $table[0][$j] == $free_text_label ) {
@@ -191,7 +169,7 @@ class DTImportCSV extends SpecialPage {
 		return null;
 	}
 
-	function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
+	protected function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
 		$text = "";
 		$jobs = array();
 		$jobParams = array();
@@ -213,8 +191,12 @@ class DTImportCSV extends SpecialPage {
 		} else {
 			Job::batchInsert( $jobs );
 		}
-		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'CSV' )->parseAsBlock();
+		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( $this->getFiletype() )->parseAsBlock();
 
 		return $text;
+	}
+
+	protected function getFiletype() {
+		return wfMessage( 'dt_filetype_csv' )->text();
 	}
 }

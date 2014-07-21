@@ -33,6 +33,7 @@ $dtgIP = dirname( __FILE__ );
 
 // register all special pages and other classes
 $wgAutoloadClasses['DTPageStructure'] = $dtgIP . '/includes/DT_PageStructure.php';
+$wgAutoloadClasses['DTPage'] = $dtgIP . '/includes/DT_Page.php';
 $wgAutoloadClasses['DTUtils'] = $dtgIP . '/includes/DT_Utils.php';
 $wgSpecialPages['ViewXML'] = 'DTViewXML';
 $wgAutoloadClasses['DTViewXML'] = $dtgIP . '/specials/DT_ViewXML.php';
@@ -45,6 +46,12 @@ $wgAutoloadClasses['DTImportJob'] = $dtgIP . '/includes/DT_ImportJob.php';
 $wgAutoloadClasses['DTXMLParser'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgHooks['AdminLinks'][] = 'dtfAddToAdminLinks';
 $wgHooks['smwInitProperties'][] = 'dtfInitProperties';
+
+// only enable spreadsheet import if PHPExcel is installed
+if (class_exists( 'PHPExcel' )) {
+	$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
+	$wgAutoloadClasses['DTImportSpreadsheet'] = $dtgIP . '/specials/DT_ImportSpreadsheet.php';
+}
 
 ###
 # This is the path to your installation of the Data Transfer extension as

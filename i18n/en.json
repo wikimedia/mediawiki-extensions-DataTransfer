@@ -28,10 +28,14 @@
     "dt_import_skipexisting": "Skip",
     "dt_import_appendtoexisting": "Append to existing content",
     "dt_import_summarydesc": "Summary of import:",
-    "dt_import_editsummary": "$1 import",
+    "dt_import_editsummary": "{{ucfirst:$1}} import",
     "dt_import_importing": "Importing...",
     "dt_import_success": "$1 {{PLURAL:$1|page|pages}} will be created from the $2 file.",
     "importcsv": "Import CSV",
+    "importspreadsheet": "Import spreadsheet",
     "dt_importcsv_badheader": "Error: the column $1 header, '$2', must be either '$3', '$4' or of the form 'template_name[field_name]'",
-    "right-datatransferimport": "Import data"
+    "right-datatransferimport": "Import data",
+    "dt_filetype_xml": "XML",
+    "dt_filetype_csv": "CSV",
+    "dt_filetype_spreadsheet": "spreadsheet"
 }
