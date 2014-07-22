@@ -32,10 +32,12 @@
 	"dt_import_skipexisting": "Пропустить",
 	"dt_import_appendtoexisting": "Добавить к существующим данным",
 	"dt_import_summarydesc": "Описание импорта:",
-	"dt_import_editsummary": "импорт $1",
+	"dt_import_editsummary": "импорт из {{ucfirst:$1}}",
 	"dt_import_importing": "Импортирование...",
 	"dt_import_success": "$1 {{PLURAL:$1|страница была|страниц были|страницы были}} созданы из файла $2.",
 	"importcsv": "Импорт CSV",
+	"importspreadsheet": "Импорт таблицы",
 	"dt_importcsv_badheader": "Ошибка. Заголовок колонки №$1 «$2» должен быть или «$3», или «$4», или в форме «template_name[field_name]»",
-	"right-datatransferimport": "импорт информации"
+	"right-datatransferimport": "Импорт данных",
+	"dt_filetype_spreadsheet": "таблица"
 }

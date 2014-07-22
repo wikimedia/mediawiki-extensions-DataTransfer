@@ -33,7 +33,7 @@
 	"dt_import_skipexisting": "スキップ",
 	"dt_import_appendtoexisting": "既存の内容に追加",
 	"dt_import_summarydesc": "取り込みの要約:",
-	"dt_import_editsummary": "$1 の取り込み",
+	"dt_import_editsummary": "{{ucfirst:$1}} の取り込み",
 	"dt_import_importing": "取り込み中...",
 	"dt_import_success": "$2 ファイルから $1 {{PLURAL:$1|ページ}}が作成されます。",
 	"importcsv": "CSVの取り込み",

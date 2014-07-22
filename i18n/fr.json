@@ -8,7 +8,8 @@
 			"Peter17",
 			"PieRRoMaN",
 			"Verdy p",
-			"Zetud"
+			"Zetud",
+			"Gomoko"
 		]
 	},
 	"datatransfer-desc": "Permet l’import et l’export de données contenues dans des appels de modèles",
@@ -35,10 +36,12 @@
 	"dt_import_skipexisting": "Passer",
 	"dt_import_appendtoexisting": "Ajouter au contenu existant",
 	"dt_import_summarydesc": "Résumé de l’import :",
-	"dt_import_editsummary": "Import de $1",
+	"dt_import_editsummary": "importer en {{ucfirst:$1}}",
 	"dt_import_importing": "Import en cours...",
 	"dt_import_success": "$1 {{PLURAL:$1|page sera créée|pages seront créées}} depuis le fichier $2.",
 	"importcsv": "Import CSV",
+	"importspreadsheet": "Importer la feuille de calcul",
 	"dt_importcsv_badheader": "Erreur : le titre de colonne $1, « $2 », doit être soit « $3 », « $4 » ou de la forme « nom_du_modèle[nom_du_champ] »",
-	"right-datatransferimport": "Importer des données"
+	"right-datatransferimport": "Importer des données",
+	"dt_filetype_spreadsheet": "feuille de calcul"
 }
