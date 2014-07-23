@@ -6,7 +6,8 @@
 			"Linforest",
 			"PhiLiP",
 			"Qiyue2001",
-			"Shirayuki"
+			"Shirayuki",
+			"Liuxinyu970226"
 		]
 	},
 	"datatransfer-desc": "允许根据模板的要求导入导出结构化的数据",
@@ -33,10 +34,12 @@
 	"dt_import_skipexisting": "跳过",
 	"dt_import_appendtoexisting": "追加到现有内容",
 	"dt_import_summarydesc": "导入摘要：",
-	"dt_import_editsummary": "$1 导入",
+	"dt_import_editsummary": "{{ucfirst:$1}}导入",
 	"dt_import_importing": "正在导入...",
 	"dt_import_success": "将依据此$2文件创建$1个{{PLURAL:$1|个页面}}。",
 	"importcsv": "导入 CSV",
+	"importspreadsheet": "导入电子表格",
 	"dt_importcsv_badheader": "错误：第$1列的标题'$2'必须为'$3'、或者'$4'、或者采取'模板名称[字段名称]'的形式",
-	"right-datatransferimport": "导入数据"
+	"right-datatransferimport": "导入数据",
+	"dt_filetype_spreadsheet": "电子表格"
 }
