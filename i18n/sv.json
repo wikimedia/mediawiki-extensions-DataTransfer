@@ -35,10 +35,12 @@
 	"dt_import_skipexisting": "Hoppa över",
 	"dt_import_appendtoexisting": "Lägg till efter befintligt innehåll",
 	"dt_import_summarydesc": "Sammanfattning av importen:",
-	"dt_import_editsummary": "$1-importering",
+	"dt_import_editsummary": "importera {{ucfirst:$1}}",
 	"dt_import_importing": "Importerar...",
 	"dt_import_success": "$1 {{PLURAL:$1|sida|sidor}} kommer skapas från $2-filen.",
 	"importcsv": "Importera CSV",
+	"importspreadsheet": "Importera kalkylblad",
 	"dt_importcsv_badheader": "Fel: Titeln $2 för kolumnen $1 måste vara antingen $3, $4 eller på formen 'mallnamn[fältnamn]'",
-	"right-datatransferimport": "Importera data"
+	"right-datatransferimport": "Importera data",
+	"dt_filetype_spreadsheet": "kalkylblad"
 }

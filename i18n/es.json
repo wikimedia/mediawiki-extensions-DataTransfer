@@ -9,7 +9,8 @@
 			"Peter17",
 			"Sanbec",
 			"Translationista",
-			"VegaDark"
+			"VegaDark",
+			"Macofe"
 		]
 	},
 	"datatransfer-desc": "Permite importar y exportar datos contenidos en llamadas de plantilla",
@@ -36,7 +37,7 @@
 	"dt_import_skipexisting": "Omitir",
 	"dt_import_appendtoexisting": "Anexar al contenido existente",
 	"dt_import_summarydesc": "Resumen de importación:",
-	"dt_import_editsummary": "$1 importación",
+	"dt_import_editsummary": "importación {{ucfirst:$1}}",
 	"dt_import_importing": "Importando...",
 	"dt_import_success": "$1 {{PLURAL:$1|página|páginas}} serán creadas del archivo $2.",
 	"importcsv": "Importar CSV",
