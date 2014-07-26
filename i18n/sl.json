@@ -32,6 +32,8 @@
 	"dt_import_importing": "Uvažanje ...",
 	"dt_import_success": "Iz datoteke $2 bom ustvaril $1 {{PLURAL:$1|stran|strani}}.",
 	"importcsv": "Uvozi CSV",
+	"importspreadsheet": "Uvoz preglednice",
 	"dt_importcsv_badheader": "Napaka: glava stolpca $1, '$2', mora biti '$3', '$4' ali oblike 'template_name[field_name]'",
-	"right-datatransferimport": "Uvoz podatkov"
+	"right-datatransferimport": "Uvoz podatkov",
+	"dt_filetype_spreadsheet": "preglednice"
 }

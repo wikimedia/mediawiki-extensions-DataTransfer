@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liangent",
-			"Mark85296341"
+			"Mark85296341",
+			"LNDDYL"
 		]
 	},
 	"datatransfer-desc": "允許根據模板的要求導入導出結構化的數據",
@@ -28,7 +29,7 @@
 	"dt_import_skipexisting": "跳過",
 	"dt_import_appendtoexisting": "追加到現有內容",
 	"dt_import_summarydesc": "導入摘要：",
-	"dt_import_editsummary": "$1 導入",
+	"dt_import_editsummary": "{{ucfirst:$1}} 導入",
 	"dt_import_importing": "正在導入...",
 	"dt_import_success": "將依據此$2文件創建$1個{{PLURAL:$1|個頁面|個頁面}}。",
 	"importcsv": "導入 CSV",
