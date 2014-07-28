@@ -7,7 +7,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'DATA_TRANSFER_VERSION', '0.5' );
+define( 'DATA_TRANSFER_VERSION', '0.6' );
 
 // constants for special properties
 define( 'DT_SP_HAS_XML_GROUPING', 1 );
@@ -47,8 +47,8 @@ $wgAutoloadClasses['DTXMLParser'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgHooks['AdminLinks'][] = 'dtfAddToAdminLinks';
 $wgHooks['smwInitProperties'][] = 'dtfInitProperties';
 
-// only enable spreadsheet import if PHPExcel is installed
-if (class_exists( 'PHPExcel' )) {
+// Only enable spreadsheet import if PHPExcel is installed.
+if ( class_exists( 'PHPExcel' )) {
 	$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
 	$wgAutoloadClasses['DTImportSpreadsheet'] = $dtgIP . '/specials/DT_ImportSpreadsheet.php';
 }
