@@ -16,7 +16,10 @@
 	"dt_xml_freetext": "Маьрша йоза",
 	"importxml": "Импорт XML",
 	"dt_import_summarydesc": "Импортах лаьцна:",
+	"dt_import_editsummary": "{{ucfirst:$1}} чура импорт",
 	"dt_import_importing": "Импорт яр...",
 	"dt_import_success": "$1 {{PLURAL:$1|агӀо кхоьллина|агӀонаш кхоьллина}} $2 файлах.",
-	"importcsv": "Импорт CSV"
+	"importcsv": "Импорт CSV",
+	"importspreadsheet": "Таблицам импорт",
+	"dt_filetype_spreadsheet": "таблица"
 }
