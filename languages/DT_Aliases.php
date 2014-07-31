@@ -382,7 +382,7 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'ImportCSV' => array( '導入CSV' ),
-	'ImportXML' => array( '導入XML' ),
-	'ViewXML' => array( '查看XML' ),
+	'ImportCSV' => array( '匯入CSV' ),
+	'ImportXML' => array( '匯入XML' ),
+	'ViewXML' => array( '檢視XML' ),
 );
