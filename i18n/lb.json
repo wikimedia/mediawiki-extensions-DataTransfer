@@ -33,6 +33,8 @@
 	"dt_import_importing": "Import am gaang ...",
 	"dt_import_success": "$1 {{PLURAL:$1|Säit gëtt|Säite ginn}} aus dem $2-Fichier ugeluecht.",
 	"importcsv": "CSV importéieren",
+	"importspreadsheet": "Tabelleberechnungsblad importéieren",
 	"dt_importcsv_badheader": "Feeler: D'Iwwerschrëft vun der Kolonn $1, '$2', muss entweder '$3', '$4' oder am Format 'Numm_vun_der_Schabloun(Numm_vum_Feld)' sinn",
-	"right-datatransferimport": "Donnéeën importéieren"
+	"right-datatransferimport": "Donnéeën importéieren",
+	"dt_filetype_spreadsheet": "Tabelleberechnungsblad"
 }
