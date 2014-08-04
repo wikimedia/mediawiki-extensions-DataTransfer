@@ -4,7 +4,8 @@
 			"Rancher",
 			"Sasa Stefanovic",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Milicevic01"
 		]
 	},
 	"viewxml": "Види XML",
@@ -27,7 +28,7 @@
 	"dt_import_skipexisting": "Прескочи",
 	"dt_import_appendtoexisting": "Додај у постојећи садржај",
 	"dt_import_summarydesc": "Опис увоза:",
-	"dt_import_editsummary": "$1 увоз",
+	"dt_import_editsummary": "{{ucfirst:$1}} увоз",
 	"dt_import_importing": "Увоз у току...",
 	"importcsv": "Увези CSV",
 	"right-datatransferimport": "Увези податке"
