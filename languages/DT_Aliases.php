@@ -298,6 +298,8 @@ $specialPageAliases['pl'] = array(
 
 /** Portuguese (português) */
 $specialPageAliases['pt'] = array(
+	'ImportCSV' => array( 'Importar_CSV' ),
+	'ImportXML' => array( 'Importar_XML' ),
 	'ViewXML' => array( 'Ver_XML' ),
 );
 

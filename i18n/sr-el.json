@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Michaello",
-			"Жељко Тодоровић"
+			"Жељко Тодоровић",
+			"Milicevic01"
 		]
 	},
 	"viewxml": "Vidi XML",
@@ -19,7 +20,7 @@
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Slobodan tekst",
 	"importxml": "Uvezi XML",
-	"dt_import_editsummary": "$1 uvoz",
+	"dt_import_editsummary": "{{ucfirst:$1}} uvoz",
 	"dt_import_importing": "Uvoz u toku...",
 	"importcsv": "Uvezi CSV",
 	"right-datatransferimport": "Uvezi podatke"
