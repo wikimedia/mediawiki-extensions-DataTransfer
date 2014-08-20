@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Siebrand",
-			"Tvdm"
+			"Tvdm",
+			"Sjoerddebruin"
 		]
 	},
 	"datatransfer-desc": "Maakt het importeren en exporteren van gestructureerde gegevens in sjabloonaanroepen mogelijk",
@@ -29,7 +30,7 @@
 	"dt_import_skipexisting": "Overslaan",
 	"dt_import_appendtoexisting": "Toevoegen aan bestaande inhoud",
 	"dt_import_summarydesc": "Samenvatting van de import:",
-	"dt_import_editsummary": "$1-import",
+	"dt_import_editsummary": "{{ucfirst:$1}}-import",
 	"dt_import_importing": "Bezig met importeren…",
 	"dt_import_success": "Uit het $2-bestand {{PLURAL:$1|wordt één pagina|worden $1 pagina's}} geïmporteerd.",
 	"importcsv": "CSV importeren",
