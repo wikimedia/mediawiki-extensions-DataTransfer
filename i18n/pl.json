@@ -3,7 +3,8 @@
 		"authors": [
 			"McMonster",
 			"Sp5uhe",
-			"Wpedzich"
+			"Wpedzich",
+			"Chrumps"
 		]
 	},
 	"datatransfer-desc": "Pozwala na importowanie i eksportowanie danych zawartych w wywołaniach szablonu",
@@ -29,7 +30,7 @@
 	"dt_import_skipexisting": "Pomiń",
 	"dt_import_appendtoexisting": "Dołącz do istniejącej zawartości",
 	"dt_import_summarydesc": "Podsumowanie importu",
-	"dt_import_editsummary": "Import $1",
+	"dt_import_editsummary": "Import {{ucfirst:$1}}",
 	"dt_import_importing": "Importowanie...",
 	"dt_import_success": "$1 {{PLURAL:$1|strona zostanie utworzona|strony zostaną utworzone|stron zostanie utworzonych}} z pliku $2.",
 	"importcsv": "Import CSV",
