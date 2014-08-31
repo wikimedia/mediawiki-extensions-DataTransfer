@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Armin1392",
-			"Mjbmr"
+			"Mjbmr",
+			"Alirezaaa"
 		]
 	},
 	"datatransfer-desc": "اجازه برای واردات و صادرات اطلاعات حاوی الگوهای تماس",
@@ -12,7 +13,7 @@
 	"dt_viewxml_namespaces": "فضاهای نام",
 	"dt_viewxml_simplifiedformat": "فرمت ساده شده",
 	"dt_xml_namespace": "فضای نام",
-	"dt_xml_pages": "صفحه‌ها",
+	"dt_xml_pages": "صفحات",
 	"dt_xml_page": "صفحه",
 	"dt_xml_template": "الگو",
 	"dt_xml_field": "زمینه",
