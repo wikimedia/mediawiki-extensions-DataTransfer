@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrisportelli"
+			"Chrisportelli",
+			"Leli Forte"
 		]
 	},
 	"datatransfer-desc": "Tippermetti l-importazzjoni u l-esportazzjoni ta' dejta li tinsab f'sejħiet ta' mudelli",
@@ -10,7 +11,7 @@
 	"dt_viewxml_categories": "Kategoriji",
 	"dt_viewxml_namespaces": "Spazji tal-isem",
 	"dt_viewxml_simplifiedformat": "Format simplifikat",
-	"dt_xml_namespace": "Spazju tal-isem",
+	"dt_xml_namespace": "Spazju tal-ismijiet",
 	"dt_xml_pages": "Paġni",
 	"dt_xml_page": "Paġna",
 	"dt_xml_template": "Mudell",
