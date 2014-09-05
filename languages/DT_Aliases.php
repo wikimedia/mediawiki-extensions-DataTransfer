@@ -241,6 +241,13 @@ $specialPageAliases['lb'] = array(
 	'ViewXML' => array( 'XML_weisen' ),
 );
 
+/** Malagasy (Malagasy) */
+$specialPageAliases['mg'] = array(
+	'ImportCSV' => array( 'HanafatraCSV' ),
+	'ImportXML' => array( 'HanafatraXML' ),
+	'ViewXML' => array( 'HijeryXML' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'ImportCSV' => array( 'УвезиCSV' ),
