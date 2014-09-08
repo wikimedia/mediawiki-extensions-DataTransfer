@@ -3,7 +3,8 @@
 		"authors": [
 			"EugeneZelenko",
 			"Jim-by",
-			"Wizardist"
+			"Wizardist",
+			"Red Winged Duck"
 		]
 	},
 	"datatransfer-desc": "Дазваляе імпартаваць і экспартаваць зьвесткі, якія ўтрымліваюцца ў выкліках шаблёнах",
@@ -30,7 +31,7 @@
 	"dt_import_skipexisting": "Прапускаць",
 	"dt_import_appendtoexisting": "Далучаць да існуючага зьместу",
 	"dt_import_summarydesc": "Кароткае апісаньне імпарту:",
-	"dt_import_editsummary": "імпарт $1",
+	"dt_import_editsummary": "імпарт з {{ucfirst:$1}}",
 	"dt_import_importing": "Імпартаваньне...",
 	"dt_import_success": "$1 {{PLURAL:$1|старонка будзе|старонкі будуць|старонак будзе}} створана з файла ў фармаце $2.",
 	"importcsv": "Імпарт CSV",
