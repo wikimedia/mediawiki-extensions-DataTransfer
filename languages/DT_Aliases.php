@@ -370,7 +370,7 @@ $specialPageAliases['tt-cyrl'] = array(
 	'ViewXML' => array( 'XML_иттереп_ачу' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'ViewXML' => array( 'VardaXML' ),
 );
