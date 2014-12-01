@@ -23,7 +23,7 @@
 	"importxml": "Εισαγωγή σε XML",
 	"dt_import_encodingtype": "Τύπος κωδικοποίησης",
 	"dt_import_skipexisting": "Παράβλεψη",
-	"dt_import_editsummary": "Εισαγωγή $1",
+	"dt_import_editsummary": "{{ucfirst:$1}} εισαγωγή",
 	"dt_import_importing": "Εισάγεται...",
 	"importcsv": "Εισαγωγή CSV",
 	"right-datatransferimport": "Εισαγωγή δεδομένων"
