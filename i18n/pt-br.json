@@ -20,8 +20,8 @@
 	"dt_xml_page": "Página",
 	"dt_xml_template": "Modelo",
 	"dt_xml_field": "Campo",
-	"dt_xml_name": "Name",
-	"dt_xml_title": "Title",
+	"dt_xml_name": "Nome",
+	"dt_xml_title": "Titulo",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Free Text",
 	"importxml": "Importar XML",
@@ -33,10 +33,12 @@
 	"dt_import_skipexisting": "Pular",
 	"dt_import_appendtoexisting": "Adicionar ao conteúdo existente",
 	"dt_import_summarydesc": "Resumo da importação:",
-	"dt_import_editsummary": "Importação de $1",
+	"dt_import_editsummary": "Importação de {{ucfirst:$1}}",
 	"dt_import_importing": "Importando...",
 	"dt_import_success": "$1 {{PLURAL:$1|página será importada|páginas serão importadas}} do arquivo $2.",
 	"importcsv": "Importar CSV",
+	"importspreadsheet": "Importar planilha",
 	"dt_importcsv_badheader": "Erro: o cabeçalho da coluna $1, '$2', deve ser '$3', ou '$4' ou da forma 'nome_da_predefinição[nome_do_campo]'",
-	"right-datatransferimport": "Importar dados"
+	"right-datatransferimport": "Importar dados",
+	"dt_filetype_spreadsheet": "planilha"
 }
