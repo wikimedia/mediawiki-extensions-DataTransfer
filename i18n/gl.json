@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Alma",
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"datatransfer-desc": "Permite importar e exportar datos contidos en chamadas de modelos",
@@ -29,7 +30,7 @@
 	"dt_import_skipexisting": "Omitir",
 	"dt_import_appendtoexisting": "Engadir ao contido existente",
 	"dt_import_summarydesc": "Resumo da importación:",
-	"dt_import_editsummary": "Importación en $1",
+	"dt_import_editsummary": "Importación de {{ucfirst:$1}}",
 	"dt_import_importing": "Importando...",
 	"dt_import_success": "{{PLURAL:$1|Unha páxina será creada|$1 páxinas serán creadas}} a partir do ficheiro $2.",
 	"importcsv": "Importación en CSV",
