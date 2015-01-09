@@ -28,10 +28,12 @@
 	"dt_import_skipexisting": "Zumbe",
 	"dt_import_appendtoexisting": "'Nzicche a 'u condenute ca esiste",
 	"dt_import_summarydesc": "Ripeloghe de l'imbortazione:",
-	"dt_import_editsummary": "'Mborte $1",
+	"dt_import_editsummary": "'Mborte {{ucfirst:$1}}",
 	"dt_import_importing": "Stoche a 'mborte...",
 	"dt_import_success": "$1 {{PLURAL:$1|pàgene|pàggene}} ca onna essere ccrejate da 'u file $2.",
 	"importcsv": "'Mborte CSV",
+	"importspreadsheet": "'Mborte 'u foglie de calcole",
 	"dt_importcsv_badheader": "Errore: 'a testate d'a colonne $1, '$2', adda essere o '$3' o '$4' o une de le module 'template_name[field_name]'",
-	"right-datatransferimport": "'Mborte date"
+	"right-datatransferimport": "'Mborte date",
+	"dt_filetype_spreadsheet": "foglie de calcole"
 }
