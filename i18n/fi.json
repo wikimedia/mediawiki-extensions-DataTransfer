@@ -6,7 +6,8 @@
 			"Nedergard",
 			"Nike",
 			"Str4nd",
-			"Vililikku"
+			"Vililikku",
+			"McSalama"
 		]
 	},
 	"datatransfer-desc": "Mahdollistaa tuoda ja viedä dataa, joka on mallinekutsuissa.",
@@ -32,7 +33,7 @@
 	"dt_import_skipexisting": "Ohita",
 	"dt_import_appendtoexisting": "Liitä nykyiseen sisältöön",
 	"dt_import_summarydesc": "Tuonnin yhteenveto",
-	"dt_import_editsummary": "$1-tuonti",
+	"dt_import_editsummary": "{{ucfirst:$1}} tuo",
 	"dt_import_importing": "Tuodaan...",
 	"dt_import_success": "$1 {{PLURAL:$1|sivu|sivua}} luodaan $2-tiedostosta.",
 	"importcsv": "CSV-tuonti",
