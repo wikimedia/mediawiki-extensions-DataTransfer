@@ -3,7 +3,8 @@
 		"authors": [
 			"Alma",
 			"Toliño",
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"datatransfer-desc": "Permite importar e exportar datos contidos en chamadas de modelos",
@@ -34,6 +35,8 @@
 	"dt_import_importing": "Importando...",
 	"dt_import_success": "{{PLURAL:$1|Unha páxina será creada|$1 páxinas serán creadas}} a partir do ficheiro $2.",
 	"importcsv": "Importación en CSV",
+	"importspreadsheet": "Importar folla de cálculo",
 	"dt_importcsv_badheader": "Erro: a cabeceira da columna $1, \"$2\", debe ser un \"$3\", \"$4\" ou do formulario \"template_name[field_name]\"",
-	"right-datatransferimport": "Importar datos"
+	"right-datatransferimport": "Importar datos",
+	"dt_filetype_spreadsheet": "folla de cálculo"
 }
