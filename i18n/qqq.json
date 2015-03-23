@@ -12,7 +12,7 @@
 			"Umherirrender"
 		]
 	},
-	"datatransfer-desc": "{{Desc|name=Data Transfer|url=http://www.mediawiki.org/wiki/Extension:Data_Transfer}}",
+	"datatransfer-desc": "{{Desc|name=Data Transfer|url=https://www.mediawiki.org/wiki/Extension:Data_Transfer}}",
 	"viewxml": "{{doc-special|ViewXML|unlisted=1}}",
 	"dt_viewxml_docu": "Used as heading of the form.\n\nThis message is followed by HTML <code><nowiki><h2></nowiki></code> heading {{msg-mw|Dt viewxml categories}}.",
 	"dt_viewxml_categories": "{{Identical|Category}}",
