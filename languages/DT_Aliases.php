@@ -75,9 +75,9 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'ImportCSV' => array( 'CSVDeke' ),
-	'ImportXML' => array( 'XMLDeke' ),
-	'ViewXML' => array( 'XMLBivin' ),
+	'ImportCSV' => array( 'CSVCıKe' ),
+	'ImportXML' => array( 'XMLCıKe' ),
+	'ViewXML' => array( 'XMLBivêne' ),
 );
 
 /** Greek (Ελληνικά) */
