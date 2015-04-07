@@ -42,6 +42,13 @@ $specialPageAliases['as'] = array(
 	'ViewXML' => array( 'XML_পৰিদৰ্শন' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'ImportCSV' => array( 'سی_اس_وی_ئی_درون_ریچی' ),
+	'ImportXML' => array( 'اکس_ام_ال_ئی_درون_ریچی' ),
+	'ViewXML' => array( 'اکس_ام_ال_ئی_دیستین' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'ViewXML' => array( 'Itihi_XML' ),
