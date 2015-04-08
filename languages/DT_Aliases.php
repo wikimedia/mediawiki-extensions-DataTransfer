@@ -248,6 +248,13 @@ $specialPageAliases['lb'] = array(
 	'ViewXML' => array( 'XML_weisen' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'ImportCSV' => array( 'وامین_اوردن_سی_اس_وی' ),
+	'ImportXML' => array( 'وامین_اوردن_ایکس_ام_ال' ),
+	'ViewXML' => array( 'دیئن_ایکس_ام_ال' ),
+);
+
 /** Malagasy (Malagasy) */
 $specialPageAliases['mg'] = array(
 	'ImportCSV' => array( 'HanafatraCSV' ),
