@@ -23,7 +23,7 @@
 	"dt_import_forexisting": "გვერდებისათვის რომლებიც უკვე არსებობენ:",
 	"dt_import_skipexisting": "გამოტოვება",
 	"dt_import_summarydesc": "იმპორტის აღწერა:",
-	"dt_import_editsummary": "$1-ის იმპორტი",
+	"dt_import_editsummary": "{{ucfirst:$1}} იმპორტი",
 	"dt_import_importing": "იმპორტირება...",
 	"importcsv": "CSV-ის იმპორტი",
 	"right-datatransferimport": "მონაცემების იმპორტირება"
