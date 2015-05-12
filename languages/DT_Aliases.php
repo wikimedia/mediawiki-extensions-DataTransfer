@@ -28,7 +28,7 @@ $specialPageAliases['ar'] = array(
 	'ViewXML' => array( 'عرض_إكس_إم_إل' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'ImportCSV' => array( 'استيراد_سى_اس_فى' ),
 	'ImportXML' => array( 'استيراد_اكس_ام_ال' ),
@@ -132,7 +132,7 @@ $specialPageAliases['fr'] = array(
 	'ViewXML' => array( 'Voir_le_XML', 'Voir_XML', 'VoirXML' ),
 );
 
-/** Franco-Provençal (arpetan) */
+/** Arpitan (arpetan) */
 $specialPageAliases['frp'] = array(
 	'ViewXML' => array( 'Vêre_lo_XML', 'VêreLoXML' ),
 );
@@ -248,7 +248,7 @@ $specialPageAliases['lb'] = array(
 	'ViewXML' => array( 'XML_weisen' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'ImportCSV' => array( 'وامین_اوردن_سی_اس_وی' ),
 	'ImportXML' => array( 'وامین_اوردن_ایکس_ام_ال' ),
