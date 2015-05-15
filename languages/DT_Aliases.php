@@ -248,7 +248,7 @@ $specialPageAliases['lb'] = array(
 	'ViewXML' => array( 'XML_weisen' ),
 );
 
-/** لوری مینجایی (لوری مینجایی) */
+/** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'ImportCSV' => array( 'وامین_اوردن_سی_اس_وی' ),
 	'ImportXML' => array( 'وامین_اوردن_ایکس_ام_ال' ),
