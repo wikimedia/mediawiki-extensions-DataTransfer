@@ -3,7 +3,8 @@
 		"authors": [
 			"Siebrand",
 			"Tvdm",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Esketti"
 		]
 	},
 	"datatransfer-desc": "Maakt het importeren en exporteren van gestructureerde gegevens in sjabloonaanroepen mogelijk",
@@ -34,6 +35,8 @@
 	"dt_import_importing": "Bezig met importeren…",
 	"dt_import_success": "Uit het $2-bestand {{PLURAL:$1|wordt één pagina|worden $1 pagina's}} geïmporteerd.",
 	"importcsv": "CSV importeren",
+	"importspreadsheet": "Werkblad importeren",
 	"dt_importcsv_badheader": "Fout: De kop van kolom $1, \"$2\", moet \"$3\" of \"$4\" zijn, of in de vorm \"sjabloonnaam[veldnaam]\" genoteerd worden.",
-	"right-datatransferimport": "Gegevens importeren"
+	"right-datatransferimport": "Gegevens importeren",
+	"dt_filetype_spreadsheet": "Spreadsheet"
 }
