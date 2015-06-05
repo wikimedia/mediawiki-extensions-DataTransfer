@@ -250,9 +250,9 @@ $specialPageAliases['lb'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'ImportCSV' => array( 'وامین_اوردن_سی_اس_وی' ),
-	'ImportXML' => array( 'وامین_اوردن_ایکس_ام_ال' ),
-	'ViewXML' => array( 'دیئن_ایکس_ام_ال' ),
+	'ImportCSV' => array( 'ڤامین_اآڤوردئن_سی_ئس_ڤی' ),
+	'ImportXML' => array( 'ڤامین_آڤوردئن_ئیکس_ئم_ئل' ),
+	'ViewXML' => array( 'دیئن_ئیکس_ئم_ئل' ),
 );
 
 /** Malagasy (Malagasy) */
