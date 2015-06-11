@@ -161,5 +161,8 @@ function dtfAddToAdminLinks( $admin_links_tree ) {
 	$main_row->addItem( ALItem::newFromSpecialPage( 'ViewXML' ) );
 	$main_row->addItem( ALItem::newFromSpecialPage( 'ImportXML' ) );
 	$main_row->addItem( ALItem::newFromSpecialPage( 'ImportCSV' ) );
+	if ( class_exists( 'PHPExcel' )) {
+		$main_row->addItem( ALItem::newFromSpecialPage( 'ImportSpreadsheet' ) );
+	}
 	return true;
 }
