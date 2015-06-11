@@ -9,7 +9,7 @@
 			"Umherirrender"
 		]
 	},
-	"datatransfer-desc": "Ermöglicht den Export von Daten im XML-Format sowie den Import von Daten im XML- und CSV-Format",
+	"datatransfer-desc": "Ermöglicht den Im- und Export von Daten",
 	"viewxml": "XML ansehen",
 	"dt_viewxml_docu": "Bitte auswählen, welche Kategorien und Namensräume im XML-Format angezeigt werden sollen:",
 	"dt_viewxml_categories": "Kategorien",
@@ -37,8 +37,8 @@
 	"dt_import_importing": "Importiere …",
 	"dt_import_success": "{{PLURAL:$1|Eine Seite|$1 Seiten}} werden aus der $2-Datei importiert.",
 	"importcsv": "CSV-Datei importieren",
-	"importspreadsheet": "Tabellenkalkulationsblatt importieren",
+	"importspreadsheet": "Tabellenkalkulationsdatei importieren",
 	"dt_importcsv_badheader": "'''Fehler:''' Der Kopf der Spalte $1, „$2“, muss entweder „$3“, „$4“ oder im Format „Vorlagenname[Feldname]“ sein",
 	"right-datatransferimport": "Daten importieren",
-	"dt_filetype_spreadsheet": "Tabellenkalkulationsblatt"
+	"dt_filetype_spreadsheet": "Tabellenkalkulations"
 }

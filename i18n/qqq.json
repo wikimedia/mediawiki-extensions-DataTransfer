@@ -45,5 +45,5 @@
 	"right-datatransferimport": "{{doc-right|datatransferimport}}",
 	"dt_filetype_xml": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension.",
 	"dt_filetype_csv": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension.",
-	"dt_filetype_spreadsheet": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension."
+	"dt_filetype_spreadsheet": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension. Patchwork message with {{msg-mw|Dt import editsummary}} as suffix."
 }
