@@ -24,7 +24,7 @@
 	"dt_import_forexisting": "Pentru pagini care există deja:",
 	"dt_import_skipexisting": "Omite",
 	"dt_import_summarydesc": "Descrierea importului:",
-	"dt_import_editsummary": "Importare $1",
+	"dt_import_editsummary": "Importare {{ucfirst:$1}}",
 	"dt_import_importing": "Importare...",
 	"importcsv": "Importă CSV",
 	"right-datatransferimport": "Importă date"
