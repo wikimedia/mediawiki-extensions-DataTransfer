@@ -7,7 +7,8 @@
 			"Ohgi",
 			"Shirayuki",
 			"青子守歌",
-			"Shield-9"
+			"Shield-9",
+			"Otokoume"
 		]
 	},
 	"datatransfer-desc": "テンプレート呼び出しに含まれるデータの取り込みおよび書き出しができるようにする",
@@ -38,6 +39,7 @@
 	"dt_import_importing": "取り込み中...",
 	"dt_import_success": "$2 ファイルから $1 {{PLURAL:$1|ページ}}が作成されます。",
 	"importcsv": "CSVの取り込み",
+	"importspreadsheet": "スプレッドシートのインポート",
 	"dt_importcsv_badheader": "エラー: 列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります",
 	"right-datatransferimport": "データを取り込む",
 	"dt_filetype_spreadsheet": "スプレッドシート"
