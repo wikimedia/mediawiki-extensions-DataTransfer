@@ -3,7 +3,8 @@
 		"authors": [
 			"Daisy2002",
 			"Yjs5497",
-			"아라"
+			"아라",
+			"Hwangjy9"
 		]
 	},
 	"datatransfer-desc": "틀 호출에 포함된 데이터를 가져오기와 내보내기를 할 수 있습니다",
@@ -30,7 +31,7 @@
 	"dt_import_skipexisting": "건너뛰기",
 	"dt_import_appendtoexisting": "기존 내용에 추가",
 	"dt_import_summarydesc": "가져오기의 요약:",
-	"dt_import_editsummary": "$1 가져오기",
+	"dt_import_editsummary": "{{ucfirst:$1}} 가져오기",
 	"dt_import_importing": "가져오는 중...",
 	"dt_import_success": "{{PLURAL:$1|문서}} $1개가 $2 파일에서 만들어집니다.",
 	"importcsv": "CSV 가져오기",
