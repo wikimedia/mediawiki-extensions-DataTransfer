@@ -6,11 +6,12 @@
  */
 
 class DTViewXML extends SpecialPage {
+
 	/**
 	 * Constructor
 	 */
-	public function DTViewXML() {
-		parent::__construct( 'ViewXML' );
+	public function __construct( $name = 'ViewXML' ) {
+		parent::__construct( $name );
 	}
 
 	function execute( $query ) {
