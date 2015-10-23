@@ -1,0 +1,45 @@
+{
+	"name": "mediawiki/data-transfer",
+	"type": "mediawiki-extension",
+	"description": "A MediaWiki extension for importing and exporting data in CSV and XML formats.",
+	"keywords": ["MediaWiki", "CSV", "XML", "import", "export"],
+	"homepage": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
+	"license": "GPL-2.0+",
+	"authors": [
+		{"name": "Alexandre Emsenhuber"},
+		{"name": "Brion Vibber"},
+		{"name": "Chad Horohoe"},
+		{"name": "Daniel Friesen"},
+		{"name": "Jeroen De Dauw"},
+		{"name": "kghbln"},
+		{"name": "Meno25"},
+		{"name": "Niklas Laxström"},
+		{"name": "Raimond Spekking"},
+		{"name": "Sam Reed"},
+		{"name": "Siebrand Mazeland"},
+		{"name": "Shinjiman"},
+		{"name": "shirayuki"},
+		{"name": "Stephan Gambke"},
+		{"name": "umherirrender"},
+		{"name": "Yaron Koren"}
+	],
+	"support": {
+		"issues": "https://phabricator.wikimedia.org/project/profile/791/",
+		"irc": "irc://irc.freenode.net/mediawiki",
+		"wiki": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
+		"source": "https://git.wikimedia.org/git/mediawiki/extensions/DataTransfer.git"
+	},
+	"require": {
+		"php": ">=5.3.0",
+		"composer/installers": "1.*,>=1.0.1"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false
+	},
+	"autoload": {
+		"files" : [
+			"DataTransfer.php"
+		]
+	}
+}
