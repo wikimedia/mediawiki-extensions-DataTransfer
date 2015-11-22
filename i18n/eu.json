@@ -3,7 +3,8 @@
 		"authors": [
 			"Kobazulo",
 			"Theklan",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Xabier Armendaritz"
 		]
 	},
 	"viewxml": "XML ikusi",
@@ -30,7 +31,7 @@
 	"dt_import_summarydesc": "Inportatze laburpena:",
 	"dt_import_editsummary": "$1 inportatu",
 	"dt_import_importing": "Inportatzen...",
-	"dt_import_success": "{{PLURAL:$1|Orrialde $1 sortuko da|$1 orrialde sortuko dira}} $2 fitxategitik.",
+	"dt_import_success": "{{PLURAL:$1|Orri bat sortuko da|$1 orri sortuko dira}} $2 fitxategitik.",
 	"importcsv": "CSV inportatu",
 	"right-datatransferimport": "Datuak inportatu"
 }
