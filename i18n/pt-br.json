@@ -7,7 +7,8 @@
 			"555",
 			"Fabsouza1",
 			"Smmvinicius",
-			"V6rg"
+			"V6rg",
+			"C.R."
 		]
 	},
 	"datatransfer-desc": "Permite a importação e exportação de dados contidos em chamadas de predefinições",
@@ -16,7 +17,7 @@
 	"dt_viewxml_categories": "Categorias",
 	"dt_viewxml_namespaces": "Namespaces",
 	"dt_viewxml_simplifiedformat": "Formato simplificado",
-	"dt_xml_namespace": "نؤمفضا",
+	"dt_xml_namespace": "Namespace",
 	"dt_xml_pages": "Páginas",
 	"dt_xml_page": "Página",
 	"dt_xml_template": "Modelo",
