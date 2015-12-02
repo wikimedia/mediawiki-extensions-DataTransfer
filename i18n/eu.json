@@ -4,7 +4,8 @@
 			"Kobazulo",
 			"Theklan",
 			"පසිඳු කාවින්ද",
-			"Xabier Armendaritz"
+			"Xabier Armendaritz",
+			"An13sa"
 		]
 	},
 	"viewxml": "XML ikusi",
@@ -29,7 +30,7 @@
 	"dt_import_skipexisting": "Utzi",
 	"dt_import_appendtoexisting": "Jada baden edukiari gehitu",
 	"dt_import_summarydesc": "Inportatze laburpena:",
-	"dt_import_editsummary": "$1 inportatu",
+	"dt_import_editsummary": "{{ucfirst:$1}} inportatu",
 	"dt_import_importing": "Inportatzen...",
 	"dt_import_success": "{{PLURAL:$1|Orri bat sortuko da|$1 orri sortuko dira}} $2 fitxategitik.",
 	"importcsv": "CSV inportatu",
