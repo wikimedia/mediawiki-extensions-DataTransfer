@@ -38,5 +38,5 @@
 	"importspreadsheet": "Werkblad importeren",
 	"dt_importcsv_badheader": "Fout: De kop van kolom $1, \"$2\", moet \"$3\" of \"$4\" zijn, of in de vorm \"sjabloonnaam[veldnaam]\" genoteerd worden.",
 	"right-datatransferimport": "Gegevens importeren",
-	"dt_filetype_spreadsheet": "Spreadsheet"
+	"dt_filetype_spreadsheet": "spreadsheet"
 }
