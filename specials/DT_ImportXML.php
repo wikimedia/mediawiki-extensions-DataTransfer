@@ -14,6 +14,10 @@ class DTImportXML extends SpecialPage {
 		parent::__construct( $name );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	function execute( $query ) {
 		$this->setHeaders();
 
