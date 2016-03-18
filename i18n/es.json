@@ -15,7 +15,7 @@
 	},
 	"datatransfer-desc": "Permite importar y exportar datos contenidos en llamadas de plantilla",
 	"viewxml": "Ver XML",
-	"dt_viewxml_docu": "Por favor seleccionar entre las siguientes categorías y nombres de espacio para ver en formato XML.",
+	"dt_viewxml_docu": "Selecciona entre las siguientes categorías y espacios de nombres para ver en formato XML.",
 	"dt_viewxml_categories": "Categorías",
 	"dt_viewxml_namespaces": "Espacios de nombres",
 	"dt_viewxml_simplifiedformat": "Formato simplificado",
@@ -39,10 +39,10 @@
 	"dt_import_summarydesc": "Resumen de importación:",
 	"dt_import_editsummary": "importación {{ucfirst:$1}}",
 	"dt_import_importing": "Importando...",
-	"dt_import_success": "$1 {{PLURAL:$1|página|páginas}} serán creadas del archivo $2.",
+	"dt_import_success": "$1 {{PLURAL:$1|página se creará|páginas se crearán}} del archivo $2.",
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar hoja de cálculo",
-	"dt_importcsv_badheader": "Error : el título de columna $1, \"$2\", tiene que ser \"$3\", \"$4\" o de la forma 'nombre_de_plantilla[nombre_del_campo]'",
+	"dt_importcsv_badheader": "Error: el título de columna $1, \"$2\", tiene que ser \"$3\", \"$4\" o de la forma 'nombre_de_plantilla[nombre_del_campo]'",
 	"right-datatransferimport": "Importar datos",
 	"dt_filetype_spreadsheet": "hoja de cálculo"
 }
