@@ -3,7 +3,8 @@
 		"authors": [
 			"Ләйсән",
 			"Аҡҡашҡа",
-			"Мухамадеева"
+			"Мухамадеева",
+			"Айбикә"
 		]
 	},
 	"datatransfer-desc": "Ҡалыпты һорап алыу эстәлегендәге мәғлүмәтте импортлау һәм экспортлау",
@@ -19,7 +20,9 @@
 	"dt_xml_field": "майҙан.",
 	"dt_xml_name": "Исем.",
 	"dt_xml_title": "Атама",
+	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Ирекле текст",
+	"importxml": "XML импорты",
 	"dt_import_selectfile": " импорт өсөн $1 файлын һайлағыҙ",
 	"dt_import_encodingtype": "кодлау төрө",
 	"dt_import_forexisting": "Булған биттәр өсөн",
@@ -31,6 +34,7 @@
 	"dt_import_editsummary": " {{ucfirst:$1}}-тан импорт",
 	"dt_import_importing": "Индереү",
 	"dt_import_success": "$1 {{PLURAL:$1|бите булған|биттәр булған|бит булған}}  $2 файлынан булдырылған.",
+	"importcsv": "CSV импорты",
 	"importspreadsheet": "Таблицаның импорты",
 	"dt_importcsv_badheader": "Хата.  №$1 «$2» колонкаларының атмаһы «$3», йәки «$4», йәки   «template_name[field_name]» формаһында булырға тейеш.",
 	"right-datatransferimport": "Мәғлүмәттәр импорты",
