@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Rotemliss",
-			"YaronSh"
+			"YaronSh",
+			"Guycn2"
 		]
 	},
 	"datatransfer-desc": "אפשרות לייבא ולייצא נתונים בתבניות",
@@ -30,10 +31,12 @@
 	"dt_import_skipexisting": "לדלג",
 	"dt_import_appendtoexisting": "לצרף את התוכן הקיים",
 	"dt_import_summarydesc": "תקציר היבוא:",
-	"dt_import_editsummary": "יבוא $1",
+	"dt_import_editsummary": "ייבוא של {{ucfirst:$1}}",
 	"dt_import_importing": "מתבצע יבוא...",
 	"dt_import_success": "{{PLURAL:$1|דף אחד ייוצר|$1 דפים ייוצרו}} מקובץ ה־$2.",
 	"importcsv": "יבוא CSV",
+	"importspreadsheet": "גיליון נתונים של ייבוא",
 	"dt_importcsv_badheader": "שגיאה: כותרת העמודה $1, '$2', חייבת להיות או '$3', '$4' או מהצורה 'שם_התבנית[שם_השדה]'",
-	"right-datatransferimport": "יבוא נתונים"
+	"right-datatransferimport": "יבוא נתונים",
+	"dt_filetype_spreadsheet": "גיליון נתונים"
 }
