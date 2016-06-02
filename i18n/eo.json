@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Michawiki",
-			"Yekrats"
+			"Yekrats",
+			"Robin van der Vliet"
 		]
 	},
 	"datatransfer-desc": "Permesas importadon kaj eksportadon de datumoj enhave en ŝablonaj vokoj",
@@ -24,5 +25,7 @@
 	"dt_import_editsummary": "$1 importo",
 	"dt_import_importing": "Importante...",
 	"importcsv": "Importi CSV",
-	"right-datatransferimport": "Importi datenojn"
+	"importspreadsheet": "Importi kalkultabelon",
+	"right-datatransferimport": "Importi datenojn",
+	"dt_filetype_spreadsheet": "kalkultabelo"
 }
