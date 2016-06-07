@@ -116,7 +116,14 @@ class DTImportCSV extends SpecialPage {
 			fclose( $tempfile );
 		} else {
 			while ( $line = fgetcsv( $csv_file ) ) {
-				array_push( $table, $line );
+				// Convert from UTF-8 to ASCII - htmlentities()
+				// fails for UTF-8 if there are non-ASCII
+				// characters.
+				$convertedLine = array();
+				foreach ( $line as $value ) {
+					$convertedLine[] = mb_convert_encoding( $value, 'UTF-8', 'ASCII' );
+				}
+				array_push( $table, $convertedLine );
 			}
 		}
 		fclose( $csv_file );
