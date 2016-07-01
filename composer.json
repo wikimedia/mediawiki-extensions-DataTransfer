@@ -27,7 +27,7 @@
 		"issues": "https://phabricator.wikimedia.org/project/profile/791/",
 		"irc": "irc://irc.freenode.net/mediawiki",
 		"wiki": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
-		"source": "https://git.wikimedia.org/git/mediawiki/extensions/DataTransfer.git"
+		"source": "https://phabricator.wikimedia.org/diffusion/EDTR/extension-datatransfer.git"
 	},
 	"require": {
 		"php": ">=5.3.0",
