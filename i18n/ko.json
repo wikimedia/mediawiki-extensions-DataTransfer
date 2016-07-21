@@ -5,7 +5,8 @@
 			"Yjs5497",
 			"아라",
 			"Hwangjy9",
-			"Revi"
+			"Revi",
+			"Ykhwong"
 		]
 	},
 	"datatransfer-desc": "틀 호출에 포함된 데이터를 가져오기와 내보내기를 할 수 있습니다",
@@ -37,7 +38,7 @@
 	"dt_import_success": "{{PLURAL:$1|문서}} $1개가 $2 파일에서 만들어집니다.",
 	"importcsv": "CSV 가져오기",
 	"importspreadsheet": "스프레드시트 들여오기",
-	"dt_importcsv_badheader": "오류: $1열의 머리인, '$2'(은)는, '$3', '$4'나 '틀_이름[필드_이름]' 형식 중 하나여야 합니다",
+	"dt_importcsv_badheader": "오류: $1열의 머리인, '$2'은(는) '$3', '$4'나 '틀_이름[필드_이름]' 형식 중 하나여야 합니다",
 	"right-datatransferimport": "데이터 가져오기",
 	"dt_filetype_spreadsheet": "스프레드시트"
 }
