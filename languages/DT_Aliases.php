@@ -13,6 +13,7 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'ImportCSV' => array( 'ImportCSV' ),
 	'ImportXML' => array( 'ImportXML' ),
+	'ImportSpreadsheet' => array( 'ImportSpreadsheet' ),
 	'ViewXML' => array( 'ViewXML' ),
 );
 
