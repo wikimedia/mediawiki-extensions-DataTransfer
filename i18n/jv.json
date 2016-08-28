@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Meursault2004"
+			"Meursault2004",
+			"NoiX180"
 		]
 	},
 	"viewxml": "Ndeleng XML",
@@ -10,7 +11,7 @@
 	"dt_xml_namespace": "Bilik nama",
 	"dt_xml_page": "Kaca",
 	"dt_xml_name": "Jeneng",
-	"dt_xml_title": "Irah-irahan (judhul)",
+	"dt_xml_title": "Sesirah",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Tèks Bébas"
 }
