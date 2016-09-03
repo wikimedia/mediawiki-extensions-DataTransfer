@@ -36,7 +36,7 @@
 	"dt_import_skipexisting": "Used as label for the radiobutton.\n{{Related|Dt import forexisting}}\n{{Identical|Skip}}",
 	"dt_import_appendtoexisting": "Used as label for the radiobutton.\n{{Related|Dt import forexisting}}",
 	"dt_import_summarydesc": "Used as label for the \"Summary text of import\" input box.\n\nThe default value of the input box is {{msg-mw|Dt import editsummary}}.",
-	"dt_import_editsummary": "Parameters:\n* $1 - the file format: CSV, XML or spreadsheet\n{{Identical|Import}}",
+	"dt_import_editsummary": "This message is part of the editsummary. It prints the result of the import in the version history of the respective page content was imported to.\n\nParameters:\n* $1 - the file format: CSV, XML or spreadsheet\n{{Identical|Import}}",
 	"dt_import_importing": "This message indicates the extension is currently importing a CSV file (or an XML file).\n{{Identical|Importing}}",
 	"dt_import_success": "Parameters:\n* $1 - the number of pages\n* $2 - the file format: CSV, XML or spreadsheet",
 	"importcsv": "{{doc-special|ImportCSV|unlisted=1}}\nCSV (comma separated value)",
