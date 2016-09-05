@@ -71,7 +71,15 @@ class DTImportJob extends Job {
 		$edit_summary = $this->params['edit_summary'];
 		if ( method_exists( 'WikiPage', 'getContent' ) ) {
 			$new_content = new WikitextContent( $text );
-			$wikiPage->doEditContent( $new_content, $edit_summary );
+			// It's strange that doEditContent() doesn't
+			// automatically attach the 'bot' flag when the user
+			// is a bot...
+			if ( $wgUser->isAllowed( 'bot' ) ) {
+				$flags = EDIT_FORCE_BOT;
+			} else {
+				$flags = 0;
+			}
+			$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
 
 		} else {
 			$article->doEdit( $text, $edit_summary );
