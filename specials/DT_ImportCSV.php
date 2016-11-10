@@ -162,7 +162,7 @@ class DTImportCSV extends SpecialPage {
 			if ( $i == 0 ) continue;
 			$page = new DTPage();
 			foreach ( $line as $j => $val ) {
-				if ( $val === '' || $table[0][$j] === '' ) {
+				if ( $table[0][$j] === '' ) {
 					continue;
 				}
 				if ( $table[0][$j] == $title_label ) {

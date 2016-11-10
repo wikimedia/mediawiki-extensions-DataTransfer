@@ -6,28 +6,23 @@
  */
 
 class DTPage {
-	var/**
-	 * Lets the user import a CSV file to turn into wiki pages
-	 *
-	 * @author Yaron Koren
-	 */
-		$mName;
+	var $mName;
 	var $mTemplates;
 	var $mFreeText;
 
-	public function DTPage () {
+	public function DTPage() {
 		$this->mTemplates = array();
 	}
 
-	function setName ( $name ) {
+	function setName( $name ) {
 		$this->mName = $name;
 	}
 
-	function getName () {
+	function getName() {
 		return $this->mName;
 	}
 
-	function addTemplateField ( $template_name, $field_name, $value ) {
+	function addTemplateField( $template_name, $field_name, $value ) {
 
 		if ( !array_key_exists( $template_name, $this->mTemplates ) ) {
 			$this->mTemplates[$template_name] = array();
@@ -35,16 +30,23 @@ class DTPage {
 		$this->mTemplates[$template_name][$field_name] = $value;
 	}
 
-	function setFreeText ( $free_text ) {
+	function setFreeText( $free_text ) {
 		$this->mFreeText = $free_text;
 	}
 
-	function createText () {
+	function createText() {
 		$text = "";
 		foreach ( $this->mTemplates as $template_name => $fields ) {
-			$text .= '{{' . $template_name . "\n";
+			$fieldsAdded = false;
+			$text .= '{{' . $template_name;
 			foreach ( $fields as $field_name => $val ) {
-				$text .= "|$field_name=$val\n";
+				if ( $val != '' ) {
+					$text .= "\n|$field_name=$val";
+					$fieldsAdded = true;
+				}
+			}
+			if ( $fieldsAdded ) {
+				$text .= "\n";
 			}
 			$text .= '}}' . "\n";
 		}
