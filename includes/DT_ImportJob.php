@@ -24,21 +24,13 @@ class DTImportJob extends Job {
 			return false;
 		}
 
-		if ( method_exists( 'WikiPage', 'getContent' ) ) {
-			$wikiPage = new WikiPage( $this->title );
-			if ( !$wikiPage ) {
-				$this->error = 'dtImport: Wiki page not found "' . $this->title->getPrefixedDBkey() . '"';
-				wfProfileOut( __METHOD__ );
-				return false;
-			}
-		} else {
-			$article = new Article( $this->title );
-			if ( !$article ) {
-				$this->error = 'dtImport: Article not found "' . $this->title->getPrefixedDBkey() . '"';
-				wfProfileOut( __METHOD__ );
-				return false;
-			}
+		$wikiPage = WikiPage::factory( $this->title );
+		if ( !$wikiPage ) {
+			$this->error = 'dtImport: Wiki page not found "' . $this->title->getPrefixedDBkey() . '"';
+			wfProfileOut( __METHOD__ );
+			return false;
 		}
+
 		$for_pages_that_exist = $this->params['for_pages_that_exist'];
 		if ( $for_pages_that_exist == 'skip' && $this->title->exists() ) {
 			return true;
@@ -52,12 +44,7 @@ class DTImportJob extends Job {
 		$text = $this->params['text'];
 		if ( $this->title->exists() ) {
 			if ( $for_pages_that_exist == 'append' ) {
-				if ( method_exists( 'WikiPage', 'getContent' ) ) {
-					// MW >= 1.21
-					$existingText = $wikiPage->getContent()->getNativeData();
-				} else {
-					$existingText = $article->getContent();
-				}
+				$existingText = ContentHandler::getContentText( $wikiPage->getContent() );
 				$text = $existingText . "\n" . $text;
 			} elseif ( $for_pages_that_exist == 'merge' ) {
 				$existingPageStructure = DTPageStructure::newFromTitle( $this->title );
@@ -69,21 +56,17 @@ class DTImportJob extends Job {
 			// otherwise, $for_pages_that_exist == 'overwrite'
 		}
 		$edit_summary = $this->params['edit_summary'];
-		if ( method_exists( 'WikiPage', 'getContent' ) ) {
-			$new_content = new WikitextContent( $text );
-			// It's strange that doEditContent() doesn't
-			// automatically attach the 'bot' flag when the user
-			// is a bot...
-			if ( $wgUser->isAllowed( 'bot' ) ) {
-				$flags = EDIT_FORCE_BOT;
-			} else {
-				$flags = 0;
-			}
-			$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
-
+		$new_content = new WikitextContent( $text );
+		// It's strange that doEditContent() doesn't
+		// automatically attach the 'bot' flag when the user
+		// is a bot...
+		if ( $wgUser->isAllowed( 'bot' ) ) {
+			$flags = EDIT_FORCE_BOT;
 		} else {
-			$article->doEdit( $text, $edit_summary );
+			$flags = 0;
 		}
+		$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
+
 		$wgUser = $actual_user;
 		wfProfileOut( __METHOD__ );
 		return true;

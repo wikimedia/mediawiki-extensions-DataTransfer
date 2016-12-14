@@ -148,13 +148,8 @@ class DTPageStructure {
 		$pageStructure = new DTPageStructure();
 		$pageStructure->mPageTitle = $pageTitle;
 
-		if ( method_exists( 'WikiPage', 'getContent' ) ) {
-			$wiki_page = new WikiPage( $pageTitle );
-			$page_contents = $wiki_page->getContent()->getNativeData();
-		} else {
-			$article = new Article( $pageTitle );
-			$page_contents = $article->getContent();
-		}
+		$wiki_page = WikiPage::factory( $pageTitle );
+		$page_contents = ContentHandler::getContentText( $wiki_page->getContent() );
 
 		$pageStructure->parsePageContents( $page_contents );
 
