@@ -28,7 +28,7 @@
 	"dt_import_skipexisting": "Saltar",
 	"dt_import_appendtoexisting": "Adjunger al contento existente",
 	"dt_import_summarydesc": "Summario de importation:",
-	"dt_import_editsummary": "Importation de $1",
+	"dt_import_editsummary": "Importation de {{ucfirst:$1}}",
 	"dt_import_importing": "Importation in curso…",
 	"dt_import_success": "$1 {{PLURAL:$1|pagina|paginas}} essera create ex le file $2.",
 	"importcsv": "Importar CSV",
