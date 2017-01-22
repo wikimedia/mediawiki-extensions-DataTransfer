@@ -3,10 +3,11 @@
 		"authors": [
 			"Michawiki",
 			"Yekrats",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Psychoslave"
 		]
 	},
-	"datatransfer-desc": "Permesas importadon kaj eksportadon de datumoj enhave en ŝablonaj vokoj",
+	"datatransfer-desc": "Permesas enportadon kaj elportadon de datumoj enhave en ŝablonaj vokoj",
 	"viewxml": "Rigardu XML-on",
 	"dt_viewxml_docu": "Bonvolu elekti inter la subaj kategorioj kaj nomspacoj por rigardi en XML-formato.",
 	"dt_viewxml_categories": "Kategorioj",
