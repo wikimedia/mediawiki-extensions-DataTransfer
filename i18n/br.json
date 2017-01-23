@@ -27,6 +27,7 @@
 	"dt_import_encodingtype": "Seurt enkodadur :",
 	"dt_import_forexisting": "Evit pajennoù zo anezho dija :",
 	"dt_import_overwriteexisting": "erlec'hiañ an endalc'had zo anezhañ dija",
+	"dt_import_mergeintoexisting": "Erlec'hiañ hepken ar maeziennoù a gaver er restr",
 	"dt_import_skipexisting": "Lezel a-gostez",
 	"dt_import_appendtoexisting": "Ouzhpennañ d'an endalc'had zo anezhañ dija",
 	"dt_import_summarydesc": "Diverradenn an enporzh :",
