@@ -22,6 +22,7 @@
 	"importxml": "Impòrt en XML",
 	"dt_import_selectfile": "Seleccionatz lo fichièr $1 d'importar :",
 	"dt_import_encodingtype": "Tipe d’encodatge:",
+	"dt_import_forexisting": "Per las paginas qu'existisson ja :",
 	"dt_import_skipexisting": "Passar",
 	"dt_import_summarydesc": "Resumit de l’impòrt :",
 	"dt_import_editsummary": "importar en {{ucfirst:$1}}",
