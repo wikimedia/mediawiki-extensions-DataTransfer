@@ -146,16 +146,23 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	protected function importFromArray( $table, &$pages ) {
-
-		// check header line to make sure every term is in the
-		// correct format
-		$title_label = wfMessage( 'dt_xml_title' )->inContentLanguage()->text();
-		$free_text_label = wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text();
-		foreach ( $table[0] as $i => $header_val ) {
-			if ( $header_val !== $title_label && $header_val !== $free_text_label && $header_val !== ''	&&
-				! preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $header_val ) ) {
-				$error_msg = wfMessage( 'dt_importcsv_badheader', $i, $header_val, $title_label, $free_text_label )->text();
-				return $error_msg;
+		// Check header line to make sure every term is in the
+		// correct format.
+		$titleLabels = array( wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
+		$freeTextLabels = array( wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
+		// Add the English-language values as well, if this isn't an
+		// English-language wiki.
+		if ( $this->getLanguage()->getCode() !== 'en' ) {
+			$titleLabels[] = wfMessage( 'dt_xml_title' )->inLanguage( 'en' )->text();
+			$freeTextLabels[] = wfMessage( 'dt_xml_freetext' )->inLanguage( 'en' )->text();
+		}
+		foreach ( $table[0] as $i => $headerVal ) {
+			if ( !in_array( $headerVal, $titleLabels )
+			&& !in_array( $headerVal, $freeTextLabels )
+			&& $headerVal !== ''
+			&& !preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $headerVal ) ) {
+				$errorMsg = wfMessage( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->text();
+				return $errorMsg;
 			}
 		}
 		foreach ( $table as $i => $line ) {
@@ -165,13 +172,13 @@ class DTImportCSV extends SpecialPage {
 				if ( $table[0][$j] === '' ) {
 					continue;
 				}
-				if ( $table[0][$j] == $title_label ) {
+				if ( in_array( $table[0][$j], $titleLabels ) ) {
 					$page->setName( $val );
-				} elseif ( $table[0][$j] == $free_text_label ) {
+				} elseif ( in_array( $table[0][$j], $freeTextLabels ) ) {
 					$page->setFreeText( $val );
 				} else {
-					list( $template_name, $field_name ) = explode( '[', str_replace( ']', '', $table[0][$j] ) );
-					$page->addTemplateField( $template_name, $field_name, $val );
+					list( $templateName, $fieldName ) = explode( '[', str_replace( ']', '', $table[0][$j] ) );
+					$page->addTemplateField( $templateName, $fieldName, $val );
 				}
 			}
 			$pages[] = $page;
