@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"CERminator"
+			"CERminator",
+			"Srdjan m"
 		]
 	},
 	"datatransfer-desc": "Omogućuje uvoz i izvoz podataka koji su sadržani u pozivima šablona",
@@ -27,7 +28,7 @@
 	"dt_import_skipexisting": "Preskoči",
 	"dt_import_appendtoexisting": "Dodaj na postojeći sadržaj",
 	"dt_import_summarydesc": "Sažetak uvoza:",
-	"dt_import_editsummary": "$1 uvoz",
+	"dt_import_editsummary": "{{ucfirst:$1}} uvoz",
 	"dt_import_importing": "Uvoz...",
 	"dt_import_success": "$1 {{PLURAL:$1|stranica|stranice|stranica}} će biti napravljeno iz $2 datoteke.",
 	"importcsv": "Uvoz CSV",
