@@ -5,7 +5,8 @@
 			"Theklan",
 			"පසිඳු කාවින්ද",
 			"Xabier Armendaritz",
-			"An13sa"
+			"An13sa",
+			"Subi"
 		]
 	},
 	"viewxml": "XML ikusi",
@@ -34,5 +35,6 @@
 	"dt_import_importing": "Inportatzen...",
 	"dt_import_success": "{{PLURAL:$1|Orri bat sortuko da|$1 orri sortuko dira}} $2 fitxategitik.",
 	"importcsv": "CSV inportatu",
-	"right-datatransferimport": "Datuak inportatu"
+	"right-datatransferimport": "Datuak inportatu",
+	"dt_filetype_spreadsheet": "kalkulu-orria"
 }
