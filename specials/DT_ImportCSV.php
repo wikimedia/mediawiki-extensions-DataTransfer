@@ -31,6 +31,7 @@ class DTImportCSV extends SpecialPage {
 			$text = $this->printForm();
 		}
 
+		$this->getOutput()->addModuleStyles( 'ext.datatransfer');
 		$this->getOutput()->addHTML( $text );
 	}
 

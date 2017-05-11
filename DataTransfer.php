@@ -24,12 +24,18 @@ $wgExtensionCredits['specialpage'][] = array(
 );
 
 ###
-# This is the path to your installation of Semantic Forms as
+# This is the path to your installation of DataTransfer as
 # seen on your local filesystem. Used against some PHP file path
 # issues.
 ##
 $dtgIP = dirname( __FILE__ );
 ##
+
+$wgResourceModules[ 'ext.datatransfer' ] = array(
+    'localBasePath' => $dtgIP,
+    'styles' => 'styles/DataTransfer.css',
+    'position' => 'bottom',
+);
 
 // register all special pages and other classes
 $wgAutoloadClasses['DTPageStructure'] = $dtgIP . '/includes/DT_PageStructure.php';
