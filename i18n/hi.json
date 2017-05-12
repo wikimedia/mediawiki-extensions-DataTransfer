@@ -24,6 +24,6 @@
 	"dt_xml_id": "आईडी",
 	"dt_xml_freetext": "मुक्त पाठ",
 	"dt_import_skipexisting": "छोड़ें",
-	"dt_import_editsummary": "$1 आयात",
+	"dt_import_editsummary": "{{ucfirst:$1}} आयात",
 	"right-datatransferimport": "डेटा आयात करें"
 }
