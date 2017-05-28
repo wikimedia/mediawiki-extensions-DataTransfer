@@ -3,7 +3,8 @@
 		"authors": [
 			"Meno25",
 			"Mutarjem horr",
-			"OsamaK"
+			"OsamaK",
+			"Mido"
 		]
 	},
 	"datatransfer-desc": "يسمح باستيراد وتصدير بيانات محتواة في استدعاءات قالب",
@@ -30,7 +31,7 @@
 	"dt_import_appendtoexisting": "إلحاق بالمحتوى الموجود",
 	"dt_import_summarydesc": "موجز الاستيراد :",
 	"dt_import_editsummary": "استيراد $1",
-	"dt_import_importing": "جاري الاستيراد...",
+	"dt_import_importing": "جارٍ الاستيراد...",
 	"dt_import_success": "سوف تُنشأ {{PLURAL:$1||صفحة واحدة|صفحتين|$1 صفحات|$1 صفحة}} من ملف $2.",
 	"importcsv": "استورد CSV",
 	"dt_importcsv_badheader": "خطأ: عنوان العامود $1، '$2'، يجب أن يكون إما '$3'، '$4' أو من الصيغة 'template_name[field_name]'",
