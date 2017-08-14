@@ -4,7 +4,8 @@
 			"Meno25",
 			"Mutarjem horr",
 			"OsamaK",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
 	"datatransfer-desc": "يسمح باستيراد وتصدير بيانات محتواة في استدعاءات قالب",
@@ -30,7 +31,7 @@
 	"dt_import_skipexisting": "أقفز",
 	"dt_import_appendtoexisting": "إلحاق بالمحتوى الموجود",
 	"dt_import_summarydesc": "موجز الاستيراد :",
-	"dt_import_editsummary": "استيراد $1",
+	"dt_import_editsummary": "استيراد {{ucfirst:$1}}",
 	"dt_import_importing": "جارٍ الاستيراد...",
 	"dt_import_success": "سوف تُنشأ {{PLURAL:$1||صفحة واحدة|صفحتين|$1 صفحات|$1 صفحة}} من ملف $2.",
 	"importcsv": "استورد CSV",
