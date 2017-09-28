@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"StanProg"
 		]
 	},
 	"viewxml": "Преглед на XML",
@@ -19,7 +20,7 @@
 	"dt_xml_id": "Номер",
 	"dt_xml_freetext": "Свободен текст",
 	"importxml": "Внасяне на XML",
-	"dt_import_skipexisting": "Пропусни",
+	"dt_import_skipexisting": "Пропускане",
 	"dt_import_importing": "Внасяне...",
 	"importcsv": "Внасяне на CSV",
 	"right-datatransferimport": "Внасяне на данни"
