@@ -56,6 +56,10 @@ $wgAutoloadClasses['DTWikiPage'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgHooks['AdminLinks'][] = 'dtfAddToAdminLinks';
 $wgHooks['smwInitProperties'][] = 'dtfInitProperties';
 
+// register page for api uploadCSV
+$wgAutoloadClasses['ApiUploadCSV'] = __DIR__ . '/specials/DT_ImportCSV.api.php';
+$wgAPIModules['uploadcsv'] = 'ApiUploadCSV';
+
 // Only enable spreadsheet import if PHPExcel is installed.
 if ( class_exists( 'PHPExcel' )) {
 	$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
