@@ -2,26 +2,64 @@
 	"name": "mediawiki/data-transfer",
 	"type": "mediawiki-extension",
 	"description": "A MediaWiki extension for importing and exporting data in CSV and XML formats.",
-	"keywords": ["MediaWiki", "CSV", "XML", "import", "export"],
+	"keywords": [
+		"MediaWiki",
+		"CSV",
+		"XML",
+		"import",
+		"export"
+	],
 	"homepage": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
 	"license": "GPL-2.0+",
 	"authors": [
-		{"name": "Alexandre Emsenhuber"},
-		{"name": "Brion Vibber"},
-		{"name": "Chad Horohoe"},
-		{"name": "Daniel Friesen"},
-		{"name": "Jeroen De Dauw"},
-		{"name": "kghbln"},
-		{"name": "Meno25"},
-		{"name": "Niklas Laxström"},
-		{"name": "Raimond Spekking"},
-		{"name": "Sam Reed"},
-		{"name": "Siebrand Mazeland"},
-		{"name": "Shinjiman"},
-		{"name": "shirayuki"},
-		{"name": "Stephan Gambke"},
-		{"name": "umherirrender"},
-		{"name": "Yaron Koren"}
+		{
+			"name": "Alexandre Emsenhuber"
+		},
+		{
+			"name": "Brion Vibber"
+		},
+		{
+			"name": "Chad Horohoe"
+		},
+		{
+			"name": "Daniel Friesen"
+		},
+		{
+			"name": "Jeroen De Dauw"
+		},
+		{
+			"name": "kghbln"
+		},
+		{
+			"name": "Meno25"
+		},
+		{
+			"name": "Niklas Laxström"
+		},
+		{
+			"name": "Raimond Spekking"
+		},
+		{
+			"name": "Sam Reed"
+		},
+		{
+			"name": "Siebrand Mazeland"
+		},
+		{
+			"name": "Shinjiman"
+		},
+		{
+			"name": "shirayuki"
+		},
+		{
+			"name": "Stephan Gambke"
+		},
+		{
+			"name": "umherirrender"
+		},
+		{
+			"name": "Yaron Koren"
+		}
 	],
 	"support": {
 		"issues": "https://phabricator.wikimedia.org/project/profile/791/",
@@ -38,17 +76,22 @@
 		"prepend-autoloader": false
 	},
 	"autoload": {
-		"files" : [
+		"files": [
 			"DataTransfer.php"
 		]
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
-		"jakub-onderka/php-console-highlighter": "0.3.2"
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"mediawiki/minus-x": "0.2.0"
 	},
 	"scripts": {
 		"test": [
-			"parallel-lint . --exclude vendor --exclude node_modules"
+			"parallel-lint . --exclude vendor --exclude node_modules",
+			"minus-x check ."
+		],
+		"fix": [
+			"minus-x fix ."
 		]
 	}
 }
