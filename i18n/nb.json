@@ -3,7 +3,8 @@
 		"authors": [
 			"Event",
 			"Nghtwlkr",
-			"Emilbk"
+			"Emilbk",
+			"Jon Harald Søby"
 		]
 	},
 	"datatransfer-desc": "Gjør det mulig å importere og eksportere data som finnes i maloppkallinger",
