@@ -64,12 +64,8 @@ class DTImportXML extends SpecialPage {
 			$job_params['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $job_params );
 		}
-		// MW 1.21+
-		if ( class_exists( 'JobQueueGroup' ) ) {
-			JobQueueGroup::singleton()->push( $jobs );
-		} else {
-			Job::batchInsert( $jobs );
-		}
+		JobQueueGroup::singleton()->push( $jobs );
+
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'XML' )
 			->parseAsBlock();
 		return $text;

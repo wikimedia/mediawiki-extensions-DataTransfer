@@ -204,12 +204,8 @@ class DTImportCSV extends SpecialPage {
 			$jobParams['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
-		// MW 1.21+
-		if ( class_exists( 'JobQueueGroup' ) ) {
-			JobQueueGroup::singleton()->push( $jobs );
-		} else {
-			Job::batchInsert( $jobs );
-		}
+		JobQueueGroup::singleton()->push( $jobs );
+
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( $this->getFiletype() )->parseAsBlock();
 
 		return $text;
