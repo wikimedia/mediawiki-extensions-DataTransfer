@@ -1,0 +1,72 @@
+{
+	"@Note": "When updating this file please also update DataTransfer.php with the same changes.",
+	"name": "Data Transfer",
+	"version": "1.0-alpha",
+	"author": [
+		"Yaron Koren",
+		"..."
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
+	"descriptionmsg": "datatransfer-desc",
+	"license-name": "GPL-2.0+",
+	"type": "specialpage",
+	"GroupPermissions": {
+		"sysop": {
+			"datatransferimport": true
+		}
+	},
+	"AvailableRights": [
+		"datatransferimport"
+	],
+	"SpecialPages": {
+		"ViewXML": "DTViewXML",
+		"ImportXML": "DTImportXML",
+		"ImportCSV": "DTImportCSV",
+		"ImportSpreadsheet": "DTImportSpreadsheet"
+	},
+        "JobClasses": {
+	       "dtImport": "DTImportJob"
+        },
+	"MessagesDirs": {
+		"DataTransfer": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"DataTransferAlias": "DataTransfer.i18n.alias.php"
+	},
+	"AutoloadClasses": {
+		"DTPageStructure": "includes/DT_PageStructure.php",
+		"DTPageComponent": "includes/DT_PageComponent.php",
+		"DTPage": "includes/DT_Page.php",
+		"DTUtils": "includes/DT_Utils.php",
+		"DTImportJob": "includes/DT_ImportJob.php",
+		"DTXMLParser": "includes/DT_XMLParser.php",
+		"DTWikiTemplate": "includes/DT_WikiTemplate.php",
+		"DTWikiPage": "includes/DT_WikiPage.php",
+		"DTHooks": "includes/DT_Hooks.php",
+		"DTViewXML": "specials/DT_ViewXML.php",
+		"DTImportXML": "specials/DT_ImportXML.php",
+		"DTImportCSV": "specials/DT_ImportCSV.php",
+		"DTImportSpreadsheet": "specials/DT_ImportSpreadsheet.php"
+	},
+	"ResourceModules": {
+		"ext.datatransfer": {
+			"styles": "styles/DataTransfer.css"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "DataTransfer"
+	},
+	"Hooks": {
+		"AdminLinks": [
+			"DTHooks::addToAdminLinks"
+		]
+	},
+	"config": {
+		"DataTransferViewXMLParseFields": false,
+		"DataTransferViewXMLParseFreeText": true
+	},
+	"manifest_version": 1
+}
