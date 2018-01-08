@@ -67,4 +67,4 @@ $wgDataTransferViewXMLParseFields = false;
 $wgDataTransferViewXMLParseFreeText = true;
 
 $wgMessagesDirs['DataTransfer'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
+$wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/DataTransfer.i18n.alias.php';
