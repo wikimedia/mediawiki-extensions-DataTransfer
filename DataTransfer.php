@@ -49,7 +49,8 @@ $wgAutoloadClasses['DTImportJob'] = $dtgIP . '/includes/DT_ImportJob.php';
 $wgAutoloadClasses['DTXMLParser'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgAutoloadClasses['DTWikiTemplate'] = $dtgIP . '/includes/DT_WikiTemplate.php';
 $wgAutoloadClasses['DTWikiPage'] = $dtgIP . '/includes/DT_WikiPage.php';
-$wgHooks['AdminLinks'][] = 'dtfAddToAdminLinks';
+$wgAutoloadClasses['DTHooks'] = $dtgIP . '/includes/DT_Hooks.php';
+$wgHooks['AdminLinks'][] = 'DTHooks::addToAdminLinks';
 
 // Only enable spreadsheet import if PHPExcel is installed.
 if ( class_exists( 'PHPExcel' )) {
@@ -77,23 +78,3 @@ $wgDataTransferViewXMLParseFreeText = true;
 
 $wgMessagesDirs['DataTransfer'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
-
-/**********************************************/
-/***** other global helpers               *****/
-/**********************************************/
-
-/**
- * Add links to the 'AdminLinks' special page, defined by the Admin Links
- * extension
- */
-function dtfAddToAdminLinks( $admin_links_tree ) {
-	$import_export_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_importexport' )->text() );
-	$main_row = $import_export_section->getRow( 'main' );
-	$main_row->addItem( ALItem::newFromSpecialPage( 'ViewXML' ) );
-	$main_row->addItem( ALItem::newFromSpecialPage( 'ImportXML' ) );
-	$main_row->addItem( ALItem::newFromSpecialPage( 'ImportCSV' ) );
-	if ( class_exists( 'PHPExcel' )) {
-		$main_row->addItem( ALItem::newFromSpecialPage( 'ImportSpreadsheet' ) );
-	}
-	return true;
-}
