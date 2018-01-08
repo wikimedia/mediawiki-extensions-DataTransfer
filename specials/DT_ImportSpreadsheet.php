@@ -3,6 +3,7 @@
  * Lets the user import a spreadsheet file to turn into wiki pages
  *
  * @author Stephan Gambke
+ * @ingroup DataTransfer
  */
 
 class DTImportSpreadsheet extends DTImportCSV {
@@ -12,6 +13,10 @@ class DTImportSpreadsheet extends DTImportCSV {
 	}
 
 	protected function printForm() {
+		if ( !class_exists( 'PHPExcel' ) ) {
+			return '<div class="error">You must have the PHPExcel library installed to run this page.</div>';
+		}
+
 		$formText = DTUtils::printFileSelector( $this->getFiletype() );
 		$formText .= DTUtils::printExistingPagesHandling();
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );

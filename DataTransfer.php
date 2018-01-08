@@ -34,7 +34,7 @@ $wgResourceModules[ 'ext.datatransfer' ] = array(
     'position' => 'bottom',
 );
 
-// register all special pages and other classes
+// Register all special pages and other classes.
 $wgAutoloadClasses['DTPageStructure'] = $dtgIP . '/includes/DT_PageStructure.php';
 $wgAutoloadClasses['DTPageComponent'] = $dtgIP . '/includes/DT_PageComponent.php';
 $wgAutoloadClasses['DTPage'] = $dtgIP . '/includes/DT_Page.php';
@@ -45,19 +45,16 @@ $wgSpecialPages['ImportXML'] = 'DTImportXML';
 $wgAutoloadClasses['DTImportXML'] = $dtgIP . '/specials/DT_ImportXML.php';
 $wgSpecialPages['ImportCSV'] = 'DTImportCSV';
 $wgAutoloadClasses['DTImportCSV'] = $dtgIP . '/specials/DT_ImportCSV.php';
+$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
+$wgAutoloadClasses['DTImportSpreadsheet'] = $dtgIP . '/specials/DT_ImportSpreadsheet.php';
 $wgJobClasses['dtImport'] = 'DTImportJob';
 $wgAutoloadClasses['DTImportJob'] = $dtgIP . '/includes/DT_ImportJob.php';
 $wgAutoloadClasses['DTXMLParser'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgAutoloadClasses['DTWikiTemplate'] = $dtgIP . '/includes/DT_WikiTemplate.php';
 $wgAutoloadClasses['DTWikiPage'] = $dtgIP . '/includes/DT_WikiPage.php';
 $wgAutoloadClasses['DTHooks'] = $dtgIP . '/includes/DT_Hooks.php';
-$wgHooks['AdminLinks'][] = 'DTHooks::addToAdminLinks';
 
-// Only enable spreadsheet import if PHPExcel is installed.
-if ( class_exists( 'PHPExcel' )) {
-	$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
-	$wgAutoloadClasses['DTImportSpreadsheet'] = $dtgIP . '/specials/DT_ImportSpreadsheet.php';
-}
+$wgHooks['AdminLinks'][] = 'DTHooks::addToAdminLinks';
 
 ###
 # Permission to import files
