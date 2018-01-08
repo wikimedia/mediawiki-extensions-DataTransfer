@@ -1,72 +1,10 @@
 <?php
 /**
- * Classes for parsing XML representing wiki pages and their template calls
+ * Class for parsing XML representing wiki pages and their template calls
  *
  * @author Yaron Koren
+ * @ingroup DataTransfer
  */
-
-class DTWikiTemplate {
-	private $mName = null;
-	private $mFields = array();
-
-	public function DTWikiTemplate( $name ) {
-		$this->mName = $name;
-	}
-
-	function addField( $name, $value ) {
-		$this->mFields[$name] = $value;
-	}
-
-	function createText() {
-		$multi_line_template = false;
-		$text = '{{' . $this->mName;
-		foreach ( $this->mFields as $field_name => $field_val ) {
-			if ( is_numeric( $field_name ) ) {
-				$text .= "|$field_val";
-			} else {
-				$text .= "\n|$field_name=$field_val";
-				$multi_line_template = true;
-			}
-		}
-		if ( $multi_line_template )
-			$text .= "\n";
-		$text .= '}}' . "\n";
-		return $text;
-	}
-}
-
-class DTWikiPage {
-	private $mPageName = null;
-	private $mElements = array();
-
-	public function DTWikiPage( $name ) {
-		$this->mPageName = $name;
-	}
-
-	function getName() {
-		return $this->mPageName;
-	}
-
-	function addTemplate( $template ) {
-		$this->mElements[] = $template;
-	}
-
-	function addFreeText( $free_text ) {
-		$this->mElements[] = $free_text;
-	}
-
-	function createText() {
-		$text = "";
-		foreach ( $this->mElements as $elem ) {
-			if ( $elem instanceof DTWikiTemplate ) {
-				$text .= $elem->createText();
-			} else {
-				$text .= $elem;
-			}
-		}
-		return $text;
-	}
-}
 
 class DTXMLParser {
 	var $mDebug = false;
