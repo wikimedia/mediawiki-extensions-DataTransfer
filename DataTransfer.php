@@ -7,11 +7,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'DATA_TRANSFER_VERSION', '0.6.2' );
-
-// constants for special properties
-define( 'DT_SP_HAS_XML_GROUPING', 1 );
-define( 'DT_SP_IS_EXCLUDED_FROM_XML', 2 );
+define( 'DATA_TRANSFER_VERSION', '1.0-alpha' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
@@ -54,7 +50,6 @@ $wgAutoloadClasses['DTXMLParser'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgAutoloadClasses['DTWikiTemplate'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgAutoloadClasses['DTWikiPage'] = $dtgIP . '/includes/DT_XMLParser.php';
 $wgHooks['AdminLinks'][] = 'dtfAddToAdminLinks';
-$wgHooks['smwInitProperties'][] = 'dtfInitProperties';
 
 // Only enable spreadsheet import if PHPExcel is installed.
 if ( class_exists( 'PHPExcel' )) {
@@ -80,81 +75,12 @@ $wgAvailableRights[] = 'datatransferimport';
 $wgDataTransferViewXMLParseFields = false;
 $wgDataTransferViewXMLParseFreeText = true;
 
-// initialize content language
-require_once($dtgIP . '/languages/DT_Language.php');
-global $wgLanguageCode;
-dtfInitContentLanguage($wgLanguageCode);
-
 $wgMessagesDirs['DataTransfer'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/languages/DT_Aliases.php';
 
 /**********************************************/
-/***** language settings                  *****/
-/**********************************************/
-
-/**
- * Initialise a global language object for content language. This
- * must happen early on, even before user language is known, to
- * determine labels for additional namespaces. In contrast, messages
- * can be initialised much later when they are actually needed.
- */
-function dtfInitContentLanguage( $langcode ) {
-	global $dtgIP, $dtgContLang;
-
-	if ( !empty( $dtgContLang ) ) { return; }
-
-	$dtContLangClass = 'DT_Language' . str_replace( '-', '_', ucfirst( $langcode ) );
-
-	if ( file_exists( $dtgIP . '/languages/' . $dtContLangClass . '.php' ) ) {
-		include_once( $dtgIP . '/languages/' . $dtContLangClass . '.php' );
-	}
-
-	// fallback if language not supported
-	if ( !class_exists( $dtContLangClass ) ) {
-		include_once( $dtgIP . '/languages/DT_LanguageEn.php' );
-		$dtContLangClass = 'DT_LanguageEn';
-	}
-
-	$dtgContLang = new $dtContLangClass();
-}
-
-/**
- * Initialise the global language object for user language. This
- * must happen after the content language was initialised, since
- * this language is used as a fallback.
- */
-function dtfInitUserLanguage( $langcode ) {
-	global $dtgIP, $dtgLang;
-
-	if ( !empty( $dtgLang ) ) { return; }
-
-	$dtLangClass = 'DT_Language' . str_replace( '-', '_', ucfirst( $langcode ) );
-
-	if ( file_exists( $dtgIP . '/languages/' . $dtLangClass . '.php' ) ) {
-		include_once( $dtgIP . '/languages/' . $dtLangClass . '.php' );
-	}
-
-	// fallback if language not supported
-	if ( !class_exists( $dtLangClass ) ) {
-		global $dtgContLang;
-		$dtgLang = $dtgContLang;
-	} else {
-		$dtgLang = new $dtLangClass();
-	}
-}
-
-/**********************************************/
 /***** other global helpers               *****/
 /**********************************************/
-
-function dtfInitProperties() {
-	global $dtgContLang;
-	$dt_props = $dtgContLang->getPropertyLabels();
-	SMWDIProperty::registerProperty( '_DT_XG', '_str', $dt_props[DT_SP_HAS_XML_GROUPING], true );
-	// TODO - this should set a "backup" English value as well,
-	// so that the phrase "Has XML grouping" works in all languages
-	return true;
-}
 
 /**
  * Add links to the 'AdminLinks' special page, defined by the Admin Links

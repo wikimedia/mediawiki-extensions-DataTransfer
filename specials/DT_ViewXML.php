@@ -20,25 +20,12 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getCategoriesList() {
-		global $wgContLang, $dtgContLang;
-		$dt_props = $dtgContLang->getPropertyLabels();
-		$exclusion_cat_name = str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
-		$exclusion_cat_full_name = $wgContLang->getNSText( NS_CATEGORY ) . ':' . $exclusion_cat_name;
 		$dbr = wfGetDB( DB_SLAVE );
 		$categorylinks = $dbr->tableName( 'categorylinks' );
 		$res = $dbr->query( "SELECT DISTINCT cl_to FROM $categorylinks" );
 		$categories = array();
 		while ( $row = $dbr->fetchRow( $res ) ) {
-			$cat_name = $row[0];
-			// Add this category to the list, if it's not the
-			// "Excluded from XML" category, and it's not a child
-			// of that category.
-			if ( $cat_name != $exclusion_cat_name ) {
-				$title = Title::newFromText( $cat_name, NS_CATEGORY );
-				$parent_categories = $title->getParentCategoryTree( array() );
-				if ( ! self::treeContainsElement( $parent_categories, $exclusion_cat_full_name ) )
-					$categories[] = $cat_name;
-			}
+			$categories[] = $row[0];
 		}
 		$dbr->freeResult( $res );
 		sort( $categories );
@@ -56,63 +43,6 @@ class DTViewXML extends SpecialPage {
 		$dbr->freeResult( $res );
 		return $namespaces;
 	}
-
-	static function getGroupings() {
-		global $smwgIP;
-
-		if ( ! isset( $smwgIP ) ) {
-			return array();
-		} else {
-			$groupings = array();
-			$store = smwfGetStore();
-			// SMWDIProperty was added in SMW 1.6
-			if ( class_exists( 'SMWDIProperty' ) ) {
-				$grouping_prop = SMWDIProperty::newFromUserLabel( '_DT_XG' );
-			} else {
-				$grouping_prop = SMWPropertyValue::makeProperty( '_DT_XG' );
-			}
-			$grouped_props = $store->getAllPropertySubjects( $grouping_prop );
-			foreach ( $grouped_props as $grouped_prop ) {
-				$res = $store->getPropertyValues( $grouped_prop, $grouping_prop );
-				$num = count( $res );
-				if ( $num > 0 ) {
-					if ( class_exists( 'SMWDIProperty' ) ) {
-						$grouping_label = $res[0]->getSortKey();
-					} else {
-						$grouping_label = $res[0]->getShortWikiText();
-					}
-					$groupings[] = array( $grouped_prop, $grouping_label );
-				}
-			}
-			return $groupings;
-		}
-	}
-
-	static function getSubpagesForPageGrouping( $page_name, $relation_name ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		$smw_relations = $dbr->tableName( 'smw_relations' );
-		$smw_attributes = $dbr->tableName( 'smw_attributes' );
-		$res = $dbr->query( "SELECT subject_title FROM $smw_relations WHERE object_title = '$page_name' AND relation_title = '$relation_name'" );
-		$subpages = array();
-		while ( $row = $dbr->fetchRow( $res ) ) {
-			$subpage_name = $row[0];
-			$query_subpage_name = str_replace( "'", "\'", $subpage_name );
-			// get the display order
-			$res2 = $dbr->query( "SELECT value_num FROM $smw_attributes WHERE subject_title = '$query_subpage_name' AND attribute_title = 'Display_order'" );
-			if ( $row2 = $dbr->fetchRow( $res2 ) ) {
-				$display_order = $row2[0];
-			} else {
-				$display_order = - 1;
-			}
-			$dbr->freeResult( $res2 );
-			// HACK - page name is the key, display order is the value
-			$subpages[$subpage_name] = $display_order;
-		}
-		$dbr->freeResult( $res );
-		uasort( $subpages, "cmp" );
-		return array_keys( $subpages );
-	}
-
 
 	/*
 	 * Get all the pages that belong to a category and all its
@@ -200,56 +130,11 @@ class DTViewXML extends SpecialPage {
 	}
 
 
-	static function getXMLForPage( $title, $simplified_format, $groupings, $depth = 0 ) {
+	static function getXMLForPage( $title, $simplified_format, $depth = 0 ) {
 		if ( $depth > 5 ) { return ""; }
-
-		global $wgContLang, $dtgContLang;
-
-		// if this page belongs to the exclusion category, exit
-		$parent_categories = $title->getParentCategoryTree( array() );
-		$dt_props = $dtgContLang->getPropertyLabels();
-		// $exclusion_category = $title->newFromText($dt_props[DT_SP_IS_EXCLUDED_FROM_XML], NS_CATEGORY);
-		$exclusion_category = $wgContLang->getNSText( NS_CATEGORY ) . ':' . str_replace( ' ', '_', $dt_props[DT_SP_IS_EXCLUDED_FROM_XML] );
-		if ( self::treeContainsElement( $parent_categories, $exclusion_category ) ) {
-			return "";
-		}
 
 		$pageStructure = DTPageStructure::newFromTitle( $title );
 		$text = $pageStructure->toXML( $simplified_format );
-
-		// handle groupings, if any apply here; first check if SMW is installed
-		global $smwgIP;
-		if ( isset( $smwgIP ) ) {
-			$store = smwfGetStore();
-			$page_title = $title->getText();
-			$page_namespace = $title->getNamespace();
-			// Escaping is needed for SMWSQLStore3 - this may be a bug in SMW.
-			$escaped_page_title = str_replace( ' ', '_', $page_title );
-			foreach ( $groupings as $pair ) {
-				list( $property_page, $grouping_label ) = $pair;
-				$options = new SMWRequestOptions();
-				$options->sort = "subject_title";
-				// get actual property from the wiki-page of the property
-				if ( class_exists( 'SMWDIProperty' ) ) {
-					$wiki_page = new SMWDIWikiPage( $escaped_page_title, $page_namespace, null );
-					$property = SMWDIProperty::newFromUserLabel( $property_page->getTitle()->getText() );
-				} else {
-					$wiki_page = SMWDataValueFactory::newTypeIDValue( '_wpg', $escaped_page_title );
-					$property = SMWPropertyValue::makeProperty( $property_page->getTitle()->getText() );
-				}
-				$res = $store->getPropertySubjects( $property, $wiki_page, $options );
-				$num = count( $res );
-				if ( $num > 0 ) {
-					$grouping_label = str_replace( ' ', '_', $grouping_label );
-					$text .= "<$grouping_label>\n";
-					foreach ( $res as $subject ) {
-						$subject_title = $subject->getTitle();
-						$text .= self::getXMLForPage( $subject_title, $simplified_format, $groupings, $depth + 1 );
-					}
-					$text .= "</$grouping_label>\n";
-				}
-			}
-		}
 
 		// escape back the curly brackets that were escaped out at the beginning
 		$text = str_replace( '&amp;#123;', '{', $text );
@@ -282,7 +167,6 @@ class DTViewXML extends SpecialPage {
 			wfResetOutputBuffers();
 			header( "Content-type: application/xml; charset=utf-8" );
 
-			$groupings = self::getGroupings();
 			$simplified_format = $wgRequest->getVal( 'simplified_format' );
 			$text = "<$pages_str>";
 			if ( $cats ) {
@@ -293,7 +177,7 @@ class DTViewXML extends SpecialPage {
 						$text .= "<$category_label $name_str=\"$cat\">\n";
 					$titles = self::getPagesForCategory( $cat, 10 );
 					foreach ( $titles as $title ) {
-						$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+						$text .= self::getXMLForPage( $title, $simplified_format );
 					}
 					if ( $simplified_format ) {
 						$text .= '</' . str_replace( ' ', '_', $cat ) . ">\n";
@@ -317,7 +201,7 @@ class DTViewXML extends SpecialPage {
 					}
 					$titles = self::getPagesForNamespace( $ns );
 					foreach ( $titles as $title ) {
-						$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+						$text .= self::getXMLForPage( $title, $simplified_format );
 					}
 					if ( $simplified_format )
 						$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
@@ -335,7 +219,7 @@ class DTViewXML extends SpecialPage {
 				$pageNames = explode( '|', $requestedTitles );
 				foreach ( $pageNames as $pageName ) {
 					$title = Title::newFromText( $pageName );
-					$text .= self::getXMLForPage( $title, $simplified_format, $groupings );
+					$text .= self::getXMLForPage( $title, $simplified_format );
 				}
 			}
 
