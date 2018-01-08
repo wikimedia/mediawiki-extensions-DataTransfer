@@ -3,6 +3,7 @@
  * Global functions and constants for the Data Transfer extension.
  *
  * @author Yaron Koren
+ * @ingroup DataTransfer
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
@@ -57,14 +58,6 @@ if ( class_exists( 'PHPExcel' )) {
 	$wgSpecialPages['ImportSpreadsheet'] = 'DTImportSpreadsheet';
 	$wgAutoloadClasses['DTImportSpreadsheet'] = $dtgIP . '/specials/DT_ImportSpreadsheet.php';
 }
-
-###
-# This is the path to your installation of the Data Transfer extension as
-# seen from the web. Change it if required ($wgScriptPath is the
-# path to the base directory of your wiki). No final slash.
-##
-$dtgScriptPath = $wgScriptPath . '/extensions/DataTransfer';
-##
 
 ###
 # Permission to import files
