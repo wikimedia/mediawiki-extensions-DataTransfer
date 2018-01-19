@@ -24,9 +24,9 @@
 		"ImportCSV": "DTImportCSV",
 		"ImportSpreadsheet": "DTImportSpreadsheet"
 	},
-        "JobClasses": {
-	       "dtImport": "DTImportJob"
-        },
+	"JobClasses": {
+		"dtImport": "DTImportJob"
+	},
 	"MessagesDirs": {
 		"DataTransfer": [
 			"i18n"
