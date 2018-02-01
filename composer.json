@@ -10,7 +10,7 @@
 		"export"
 	],
 	"homepage": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Alexandre Emsenhuber"
