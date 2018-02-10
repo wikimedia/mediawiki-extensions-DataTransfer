@@ -16,18 +16,14 @@ class DTImportJob extends Job {
 	 * @return boolean success
 	 */
 	function run() {
-		wfProfileIn( __METHOD__ );
-
 		if ( is_null( $this->title ) ) {
 			$this->error = "dtImport: Invalid title";
-			wfProfileOut( __METHOD__ );
 			return false;
 		}
 
 		$wikiPage = WikiPage::factory( $this->title );
 		if ( !$wikiPage ) {
 			$this->error = 'dtImport: Wiki page not found "' . $this->title->getPrefixedDBkey() . '"';
-			wfProfileOut( __METHOD__ );
 			return false;
 		}
 
@@ -68,7 +64,6 @@ class DTImportJob extends Job {
 		$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
 
 		$wgUser = $actual_user;
-		wfProfileOut( __METHOD__ );
 		return true;
 	}
 }
