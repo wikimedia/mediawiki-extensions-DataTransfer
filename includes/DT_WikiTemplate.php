@@ -10,7 +10,7 @@ class DTWikiTemplate {
 	private $mName = null;
 	private $mFields = array();
 
-	public function DTWikiTemplate( $name ) {
+	public function __construct( $name ) {
 		$this->mName = $name;
 	}
 

@@ -10,7 +10,7 @@ class DTPage {
 	var $mTemplates;
 	var $mFreeText;
 
-	public function DTPage() {
+	public function __construct() {
 		$this->mTemplates = array();
 	}
 
