@@ -28,6 +28,7 @@
 	"dt_import_encodingtype": "نوع الترميز:",
 	"dt_import_forexisting": "لصفحات موجودة مسبقاّ :",
 	"dt_import_overwriteexisting": "أكتب على المحتوى الموجود",
+	"dt_import_mergeintoexisting": "استبدال الحقول الموجودة في الملف فقط",
 	"dt_import_skipexisting": "أقفز",
 	"dt_import_appendtoexisting": "إلحاق بالمحتوى الموجود",
 	"dt_import_summarydesc": "موجز الاستيراد :",
@@ -35,6 +36,8 @@
 	"dt_import_importing": "جارٍ الاستيراد...",
 	"dt_import_success": "سوف تُنشأ {{PLURAL:$1||صفحة واحدة|صفحتين|$1 صفحات|$1 صفحة}} من ملف $2.",
 	"importcsv": "استورد CSV",
+	"importspreadsheet": "استيراد جدول البيانات",
 	"dt_importcsv_badheader": "خطأ: عنوان العامود $1، '$2'، يجب أن يكون إما '$3'، '$4' أو من الصيغة 'template_name[field_name]'",
-	"right-datatransferimport": "استورد بيانات"
+	"right-datatransferimport": "استورد بيانات",
+	"dt_filetype_spreadsheet": "جدول بيانات"
 }
