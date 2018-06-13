@@ -4,11 +4,12 @@
 			"Michawiki",
 			"Yekrats",
 			"Robin van der Vliet",
-			"Psychoslave"
+			"Psychoslave",
+			"Lucas"
 		]
 	},
 	"datatransfer-desc": "Permesas enportadon kaj elportadon de datumoj enhave en ŝablonaj vokoj",
-	"viewxml": "Rigardu XML-on",
+	"viewxml": "Vidi XML-on",
 	"dt_viewxml_docu": "Bonvolu elekti inter la subaj kategorioj kaj nomspacoj por rigardi en XML-formato.",
 	"dt_viewxml_categories": "Kategorioj",
 	"dt_viewxml_namespaces": "Nomspacoj",
