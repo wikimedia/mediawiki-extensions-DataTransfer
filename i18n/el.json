@@ -5,7 +5,8 @@
 			"Crazymadlover",
 			"Glavkos",
 			"Omnipaedista",
-			"ZaDiak"
+			"ZaDiak",
+			"Nikosgranturismogt"
 		]
 	},
 	"viewxml": "Προβολή XML",
@@ -21,8 +22,11 @@
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Ελεύθερο Κείμενο",
 	"importxml": "Εισαγωγή σε XML",
+	"dt_import_selectfile": "Παρακαλούμε επιλέξτε το αρχείο $1 για εισαγωγή:",
 	"dt_import_encodingtype": "Τύπος κωδικοποίησης",
+	"dt_import_forexisting": "Για σελίδες που υπάρχουν ήδη:",
 	"dt_import_skipexisting": "Παράβλεψη",
+	"dt_import_summarydesc": "Σύνοψη εισαγωγής:",
 	"dt_import_editsummary": "{{ucfirst:$1}} εισαγωγή",
 	"dt_import_importing": "Εισάγεται...",
 	"importcsv": "Εισαγωγή CSV",
