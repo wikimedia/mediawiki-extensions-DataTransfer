@@ -6,10 +6,11 @@
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
 			"Milicevic01",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"BadDog"
 		]
 	},
-	"viewxml": "Погледај XML",
+	"viewxml": "Прегледање XML-а",
 	"dt_viewxml_categories": "Категорије",
 	"dt_viewxml_namespaces": "Именски простори",
 	"dt_viewxml_simplifiedformat": "Поједностављени формат",
