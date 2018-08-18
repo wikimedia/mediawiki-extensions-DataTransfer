@@ -34,6 +34,8 @@
 	"dt_import_importing": "Importowanie...",
 	"dt_import_success": "$1 {{PLURAL:$1|strona zostanie utworzona|strony zostaną utworzone|stron zostanie utworzonych}} z pliku $2.",
 	"importcsv": "Import CSV",
+	"importspreadsheet": "Import arkusza kalkulacyjnego",
 	"dt_importcsv_badheader": "Błąd – w kolumnie $1 nagłówka jest „$2”, a powinno być: „$3”, „$4” lub „nazwa_szablonu[nazwa_pola]”",
-	"right-datatransferimport": "Importowanie danych"
+	"right-datatransferimport": "Importowanie danych",
+	"dt_filetype_spreadsheet": "arkusz kalkulacyjny"
 }
