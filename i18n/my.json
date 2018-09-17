@@ -10,5 +10,6 @@
 	"dt_xml_pages": "စာမျက်နှာများ",
 	"dt_xml_page": "စာမျက်နှာ",
 	"dt_xml_template": "တမ်းပလိတ်",
-	"dt_xml_name": "အမည်"
+	"dt_xml_name": "အမည်",
+	"dt_import_skipexisting": "ကျော်ရန်"
 }
