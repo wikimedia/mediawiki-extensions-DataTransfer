@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jon Harald Søby",
-			"Tjernobyl"
+			"Tjernobyl",
+			"Saederup92"
 		]
 	},
 	"viewxml": "Vis XML",
@@ -20,5 +21,6 @@
 	"dt_xml_freetext": "Fritekst",
 	"importxml": "Importer XML",
 	"dt_import_overwriteexisting": "Overskriv eksisterende indhold",
-	"dt_import_skipexisting": "Spring over"
+	"dt_import_skipexisting": "Spring over",
+	"dt_import_importing": "Importerer..."
 }
