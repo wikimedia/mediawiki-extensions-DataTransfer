@@ -16,7 +16,7 @@ class DTViewXML extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
-		self::doSpecialViewXML( $query );
+		$this->doSpecialViewXML( $query );
 	}
 
 	static function getCategoriesList() {
@@ -142,8 +142,11 @@ class DTViewXML extends SpecialPage {
 		return $text;
 	}
 
-	static function doSpecialViewXML() {
-		global $wgOut, $wgRequest, $wgContLang;
+	function doSpecialViewXML() {
+		global $wgContLang;
+
+		$out = $this->getOutput();
+		$request  = $this->getRequest();
 
 		$namespace_labels = $wgContLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
@@ -152,22 +155,22 @@ class DTViewXML extends SpecialPage {
 		$pages_str = str_replace( ' ', '_', wfMessage( 'dt_xml_pages' )->inContentLanguage()->text() );
 
 		$form_submitted = false;
-		$cats = $wgRequest->getArray( 'categories' );
-		$nses = $wgRequest->getArray( 'namespaces' );
-		$requestedTitles = $wgRequest->getVal( 'titles' );
+		$cats = $request->getArray( 'categories' );
+		$nses = $request->getArray( 'namespaces' );
+		$requestedTitles = $request->getVal( 'titles' );
 		if ( count( $cats ) > 0 || count( $nses ) > 0 || $requestedTitles != null ) {
 			$form_submitted = true;
 		}
 
 		if ( $form_submitted ) {
-			$wgOut->disable();
+			$out->disable();
 
 			// Cancel output buffering and gzipping if set
 			// This should provide safer streaming for pages with history
 			wfResetOutputBuffers();
 			header( "Content-type: application/xml; charset=utf-8" );
 
-			$simplified_format = $wgRequest->getVal( 'simplified_format' );
+			$simplified_format = $request->getVal( 'simplified_format' );
 			$text = "<$pages_str>";
 			if ( $cats ) {
 				foreach ( $cats as $cat => $val ) {
@@ -260,7 +263,7 @@ END;
 			$text .= "<input type=\"submit\" value=\"" . wfMessage( 'viewxml' )->text() . "\">\n";
 			$text .= "</form>\n";
 
-			$wgOut->addHTML( $text );
+			$out->addHTML( $text );
 		}
 	}
 }
