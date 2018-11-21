@@ -158,7 +158,7 @@ class DTViewXML extends SpecialPage {
 		$cats = $request->getArray( 'categories' );
 		$nses = $request->getArray( 'namespaces' );
 		$requestedTitles = $request->getVal( 'titles' );
-		if ( count( $cats ) > 0 || count( $nses ) > 0 || $requestedTitles != null ) {
+		if ( ! empty( $cats ) || ! empty( $nses ) || $requestedTitles != null ) {
 			$form_submitted = true;
 		}
 
