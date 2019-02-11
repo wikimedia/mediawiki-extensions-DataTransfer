@@ -24,7 +24,7 @@
 	"importxml": "XML'i azere ke",
 	"dt_import_selectfile": "Azere kerdışi rê dosyay $1 weçinê",
 	"dt_import_encodingtype": "Babeta kod kerdışi",
-	"dt_import_skipexisting": "Çerme",
+	"dt_import_skipexisting": "Ravêre",
 	"dt_import_summarydesc": "Xulasaya azere kerdışi :",
 	"dt_import_editsummary": "{{ucfirst:$1}} azere de",
 	"dt_import_importing": "Dano azere...",
