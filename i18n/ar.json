@@ -27,7 +27,7 @@
 	"dt_import_selectfile": "من فضلك اختر ملف $1 للاستيراد:",
 	"dt_import_encodingtype": "نوع الترميز:",
 	"dt_import_forexisting": "لصفحات موجودة مسبقاّ :",
-	"dt_import_overwriteexisting": "أكتب على المحتوى الموجود",
+	"dt_import_overwriteexisting": "اكتب على المحتوى الموجود",
 	"dt_import_mergeintoexisting": "استبدال الحقول الموجودة في الملف فقط",
 	"dt_import_skipexisting": "أقفز",
 	"dt_import_appendtoexisting": "إلحاق بالمحتوى الموجود",
