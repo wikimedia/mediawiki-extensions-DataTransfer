@@ -8,7 +8,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'DATA_TRANSFER_VERSION', '1.0' );
+define( 'DATA_TRANSFER_VERSION', '1.0.1' );
 
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
