@@ -34,6 +34,7 @@
 	"importcsv": "Import CSV",
 	"importspreadsheet": "Import spreadsheet",
 	"dt_importcsv_badheader": "Error: the column $1 header, '$2', must be either '$3', '$4' or of the form 'template_name[field_name]'",
+	"action-datatransferimport": "import data",
 	"right-datatransferimport": "Import data",
 	"dt_filetype_xml": "XML",
 	"dt_filetype_csv": "CSV",

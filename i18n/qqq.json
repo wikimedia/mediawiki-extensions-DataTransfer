@@ -42,6 +42,7 @@
 	"importcsv": "{{doc-special|ImportCSV|unlisted=1}}\nCSV (comma separated value)",
 	"importspreadsheet": "{{doc-special|ImportSpreadsheet|unlisted=1}}",
 	"dt_importcsv_badheader": "The text \"template_name[field_name]\" can be translated. Parameters:\n* $1 - a column number in the first row of the CVS file\n* $2 - the value found for the $1th column in the first line of the CSV file\n* $3 - the title label\n* $4 - a free text label",
+	"action-datatransferimport": "{{doc-action|datatransferimport}}",
 	"right-datatransferimport": "{{doc-right|datatransferimport}}",
 	"dt_filetype_xml": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension.",
 	"dt_filetype_csv": "The type of the file that is to be imported. This is a descriptive name, NOT a file extension.",
