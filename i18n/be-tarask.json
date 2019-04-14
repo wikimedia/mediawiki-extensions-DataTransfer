@@ -37,6 +37,7 @@
 	"importcsv": "Імпарт CSV",
 	"importspreadsheet": "Імпарт табліцы",
 	"dt_importcsv_badheader": "Памылка: загаловак слупка $1, '$2', павінен быць адным з '$3', '$4' альбо у форме 'назва_шаблёну[назва_поля]'",
+	"action-datatransferimport": "імпарт зьвестак",
 	"right-datatransferimport": "імпарт зьвестак",
 	"dt_filetype_spreadsheet": "табліца"
 }

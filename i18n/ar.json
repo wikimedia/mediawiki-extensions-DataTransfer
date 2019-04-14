@@ -38,6 +38,7 @@
 	"importcsv": "استورد CSV",
 	"importspreadsheet": "استيراد جدول البيانات",
 	"dt_importcsv_badheader": "خطأ: عنوان العامود $1، '$2'، يجب أن يكون إما '$3'، '$4' أو من الصيغة 'template_name[field_name]'",
+	"action-datatransferimport": "استيراد البيانات",
 	"right-datatransferimport": "استورد بيانات",
 	"dt_filetype_xml": "إكس إم إل",
 	"dt_filetype_csv": "سي إس في",

@@ -34,6 +34,7 @@
 	"importcsv": "Увоз на CSV",
 	"importspreadsheet": "Увези табеларна пресметка",
 	"dt_importcsv_badheader": "Грешка: насловот на столбот бр. $1, „$2“, мора да биде или „$3“, или „$4“, или пак од обликот „template_name[field_name]“",
+	"action-datatransferimport": "увоз на податоци",
 	"right-datatransferimport": "Увезување податоци",
 	"dt_filetype_spreadsheet": "табеларна пресметка"
 }

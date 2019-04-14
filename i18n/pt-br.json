@@ -8,7 +8,8 @@
 			"Fabsouza1",
 			"Smmvinicius",
 			"V6rg",
-			"C.R."
+			"C.R.",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"datatransfer-desc": "Permite a importação e exportação de dados contidos em chamadas de predefinições",
@@ -41,6 +42,7 @@
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar planilha",
 	"dt_importcsv_badheader": "Erro: o cabeçalho da coluna $1, '$2', deve ser '$3', ou '$4' ou da forma 'nome_da_predefinição[nome_do_campo]'",
+	"action-datatransferimport": "importar dados",
 	"right-datatransferimport": "Importar dados",
 	"dt_filetype_spreadsheet": "planilha"
 }
