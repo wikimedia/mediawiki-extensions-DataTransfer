@@ -4,7 +4,8 @@
 			"McMonster",
 			"Sp5uhe",
 			"Wpedzich",
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
 	"datatransfer-desc": "Pozwala na importowanie i eksportowanie danych zawartych w wywołaniach szablonu",
@@ -36,6 +37,7 @@
 	"importcsv": "Import CSV",
 	"importspreadsheet": "Import arkusza kalkulacyjnego",
 	"dt_importcsv_badheader": "Błąd – w kolumnie $1 nagłówka jest „$2”, a powinno być: „$3”, „$4” lub „nazwa_szablonu[nazwa_pola]”",
+	"action-datatransferimport": "importowania danych",
 	"right-datatransferimport": "Importowanie danych",
 	"dt_filetype_spreadsheet": "arkusz kalkulacyjny"
 }

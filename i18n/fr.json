@@ -9,7 +9,8 @@
 			"PieRRoMaN",
 			"Verdy p",
 			"Zetud",
-			"Gomoko"
+			"Gomoko",
+			"Pols12"
 		]
 	},
 	"datatransfer-desc": "Permet l’import et l’export de données contenues dans des appels de modèles",
@@ -42,6 +43,7 @@
 	"importcsv": "Import CSV",
 	"importspreadsheet": "Importer la feuille de calcul",
 	"dt_importcsv_badheader": "Erreur : le titre de colonne $1, « $2 », doit être soit « $3 », « $4 » ou de la forme « nom_du_modèle[nom_du_champ] »",
+	"action-datatransferimport": "importer des données",
 	"right-datatransferimport": "Importer des données",
 	"dt_filetype_spreadsheet": "feuille de calcul"
 }
