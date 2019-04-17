@@ -39,6 +39,7 @@
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar folha de cálculo",
 	"dt_importcsv_badheader": "Erro: o cabeçalho da coluna $1, '$2', deve ser '$3', '$4' ou ter a forma 'nome_da_predefinição[nome_do_campo]'",
+	"action-datatransferimport": "importar dados",
 	"right-datatransferimport": "Importar dados",
 	"dt_filetype_spreadsheet": "folha de cálculo"
 }

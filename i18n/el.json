@@ -6,7 +6,8 @@
 			"Glavkos",
 			"Omnipaedista",
 			"ZaDiak",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"Protnet"
 		]
 	},
 	"viewxml": "Προβολή XML",
@@ -30,5 +31,6 @@
 	"dt_import_editsummary": "{{ucfirst:$1}} εισαγωγή",
 	"dt_import_importing": "Εισάγεται...",
 	"importcsv": "Εισαγωγή CSV",
+	"action-datatransferimport": "εισαγάγετε δεδομένα",
 	"right-datatransferimport": "Εισαγωγή δεδομένων"
 }
