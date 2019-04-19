@@ -38,6 +38,7 @@
 	"importcsv": "匯入 CSV",
 	"importspreadsheet": "匯入試算表",
 	"dt_importcsv_badheader": "錯誤：第$1列的標題'$2'必須為'$3'、或者'$4'、或者採取'模板名稱[字段名稱]'的形式",
+	"action-datatransferimport": "匯入資料",
 	"right-datatransferimport": "匯入資料",
 	"dt_filetype_spreadsheet": "試算表"
 }

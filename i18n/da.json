@@ -22,5 +22,6 @@
 	"importxml": "Importer XML",
 	"dt_import_overwriteexisting": "Overskriv eksisterende indhold",
 	"dt_import_skipexisting": "Spring over",
-	"dt_import_importing": "Importerer..."
+	"dt_import_importing": "Importerer...",
+	"action-datatransferimport": "importer data"
 }

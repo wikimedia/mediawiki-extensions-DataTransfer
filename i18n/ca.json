@@ -5,7 +5,8 @@
 			"Jordi Roqué",
 			"SMP",
 			"Solde",
-			"Toniher"
+			"Toniher",
+			"Fitoschido"
 		]
 	},
 	"datatransfer-desc": "Permet importar i exportar les dades que contenen les crides de les plantilles",
@@ -38,6 +39,7 @@
 	"importcsv": "Importa un CSV",
 	"importspreadsheet": "Importa el full de càlcul",
 	"dt_importcsv_badheader": "Error: la capçalera de la columna $1, '$2', ha de ser o bé '$3', '$4' o bé de la forma 'template_name[field_name]'",
+	"action-datatransferimport": "importar dades",
 	"right-datatransferimport": "Importar dades",
 	"dt_filetype_spreadsheet": "full de càlcul"
 }
