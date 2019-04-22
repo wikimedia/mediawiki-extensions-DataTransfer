@@ -35,6 +35,7 @@
 	"importcsv": "CSV importéieren",
 	"importspreadsheet": "Tabelleberechnungsblad importéieren",
 	"dt_importcsv_badheader": "Feeler: D'Iwwerschrëft vun der Kolonn $1, '$2', muss entweder '$3', '$4' oder am Format 'Numm_vun_der_Schabloun(Numm_vum_Feld)' sinn",
+	"action-datatransferimport": "Donnéeën importéieren",
 	"right-datatransferimport": "Donnéeën importéieren",
 	"dt_filetype_spreadsheet": "Tabelleberechnungsblad"
 }

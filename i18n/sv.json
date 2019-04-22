@@ -41,6 +41,7 @@
 	"importcsv": "Importera CSV",
 	"importspreadsheet": "Importera kalkylblad",
 	"dt_importcsv_badheader": "Fel: Titeln $2 för kolumnen $1 måste vara antingen $3, $4 eller på formen 'mallnamn[fältnamn]'",
+	"action-datatransferimport": "importera data",
 	"right-datatransferimport": "Importera data",
 	"dt_filetype_spreadsheet": "kalkylblad"
 }
