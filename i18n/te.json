@@ -18,7 +18,7 @@
 	"dt_xml_freetext": "స్వేచ్ఛా పాఠ్యం",
 	"dt_import_appendtoexisting": "ఈసరికే ఉన్న కంటెంటు వెనుక చేర్చు",
 	"dt_import_summarydesc": "దిగుమతి సారాంశం:",
-	"dt_import_editsummary": "$1 దిగుమతి",
+	"dt_import_editsummary": "{{ucfirst:$1}} దిగుమతి",
 	"dt_import_importing": "దిగుమతి చేస్తున్నాం...",
 	"dt_import_success": "ఫైలు $2 నుండి $1 {{PLURAL:$1|పేజీ|పేజీలు}} సృష్టించబడతాయి.",
 	"importcsv": "CSV ని దిగుమతి చెయ్యి",
