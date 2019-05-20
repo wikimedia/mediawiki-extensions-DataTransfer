@@ -4,7 +4,8 @@
 			"Amire80",
 			"Rotemliss",
 			"YaronSh",
-			"Guycn2"
+			"Guycn2",
+			"Erelon"
 		]
 	},
 	"datatransfer-desc": "מתן אפשרות לייבא ולייצא נתונים בקריאות לתבניות",
@@ -37,6 +38,7 @@
 	"importcsv": "יבוא CSV",
 	"importspreadsheet": "גיליון נתונים של ייבוא",
 	"dt_importcsv_badheader": "שגיאה: כותרת העמודה $1, '$2', חייבת להיות או '$3', '$4' או מהצורה 'שם_התבנית[שם_השדה]'",
+	"action-datatransferimport": "ייבוא נתונים",
 	"right-datatransferimport": "ייבוא נתונים",
 	"dt_filetype_spreadsheet": "גיליון נתונים"
 }
