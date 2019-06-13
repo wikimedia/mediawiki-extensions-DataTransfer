@@ -45,9 +45,16 @@ class DTPageComponent {
 			$wikitext = '{{' . $this->mTemplateName;
 			foreach ( $this->mFields as $fieldName => $fieldValue ) {
 				if ( is_numeric( $fieldName ) ) {
-					$wikitext .= '|' . $fieldValue;
+					$wikitext .= '|';
 				} else {
-					$wikitext .= "\n|$fieldName=$fieldValue";
+					$wikitext .= "\n|$fieldName=";
+				}
+				if ( is_array( $fieldValue ) ) {
+					foreach ( $fieldValue as $subTemplate ) {
+						$wikitext .= $subTemplate->toWikitext();
+					}
+				} else {
+					$wikitext .= $fieldValue;
 				}
 			}
 			$wikitext .= "\n}}";
