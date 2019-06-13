@@ -3,7 +3,8 @@
 		"authors": [
 			"Armin1392",
 			"Mjbmr",
-			"Alirezaaa"
+			"Alirezaaa",
+			"FarsiNevis"
 		]
 	},
 	"datatransfer-desc": "اجازه برای واردات و صادرات اطلاعات حاوی الگوهای تماس",
@@ -30,7 +31,7 @@
 	"dt_import_skipexisting": "پرش",
 	"dt_import_appendtoexisting": "ضمیمه کردن به محتوای موجود",
 	"dt_import_summarydesc": "خلاصهٔ درون‌ریزی:",
-	"dt_import_editsummary": "درون‌ریزی $1",
+	"dt_import_editsummary": "درون‌ریزی {{ucfirst:$1}}",
 	"dt_import_importing": "در حال درون‌ریزی...",
 	"dt_import_success": "$1 {{PLURAL:$1|page|pages}} از پوشهٔ $2 ایجاد خواهدشد.",
 	"importcsv": "درون‌ریزی سی‌اس‌وی",
