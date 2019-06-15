@@ -20,7 +20,7 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getCategoriesList() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$categorylinks = $dbr->tableName( 'categorylinks' );
 		$res = $dbr->query( "SELECT DISTINCT cl_to FROM $categorylinks" );
 		$categories = array();
@@ -33,7 +33,7 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getNamespacesList() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$page = $dbr->tableName( 'page' );
 		$res = $dbr->query( "SELECT DISTINCT page_namespace FROM $page" );
 		$namespaces = array();
@@ -52,7 +52,7 @@ class DTViewXML extends SpecialPage {
 	static function getPagesForCategory( $top_category, $num_levels ) {
 		if ( 0 == $num_levels ) return $top_category;
 
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$fname = "getPagesForCategory";
 		$categories = array( $top_category );
 		$checkcategories = array( $top_category );
@@ -96,7 +96,7 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getPagesForNamespace( $namespace ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$page = $dbr->tableName( 'page' );
 		$res = $dbr->query( "SELECT page_id FROM $page WHERE page_namespace = '$namespace'" );
 		$titles = array();

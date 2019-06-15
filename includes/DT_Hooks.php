@@ -7,6 +7,13 @@
  */
 class DTHooks {
 
+	public static function registerExtension() {
+		// Backward compatibility for MW < 1.28.
+		if ( !defined( 'DB_REPLICA' ) ) {
+			define( 'DB_REPLICA', DB_SLAVE );
+		}
+	}
+
 	/**
 	 * Add links to the 'AdminLinks' special page, defined by the Admin Links
 	 * extension

@@ -10,6 +10,7 @@
 	"descriptionmsg": "datatransfer-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
+	"callback": "DTHooks::registerExtension",
 	"GroupPermissions": {
 		"sysop": {
 			"datatransferimport": true
