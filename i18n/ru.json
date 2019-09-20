@@ -5,7 +5,8 @@
 			"Innv",
 			"Lockal",
 			"Okras",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"Movses"
 		]
 	},
 	"datatransfer-desc": "Позволяет импортировать и экспортировать данные, содержащиеся в вызовах шаблонов",
@@ -38,6 +39,7 @@
 	"importcsv": "Импорт CSV",
 	"importspreadsheet": "Импорт таблицы",
 	"dt_importcsv_badheader": "Ошибка. Заголовок колонки №$1 «$2» должен быть или «$3», или «$4», или в форме «template_name[field_name]»",
+	"action-datatransferimport": "импорт данных",
 	"right-datatransferimport": "Импорт данных",
 	"dt_filetype_spreadsheet": "таблица"
 }
