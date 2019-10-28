@@ -37,6 +37,7 @@
 	"importcsv": "Importer CSV",
 	"importspreadsheet": "Importer regneark",
 	"dt_importcsv_badheader": "Feil: kolonneoverskriften $1, '$2', må være enten '$3', '$4' eller på formen 'malnavn[feltnavn]'",
+	"action-datatransferimport": "importer data",
 	"right-datatransferimport": "Importer data",
 	"dt_filetype_spreadsheet": "regneark"
 }
