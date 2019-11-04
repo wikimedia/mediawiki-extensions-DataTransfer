@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
 	"dt_viewxml_categories": "Төркемнәр",
@@ -17,6 +18,6 @@
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Ирекле текст",
 	"importxml": "XML импорты",
-	"dt_import_selectfile": "Зинһар, импорт өчен $1 файлын сайлагыз:",
+	"dt_import_selectfile": "Кертү өчен $1 файлын сайлагыз әле:",
 	"dt_import_encodingtype": "Кодлау төре"
 }
