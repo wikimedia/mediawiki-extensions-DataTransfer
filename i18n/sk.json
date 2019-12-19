@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Helix84"
+			"Helix84",
+			"Luky001"
 		]
 	},
 	"datatransfer-desc": "Umožňuje import a export údajov obsiahnutých v bunkách šablón",
@@ -22,7 +23,7 @@
 	"importxml": "Importovať XML",
 	"dt_import_selectfile": "Prosím, vyberte $1 súbor, ktorý chcete importovať:",
 	"dt_import_encodingtype": "Typ kódovania:",
-	"dt_import_editsummary": "Import $1",
+	"dt_import_editsummary": "{{ucfirst:$1}} import",
 	"dt_import_importing": "Prebieha import...",
 	"dt_import_success": "Z $2 súboru sa {{PLURAL:$1|importuje $1 stránka|importujú $1 stránky|importuje $1 stránok}}.",
 	"importcsv": "Import CSV",
