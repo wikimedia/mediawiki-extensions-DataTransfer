@@ -4,7 +4,8 @@
 			"Siebrand",
 			"Tvdm",
 			"Sjoerddebruin",
-			"Esketti"
+			"Esketti",
+			"Mainframe98"
 		]
 	},
 	"datatransfer-desc": "Maakt het importeren en exporteren van gestructureerde gegevens in sjabloonaanroepen mogelijk",
@@ -37,6 +38,7 @@
 	"importcsv": "CSV importeren",
 	"importspreadsheet": "Werkblad importeren",
 	"dt_importcsv_badheader": "Fout: De kop van kolom $1, \"$2\", moet \"$3\" of \"$4\" zijn, of in de vorm \"sjabloonnaam[veldnaam]\" genoteerd worden.",
+	"action-datatransferimport": "gegevens te importeren",
 	"right-datatransferimport": "Gegevens importeren",
 	"dt_filetype_spreadsheet": "spreadsheet"
 }
