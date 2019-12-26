@@ -4,7 +4,7 @@
 			"Bjankuloski06"
 		]
 	},
-	"datatransfer-desc": "Овозможува увоз и извоз на податоци содржани во повикувањата на шаблоните",
+	"datatransfer-desc": "Овозможува увоз и извоз на податоци содржани во повикувањата на предлошките",
 	"viewxml": "Преглед на XML",
 	"dt_viewxml_docu": "Одберете од следиве категории и именски простори за преглед во XML формат.",
 	"dt_viewxml_categories": "Категории",
@@ -13,7 +13,7 @@
 	"dt_xml_namespace": "Именски простор",
 	"dt_xml_pages": "Страници",
 	"dt_xml_page": "Страница",
-	"dt_xml_template": "Шаблон",
+	"dt_xml_template": "Предлошка",
 	"dt_xml_field": "Поле",
 	"dt_xml_name": "Име",
 	"dt_xml_title": "Наслов",
