@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class that represents a single "component" of a page - either a template
  * or a piece of free text.
@@ -67,7 +70,15 @@ class DTPageComponent {
 	public function toXML( $isSimplified ) {
 		global $wgDataTransferViewXMLParseFields;
 		global $wgDataTransferViewXMLParseFreeText;
-		global $wgParser, $wgTitle;
+		global $wgTitle;
+
+		if ( method_exists( "MediaWiki\\MediaWikiServices", "getParser" ) ) {
+			$parser = MediaWikiServices::getInstance()->getParser();
+		} else {
+			// MW < 1.29
+			global $wgParser;
+			$parser = $wgParser;
+		}
 
 		if ( $this->mIsTemplate ) {
 			global $wgContLang;
@@ -87,7 +98,7 @@ class DTPageComponent {
 					}
 				} elseif ( $wgDataTransferViewXMLParseFields ) {
 					// Avoid table of contents and "edit" links
-					$fieldValue = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, new ParserOptions() )->getText();
+					$fieldValue = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, new ParserOptions() )->getText();
 				}
 
 				if ( $isSimplified ) {
@@ -128,7 +139,7 @@ class DTPageComponent {
 					$freeText = $mw->replace( '', $freeText );
 				}
 				// Avoid "edit" links.
-				$freeText = $wgParser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $freeText, $wgTitle, new ParserOptions() )->getText();
+				$freeText = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $freeText, $wgTitle, new ParserOptions() )->getText();
 			} else {
 				$freeText = $this->mFreeText;
 			}
