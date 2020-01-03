@@ -1,7 +1,7 @@
 {
 	"@Note": "When updating this file please also update DataTransfer.php with the same changes.",
 	"name": "Data Transfer",
-	"version": "1.0.1",
+	"version": "1.1-alpha",
 	"author": [
 		"Yaron Koren",
 		"..."
@@ -10,7 +10,6 @@
 	"descriptionmsg": "datatransfer-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
-	"callback": "DTHooks::registerExtension",
 	"GroupPermissions": {
 		"sysop": {
 			"datatransferimport": true

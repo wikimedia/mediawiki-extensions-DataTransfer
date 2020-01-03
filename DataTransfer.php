@@ -68,8 +68,3 @@ $wgDataTransferViewXMLParseFreeText = true;
 
 $wgMessagesDirs['DataTransfer'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DataTransferAlias'] = $dtgIP . '/DataTransfer.i18n.alias.php';
-
-// Backward compatibility for MW < 1.28.
-if ( !defined( 'DB_REPLICA' ) ) {
-	define( 'DB_REPLICA', DB_SLAVE );
-}
