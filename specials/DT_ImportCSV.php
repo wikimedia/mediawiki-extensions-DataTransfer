@@ -51,7 +51,7 @@ class DTImportCSV extends SpecialPage {
 		$encoding = $this->getRequest()->getVal( 'encoding' );
 		$pages = array();
 
-		$error_msg = $this->importFromFile( $source->mHandle, $encoding, $pages );
+		$error_msg = $this->importFromFile( $source, $encoding, $pages );
 
 		if ( ! is_null( $error_msg ) ) {
 			$text .= $error_msg;
@@ -94,52 +94,49 @@ class DTImportCSV extends SpecialPage {
 		return $text;
 	}
 
-	protected function importFromFile( $csv_file, $encoding, &$pages ) {
-		if ( is_null( $csv_file ) ) {
+	protected function importFromFile( ImportStreamSource $csvFileStream, $encoding, &$pages ) {
+		$encodingCode = ( $encoding == 'utf16' ) ? 'UTF-16' : 'ASCII';
+
+		$csvString = '';
+		while ( ! $csvFileStream->atEnd() ) {
+			$csvString .= $csvFileStream->readChunk();
+		}
+
+		if ( $csvString == '' ) {
 			return wfMessage( 'emptyfile' )->text();
 		}
 
-		$table = array();
-		if ( $encoding == 'utf16' ) {
-			// Change encoding to UTF-8.
-			// Starting with PHP 5.3 we could use str_getcsv(),
-			// which would save the tempfile hassle.
-			$tempfile = tmpfile();
-			$csv_string = '';
-			while ( !feof( $csv_file ) ) {
-				$csv_string .= fgets( $csv_file, 65535 );
- 			}
-			fwrite( $tempfile, iconv( 'UTF-16', 'UTF-8', $csv_string ) );
-			fseek( $tempfile, 0 );
-			while ( $line = fgetcsv( $tempfile ) ) {
-				array_push( $table, $line );
-			}
-			fclose( $tempfile );
-		} else {
-			while ( $line = fgetcsv( $csv_file ) ) {
-				// Convert from UTF-8 to ASCII - htmlentities()
-				// fails for UTF-8 if there are non-ASCII
-				// characters.
-				$convertedLine = array();
-				foreach ( $line as $value ) {
-					$convertedLine[] = mb_convert_encoding( $value, 'UTF-8', 'ASCII' );
+		// Get rid of the "byte order mark", if it's there - this is
+		// a two- or three-character string sometimes put at the beginning
+		// of files to indicate its encoding.
+		$byteOrderMarks = array(
+			pack( "CCC", 0xef, 0xbb, 0xbf ), // UTF8
+			pack( "CC", 0xfe, 0xff ), // UTF16 big-endian
+			pack( "CC", 0xff, 0xfe ) // UTF16 little-endian
+		);
+		foreach ( $byteOrderMarks as $i => $bom ) {
+			if ( strncmp( $csvString, $bom, strlen( $bom ) ) === 0 ) {
+				if ( $i == 2 ) {
+					// This is really just here as a
+					// placeholder - unfortunately, the
+					// encoding for UTF-16LE still doesn't
+					// work, so trying to import CSV from
+					// such a file will result in an
+					// error message.
+					$encodingCode = 'UTF-16LE';
 				}
-				array_push( $table, $convertedLine );
+				$csvString = substr( $csvString, strlen( $bom ) );
+				break;
 			}
 		}
-		fclose( $csv_file );
 
-		// Get rid of the "byte order mark", if it's there - this is
-		// a three-character string sometimes put at the beginning
-		// of files to indicate its encoding.
-		// Code copied from:
-		// http://www.dotvoid.com/2010/04/detecting-utf-bom-byte-order-mark/
-		$byteOrderMark = pack( "CCC", 0xef, 0xbb, 0xbf );
-		if ( 0 == strncmp( $table[0][0], $byteOrderMark, 3 ) ) {
-			$table[0][0] = substr( $table[0][0], 3 );
-			// If there were quotation marks around this value,
-			// they didn't get removed, so remove them now.
-			$table[0][0] = trim( $table[0][0], '"' );
+		$table = str_getcsv( $csvString, "\n" );
+		foreach ( $table as &$row ) {
+			$row = str_getcsv( $row );
+			foreach ( $row as &$value ) {
+				$value = mb_convert_encoding( $value, 'UTF-8', $encodingCode );
+				$value = trim( $value );
+			}
 		}
 
 		return $this->importFromArray( $table, $pages );
