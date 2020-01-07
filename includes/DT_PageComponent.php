@@ -72,13 +72,7 @@ class DTPageComponent {
 		global $wgDataTransferViewXMLParseFreeText;
 		global $wgTitle;
 
-		if ( method_exists( "MediaWiki\\MediaWikiServices", "getParser" ) ) {
-			$parser = MediaWikiServices::getInstance()->getParser();
-		} else {
-			// MW < 1.29
-			global $wgParser;
-			$parser = $wgParser;
-		}
+		$parser = MediaWikiServices::getInstance()->getParser();
 
 		if ( $this->mIsTemplate ) {
 			global $wgContLang;
