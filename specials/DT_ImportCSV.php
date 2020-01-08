@@ -95,8 +95,6 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	protected function importFromFile( ImportStreamSource $csvFileStream, $encoding, &$pages ) {
-		$encodingCode = ( $encoding == 'utf16' ) ? 'UTF-16' : 'ASCII';
-
 		$csvString = '';
 		while ( ! $csvFileStream->atEnd() ) {
 			$csvString .= $csvFileStream->readChunk();
@@ -116,28 +114,38 @@ class DTImportCSV extends SpecialPage {
 		);
 		foreach ( $byteOrderMarks as $i => $bom ) {
 			if ( strncmp( $csvString, $bom, strlen( $bom ) ) === 0 ) {
-				if ( $i == 2 ) {
-					// This is really just here as a
-					// placeholder - unfortunately, the
-					// encoding for UTF-16LE still doesn't
-					// work, so trying to import CSV from
-					// such a file will result in an
-					// error message.
-					$encodingCode = 'UTF-16LE';
-				}
 				$csvString = substr( $csvString, strlen( $bom ) );
+				// Override the encoding type that the user
+				// selected, if there is a BOM - this is
+				// presumably always the more accurate value.
+				if ( $i == 0 ) {
+					$encoding = 'utf8';
+				} elseif ( $i == 1 ) {
+					$encoding = 'utf16';
+				} elseif ( $i == 2 ) {
+					$encoding = 'utf16le';
+				}
 				break;
 			}
 		}
 
-		$table = str_getcsv( $csvString, "\n" );
-		foreach ( $table as &$row ) {
-			$row = str_getcsv( $row );
-			foreach ( $row as &$value ) {
-				$value = mb_convert_encoding( $value, 'UTF-8', $encodingCode );
-				$value = trim( $value );
-			}
+		if ( $encoding == 'utf16' ) {
+			$csvString = mb_convert_encoding( $csvString, 'UTF-8', 'UTF-16' );
+		} elseif ( $encoding == 'utf16le' ) {
+			$csvString = mb_convert_encoding( $csvString, 'UTF-8', 'UTF-16LE' );
 		}
+
+		// It would be simpler to use str_getcsv() here, but for some
+		// odd reason that function fails if any value in the CSV file
+		// contains one or more newline breaks.
+		$table = array();
+		$tempfile = tmpfile();
+		fwrite( $tempfile, $csvString );
+		fseek( $tempfile, 0 );
+		while ( $line = fgetcsv( $tempfile ) ) {
+			array_push( $table, $line );
+		}
+		fclose( $tempfile );
 
 		return $this->importFromArray( $table, $pages );
 
