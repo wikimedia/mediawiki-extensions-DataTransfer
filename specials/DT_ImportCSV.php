@@ -41,7 +41,7 @@ class DTImportCSV extends SpecialPage {
 		$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
 
 		if ( !$uploadResult->isOK() ) {
-			$uploadError = $this->getOutput()->parse( $uploadResult->getWikiText() );
+			$uploadError = $this->getOutput()->parseAsInterface( $uploadResult->getWikiText() );
 			$text .= $uploadError;
 			return $text;
 		}
