@@ -128,7 +128,12 @@ class DTPageComponent {
 				// Undo the escaping that happened before.
 				$freeText = str_replace( array( '&#123;', '&#125;' ), array( '{', '}' ), $freeText );
 				// Get rid of table of contents.
-				$mw = MagicWord::get( 'toc' );
+				if ( method_exists( '\MediaWiki\MediaWikiServices', 'getInstance' ) ) {
+					// MW 1.32+
+					$mw = \MediaWiki\MediaWikiServices::getInstance()->getMagicWordFactory()->get( 'toc' );
+				} else {
+					$mw = MagicWord::get( 'toc' );
+				}
 				if ( $mw->match( $freeText ) ) {
 					$freeText = $mw->replace( '', $freeText );
 				}
