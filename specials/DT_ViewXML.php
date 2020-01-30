@@ -162,6 +162,21 @@ class DTViewXML extends SpecialPage {
 			$form_submitted = true;
 		}
 
+		// Validate namespace IDs, if there are any.
+		if ( $nses ) {
+			foreach ( $nses as $nsString => $val ) {
+				$ns = (int)$nsString;
+				if ( $ns !== $nsString ) {
+					$errorMsg = Html::element( 'div',
+						[ 'class' => 'error' ],
+						"Error: invalid namespace ID '$nsString'"
+					);
+					$out->addHTML( $errorMsg );
+					return;
+				}
+			}
+		}
+
 		if ( $form_submitted ) {
 			$out->disable();
 
