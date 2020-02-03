@@ -21,26 +21,13 @@ class DTViewXML extends SpecialPage {
 
 	static function getCategoriesList() {
 		$dbr = wfGetDB( DB_REPLICA );
-		$categorylinks = $dbr->tableName( 'categorylinks' );
-		$res = $dbr->query( "SELECT DISTINCT cl_to FROM $categorylinks" );
-		$categories = array();
-		while ( $row = $dbr->fetchRow( $res ) ) {
-			$categories[] = $row[0];
-		}
-		$dbr->freeResult( $res );
-		sort( $categories );
+		$categories = $dbr->selectFieldValues( 'categorylinks', 'DISTINCT cl_to' );
 		return $categories;
 	}
 
 	static function getNamespacesList() {
 		$dbr = wfGetDB( DB_REPLICA );
-		$page = $dbr->tableName( 'page' );
-		$res = $dbr->query( "SELECT DISTINCT page_namespace FROM $page" );
-		$namespaces = array();
-		while ( $row = $dbr->fetchRow( $res ) ) {
-			$namespaces[] = $row[0];
-		}
-		$dbr->freeResult( $res );
+		$namespaces = $dbr->selectFieldValues( 'page', 'DISTINCT page_namespace' );
 		return $namespaces;
 	}
 
@@ -97,13 +84,11 @@ class DTViewXML extends SpecialPage {
 
 	static function getPagesForNamespace( $namespace ) {
 		$dbr = wfGetDB( DB_REPLICA );
-		$page = $dbr->tableName( 'page' );
-		$res = $dbr->query( "SELECT page_id FROM $page WHERE page_namespace = '$namespace'" );
-		$titles = array();
-		while ( $row = $dbr->fetchRow( $res ) ) {
-			$titles[] = Title::newFromID( $row[0] );
+		$titleIDs = $dbr->selectFieldValues( 'page', 'page_id', [ 'page_namespace' => $namespace ], __METHOD__ );
+		$titles = [];
+		foreach ( $titleIDs as $titleID ) {
+			$titles[] = Title::newFromID( $titleID );
 		}
-		$dbr->freeResult( $res );
 		return $titles;
 	}
 
