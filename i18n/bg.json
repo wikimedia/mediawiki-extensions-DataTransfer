@@ -3,7 +3,8 @@
 		"authors": [
 			"DCLXVI",
 			"පසිඳු කාවින්ද",
-			"StanProg"
+			"StanProg",
+			"Ted Masters"
 		]
 	},
 	"viewxml": "Преглед на XML",
@@ -23,5 +24,6 @@
 	"dt_import_skipexisting": "Пропускане",
 	"dt_import_importing": "Внасяне...",
 	"importcsv": "Внасяне на CSV",
+	"action-datatransferimport": "внасяне на данни",
 	"right-datatransferimport": "Внасяне на данни"
 }
