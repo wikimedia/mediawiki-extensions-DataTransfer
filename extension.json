@@ -63,9 +63,7 @@
 		"remoteExtPath": "DataTransfer"
 	},
 	"Hooks": {
-		"AdminLinks": [
-			"DTHooks::addToAdminLinks"
-		]
+		"AdminLinks": "DTHooks::addToAdminLinks"
 	},
 	"config": {
 		"DataTransferViewXMLParseFields": false,
