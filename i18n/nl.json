@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand",
-			"Tvdm",
-			"Sjoerddebruin",
 			"Esketti",
-			"Mainframe98"
+			"Mainframe98",
+			"Siebrand",
+			"Sjoerddebruin",
+			"Tvdm"
 		]
 	},
 	"datatransfer-desc": "Maakt het importeren en exporteren van gestructureerde gegevens in sjabloonaanroepen mogelijk",

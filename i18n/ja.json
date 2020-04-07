@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"2nd-player",
 			"Aotake",
 			"Fryed-peach",
 			"JtFuruhata",
 			"Ohgi",
-			"Shirayuki",
-			"青子守歌",
-			"Shield-9",
 			"Otokoume",
-			"2nd-player"
+			"Shield-9",
+			"Shirayuki",
+			"青子守歌"
 		]
 	},
 	"datatransfer-desc": "テンプレート呼び出しに含まれるデータの取り込みおよび書き出しができるようにする",

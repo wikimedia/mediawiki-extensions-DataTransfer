@@ -2,11 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Arnaugir",
+			"Fitoschido",
 			"Jordi Roqué",
 			"SMP",
 			"Solde",
-			"Toniher",
-			"Fitoschido"
+			"Toniher"
 		]
 	},
 	"datatransfer-desc": "Permet importar i exportar les dades que contenen les crides de les plantilles",

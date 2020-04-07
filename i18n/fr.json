@@ -2,15 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Crochet.david",
+			"Gomoko",
 			"Grondin",
 			"IAlex",
 			"Metroitendo",
 			"Peter17",
 			"PieRRoMaN",
+			"Pols12",
 			"Verdy p",
-			"Zetud",
-			"Gomoko",
-			"Pols12"
+			"Zetud"
 		]
 	},
 	"datatransfer-desc": "Permet l’import et l’export de données contenues dans des appels de modèles",

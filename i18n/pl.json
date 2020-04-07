@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"McMonster",
-			"Sp5uhe",
-			"Wpedzich",
 			"Chrumps",
+			"McMonster",
+			"Rail",
 			"Railfail536",
-			"Rail"
+			"Sp5uhe",
+			"Wpedzich"
 		]
 	},
 	"datatransfer-desc": "Pozwala na importowanie i eksportowanie danych zawartych w wywołaniach szablonu",
