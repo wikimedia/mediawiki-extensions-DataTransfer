@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"Phjtieudoc",
 			"Vinhtantran",
 			"පසිඳු කාවින්ද"
 		]
@@ -25,7 +26,7 @@
 	"dt_import_selectfile": "Xin hãy chọn tập tin $1 để nhập:",
 	"dt_import_encodingtype": "Bảng mã:",
 	"dt_import_skipexisting": "Bỏ qua",
-	"dt_import_editsummary": "Nhập $1",
+	"dt_import_editsummary": "Nhập {{ucfirst:$1}}",
 	"dt_import_importing": "Đang nhập…",
 	"dt_import_success": "{{PLURAL:$1|Trang|$1 trang}} sẽ được nhập từ tập tin $2.",
 	"importcsv": "Nhập CSV",
