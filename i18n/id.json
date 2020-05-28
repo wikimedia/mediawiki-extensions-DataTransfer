@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Diki Ananta",
 			"Farras",
 			"Irwangatot",
 			"IvanLanin",
@@ -31,7 +32,7 @@
 	"dt_import_skipexisting": "Lewati",
 	"dt_import_appendtoexisting": "Tambahkan kepada konten yang ada",
 	"dt_import_summarydesc": "Ringkasan impor:",
-	"dt_import_editsummary": "$1 impor",
+	"dt_import_editsummary": "{{ucfirst:$1}} impor",
 	"dt_import_importing": "Mengimpor...",
 	"dt_import_success": "$1 {{PLURAL:$1|halaman|halaman}} akan di buat dari  berkas $2.",
 	"importcsv": "Impor CSV",
