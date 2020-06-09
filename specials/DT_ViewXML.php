@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Displays an interface to let the user export pages from the wiki in XML form
  *
@@ -115,7 +118,20 @@ class DTViewXML extends SpecialPage {
 	}
 
 
-	static function getXMLForPage( $title, $simplified_format, $depth = 0 ) {
+	function getXMLForPage( $title, $simplified_format, $depth = 0 ) {
+		if ( method_exists( 'MediaWiki\Permissions\PermissionManager', 'userCan' ) ) {
+			// MW 1.33+
+			$user = $this->getUser();
+			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+			if ( !$permissionManager->userCan( 'read', $user, $title ) ) {
+				return "";
+			}
+		} else {
+			if ( !$title->userCan( 'read' ) ) {
+				return "";
+			}
+		}
+
 		if ( $depth > 5 ) { return ""; }
 
 		$pageStructure = DTPageStructure::newFromTitle( $title );
@@ -180,7 +196,7 @@ class DTViewXML extends SpecialPage {
 						$text .= "<$category_label $name_str=\"$cat\">\n";
 					$titles = self::getPagesForCategory( $cat, 10 );
 					foreach ( $titles as $title ) {
-						$text .= self::getXMLForPage( $title, $simplified_format );
+						$text .= $this->getXMLForPage( $title, $simplified_format );
 					}
 					if ( $simplified_format ) {
 						$text .= '</' . str_replace( ' ', '_', $cat ) . ">\n";
@@ -204,7 +220,7 @@ class DTViewXML extends SpecialPage {
 					}
 					$titles = self::getPagesForNamespace( $ns );
 					foreach ( $titles as $title ) {
-						$text .= self::getXMLForPage( $title, $simplified_format );
+						$text .= $this->getXMLForPage( $title, $simplified_format );
 					}
 					if ( $simplified_format )
 						$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
@@ -222,7 +238,7 @@ class DTViewXML extends SpecialPage {
 				$pageNames = explode( '|', $requestedTitles );
 				foreach ( $pageNames as $pageName ) {
 					$title = Title::newFromText( $pageName );
-					$text .= self::getXMLForPage( $title, $simplified_format );
+					$text .= $this->getXMLForPage( $title, $simplified_format );
 				}
 			}
 
