@@ -107,7 +107,7 @@ class DTImportCSV extends SpecialPage {
 		}
 
 		if ( $csvString == '' ) {
-			return wfMessage( 'emptyfile' )->text();
+			return $this->msg( 'emptyfile' )->text();
 		}
 
 		// Get rid of the "byte order mark", if it's there - this is
@@ -160,20 +160,20 @@ class DTImportCSV extends SpecialPage {
 	protected function importFromArray( $table, &$pages ) {
 		// Check header line to make sure every term is in the
 		// correct format.
-		$titleLabels = array( wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
-		$freeTextLabels = array( wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
+		$titleLabels = array( $this->msg( 'dt_xml_title' )->inContentLanguage()->text() );
+		$freeTextLabels = array( $this->msg( 'dt_xml_freetext' )->inContentLanguage()->text() );
 		// Add the English-language values as well, if this isn't an
 		// English-language wiki.
 		if ( $this->getLanguage()->getCode() !== 'en' ) {
-			$titleLabels[] = wfMessage( 'dt_xml_title' )->inLanguage( 'en' )->text();
-			$freeTextLabels[] = wfMessage( 'dt_xml_freetext' )->inLanguage( 'en' )->text();
+			$titleLabels[] = $this->msg( 'dt_xml_title' )->inLanguage( 'en' )->text();
+			$freeTextLabels[] = $this->msg( 'dt_xml_freetext' )->inLanguage( 'en' )->text();
 		}
 		foreach ( $table[0] as $i => $headerVal ) {
 			if ( !in_array( $headerVal, $titleLabels )
 			&& !in_array( $headerVal, $freeTextLabels )
 			&& $headerVal !== ''
 			&& !preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $headerVal ) ) {
-				$errorMsg = wfMessage( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->text();
+				$errorMsg = $this->msg( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->text();
 				return $errorMsg;
 			}
 		}
@@ -223,6 +223,6 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	protected function getFiletype() {
-		return wfMessage( 'dt_filetype_csv' )->text();
+		return $this->msg( 'dt_filetype_csv' )->text();
 	}
 }

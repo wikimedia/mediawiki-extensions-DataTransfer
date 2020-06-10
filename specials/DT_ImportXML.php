@@ -34,9 +34,9 @@ class DTImportXML extends SpecialPage {
 			$forPagesThatExist = $request->getVal( 'pagesThatExist' );
 			$text .= self::modifyPages( $source, $importSummary, $forPagesThatExist );
 		} else {
-			$formText = DTUtils::printFileSelector( wfMessage( 'dt_filetype_xml' )->text() );
+			$formText = DTUtils::printFileSelector( $this->msg( 'dt_filetype_xml' )->text() );
 			$formText .= DTUtils::printExistingPagesHandling();
-			$formText .= DTUtils::printImportSummaryInput( wfMessage( 'dt_filetype_xml' )->text() );
+			$formText .= DTUtils::printImportSummaryInput( $this->msg( 'dt_filetype_xml' )->text() );
 			$formText .= DTUtils::printSubmitButton();
 			$text = "\t" . Xml::tags( 'form',
 				array(

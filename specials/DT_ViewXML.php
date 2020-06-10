@@ -151,9 +151,9 @@ class DTViewXML extends SpecialPage {
 
 		$namespace_labels = $wgContLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
-		$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
-		$namespace_str = str_replace( ' ', '_', wfMessage( 'dt_xml_namespace' )->text() );
-		$pages_str = str_replace( ' ', '_', wfMessage( 'dt_xml_pages' )->inContentLanguage()->text() );
+		$name_str = str_replace( ' ', '_', $this->msg( 'dt_xml_name' )->inContentLanguage()->text() );
+		$namespace_str = str_replace( ' ', '_', $this->msg( 'dt_xml_namespace' )->text() );
+		$pages_str = str_replace( ' ', '_', $this->msg( 'dt_xml_pages' )->inContentLanguage()->text() );
 
 		$form_submitted = false;
 		$cats = $request->getArray( 'categories' );
@@ -254,8 +254,8 @@ class DTViewXML extends SpecialPage {
 	<input type="hidden" name="title" value="$special_namespace:ViewXML">
 
 END;
-			$text .= "<p>" . wfMessage( 'dt_viewxml_docu' )->text() . "</p>\n";
-			$text .= "<h2>" . wfMessage( 'dt_viewxml_categories' )->text() . "</h2>\n";
+			$text .= "<p>" . $this->msg( 'dt_viewxml_docu' )->text() . "</p>\n";
+			$text .= "<h2>" . $this->msg( 'dt_viewxml_categories' )->text() . "</h2>\n";
 			$categories = self::getCategoriesList();
 			foreach ( $categories as $category ) {
 				$text .= Html::input( "categories[$category]", null, 'checkbox' );
@@ -263,11 +263,11 @@ END;
 				$link = Linker::link( $title, htmlspecialchars( $title->getText() ) );
 				$text .= " $link<br />\n";
 			}
-			$text .= "<h2>" . wfMessage( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
+			$text .= "<h2>" . $this->msg( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
 			$namespaces = self::getNamespacesList();
 			foreach ( $namespaces as $nsCode ) {
 				if ( $nsCode === '0' ) {
-					$nsName = wfMessage( 'blanknamespace' )->escaped();
+					$nsName = $this->msg( 'blanknamespace' )->escaped();
 				} else {
 					$nsName = htmlspecialchars( $wgContLang->getFormattedNsText( $nsCode ) );
 					if ( $nsName === '' ) continue;
@@ -275,8 +275,8 @@ END;
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
-			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . wfMessage( 'dt_viewxml_simplifiedformat' )->text() . "</label></p>\n";
-			$text .= "<input type=\"submit\" value=\"" . wfMessage( 'viewxml' )->text() . "\">\n";
+			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . $this->msg( 'dt_viewxml_simplifiedformat' )->text() . "</label></p>\n";
+			$text .= "<input type=\"submit\" value=\"" . $this->msg( 'viewxml' )->text() . "\">\n";
 			$text .= "</form>\n";
 
 			$out->addHTML( $text );
