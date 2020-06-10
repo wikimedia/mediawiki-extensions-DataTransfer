@@ -39,11 +39,11 @@ class DTImportXML extends SpecialPage {
 			$formText .= DTUtils::printImportSummaryInput( $this->msg( 'dt_filetype_xml' )->text() );
 			$formText .= DTUtils::printSubmitButton();
 			$text = "\t" . Xml::tags( 'form',
-				array(
+				[
 					'enctype' => 'multipart/form-data',
 					'action' => '',
 					'method' => 'post'
-				), $formText ) . "\n";
+				], $formText ) . "\n";
 		}
 
 		$this->getOutput()->addHTML( $text );
@@ -53,8 +53,8 @@ class DTImportXML extends SpecialPage {
 		$text = "";
 		$xml_parser = new DTXMLParser( $source );
 		$xml_parser->doParse();
-		$jobs = array();
-		$job_params = array();
+		$jobs = [];
+		$job_params = [];
 		$job_params['user_id'] = $this->getUser()->getId();
 		$job_params['edit_summary'] = $editSummary;
 		$job_params['for_pages_that_exist'] = $forPagesThatExist;

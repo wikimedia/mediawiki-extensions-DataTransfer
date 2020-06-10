@@ -22,11 +22,11 @@ class DTImportSpreadsheet extends DTImportCSV {
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
 		$formText .= DTUtils::printSubmitButton();
 		$text = "\t" . Xml::tags( 'form',
-				array(
-					'enctype' => 'multipart/form-data',
-					'action' => '',
-					'method' => 'post'
-				), $formText ) . "\n";
+			[
+				'enctype' => 'multipart/form-data',
+				'action' => '',
+				'method' => 'post'
+			], $formText ) . "\n";
 		return $text;
 	}
 

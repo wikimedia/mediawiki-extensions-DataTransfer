@@ -22,7 +22,7 @@ class DTPageComponent {
 		$dtPageComponent = new DTPageComponent();
 		$dtPageComponent->mTemplateName = trim( $templateName );
 		$dtPageComponent->mIsTemplate = true;
-		$dtPageComponent->mFields = array();
+		$dtPageComponent->mFields = [];
 		self::$mUnnamedFieldCounter = 1;
 		return $dtPageComponent;
 	}
@@ -106,7 +106,7 @@ class DTPageComponent {
 					$attrs = null;
 				} else {
 					$fieldTag = $field_str;
-					$attrs = array( $name_str => $fieldName );
+					$attrs = [ $name_str => $fieldName ];
 				}
 				if ( is_array( $fieldValue ) ) {
 					$bodyXML .= Xml::tags( $fieldTag, $attrs, $fieldValueXML );
@@ -126,7 +126,7 @@ class DTPageComponent {
 			if ( $wgDataTransferViewXMLParseFreeText ) {
 				$freeText = $this->mFreeText;
 				// Undo the escaping that happened before.
-				$freeText = str_replace( array( '&#123;', '&#125;' ), array( '{', '}' ), $freeText );
+				$freeText = str_replace( [ '&#123;', '&#125;' ], [ '{', '}' ], $freeText );
 				// Get rid of table of contents.
 				if ( method_exists( '\MediaWiki\MediaWikiServices', 'getInstance' ) ) {
 					// MW 1.32+
@@ -142,7 +142,7 @@ class DTPageComponent {
 			} else {
 				$freeText = $this->mFreeText;
 			}
-			return XML::element( $free_text_str, array( 'id' => $this->mFreeTextID ), $freeText );
+			return XML::element( $free_text_str, [ 'id' => $this->mFreeTextID ], $freeText );
 		}
 	}
 }

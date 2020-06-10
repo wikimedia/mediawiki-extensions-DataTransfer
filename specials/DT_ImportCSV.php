@@ -55,7 +55,7 @@ class DTImportCSV extends SpecialPage {
 		$source = $uploadResult->value;
 
 		$encoding = $this->getRequest()->getVal( 'encoding' );
-		$pages = array();
+		$pages = [];
 
 		$error_msg = $this->importFromFile( $source, $encoding, $pages );
 
@@ -75,28 +75,26 @@ class DTImportCSV extends SpecialPage {
 	protected function printForm() {
 		$formText = DTUtils::printFileSelector( $this->getFiletype() );
 		$utf8OptionText = "\t" . Xml::element( 'option',
-				array(
-					'selected' => 'selected',
-					'value' => 'utf8'
-				), 'UTF-8' ) . "\n";
+			[
+				'selected' => 'selected',
+				'value' => 'utf8'
+			], 'UTF-8' ) . "\n";
 		$utf16OptionText = "\t" . Xml::element( 'option',
-				array(
-					'value' => 'utf16'
-				), 'UTF-16' ) . "\n";
+			[ 'value' => 'utf16' ], 'UTF-16' ) . "\n";
 		$encodingSelectText = Xml::tags( 'select',
-				array( 'name' => 'encoding' ),
-				"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
+			[ 'name' => 'encoding' ],
+			"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
 		$formText .= "\t" . Xml::tags( 'p', null, $this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText ) . "\n";
 		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		$formText .= DTUtils::printExistingPagesHandling();
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
 		$formText .= DTUtils::printSubmitButton();
 		$text = "\t" . Xml::tags( 'form',
-				array(
-					'enctype' => 'multipart/form-data',
-					'action' => '',
-					'method' => 'post'
-				), $formText ) . "\n";
+			[
+				'enctype' => 'multipart/form-data',
+				'action' => '',
+				'method' => 'post'
+			], $formText ) . "\n";
 		return $text;
 	}
 
@@ -113,11 +111,11 @@ class DTImportCSV extends SpecialPage {
 		// Get rid of the "byte order mark", if it's there - this is
 		// a two- or three-character string sometimes put at the beginning
 		// of files to indicate its encoding.
-		$byteOrderMarks = array(
+		$byteOrderMarks = [
 			pack( "CCC", 0xef, 0xbb, 0xbf ), // UTF8
 			pack( "CC", 0xfe, 0xff ), // UTF16 big-endian
 			pack( "CC", 0xff, 0xfe ) // UTF16 little-endian
-		);
+		];
 		foreach ( $byteOrderMarks as $i => $bom ) {
 			if ( strncmp( $csvString, $bom, strlen( $bom ) ) === 0 ) {
 				$csvString = substr( $csvString, strlen( $bom ) );
@@ -144,7 +142,7 @@ class DTImportCSV extends SpecialPage {
 		// It would be simpler to use str_getcsv() here, but for some
 		// odd reason that function fails if any value in the CSV file
 		// contains one or more newline breaks.
-		$table = array();
+		$table = [];
 		$tempfile = tmpfile();
 		fwrite( $tempfile, $csvString );
 		fseek( $tempfile, 0 );
@@ -160,8 +158,8 @@ class DTImportCSV extends SpecialPage {
 	protected function importFromArray( $table, &$pages ) {
 		// Check header line to make sure every term is in the
 		// correct format.
-		$titleLabels = array( $this->msg( 'dt_xml_title' )->inContentLanguage()->text() );
-		$freeTextLabels = array( $this->msg( 'dt_xml_freetext' )->inContentLanguage()->text() );
+		$titleLabels = [ $this->msg( 'dt_xml_title' )->inContentLanguage()->text() ];
+		$freeTextLabels = [ $this->msg( 'dt_xml_freetext' )->inContentLanguage()->text() ];
 		// Add the English-language values as well, if this isn't an
 		// English-language wiki.
 		if ( $this->getLanguage()->getCode() !== 'en' ) {
@@ -201,11 +199,13 @@ class DTImportCSV extends SpecialPage {
 
 	protected function modifyPages( $pages, $editSummary, $forPagesThatExist ) {
 		$text = "";
-		$jobs = array();
-		$jobParams = array();
-		$jobParams['user_id'] = $this->getUser()->getId();
-		$jobParams['edit_summary'] = $editSummary;
-		$jobParams['for_pages_that_exist'] = $forPagesThatExist;
+		$jobs = [];
+		$jobParams = [
+			'user_id' => $this->getUser()->getId(),
+			'edit_summary' => $editSummary,
+			'for_pages_that_exist' => $forPagesThatExist
+		];
+
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			if ( is_null( $title ) ) {
