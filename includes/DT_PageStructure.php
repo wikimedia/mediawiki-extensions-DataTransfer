@@ -45,7 +45,7 @@ class DTPageStructure {
 
 	/**
 	 * Parses the contents of a wiki page, turning template calls into
-	 * an arracy of DTPageComponent objects.
+	 * an array of DTPageComponent objects.
 	 */
 	public function parsePageContents( $page_contents ) {
 		// escape out variables like "{{PAGENAME}}"
