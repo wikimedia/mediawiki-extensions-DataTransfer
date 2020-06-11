@@ -50,6 +50,10 @@ class DTImportXML extends SpecialPage {
 	}
 
 	function modifyPages( $source, $editSummary, $forPagesThatExist ) {
+		if ( $source == null ) {
+			return Html::element( 'div', [ 'class' => 'error' ], wfMessage( 'importnofile' )->text() );
+		}
+
 		$text = "";
 		$xml_parser = new DTXMLParser( $source );
 		$xml_parser->doParse();
