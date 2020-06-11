@@ -74,22 +74,26 @@ class DTImportCSV extends SpecialPage {
 
 	protected function printForm() {
 		$formText = DTUtils::printFileSelector( $this->getFiletype() );
-		$utf8OptionText = "\t" . Xml::element( 'option',
+		$utf8OptionText = "\t" . Html::element( 'option',
 			[
 				'selected' => 'selected',
 				'value' => 'utf8'
 			], 'UTF-8' ) . "\n";
-		$utf16OptionText = "\t" . Xml::element( 'option',
+		$utf16OptionText = "\t" . Html::element( 'option',
 			[ 'value' => 'utf16' ], 'UTF-16' ) . "\n";
-		$encodingSelectText = Xml::tags( 'select',
+		$encodingSelectText = Html::rawElement( 'select',
 			[ 'name' => 'encoding' ],
 			"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
-		$formText .= "\t" . Xml::tags( 'p', null, $this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText ) . "\n";
+		$formText .= "\t" . Html::rawElement(
+			'p',
+			null,
+			$this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText
+		) . "\n";
 		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		$formText .= DTUtils::printExistingPagesHandling();
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
 		$formText .= DTUtils::printSubmitButton();
-		$text = "\t" . Xml::tags( 'form',
+		$text = "\t" . Html::rawElement( 'form',
 			[
 				'enctype' => 'multipart/form-data',
 				'action' => '',
