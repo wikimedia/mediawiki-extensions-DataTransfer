@@ -42,6 +42,7 @@
 	"importcsv": "CSVの取り込み",
 	"importspreadsheet": "スプレッドシートの取り込み",
 	"dt_importcsv_badheader": "エラー: 列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります",
+	"action-datatransferimport": "データの取り込み",
 	"right-datatransferimport": "データを取り込む",
 	"dt_filetype_spreadsheet": "スプレッドシート"
 }
