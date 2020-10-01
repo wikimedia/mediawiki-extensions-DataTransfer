@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Daud I.F. Argana",
 			"Diki Ananta",
 			"Farras",
 			"Irwangatot",
@@ -30,6 +31,7 @@
 	"dt_import_encodingtype": "Tipe penyandian:",
 	"dt_import_forexisting": "Untuk halaman yang sudah ada:",
 	"dt_import_overwriteexisting": "Menimpa konten yang ada",
+	"dt_import_mergeintoexisting": "Hanya menimpa ruas yang terkandung dalam berkas",
 	"dt_import_skipexisting": "Lewati",
 	"dt_import_appendtoexisting": "Tambahkan kepada konten yang ada",
 	"dt_import_summarydesc": "Ringkasan impor:",
@@ -37,6 +39,9 @@
 	"dt_import_importing": "Mengimpor...",
 	"dt_import_success": "$1 {{PLURAL:$1|halaman|halaman}} akan di buat dari  berkas $2.",
 	"importcsv": "Impor CSV",
+	"importspreadsheet": "Impor lembar lajur",
 	"dt_importcsv_badheader": "Kesalahan: kepala kolom $1, '$2', harus berupa '$3', '$4' atau bentuk 'template_name [field_name]'",
-	"right-datatransferimport": "Impor data"
+	"action-datatransferimport": "impor data",
+	"right-datatransferimport": "Impor data",
+	"dt_filetype_spreadsheet": "lembar lajur"
 }
