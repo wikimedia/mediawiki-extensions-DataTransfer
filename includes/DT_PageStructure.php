@@ -60,7 +60,15 @@ class DTPageStructure {
 		// escape out tables
 		$page_contents = str_replace( '{|', '&#123;|', $page_contents );
 		$page_contents = str_replace( '|}', '|&#125;', $page_contents );
-
+		// Replace any links in the content with dummy names
+		// to avoid parsing of internal link content. These
+		// dummies are replaced back later.
+		$linkPattern = '/\[+[^\]]*\]+/';
+		$linksInContent = [];
+		preg_match_all( $linkPattern, $page_contents, $linksInContent );
+		for ( $i = 0; $i < count( $linksInContent ); $i++ ) {
+			$page_contents = str_replace( $linksInContent[$i], "dummyLink$i", $page_contents );
+		}
 		// traverse the page contents, one character at a time
 		$uncompleted_curly_brackets = 0;
 		$free_text = "";
@@ -123,6 +131,14 @@ class DTPageStructure {
 					} else {
 						if ( $c == "|" || $c == "}" ) {
 							if ( $field_has_name ) {
+								// Replace back the dummy links and escaped symbols with actual ones.
+								$dummyLinkPattern = '/dummyLink(\d+)/';
+								if ( preg_match( $dummyLinkPattern, $field_value, $dummy ) ) {
+									$linkNum = $dummy[1];
+									$field_value = str_replace( $dummy[0], $linksInContent[0][$linkNum], $field_value );
+								}
+								$field_value = str_replace( '&#123;', '{', $field_value );
+								$field_value = str_replace( '&#125;', '}', $field_value );
 								$curTemplate->addNamedField( $field_name, $field_value );
 								$field_value = "";
 								$field_has_name = false;
