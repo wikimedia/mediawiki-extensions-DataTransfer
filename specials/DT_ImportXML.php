@@ -21,7 +21,7 @@ class DTImportXML extends SpecialPage {
 	function execute( $query ) {
 		$this->setHeaders();
 
-		if ( ! $this->getUser()->isAllowed( 'datatransferimport' ) ) {
+		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
 			throw new PermissionsError( 'datatransferimport' );
 		}
 

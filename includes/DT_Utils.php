@@ -5,7 +5,7 @@
  *
  * @author Yaron Koren
  */
-class DTUtils  {
+class DTUtils {
 
 	static function printImportingMessage() {
 		return "\t" . Html::element( 'p', null, wfMessage( 'dt_import_importing' )->text() ) . "\n";
@@ -21,7 +21,7 @@ END;
 		return $text;
 	}
 
-	static function printImportRadioButton( $option, $optionMsg, $isChecked = false) {
+	static function printImportRadioButton( $option, $optionMsg, $isChecked = false ) {
 		$radioButtonAttrs = [];
 		if ( $isChecked ) {
 			$radioButtonAttrs['checked'] = true;
@@ -40,7 +40,7 @@ END;
 			self::printImportRadioButton( 'skip', 'dt_import_skipexisting' ) .
 			self::printImportRadioButton( 'append', 'dt_import_appendtoexisting' );
 		$text .= "\t" . Html::rawElement( 'p', null, $existingPagesText ) . "\n";
-		$text .= "\t" .  '<hr style="margin: 10px 0 10px 0" />' . "\n";
+		$text .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		return $text;
 	}
 

@@ -31,8 +31,7 @@ class DTImportSpreadsheet extends DTImportCSV {
 	}
 
 	protected function importFromFile( $file, $encoding, &$pages ) {
-
-		if ( is_null( $file ) ) {
+		if ( $file === null ) {
 			return wfMessage( 'emptyfile' )->text();
 		}
 
@@ -48,7 +47,6 @@ class DTImportSpreadsheet extends DTImportCSV {
 		$table = $spreadsheet->getSheet( 0 )->toArray( '', true, true, false );
 
 		return $this->importFromArray( $table, $pages );
-
 	}
 
 	protected function getFiletype() {

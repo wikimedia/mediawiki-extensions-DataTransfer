@@ -8,7 +8,7 @@
 
 class DTWikiPage {
 	private $mPageName = null;
-	private $mElements = array();
+	private $mElements = [];
 
 	public function __construct( $name ) {
 		$this->mPageName = $name;

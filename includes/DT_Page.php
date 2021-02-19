@@ -6,12 +6,12 @@
  */
 
 class DTPage {
-	var $mName;
-	var $mTemplates;
-	var $mFreeText;
+	private $mName;
+	private $mTemplates;
+	private $mFreeText;
 
 	public function __construct() {
-		$this->mTemplates = array();
+		$this->mTemplates = [];
 	}
 
 	function setName( $name ) {
@@ -23,9 +23,8 @@ class DTPage {
 	}
 
 	function addTemplateField( $template_name, $field_name, $value ) {
-
 		if ( !array_key_exists( $template_name, $this->mTemplates ) ) {
-			$this->mTemplates[$template_name] = array();
+			$this->mTemplates[$template_name] = [];
 		}
 		$this->mTemplates[$template_name][$field_name] = $value;
 	}

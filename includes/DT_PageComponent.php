@@ -10,13 +10,13 @@ use MediaWiki\MediaWikiServices;
  * @author DataTransfer
  */
 class DTPageComponent {
-	var $mIsTemplate = false;
-	var $mTemplateName;
+	private $mIsTemplate = false;
+	private $mTemplateName;
 	static $mUnnamedFieldCounter;
-	var $mFields;
-	var $mFreeText;
+	private $mFields;
+	private $mFreeText;
 	static $mFreeTextIDCounter = 1;
-	var $mFreeTextID;
+	private $mFreeTextID;
 
 	public static function newTemplate( $templateName ) {
 		$dtPageComponent = new DTPageComponent();
@@ -26,6 +26,7 @@ class DTPageComponent {
 		self::$mUnnamedFieldCounter = 1;
 		return $dtPageComponent;
 	}
+
 	public static function newFreeText( $freeText ) {
 		$dtPageComponent = new DTPageComponent();
 		$dtPageComponent->mIsTemplate = false;
@@ -119,7 +120,7 @@ class DTPageComponent {
 				$templateName = str_replace( ' ', '_', $this->mTemplateName );
 				return Xml::tags( $templateName, null, $bodyXML );
 			} else {
-				return Xml::tags( $template_label, array( $name_str => $this->mTemplateName ), $bodyXML );
+				return Xml::tags( $template_label, [ $name_str => $this->mTemplateName ], $bodyXML );
 			}
 		} else {
 			$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );

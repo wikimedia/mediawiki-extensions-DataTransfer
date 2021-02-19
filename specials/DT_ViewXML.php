@@ -40,22 +40,23 @@ class DTViewXML extends SpecialPage {
 	 * on SMW's SMWInlineQuery::includeSubcategories()
 	 */
 	static function getPagesForCategory( $top_category, $num_levels ) {
-		if ( 0 == $num_levels ) return $top_category;
+		if ( 0 == $num_levels ) { return $top_category;
+		}
 
 		$db = wfGetDB( DB_REPLICA );
 		$fname = "getPagesForCategory";
-		$categories = array( $top_category );
-		$checkcategories = array( $top_category );
-		$titles = array();
+		$categories = [ $top_category ];
+		$checkcategories = [ $top_category ];
+		$titles = [];
 		for ( $level = $num_levels; $level > 0; $level-- ) {
-			$newcategories = array();
+			$newcategories = [];
 			foreach ( $checkcategories as $category ) {
 				$res = $db->select( // make the query
-					array( 'categorylinks', 'page' ),
-					array( 'page_id', 'page_title', 'page_namespace' ),
-					array( 'cl_from = page_id',
+					[ 'categorylinks', 'page' ],
+					[ 'page_id', 'page_title', 'page_namespace' ],
+					[ 'cl_from = page_id',
 						'cl_to = ' . $db->addQuotes( $category )
-					),
+					],
 					$fname
 				);
 				if ( $res ) {
@@ -80,7 +81,7 @@ class DTViewXML extends SpecialPage {
 			} else {
 				$categories = array_merge( $categories, $newcategories );
 			}
-			$checkcategories = array_diff( $newcategories, array() );
+			$checkcategories = array_diff( $newcategories, [] );
 		}
 		return $titles;
 	}
@@ -117,7 +118,6 @@ class DTViewXML extends SpecialPage {
 		return false;
 	}
 
-
 	function getXMLForPage( $title, $simplified_format, $depth = 0 ) {
 		if ( method_exists( 'MediaWiki\Permissions\PermissionManager', 'userCan' ) ) {
 			// MW 1.33+
@@ -132,7 +132,8 @@ class DTViewXML extends SpecialPage {
 			}
 		}
 
-		if ( $depth > 5 ) { return ""; }
+		if ( $depth > 5 ) { return "";
+		}
 
 		$pageStructure = DTPageStructure::newFromTitle( $title );
 		$text = $pageStructure->toXML( $simplified_format );
@@ -159,7 +160,7 @@ class DTViewXML extends SpecialPage {
 		$cats = $request->getArray( 'categories' );
 		$nses = $request->getArray( 'namespaces' );
 		$requestedTitles = $request->getVal( 'titles' );
-		if ( ! empty( $cats ) || ! empty( $nses ) || $requestedTitles != null ) {
+		if ( !empty( $cats ) || !empty( $nses ) || $requestedTitles != null ) {
 			$form_submitted = true;
 		}
 
@@ -190,10 +191,11 @@ class DTViewXML extends SpecialPage {
 			$text = "<$pages_str>";
 			if ( $cats ) {
 				foreach ( $cats as $cat => $val ) {
-					if ( $simplified_format )
+					if ( $simplified_format ) {
 						$text .= '<' . str_replace( ' ', '_', $cat ) . ">\n";
-					else
-						$text .= "<$category_label $name_str=\"$cat\">\n";
+
+					} else { $text .= "<$category_label $name_str=\"$cat\">\n";
+					}
 					$titles = self::getPagesForCategory( $cat, 10 );
 					foreach ( $titles as $title ) {
 						$text .= $this->getXMLForPage( $title, $simplified_format );
@@ -208,7 +210,7 @@ class DTViewXML extends SpecialPage {
 
 			if ( $nses ) {
 				foreach ( $nses as $ns => $val ) {
-			 		if ( $ns == 0 ) {
+					if ( $ns == 0 ) {
 						$ns_name = "Main";
 					} else {
 						$ns_name = MWNamespace::getCanonicalName( $ns );
@@ -222,10 +224,11 @@ class DTViewXML extends SpecialPage {
 					foreach ( $titles as $title ) {
 						$text .= $this->getXMLForPage( $title, $simplified_format );
 					}
-					if ( $simplified_format )
+					if ( $simplified_format ) {
 						$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
-					else
-						$text .= "</$namespace_str>\n";
+
+					} else { $text .= "</$namespace_str>\n";
+					}
 				}
 			}
 
@@ -270,7 +273,8 @@ END;
 					$nsName = $this->msg( 'blanknamespace' )->escaped();
 				} else {
 					$nsName = htmlspecialchars( $wgContLang->getFormattedNsText( $nsCode ) );
-					if ( $nsName === '' ) continue;
+					if ( $nsName === '' ) { continue;
+					}
 				}
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";

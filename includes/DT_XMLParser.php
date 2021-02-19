@@ -7,13 +7,13 @@
  */
 
 class DTXMLParser {
-	var $mDebug = false;
-	var $mSource = null;
-	var $mCurFieldName = null;
-	var $mCurFieldValue = '';
-	var $mCurTemplate = null;
-	var $mCurPage = null; // new DTWikiPage();
-	var $mPages = array();
+	private $mDebug = false;
+	private $mSource = null;
+	private $mCurFieldName = null;
+	private $mCurFieldValue = '';
+	private $mCurTemplate = null;
+	private $mCurPage = null; // new DTWikiPage();
+	private $mPages = [];
 
 	function __construct( $source ) {
 		$this->mSource = $source;
@@ -51,7 +51,6 @@ class DTXMLParser {
 	function donothing( $parser, $x, $y = "" ) {
 		# $this->debug( "donothing" );
 	}
-
 
 	function in_start( $parser, $name, $attribs ) {
 		// $this->debug( "in_start $name" );

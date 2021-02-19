@@ -10,7 +10,7 @@ class DTImportCSV extends SpecialPage {
 	/**
 	 * Constructor
 	 */
-	public function __construct( $name='ImportCSV' ) {
+	public function __construct( $name = 'ImportCSV' ) {
 		parent::__construct( $name );
 	}
 
@@ -21,7 +21,7 @@ class DTImportCSV extends SpecialPage {
 	function execute( $query ) {
 		$this->setHeaders();
 
-		if ( ! $this->getUser()->isAllowed( 'datatransferimport' ) ) {
+		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
 			throw new PermissionsError( 'datatransferimport' );
 		}
 
@@ -31,12 +31,11 @@ class DTImportCSV extends SpecialPage {
 			$text = $this->printForm();
 		}
 
-		$this->getOutput()->addModuleStyles( 'ext.datatransfer');
+		$this->getOutput()->addModuleStyles( 'ext.datatransfer' );
 		$this->getOutput()->addHTML( $text );
 	}
 
-	protected function importFromUploadAndModifyPages () {
-
+	protected function importFromUploadAndModifyPages() {
 		$text = DTUtils::printImportingMessage();
 		$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
 
@@ -59,7 +58,7 @@ class DTImportCSV extends SpecialPage {
 
 		$error_msg = $this->importFromFile( $source, $encoding, $pages );
 
-		if ( ! is_null( $error_msg ) ) {
+		if ( $error_msg !== null ) {
 			$text .= $error_msg;
 			return $text;
 		}
@@ -83,7 +82,7 @@ class DTImportCSV extends SpecialPage {
 			[ 'value' => 'utf16' ], 'UTF-16' ) . "\n";
 		$encodingSelectText = Html::rawElement( 'select',
 			[ 'name' => 'encoding' ],
-			"\n" . $utf8OptionText . $utf16OptionText. "\t" ) . "\n\t";
+			"\n" . $utf8OptionText . $utf16OptionText . "\t" ) . "\n\t";
 		$formText .= "\t" . Html::rawElement(
 			'p',
 			null,
@@ -104,7 +103,7 @@ class DTImportCSV extends SpecialPage {
 
 	protected function importFromFile( ImportStreamSource $csvFileStream, $encoding, &$pages ) {
 		$csvString = '';
-		while ( ! $csvFileStream->atEnd() ) {
+		while ( !$csvFileStream->atEnd() ) {
 			$csvString .= $csvFileStream->readChunk();
 		}
 
@@ -156,7 +155,6 @@ class DTImportCSV extends SpecialPage {
 		fclose( $tempfile );
 
 		return $this->importFromArray( $table, $pages );
-
 	}
 
 	protected function importFromArray( $table, &$pages ) {
@@ -180,7 +178,9 @@ class DTImportCSV extends SpecialPage {
 			}
 		}
 		foreach ( $table as $i => $line ) {
-			if ( $i == 0 ) continue;
+			if ( $i == 0 ) {
+				continue;
+			}
 			$page = new DTPage();
 			foreach ( $line as $j => $val ) {
 				if ( $table[0][$j] === '' ) {
@@ -212,7 +212,7 @@ class DTImportCSV extends SpecialPage {
 
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page->getName() );
-			if ( is_null( $title ) ) {
+			if ( $title === null ) {
 				$text .= '<p>' . $this->msg( 'img-auth-badtitle', $page->getName() )->text() . "</p>\n";
 				continue;
 			}

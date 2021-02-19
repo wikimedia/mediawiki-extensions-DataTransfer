@@ -8,7 +8,7 @@
 
 class DTWikiTemplate {
 	private $mName = null;
-	private $mFields = array();
+	private $mFields = [];
 
 	public function __construct( $name ) {
 		$this->mName = $name;
@@ -29,8 +29,9 @@ class DTWikiTemplate {
 				$multi_line_template = true;
 			}
 		}
-		if ( $multi_line_template )
+		if ( $multi_line_template ) {
 			$text .= "\n";
+		}
 		$text .= '}}' . "\n";
 		return $text;
 	}

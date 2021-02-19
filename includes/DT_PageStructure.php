@@ -8,8 +8,8 @@
  * @ingroup DataTransfer
  */
 class DTPageStructure {
-	var $mPageTitle;
-	var $mComponents = array();
+	private $mPageTitle;
+	private $mComponents = [];
 
 	function addComponent( $dtPageComponent ) {
 		$this->mComponents[] = $dtPageComponent;
@@ -80,8 +80,9 @@ class DTPageStructure {
 			$c = $page_contents[$i];
 			if ( $uncompleted_curly_brackets == 0 ) {
 				if ( $c == "{" || $i == strlen( $page_contents ) - 1 ) {
-					if ( $i == strlen( $page_contents ) - 1 )
+					if ( $i == strlen( $page_contents ) - 1 ) {
 						$free_text .= $c;
+					}
 					$uncompleted_curly_brackets++;
 					$free_text = trim( $free_text );
 					if ( $free_text != "" ) {
@@ -150,7 +151,7 @@ class DTPageStructure {
 							$field_name = "";
 						} elseif ( $c == "=" ) {
 							// handle case of = in value
-							if ( ! $creating_field_name ) {
+							if ( !$creating_field_name ) {
 								$field_value .= $c;
 							} else {
 								$creating_field_name = false;
@@ -178,7 +179,7 @@ class DTPageStructure {
 	 * Helper function for mergeInPageStructure().
 	 */
 	private function getSingleInstanceTemplates() {
-		$instancesPerTemplate = array();
+		$instancesPerTemplate = [];
 		foreach ( $this->mComponents as $pageComponent ) {
 			if ( $pageComponent->mIsTemplate ) {
 				$templateName = $pageComponent->mTemplateName;
@@ -190,7 +191,7 @@ class DTPageStructure {
 			}
 		}
 
-		$singleInstanceTemplates = array();
+		$singleInstanceTemplates = [];
 		foreach ( $instancesPerTemplate as $templateName => $instances ) {
 			if ( $instances == 1 ) {
 				$singleInstanceTemplates[] = $templateName;
@@ -252,7 +253,7 @@ class DTPageStructure {
 		if ( $isSimplified ) {
 			return Xml::tags( $page_str, null, Xml::tags( $id_str, null, $articleID ) . Xml::tags( $title_str, null, $pageName ) . $bodyXML );
 		} else {
-			return Xml::tags( $page_str, array( $id_str => $articleID, $title_str => $pageName ), $bodyXML );
+			return Xml::tags( $page_str, [ $id_str => $articleID, $title_str => $pageName ], $bodyXML );
 		}
 	}
 

@@ -13,10 +13,10 @@ class DTImportJob extends Job {
 
 	/**
 	 * Run a dtImport job
-	 * @return boolean success
+	 * @return bool success
 	 */
 	function run() {
-		if ( is_null( $this->title ) ) {
+		if ( $this->title === null ) {
 			$this->error = "dtImport: Invalid title";
 			return false;
 		}
