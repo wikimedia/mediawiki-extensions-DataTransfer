@@ -145,12 +145,17 @@ class DTViewXML extends SpecialPage {
 	}
 
 	function doSpecialViewXML() {
-		global $wgContLang;
-
 		$out = $this->getOutput();
 		$request  = $this->getRequest();
+		if ( method_exists( 'MediaWiki\MediaWikiServices', 'getContentLanguage' ) ) {
+			// MW 1.32+
+			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+		} else {
+			global $wgContLang;
+			$contLang = $wgContLang;
+		}
 
-		$namespace_labels = $wgContLang->getNamespaces();
+		$namespace_labels = $contLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
 		$name_str = str_replace( ' ', '_', $this->msg( 'dt_xml_name' )->inContentLanguage()->text() );
 		$namespace_str = str_replace( ' ', '_', $this->msg( 'dt_xml_namespace' )->text() );
@@ -248,9 +253,8 @@ class DTViewXML extends SpecialPage {
 			$text .= "</$pages_str>";
 			print $text;
 		} else {
-			// set 'title' as hidden field, in case there's no URL niceness
-			global $wgContLang;
-			$mw_namespace_labels = $wgContLang->getNamespaces();
+			// Set 'title' as hidden field, in case there's no URL niceness.
+			$mw_namespace_labels = $contLang->getNamespaces();
 			$special_namespace = $mw_namespace_labels[NS_SPECIAL];
 			$text = <<<END
 	<form action="" method="get">
@@ -272,7 +276,7 @@ END;
 				if ( $nsCode === '0' ) {
 					$nsName = $this->msg( 'blanknamespace' )->escaped();
 				} else {
-					$nsName = htmlspecialchars( $wgContLang->getFormattedNsText( $nsCode ) );
+					$nsName = htmlspecialchars( $contLang->getFormattedNsText( $nsCode ) );
 					if ( $nsName === '' ) { continue;
 					}
 				}
