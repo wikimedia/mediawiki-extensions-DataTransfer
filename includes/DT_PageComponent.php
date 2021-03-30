@@ -35,6 +35,10 @@ class DTPageComponent {
 		return $dtPageComponent;
 	}
 
+	public function getFields() {
+		return $this->mFields;
+	}
+
 	public function addNamedField( $fieldName, $fieldValue ) {
 		$this->mFields[trim( $fieldName )] = trim( $fieldValue );
 	}
@@ -42,6 +46,10 @@ class DTPageComponent {
 	public function addUnnamedField( $fieldValue ) {
 		$fieldName = self::$mUnnamedFieldCounter++;
 		$this->mFields[$fieldName] = trim( $fieldValue );
+	}
+
+	public function isTemplate() {
+		return $this->mIsTemplate;
 	}
 
 	public function toWikitext() {

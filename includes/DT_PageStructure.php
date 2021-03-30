@@ -30,12 +30,12 @@ class DTPageStructure {
 		// as if it's the full contents of a page, and add the
 		// resulting "components" to that field.
 		foreach ( $pageStructure->mComponents as $pageComponent ) {
-			if ( $pageComponent->mIsTemplate ) {
-				foreach ( $pageComponent->mFields as $fieldName => $fieldValue ) {
+			if ( $pageComponent->isTemplate() ) {
+				foreach ( $pageComponent->getFields() as $fieldName => $fieldValue ) {
 					if ( strpos( $fieldValue, '{{' ) !== false ) {
 						$dummyPageStructure = new DTPageStructure();
 						$dummyPageStructure->parsePageContents( $fieldValue );
-						$pageComponent->mFields[$fieldName] = $dummyPageStructure->mComponents;
+						$pageComponent->addNamedField( $fieldName, $dummyPageStructure->mComponents );
 					}
 				}
 			}
@@ -181,7 +181,7 @@ class DTPageStructure {
 	private function getSingleInstanceTemplates() {
 		$instancesPerTemplate = [];
 		foreach ( $this->mComponents as $pageComponent ) {
-			if ( $pageComponent->mIsTemplate ) {
+			if ( $pageComponent->isTemplate() ) {
 				$templateName = $pageComponent->mTemplateName;
 				if ( array_key_exists( $templateName, $instancesPerTemplate ) ) {
 					$instancesPerTemplate[$templateName]++;
@@ -222,8 +222,8 @@ class DTPageStructure {
 		foreach ( $secondPageStructure->mComponents as $pageComponent ) {
 			if ( in_array( $pageComponent->mTemplateName, $singleInstanceTemplatesInBoth ) ) {
 				$indexOfThisTemplate = $this->getIndexOfTemplateName( $pageComponent->mTemplateName );
-				foreach ( $pageComponent->mFields as $fieldName => $fieldValue ) {
-					$this->mComponents[$indexOfThisTemplate]->mFields[$fieldName] = $fieldValue;
+				foreach ( $pageComponent->getFields() as $fieldName => $fieldValue ) {
+					$this->mComponents[$indexOfThisTemplate]->addNamedField( $fieldName, $fieldValue );
 				}
 			} else {
 				$this->mComponents[] = $pageComponent;
