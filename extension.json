@@ -48,10 +48,10 @@
 		"DTWikiTemplate": "includes/DT_WikiTemplate.php",
 		"DTWikiPage": "includes/DT_WikiPage.php",
 		"DTHooks": "includes/DT_Hooks.php",
-		"DTViewXML": "specials/DT_ViewXML.php",
-		"DTImportXML": "specials/DT_ImportXML.php",
-		"DTImportCSV": "specials/DT_ImportCSV.php",
-		"DTImportSpreadsheet": "specials/DT_ImportSpreadsheet.php"
+		"DTViewXML": "includes/specials/DT_ViewXML.php",
+		"DTImportXML": "includes/specials/DT_ImportXML.php",
+		"DTImportCSV": "includes/specials/DT_ImportCSV.php",
+		"DTImportSpreadsheet": "includes/specials/DT_ImportSpreadsheet.php"
 	},
 	"ResourceModules": {
 		"ext.datatransfer": {
