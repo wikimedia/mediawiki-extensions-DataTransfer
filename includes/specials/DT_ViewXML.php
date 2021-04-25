@@ -264,10 +264,11 @@ END;
 			$text .= "<p>" . $this->msg( 'dt_viewxml_docu' )->text() . "</p>\n";
 			$text .= "<h2>" . $this->msg( 'dt_viewxml_categories' )->text() . "</h2>\n";
 			$categories = self::getCategoriesList();
+			$linkRenderer = $this->getLinkRenderer();
 			foreach ( $categories as $category ) {
 				$text .= Html::input( "categories[$category]", null, 'checkbox' );
 				$title = Title::makeTitle( NS_CATEGORY, $category );
-				$link = Linker::link( $title, htmlspecialchars( $title->getText() ) );
+				$link = $linkRenderer->makeKnownLink( $title, $title->getText() );
 				$text .= " $link<br />\n";
 			}
 			$text .= "<h2>" . $this->msg( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
