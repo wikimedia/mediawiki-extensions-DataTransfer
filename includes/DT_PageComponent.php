@@ -84,8 +84,14 @@ class DTPageComponent {
 		$parser = MediaWikiServices::getInstance()->getParser();
 
 		if ( $this->mIsTemplate ) {
-			global $wgContLang;
-			$namespace_labels = $wgContLang->getNamespaces();
+			if ( method_exists( 'MediaWiki\MediaWikiServices', 'getContentLanguage' ) ) {
+				// MW 1.32+
+				$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+			} else {
+				global $wgContLang;
+				$contLang = $wgContLang;
+			}
+			$namespace_labels = $contLang->getNamespaces();
 			$template_label = $namespace_labels[NS_TEMPLATE];
 			$field_str = str_replace( ' ', '_', wfMessage( 'dt_xml_field' )->inContentLanguage()->text() );
 			$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
