@@ -63,7 +63,7 @@
 	],
 	"support": {
 		"issues": "https://phabricator.wikimedia.org/project/profile/791/",
-		"irc": "irc://irc.freenode.net/mediawiki",
+		"irc": "irc://irc.libera.chat/mediawiki",
 		"wiki": "https://www.mediawiki.org/wiki/Extension:Data_Transfer",
 		"source": "https://phabricator.wikimedia.org/diffusion/EDTR/extension-datatransfer.git"
 	},
