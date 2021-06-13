@@ -157,7 +157,7 @@ class DTPageComponent {
 			} else {
 				$freeText = $this->mFreeText;
 			}
-			return XML::element( $free_text_str, [ 'id' => $this->mFreeTextID ], $freeText );
+			return Xml::element( $free_text_str, [ 'id' => $this->mFreeTextID ], $freeText );
 		}
 	}
 }
