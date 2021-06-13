@@ -63,7 +63,7 @@ class DTImportXML extends SpecialPage {
 		$job_params['edit_summary'] = $editSummary;
 		$job_params['for_pages_that_exist'] = $forPagesThatExist;
 
-		foreach ( $xml_parser->mPages as $page ) {
+		foreach ( $xml_parser->getPages() as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			$job_params['text'] = $page->createText();
 			$jobs[] = new DTImportJob( $title, $job_params );

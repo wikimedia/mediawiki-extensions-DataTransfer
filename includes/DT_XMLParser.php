@@ -211,4 +211,8 @@ class DTXMLParser {
 	function freetext_value( $parser, $data ) {
 		$this->mCurPage->addFreeText( $data );
 	}
+
+	public function getPages() {
+		return $this->mPages;
+	}
 }
