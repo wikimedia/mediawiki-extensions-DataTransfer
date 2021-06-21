@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Aushulz"
 		]
 	},
+	"dt_viewxml_categories": "Catigurìi",
+	"dt_xml_template": "Template",
 	"dt_xml_name": "Nomu",
 	"dt_xml_id": "ID"
 }
