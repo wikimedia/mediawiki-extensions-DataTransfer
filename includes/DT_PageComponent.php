@@ -52,6 +52,10 @@ class DTPageComponent {
 		return $this->mIsTemplate;
 	}
 
+	public function getTemplateName() {
+		return $this->mTemplateName;
+	}
+
 	public function toWikitext() {
 		if ( $this->mIsTemplate ) {
 			$wikitext = '{{' . $this->mTemplateName;
