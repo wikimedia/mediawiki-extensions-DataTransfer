@@ -182,7 +182,7 @@ class DTPageStructure {
 		$instancesPerTemplate = [];
 		foreach ( $this->mComponents as $pageComponent ) {
 			if ( $pageComponent->isTemplate() ) {
-				$templateName = $pageComponent->mTemplateName;
+				$templateName = $pageComponent->getTemplateName();
 				if ( array_key_exists( $templateName, $instancesPerTemplate ) ) {
 					$instancesPerTemplate[$templateName]++;
 				} else {
@@ -202,7 +202,7 @@ class DTPageStructure {
 
 	private function getIndexOfTemplateName( $templateName ) {
 		foreach ( $this->mComponents as $i => $pageComponent ) {
-			if ( $pageComponent->mTemplateName == $templateName ) {
+			if ( $pageComponent->getTemplateName() == $templateName ) {
 				return $i;
 			}
 		}
@@ -220,8 +220,8 @@ class DTPageStructure {
 		$singleInstanceTemplatesThere = $secondPageStructure->getSingleInstanceTemplates();
 		$singleInstanceTemplatesInBoth = array_intersect( $singleInstanceTemplatesHere, $singleInstanceTemplatesThere );
 		foreach ( $secondPageStructure->mComponents as $pageComponent ) {
-			if ( in_array( $pageComponent->mTemplateName, $singleInstanceTemplatesInBoth ) ) {
-				$indexOfThisTemplate = $this->getIndexOfTemplateName( $pageComponent->mTemplateName );
+			if ( in_array( $pageComponent->getTemplateName(), $singleInstanceTemplatesInBoth ) ) {
+				$indexOfThisTemplate = $this->getIndexOfTemplateName( $pageComponent->getTemplateName() );
 				foreach ( $pageComponent->getFields() as $fieldName => $fieldValue ) {
 					$this->mComponents[$indexOfThisTemplate]->addNamedField( $fieldName, $fieldValue );
 				}
