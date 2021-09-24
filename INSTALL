@@ -1,4 +1,4 @@
-[[Data Transfer 1.2]]
+[[Data Transfer 1.2.1]]
 
 Contents:
 * Disclaimer
@@ -23,9 +23,9 @@ This extension requires MediaWiki 1.29 or greater.
     "[wikipath]/LocalSettings.php":
       wfLoadExtension( 'DataTransfer' );
 (3) To enable importing spreadsheet files (Excel, OOCalc, Gnumeric, ...),
-    use Composer to install the phpoffice/phpexcel module. From the MediaWiki
-    installation directory call:
-      composer require "phpoffice/phpexcel:~1.8"
+    use Composer to install the PhpOffice\PhpSpreadsheet module. From the
+    MediaWiki installation directory, call:
+      composer require "phpoffice/phpspreadsheetl:~1.8"
 
 == Contact ==
 
