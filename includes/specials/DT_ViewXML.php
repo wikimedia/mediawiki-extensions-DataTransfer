@@ -154,6 +154,12 @@ class DTViewXML extends SpecialPage {
 			global $wgContLang;
 			$contLang = $wgContLang;
 		}
+		if ( method_exists( 'MediaWiki\MediaWikiServices', 'getNamespaceInfo' ) ) {
+			// MW 1.34+
+			$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		} else {
+			$namespaceInfo = null;
+		}
 
 		$namespace_labels = $contLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
@@ -218,7 +224,11 @@ class DTViewXML extends SpecialPage {
 					if ( $ns == 0 ) {
 						$ns_name = "Main";
 					} else {
-						$ns_name = MWNamespace::getCanonicalName( $ns );
+						if ( $namespaceInfo ) {
+							$ns_name = $namespaceInfo->getCanonicalName( $ns );
+						} else {
+							$ns_name = MWNamespace::getCanonicalName( $ns );
+						}
 					}
 					if ( $simplified_format ) {
 						$text .= '<' . str_replace( ' ', '_', $ns_name ) . ">\n";
