@@ -17,7 +17,7 @@ class DTHooks {
 		$main_row->addItem( ALItem::newFromSpecialPage( 'ViewXML' ) );
 		$main_row->addItem( ALItem::newFromSpecialPage( 'ImportXML' ) );
 		$main_row->addItem( ALItem::newFromSpecialPage( 'ImportCSV' ) );
-		if ( class_exists( 'PHPExcel' ) ) {
+		if ( class_exists( 'PhpOffice\PhpSpreadsheet\Spreadsheet' ) || class_exists( 'PHPExcel' ) ) {
 			$main_row->addItem( ALItem::newFromSpecialPage( 'ImportSpreadsheet' ) );
 		}
 		return true;
