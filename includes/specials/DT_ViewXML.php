@@ -147,13 +147,7 @@ class DTViewXML extends SpecialPage {
 	function doSpecialViewXML() {
 		$out = $this->getOutput();
 		$request  = $this->getRequest();
-		if ( method_exists( 'MediaWiki\MediaWikiServices', 'getContentLanguage' ) ) {
-			// MW 1.32+
-			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-		} else {
-			global $wgContLang;
-			$contLang = $wgContLang;
-		}
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		if ( method_exists( 'MediaWiki\MediaWikiServices', 'getNamespaceInfo' ) ) {
 			// MW 1.34+
 			$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
