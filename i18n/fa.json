@@ -4,7 +4,8 @@
 			"Alirezaaa",
 			"Armin1392",
 			"FarsiNevis",
-			"Mjbmr"
+			"Mjbmr",
+			"Jeeputer"
 		]
 	},
 	"datatransfer-desc": "اجازه برای واردات و صادرات اطلاعات حاوی الگوهای تماس",
@@ -36,5 +37,6 @@
 	"dt_import_success": "$1 {{PLURAL:$1|page|pages}} از پوشهٔ $2 ایجاد خواهدشد.",
 	"importcsv": "درون‌ریزی سی‌اس‌وی",
 	"dt_importcsv_badheader": "خطا: سر فصل ستون $1،$2، باید یا $3،$4 یا فرم 'template_name[field_name]' باشد",
+	"action-datatransferimport": "درون‌ریزی داده",
 	"right-datatransferimport": "درون‌ریزی داده‌ها"
 }

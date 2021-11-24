@@ -28,7 +28,7 @@
 	"dt_import_skipexisting": "Přeskočić",
 	"dt_import_appendtoexisting": "K eksistowacemu wobsahej připowěsnyć",
 	"dt_import_summarydesc": "Zjeće importa:",
-	"dt_import_editsummary": "Importowanje $1",
+	"dt_import_editsummary": "Importowanje {{ucfirst:$1}}",
 	"dt_import_importing": "Importuje so...",
 	"dt_import_success": "$1 {{PLURAL:$1|strona so z dataje $2 twori|stronje so z dataje $2 tworitej|strony so z dataje $2 tworja|stronow so z dataje $2 twori}}.",
 	"importcsv": "Importowanje CSV",
