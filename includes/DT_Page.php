@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Storage\SlotRecord;
+
 /**
  * Class holding the data of a page to be imported
  *
@@ -9,9 +12,11 @@ class DTPage {
 	private $mName;
 	private $mTemplates;
 	private $mFreeText;
+	private $mSlot;
 
 	public function __construct() {
 		$this->mTemplates = [];
+		$this->mSlot = SlotRecord::MAIN;
 	}
 
 	function setName( $name ) {
@@ -20,6 +25,14 @@ class DTPage {
 
 	function getName() {
 		return $this->mName;
+	}
+
+	function setSlot( $slot ) {
+		$this->mSlot = $slot;
+	}
+
+	function getSlot() {
+		return $this->mSlot;
 	}
 
 	function addTemplateField( $template_name, $field_name, $value ) {

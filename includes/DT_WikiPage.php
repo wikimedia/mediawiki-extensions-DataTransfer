@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Storage\SlotRecord;
+
 /**
  * Class for representing a wiki page.
  *
@@ -9,13 +12,23 @@
 class DTWikiPage {
 	private $mPageName = null;
 	private $mElements = [];
+	private $mSlot;
 
 	public function __construct( $name ) {
 		$this->mPageName = $name;
+		$this->mSlot = SlotRecord::MAIN;
 	}
 
 	function getName() {
 		return $this->mPageName;
+	}
+
+	function setSlot( $slot ) {
+		$this->mSlot = $slot;
+	}
+
+	function getSlot() {
+		return $this->mSlot;
 	}
 
 	function addTemplate( $template ) {

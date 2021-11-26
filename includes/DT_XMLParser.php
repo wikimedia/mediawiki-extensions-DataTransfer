@@ -64,6 +64,7 @@ class DTXMLParser {
 	function in_pages( $parser, $name, $attribs ) {
 		$this->debug( "in_pages $name" );
 		$page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
+		$slot_str = str_replace( ' ', '_', wfMessage( 'dt_xml_slot' )->inContentLanguage()->text() );
 		if ( $name == $page_str ) {
 			$title_str = str_replace( ' ', '_', wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
 			if ( array_key_exists( $title_str, $attribs ) ) {
@@ -72,6 +73,10 @@ class DTXMLParser {
 			} else {
 				$this->throwXMLerror( "'$title_str' attribute missing for page" );
 				return;
+			}
+
+			if ( array_key_exists( $slot_str, $attribs ) ) {
+				$this->mCurPage->setSlot( $attribs[$slot_str] );
 			}
 		} else {
 			$this->throwXMLerror( "Expected <$page_str>, got <$name>" );

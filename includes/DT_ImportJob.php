@@ -1,5 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRoleRegistry;
+use MediaWiki\Storage\SlotRecord;
+
 /**
  * Background job to import a page into the wiki, for use by Data Transfer
  *
@@ -32,6 +36,18 @@ class DTImportJob extends Job {
 			return true;
 		}
 
+		if ( isset( $this->params['slot'] ) ) {
+			$slotRole = $this->params['slot'];
+			$slotRoleRegistry = MediaWikiServices::getInstance()->getSlotRoleRegistry();
+
+			if ( !$slotRoleRegistry->isKnownRole( $slotRole ) ) {
+				$this->error = 'dtImport: Slot role not found "' . $slotRole . '"';
+				return false;
+			}
+		} else {
+			$slotRole = SlotRecord::MAIN;
+		}
+
 		// Change global $wgUser variable to the one specified by
 		// the job only for the extent of this import.
 		global $wgUser;
@@ -51,7 +67,7 @@ class DTImportJob extends Job {
 			}
 			// otherwise, $for_pages_that_exist == 'overwrite'
 		}
-		$edit_summary = $this->params['edit_summary'];
+		$edit_summary = CommentStoreComment::newUnsavedComment( $this->params['edit_summary'] );
 		$new_content = new WikitextContent( $text );
 		// It's strange that doEditContent() doesn't
 		// automatically attach the 'bot' flag when the user
@@ -61,7 +77,10 @@ class DTImportJob extends Job {
 		} else {
 			$flags = 0;
 		}
-		$wikiPage->doEditContent( $new_content, $edit_summary, $flags );
+
+		$pageUpdater = $wikiPage->newPageUpdater( $wgUser );
+		$pageUpdater->setContent( $slotRole, $new_content );
+		$pageUpdater->saveRevision( $edit_summary, $flags );
 
 		$wgUser = $actual_user;
 		return true;

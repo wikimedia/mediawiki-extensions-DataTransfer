@@ -66,6 +66,7 @@ class DTImportXML extends SpecialPage {
 		foreach ( $xml_parser->getPages() as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			$job_params['text'] = $page->createText();
+			$job_params['slot'] = $page->getSlot();
 			$jobs[] = new DTImportJob( $title, $job_params );
 		}
 		JobQueueGroup::singleton()->push( $jobs );

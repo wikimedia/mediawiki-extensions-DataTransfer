@@ -155,15 +155,18 @@ class DTImportCSV extends SpecialPage {
 		// correct format.
 		$titleLabels = [ $this->msg( 'dt_xml_title' )->inContentLanguage()->text() ];
 		$freeTextLabels = [ $this->msg( 'dt_xml_freetext' )->inContentLanguage()->text() ];
+		$slotLabels = [ $this->msg( 'dt_xml_slot' )->inContentLanguage()->text() ];
 		// Add the English-language values as well, if this isn't an
 		// English-language wiki.
 		if ( $this->getLanguage()->getCode() !== 'en' ) {
 			$titleLabels[] = $this->msg( 'dt_xml_title' )->inLanguage( 'en' )->text();
 			$freeTextLabels[] = $this->msg( 'dt_xml_freetext' )->inLanguage( 'en' )->text();
+			$slotLabels[] = $this->msg( 'dt_xml_slot' )->inLanguage( 'en' )->text();
 		}
 		foreach ( $table[0] as $i => $headerVal ) {
 			if ( !in_array( $headerVal, $titleLabels )
 			&& !in_array( $headerVal, $freeTextLabels )
+			&& !in_array( $headerVal, $slotLabels )
 			&& $headerVal !== ''
 			&& !preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $headerVal ) ) {
 				$errorMsg = $this->msg( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->text();
@@ -183,6 +186,8 @@ class DTImportCSV extends SpecialPage {
 					$page->setName( $val );
 				} elseif ( in_array( $table[0][$j], $freeTextLabels ) ) {
 					$page->setFreeText( $val );
+				} elseif ( in_array( $table[0][$j], $slotLabels ) && $val !== '' ) {
+					$page->setSlot( $val );
 				} else {
 					list( $templateName, $fieldName ) = explode( '[', str_replace( ']', '', $table[0][$j] ) );
 					$page->addTemplateField( $templateName, $fieldName, $val );
@@ -210,6 +215,7 @@ class DTImportCSV extends SpecialPage {
 				continue;
 			}
 			$jobParams['text'] = $page->createText();
+			$jobParams['slot'] = $page->getSlot();
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
 		JobQueueGroup::singleton()->push( $jobs );

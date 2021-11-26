@@ -19,6 +19,7 @@
 	"dt_xml_title": "Title",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Free Text",
+	"dt_xml_slot": "Slot",
 	"importxml": "Import XML",
 	"dt_import_selectfile": "Please select the $1 file to import:",
 	"dt_import_encodingtype": "Encoding type:",

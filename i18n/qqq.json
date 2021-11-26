@@ -27,6 +27,7 @@
 	"dt_xml_title": "Used as XML tag name.\n{{Identical|Title}}",
 	"dt_xml_id": "Used as XML tag name.\n{{Identical|ID}}",
 	"dt_xml_freetext": "Used as XML tag name.\n{{Identical|Free text}}",
+	"dt_xml_slot": "Used as XML tag name.\n{{Identical|Slot}}",
 	"importxml": "{{doc-special|ImportXML|unlisted=1}}",
 	"dt_import_selectfile": "Used as label for the File selector. Parameters:\n* $1 - the file format: CSV, XML or spreadsheet",
 	"dt_import_encodingtype": "The type of encoding for the file: either UTF-8 or UTF-16",
