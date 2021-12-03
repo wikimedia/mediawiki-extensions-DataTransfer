@@ -65,7 +65,7 @@ class DTImportJob extends Job {
 		}
 		$edit_summary = CommentStoreComment::newUnsavedComment( $this->params['edit_summary'] );
 		$new_content = new WikitextContent( $text );
-		// It's strange that doEditContent() doesn't
+		// It's strange that saveRevision() doesn't
 		// automatically attach the 'bot' flag when the user
 		// is a bot...
 		if ( $user->isAllowed( 'bot' ) ) {
