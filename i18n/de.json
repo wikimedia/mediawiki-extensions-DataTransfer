@@ -24,6 +24,7 @@
 	"dt_xml_title": "Titel",
 	"dt_xml_id": "Kennung",
 	"dt_xml_freetext": "Freitext",
+	"dt_xml_slot": "Slot",
 	"importxml": "XML-Datei importieren",
 	"dt_import_selectfile": "Bitte die zu importierende $1-Datei auswählen:",
 	"dt_import_encodingtype": "Zeichenkodierung:",
