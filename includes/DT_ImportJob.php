@@ -48,11 +48,7 @@ class DTImportJob extends Job {
 			$slotRole = SlotRecord::MAIN;
 		}
 
-		// Change global $wgUser variable to the one specified by
-		// the job only for the extent of this import.
-		global $wgUser;
-		$actual_user = $wgUser;
-		$wgUser = User::newFromId( $this->params['user_id'] );
+		$user = User::newFromId( $this->params['user_id'] );
 		$text = $this->params['text'];
 		if ( $this->title->exists() ) {
 			if ( $for_pages_that_exist == 'append' ) {
@@ -72,17 +68,16 @@ class DTImportJob extends Job {
 		// It's strange that doEditContent() doesn't
 		// automatically attach the 'bot' flag when the user
 		// is a bot...
-		if ( $wgUser->isAllowed( 'bot' ) ) {
+		if ( $user->isAllowed( 'bot' ) ) {
 			$flags = EDIT_FORCE_BOT;
 		} else {
 			$flags = 0;
 		}
 
-		$pageUpdater = $wikiPage->newPageUpdater( $wgUser );
+		$pageUpdater = $wikiPage->newPageUpdater( $user );
 		$pageUpdater->setContent( $slotRole, $new_content );
 		$pageUpdater->saveRevision( $edit_summary, $flags );
 
-		$wgUser = $actual_user;
 		return true;
 	}
 }
