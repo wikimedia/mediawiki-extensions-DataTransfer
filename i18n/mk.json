@@ -19,6 +19,7 @@
 	"dt_xml_title": "Наслов",
 	"dt_xml_id": "Назнака",
 	"dt_xml_freetext": "Слободен текст",
+	"dt_xml_slot": "Жлеб",
 	"importxml": "Увоз на XML",
 	"dt_import_selectfile": "Одберете ја $1 податотеката за увоз:",
 	"dt_import_encodingtype": "Тип на кодирање:",
