@@ -34,6 +34,7 @@
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar folio de calculo",
 	"dt_importcsv_badheader": "Error: le capite del columna $1, '$2', debe esser '$3', '$4' o in le forma 'nomine_de_patrono[nomine_de_campo]'",
+	"action-datatransferimport": "importar datos",
 	"right-datatransferimport": "Importar datos",
 	"dt_filetype_spreadsheet": "folio de calculo"
 }
