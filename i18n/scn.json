@@ -14,5 +14,6 @@
 	"dt_xml_template": "Template",
 	"dt_xml_name": "Nomu",
 	"dt_xml_title": "Tìtulu",
-	"dt_xml_id": "ID"
+	"dt_xml_id": "ID",
+	"dt_import_editsummary": "Mpurtazzioni {{ucfirst:$1}}"
 }
