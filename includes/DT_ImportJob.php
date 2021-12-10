@@ -76,6 +76,13 @@ class DTImportJob extends Job {
 
 		$pageUpdater = $wikiPage->newPageUpdater( $user );
 		$pageUpdater->setContent( $slotRole, $new_content );
+
+		if ( $slotRole !== SlotRecord::MAIN && !$wikiPage->exists() ) {
+			// The 'main' content slot must be set when creating a new page
+			$emptyContent = ContentHandler::makeContent( "", $wikiPage->getTitle() );
+			$pageUpdater->setContent( SlotRecord::MAIN, $emptyContent );
+		}
+
 		$pageUpdater->saveRevision( $edit_summary, $flags );
 
 		return true;
