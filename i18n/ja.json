@@ -9,7 +9,8 @@
 			"Otokoume",
 			"Shield-9",
 			"Shirayuki",
-			"青子守歌"
+			"青子守歌",
+			"Marine-Blue"
 		]
 	},
 	"datatransfer-desc": "テンプレート呼び出しに含まれるデータの取り込みおよび書き出しができるようにする",
@@ -27,8 +28,8 @@
 	"dt_xml_title": "タイトル",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "自由形式テキスト",
-	"importxml": "XMLを取り込む",
-	"dt_import_selectfile": "取り込む $1 ファイルを選択してください:",
+	"importxml": "XMLからインポートする",
+	"dt_import_selectfile": "インポートする $1 ファイルを選択してください:",
 	"dt_import_encodingtype": "エンコーディング方式:",
 	"dt_import_forexisting": "既存のページの場合:",
 	"dt_import_overwriteexisting": "既存の内容に上書き",
@@ -42,6 +43,7 @@
 	"importcsv": "CSVの取り込み",
 	"importspreadsheet": "スプレッドシートの取り込み",
 	"dt_importcsv_badheader": "エラー: 列 $1 のヘッダー「$2」は、「$3」または「$4」であるか、「テンプレート名[フィールド名]」の形式である必要があります",
-	"right-datatransferimport": "データを取り込む",
+	"action-datatransferimport": "データのインポート",
+	"right-datatransferimport": "データをインポートする",
 	"dt_filetype_spreadsheet": "スプレッドシート"
 }

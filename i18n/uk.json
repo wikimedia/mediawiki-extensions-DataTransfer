@@ -6,7 +6,8 @@
 			"Prima klasy4na",
 			"Vlad5250",
 			"Ата",
-			"Тест"
+			"Тест",
+			"DDPAT"
 		]
 	},
 	"datatransfer-desc": "Дозволяє імпортувати та експортувати дані, які містяться в викликах шаблонів",
@@ -41,5 +42,7 @@
 	"dt_importcsv_badheader": "Помилка. Заголовок колонки №$1 «$2» повинен бути або «$3», або «$4», або у формі «template_name[field_name]»",
 	"action-datatransferimport": "імпорт даних",
 	"right-datatransferimport": "Імпорт даних",
+	"dt_filetype_xml": "XML",
+	"dt_filetype_csv": "CSV",
 	"dt_filetype_spreadsheet": "таблиця"
 }

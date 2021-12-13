@@ -45,5 +45,7 @@
 	"dt_importcsv_badheader": "Erreur : le titre de colonne $1, « $2 », doit être soit « $3 », « $4 » ou de la forme « nom_du_modèle[nom_du_champ] »",
 	"action-datatransferimport": "importer des données",
 	"right-datatransferimport": "Importer des données",
+	"dt_filetype_xml": "XML",
+	"dt_filetype_csv": "CSV",
 	"dt_filetype_spreadsheet": "feuille de calcul"
 }
