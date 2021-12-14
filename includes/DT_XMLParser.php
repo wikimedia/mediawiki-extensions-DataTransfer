@@ -156,11 +156,6 @@ class DTXMLParser {
 			$name_str = str_replace( ' ', '_', wfMessage( 'dt_xml_name' )->inContentLanguage()->text() );
 			if ( array_key_exists( $name_str, $attribs ) ) {
 				$this->mCurFieldName = $attribs[$name_str];
-			// $this->push( $name );
-			$this->workRevisionCount = 0;
-			$this->workSuccessCount = 0;
-			$this->uploadCount = 0;
-			$this->uploadSuccessCount = 0;
 			xml_set_element_handler( $parser, "in_field", "out_field" );
 			xml_set_character_data_handler( $parser, "field_value" );
 			} else {
