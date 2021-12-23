@@ -24,6 +24,7 @@
 	"dt_xml_title": "제목",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "자유 텍스트",
+	"dt_xml_slot": "슬롯",
 	"importxml": "XML 가져오기",
 	"dt_import_selectfile": "가져오려면 $1 파일을 선택하세요:",
 	"dt_import_encodingtype": "인코딩 유형:",
