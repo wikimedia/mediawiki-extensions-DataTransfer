@@ -26,6 +26,7 @@
 	"dt_xml_title": "Judul",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Teks Bebas",
+	"dt_xml_slot": "Slot",
 	"importxml": "Impor XML",
 	"dt_import_selectfile": "Pilih berkas $1 untuk di impor:",
 	"dt_import_encodingtype": "Tipe penyandian:",
