@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Lets the user import a CSV file to turn into wiki pages
  *
@@ -218,7 +221,12 @@ class DTImportCSV extends SpecialPage {
 			$jobParams['slot'] = $page->getSlot();
 			$jobs[] = new DTImportJob( $title, $jobParams );
 		}
-		JobQueueGroup::singleton()->push( $jobs );
+		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
+			// MW 1.37+
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
+		} else {
+			JobQueueGroup::singleton()->push( $jobs );
+		}
 
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( $this->getFiletype() )->parseAsBlock();
 

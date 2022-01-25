@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Lets the user import an XML file to turn into wiki pages
  *
@@ -69,7 +72,12 @@ class DTImportXML extends SpecialPage {
 			$job_params['slot'] = $page->getSlot();
 			$jobs[] = new DTImportJob( $title, $job_params );
 		}
-		JobQueueGroup::singleton()->push( $jobs );
+		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
+			// MW 1.37+
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
+		} else {
+			JobQueueGroup::singleton()->push( $jobs );
+		}
 
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'XML' )
 			->parseAsBlock();
