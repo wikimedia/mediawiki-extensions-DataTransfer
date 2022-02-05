@@ -59,21 +59,16 @@ class DTViewXML extends SpecialPage {
 					],
 					$fname
 				);
-				if ( $res ) {
-					while ( $row = $db->fetchRow( $res ) ) {
-						if ( array_key_exists( 'page_title', $row ) ) {
-							$page_namespace = $row['page_namespace'];
-							if ( $page_namespace == NS_CATEGORY ) {
-								$new_category = $row[ 'page_title' ];
-								if ( !in_array( $new_category, $categories ) ) {
-									$newcategories[] = $new_category;
-								}
-							} else {
-								$titles[] = Title::newFromID( $row['page_id'] );
-							}
+				foreach ( $res as $row ) {
+					$page_namespace = $row->page_namespace;
+					if ( $page_namespace == NS_CATEGORY ) {
+						$new_category = $row->page_title;
+						if ( !in_array( $new_category, $categories ) ) {
+							$newcategories[] = $new_category;
 						}
+					} else {
+						$titles[] = Title::newFromID( $row->page_id );
 					}
-					$db->freeResult( $res );
 				}
 			}
 			if ( count( $newcategories ) == 0 ) {
