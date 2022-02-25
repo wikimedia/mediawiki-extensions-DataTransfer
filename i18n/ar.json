@@ -5,6 +5,7 @@
 			"Mido",
 			"Mutarjem horr",
 			"OsamaK",
+			"Sonic N800",
 			"ديفيد"
 		]
 	},
@@ -37,7 +38,7 @@
 	"dt_import_success": "سوف تُنشأ {{PLURAL:$1||صفحة واحدة|صفحتين|$1 صفحات|$1 صفحة}} من ملف $2.",
 	"importcsv": "استورد CSV",
 	"importspreadsheet": "استيراد جدول البيانات",
-	"dt_importcsv_badheader": "خطأ: عنوان العامود $1، '$2'، يجب أن يكون إما '$3'، '$4' أو من الصيغة 'template_name[field_name]'",
+	"dt_importcsv_badheader": "خطأ: عنوان العمود $1، '$2'، يجب أن يكون إما '$3'، '$4' أو من الصيغة 'template_name[field_name]'",
 	"action-datatransferimport": "استيراد البيانات",
 	"right-datatransferimport": "استورد بيانات",
 	"dt_filetype_xml": "إكس إم إل",
