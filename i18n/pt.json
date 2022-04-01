@@ -24,6 +24,7 @@
 	"dt_xml_title": "Título",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Texto livre",
+	"dt_xml_slot": "Espaço",
 	"importxml": "Importar XML",
 	"dt_import_selectfile": "Por favor, selecione o ficheiro $1 a importar:",
 	"dt_import_encodingtype": "Tipo de codificação:",
