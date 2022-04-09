@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Class holding the data of a page to be imported

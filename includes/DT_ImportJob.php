@@ -2,7 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRoleRegistry;
-use MediaWiki\Storage\SlotRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * Background job to import a page into the wiki, for use by Data Transfer
