@@ -1,4 +1,5 @@
 {
+	"name": "DataTransfer",
 	"private": true,
 	"scripts": {
 		"test": "grunt test"
