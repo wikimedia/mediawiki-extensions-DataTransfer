@@ -3,6 +3,7 @@
 		"authors": [
 			"Armando-Martin",
 			"Crazymadlover",
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Imre",
 			"Locos epraix",
@@ -28,6 +29,7 @@
 	"dt_xml_title": "Título",
 	"dt_xml_id": "Id.",
 	"dt_xml_freetext": "Texto libre",
+	"dt_xml_slot": "Ranura",
 	"importxml": "Importar XML",
 	"dt_import_selectfile": "Selecciona el archivo $1 que importar:",
 	"dt_import_encodingtype": "Tipo de codificación:",
@@ -43,6 +45,7 @@
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar hoja de cálculo",
 	"dt_importcsv_badheader": "Error: el título de columna $1, \"$2\", tiene que ser \"$3\", \"$4\" o de la forma 'nombre_de_plantilla[nombre_del_campo]'",
+	"action-datatransferimport": "importar datos",
 	"right-datatransferimport": "Importar datos",
 	"dt_filetype_spreadsheet": "hoja de cálculo"
 }
