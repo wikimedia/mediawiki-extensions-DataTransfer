@@ -10,7 +10,8 @@
 			"Peter17",
 			"Sanbec",
 			"Translationista",
-			"VegaDark"
+			"VegaDark",
+			"DiegoAmbrocio"
 		]
 	},
 	"datatransfer-desc": "Permite importar y exportar datos contenidos en llamadas de plantilla",
@@ -43,6 +44,7 @@
 	"importcsv": "Importar CSV",
 	"importspreadsheet": "Importar hoja de cálculo",
 	"dt_importcsv_badheader": "Error: el título de columna $1, \"$2\", tiene que ser \"$3\", \"$4\" o de la forma 'nombre_de_plantilla[nombre_del_campo]'",
+	"action-datatransferimport": "importar datos",
 	"right-datatransferimport": "Importar datos",
 	"dt_filetype_spreadsheet": "hoja de cálculo"
 }
