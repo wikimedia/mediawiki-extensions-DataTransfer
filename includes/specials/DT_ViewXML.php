@@ -114,20 +114,14 @@ class DTViewXML extends SpecialPage {
 	}
 
 	function getXMLForPage( $title, $simplified_format, $depth = 0 ) {
-		if ( method_exists( 'MediaWiki\Permissions\PermissionManager', 'userCan' ) ) {
-			// MW 1.33+
-			$user = $this->getUser();
-			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-			if ( !$permissionManager->userCan( 'read', $user, $title ) ) {
-				return "";
-			}
-		} else {
-			if ( !$title->userCan( 'read' ) ) {
-				return "";
-			}
+		$user = $this->getUser();
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		if ( !$permissionManager->userCan( 'read', $user, $title ) ) {
+			return "";
 		}
 
-		if ( $depth > 5 ) { return "";
+		if ( $depth > 5 ) {
+			return "";
 		}
 
 		$pageStructure = DTPageStructure::newFromTitle( $title );
@@ -143,12 +137,7 @@ class DTViewXML extends SpecialPage {
 		$out = $this->getOutput();
 		$request  = $this->getRequest();
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-		if ( method_exists( 'MediaWiki\MediaWikiServices', 'getNamespaceInfo' ) ) {
-			// MW 1.34+
-			$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-		} else {
-			$namespaceInfo = null;
-		}
+		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
 
 		$namespace_labels = $contLang->getNamespaces();
 		$category_label = $namespace_labels[NS_CATEGORY];
@@ -213,11 +202,7 @@ class DTViewXML extends SpecialPage {
 					if ( $ns == 0 ) {
 						$ns_name = "Main";
 					} else {
-						if ( $namespaceInfo ) {
-							$ns_name = $namespaceInfo->getCanonicalName( $ns );
-						} else {
-							$ns_name = MWNamespace::getCanonicalName( $ns );
-						}
+						$ns_name = $namespaceInfo->getCanonicalName( $ns );
 					}
 					if ( $simplified_format ) {
 						$text .= '<' . str_replace( ' ', '_', $ns_name ) . ">\n";
