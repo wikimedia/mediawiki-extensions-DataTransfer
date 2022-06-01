@@ -38,7 +38,7 @@
 	"importcsv": "יבוא CSV",
 	"importspreadsheet": "גיליון נתונים של ייבוא",
 	"dt_importcsv_badheader": "שגיאה: כותרת העמודה $1, '$2', חייבת להיות או '$3', '$4' או מהצורה 'שם_התבנית[שם_השדה]'",
-	"action-datatransferimport": "ייבוא נתונים",
-	"right-datatransferimport": "ייבוא נתונים",
+	"action-datatransferimport": "לייבא נתונים",
+	"right-datatransferimport": "יבוא נתונים",
 	"dt_filetype_spreadsheet": "גיליון נתונים"
 }
