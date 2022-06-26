@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class that holds the structure of a single wiki page. It is used for both
  * turning wikitext into XML, and vice versa.
@@ -20,7 +22,12 @@ class DTPageStructure {
 		$pageStructure = new DTPageStructure();
 		$pageStructure->mPageTitle = $pageTitle;
 
-		$wiki_page = WikiPage::factory( $pageTitle );
+		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+			// MW 1.36+
+			$wiki_page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $pageTitle );
+		} else {
+			$wiki_page = WikiPage::factory( $pageTitle );
+		}
 		$page_contents = ContentHandler::getContentText( $wiki_page->getContent() );
 
 		$pageStructure->parsePageContents( $page_contents );
