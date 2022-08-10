@@ -22,6 +22,7 @@
 	"dt_xml_title": "Tittel",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Fritekst",
+	"dt_xml_slot": "Spalte",
 	"importxml": "Importer XML",
 	"dt_import_selectfile": "Vennligst velg $1-filen som skal importeres:",
 	"dt_import_encodingtype": "Tegnkodingstype:",
