@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
+	"dt_viewxml_categories": "קאַטעגאָריעס",
+	"dt_xml_pages": "בלעטער",
+	"dt_xml_page": "בלאַט",
 	"dt_xml_name": "נאָמען",
 	"dt_xml_title": "טיטל"
 }
