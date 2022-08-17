@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
 	"datatransfer-desc": "Omogoča uvažanje in izvažanje podatkov iz klicev predlog",
@@ -20,7 +21,7 @@
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Prosto besedilo",
 	"importxml": "Uvozi XML",
-	"dt_import_selectfile": "Prosimo, izberite datoteko $1 za uvoz:",
+	"dt_import_selectfile": "Prosimo, izberite $1-datoteko za uvoz:",
 	"dt_import_encodingtype": "Vrsta kodiranja:",
 	"dt_import_forexisting": "Za že obstoječe strani:",
 	"dt_import_overwriteexisting": "Prepiši obstoječo vsebino",
