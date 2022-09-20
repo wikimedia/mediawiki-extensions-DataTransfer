@@ -32,6 +32,7 @@
 	"dt_import_success": "$1 {{PLURAL:$1|stranica će biti napravljena|stranice će biti napravljene|stranica će biti napravljeno}} iz $2 datoteke.",
 	"importcsv": "Uvoz CSV-a",
 	"importspreadsheet": "Uvezi unakrsnu tabelu",
+	"dt_importcsv_badheader": "Greška: zaglavlje kolone $1, '$2', mora biti ili '$3', ili '$4', ili čak od obrasca 'template_name[field_name]'",
 	"action-datatransferimport": "uvoz podataka",
 	"right-datatransferimport": "Uvoženje podatke",
 	"dt_filetype_spreadsheet": "unakrsna tabela"
