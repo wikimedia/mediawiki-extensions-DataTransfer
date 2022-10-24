@@ -24,7 +24,7 @@
 	"dt_xml_id": "מזהה (ID)",
 	"dt_xml_freetext": "טקסט חופשי",
 	"importxml": "יבוא XML",
-	"dt_import_selectfile": "נא לבחור את קובץ ה־$1 לייבוא:",
+	"dt_import_selectfile": "נא לבחור את קובץ ה־$1 ליבוא:",
 	"dt_import_encodingtype": "סוג הקידוד:",
 	"dt_import_forexisting": "עבור הדפים שכבר קיימים:",
 	"dt_import_overwriteexisting": "לדרוס את התוכן הקיים",
