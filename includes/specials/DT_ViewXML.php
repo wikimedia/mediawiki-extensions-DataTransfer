@@ -136,6 +136,8 @@ class DTViewXML extends SpecialPage {
 	function doSpecialViewXML() {
 		$out = $this->getOutput();
 		$request  = $this->getRequest();
+		$out->enableOOUI();
+
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
 
@@ -269,7 +271,7 @@ END;
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
 			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . $this->msg( 'dt_viewxml_simplifiedformat' )->text() . "</label></p>\n";
-			$text .= "<input type=\"submit\" value=\"" . $this->msg( 'viewxml' )->text() . "\">\n";
+			$text .= DTUtils::printSubmitButton( 'viewxml' );
 			$text .= "</form>\n";
 
 			$out->addHTML( $text );

@@ -17,6 +17,8 @@ class DTImportSpreadsheet extends DTImportCSV {
 			return '<div class="error">You must have the PhpSpreadsheet or PHPExcel library installed to run this page.</div>';
 		}
 
+		$this->getOutput()->enableOOUI();
+
 		$formText = DTUtils::printFileSelector( $this->getFiletype() );
 		$formText .= DTUtils::printExistingPagesHandling();
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );

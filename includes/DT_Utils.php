@@ -13,10 +13,13 @@ class DTUtils {
 
 	static function printFileSelector( $fileType ) {
 		$text = "\n\t" . Html::element( 'p', null, wfMessage( 'dt_import_selectfile', $fileType )->text() ) . "\n";
-		$text .= <<<END
-	<p><input type="file" name="file_name" size="25" /></p>
 
-END;
+		// Unfortunately, the PHP version of this widget contains no
+		// custom formatting - it's identical to the browser's
+		// standard file input. This may or may not ever get fixed.
+		$text .= new OOUI\SelectFileInputWidget( [
+			'name' => 'file_name'
+		] );
 		$text .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		return $text;
 	}
@@ -59,12 +62,17 @@ END;
 			$importSummaryText ) . "\n";
 	}
 
-	static function printSubmitButton() {
-		$formSubmitText = Html::input(
-			'import_file',
-			wfMessage( 'import-interwiki-submit' )->text(),
-			'submit'
-		);
-		return "\t" . Html::rawElement( 'p', null, $formSubmitText ) . "\n";
+	static function printSubmitButton( $buttonMsg = null ) {
+		if ( $buttonMsg == null ) {
+			$buttonMsg = 'import-interwiki-submit';
+		}
+		$formSubmitButton = new OOUI\ButtonInputWidget( [
+			'label' => wfMessage( $buttonMsg )->text(),
+			'type' => 'submit',
+			'name' => 'import_file',
+			'id' => 'import_file',
+			'flags' => [ 'primary', 'progressive' ]
+		] );
+		return "\t" . Html::rawElement( 'p', null, $formSubmitButton ) . "\n";
 	}
 }

@@ -23,6 +23,9 @@ class DTImportCSV extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
+		$out = $this->getOutput();
+		$out->enableOOUI();
+		$out->addModuleStyles( 'ext.datatransfer' );
 
 		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
 			throw new PermissionsError( 'datatransferimport' );
@@ -34,8 +37,7 @@ class DTImportCSV extends SpecialPage {
 			$text = $this->printForm();
 		}
 
-		$this->getOutput()->addModuleStyles( 'ext.datatransfer' );
-		$this->getOutput()->addHTML( $text );
+		$out->addHTML( $text );
 	}
 
 	protected function importFromUploadAndModifyPages() {

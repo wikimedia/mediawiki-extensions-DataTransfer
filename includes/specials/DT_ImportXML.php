@@ -23,6 +23,8 @@ class DTImportXML extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
+		$out = $this->getOutput();
+		$out->enableOOUI();
 
 		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
 			throw new PermissionsError( 'datatransferimport' );
@@ -49,7 +51,7 @@ class DTImportXML extends SpecialPage {
 				], $formText ) . "\n";
 		}
 
-		$this->getOutput()->addHTML( $text );
+		$out->addHTML( $text );
 	}
 
 	function modifyPages( $source, $editSummary, $forPagesThatExist ) {
