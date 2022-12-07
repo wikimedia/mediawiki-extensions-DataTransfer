@@ -20,6 +20,7 @@
 	"dt_xml_title": "Naslov",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Prosto besedilo",
+	"dt_xml_slot": "Reža",
 	"importxml": "Uvozi XML",
 	"dt_import_selectfile": "Prosimo, izberite $1-datoteko za uvoz:",
 	"dt_import_encodingtype": "Vrsta kodiranja:",
@@ -35,6 +36,9 @@
 	"importcsv": "Uvozi CSV",
 	"importspreadsheet": "Uvoz preglednice",
 	"dt_importcsv_badheader": "Napaka: glava stolpca $1, '$2', mora biti '$3', '$4' ali oblike 'template_name[field_name]'",
+	"action-datatransferimport": "uvažanje podatkov",
 	"right-datatransferimport": "Uvoz podatkov",
+	"dt_filetype_xml": "XML",
+	"dt_filetype_csv": "CSV",
 	"dt_filetype_spreadsheet": "preglednice"
 }
