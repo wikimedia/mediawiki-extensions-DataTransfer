@@ -27,7 +27,7 @@
 	"dt_import_overwriteexisting": "Prepiši obstoječo vsebino",
 	"dt_import_mergeintoexisting": "Prepiši samo polja iz datoteke",
 	"dt_import_skipexisting": "Preskoči",
-	"dt_import_appendtoexisting": "Dodaj obstoječi vsebini",
+	"dt_import_appendtoexisting": "Pripni obstoječi vsebini",
 	"dt_import_summarydesc": "Povzetek uvoza:",
 	"dt_import_editsummary": "uvoz $1",
 	"dt_import_importing": "Uvažanje ...",
