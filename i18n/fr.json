@@ -38,7 +38,7 @@
 	"dt_import_appendtoexisting": "Ajouter au contenu existant",
 	"dt_import_summarydesc": "Résumé de l’import :",
 	"dt_import_editsummary": "Import de $1",
-	"dt_import_importing": "Import en cours...",
+	"dt_import_importing": "Importation en cours...",
 	"dt_import_success": "$1 {{PLURAL:$1|page sera créée|pages seront créées}} depuis le fichier $2.",
 	"importcsv": "Import de CSV",
 	"importspreadsheet": "Importer la feuille de calcul",

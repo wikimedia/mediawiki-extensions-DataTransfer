@@ -9,7 +9,8 @@
 			"Raymond",
 			"Shirayuki",
 			"Siebrand",
-			"Umherirrender"
+			"Umherirrender",
+			"Verdy p"
 		]
 	},
 	"datatransfer-desc": "{{Desc|name=Data Transfer|url=https://www.mediawiki.org/wiki/Extension:Data_Transfer}}",
@@ -39,9 +40,9 @@
 	"dt_import_editsummary": "This message is part of the editsummary. It prints the result of the import in the version history of the respective page content was imported to.\n\nParameters:\n* $1 - the file format: CSV, XML or spreadsheet\n{{Identical|Import}}",
 	"dt_import_importing": "This message indicates the extension is currently importing a CSV file (or an XML file).\n{{Identical|Importing}}",
 	"dt_import_success": "Parameters:\n* $1 - the number of pages\n* $2 - the file format: CSV, XML or spreadsheet",
-	"importcsv": "{{doc-special|ImportCSV|unlisted=1}}\nCSV (comma separated value)",
+	"importcsv": "{{doc-special|ImportCSV|unlisted=1}}\n'''Warning''': '''CSV''' is the correct abbreviation frequently used in English computer jargon for \"comma-separated values\" here!\n\nDo not confuse with the acronym '''CVS''' for \"Concurrent Versions System\" or \"Concurrent Versioning System\" (\"Subversion\" and \"Git\" are other common related systems for version control used in cooperative development projects).",
 	"importspreadsheet": "{{doc-special|ImportSpreadsheet|unlisted=1}}",
-	"dt_importcsv_badheader": "The text \"template_name[field_name]\" can be translated. Parameters:\n* $1 - a column number in the first row of the CVS file\n* $2 - the value found for the $1th column in the first line of the CSV file\n* $3 - the title label\n* $4 - a free text label",
+	"dt_importcsv_badheader": "The text \"template_name[field_name]\" can be translated. Parameters:\n* $1 - a column number in the first row of the CSV file\n* $2 - the value found for the $1th column in the first line of the CSV file\n* $3 - the title label\n* $4 - a free text label\n\n'''Warning''': '''CSV''' is the correct abbreviation frequently used in English computer jargon for tabular data files formated as \"comma-separated values\" here!\n\nDo not confuse with the acronym '''CVS''' for \"Concurrent Versions System\" or \"Concurrent Versioning System\" (\"Subversion\" and \"Git\" are other common related systems for version control used in cooperative development projects).",
 	"action-datatransferimport": "{{doc-action|datatransferimport}}",
 	"right-datatransferimport": "{{doc-right|datatransferimport}}",
 	"dt_filetype_xml": "{{optional}}\nThe type of the file that is to be imported. This is a descriptive name, NOT a file extension.",
