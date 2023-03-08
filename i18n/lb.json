@@ -3,10 +3,11 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
-	"datatransfer-desc": "Erlaabt et Daten déi an Opruffer vu Schabloune benotzt ginn z'importéieren an z'exportéieren",
+	"datatransfer-desc": "Erlaabt et Donnéeën, déi an Opriff vu Schabloune benotzt ginn, z'importéieren an z'exportéieren",
 	"viewxml": "XML weisen",
 	"dt_viewxml_docu": "Wielt wgl. ënner dëse Kategorien an Nimmraim fir am XML-Format unzeweisen.",
 	"dt_viewxml_categories": "Kategorien",
@@ -21,10 +22,11 @@
 	"dt_xml_title": "Titel",
 	"dt_xml_id": "Nummer",
 	"dt_xml_freetext": "Fräien Text",
+	"dt_xml_slot": "Slot",
 	"importxml": "XML importéieren",
 	"dt_import_selectfile": "Sicht de(n) $1-Fichier eraus fir z'importéieren:",
 	"dt_import_encodingtype": "Encoding-Typ:",
-	"dt_import_forexisting": "Fir Säiten déi et scho gëtt:",
+	"dt_import_forexisting": "Fir Säiten, déi et scho gëtt:",
 	"dt_import_overwriteexisting": "Den Inhalt den et gëtt iwwerschreiwen",
 	"dt_import_mergeintoexisting": "Nëmme Felder iwwerschreiwen déi am Fichier dra sinn",
 	"dt_import_skipexisting": "Iwwersprangen",
