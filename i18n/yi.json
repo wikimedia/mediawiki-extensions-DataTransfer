@@ -6,8 +6,11 @@
 		]
 	},
 	"dt_viewxml_categories": "קאַטעגאָריעס",
+	"dt_viewxml_namespaces": "נאָמענטיילן",
+	"dt_xml_namespace": "נאָמענטייל",
 	"dt_xml_pages": "בלעטער",
 	"dt_xml_page": "בלאַט",
+	"dt_xml_template": "מוסטער",
 	"dt_xml_name": "נאָמען",
 	"dt_xml_title": "טיטל"
 }
