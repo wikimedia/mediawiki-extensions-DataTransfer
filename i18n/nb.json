@@ -4,7 +4,8 @@
 			"Emilbk",
 			"Event",
 			"Jon Harald Søby",
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"EdoAug"
 		]
 	},
 	"datatransfer-desc": "Gjør det mulig å importere og eksportere data som finnes i maloppkallinger",
@@ -32,7 +33,7 @@
 	"dt_import_appendtoexisting": "Tilføy til eksisterende innhold",
 	"dt_import_summarydesc": "Importsammendrag:",
 	"dt_import_editsummary": "{{ucfirst:$1}}-importering",
-	"dt_import_importing": "Importerer...",
+	"dt_import_importing": "Importerer ...",
 	"dt_import_success": "{{PLURAL:$1|Én side|$1 sider}} vil bli importert fra $2-filen.",
 	"importcsv": "Importer CSV",
 	"importspreadsheet": "Importer regneark",
