@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -37,6 +38,7 @@
 	"importcsv": "Enporzh CSV",
 	"importspreadsheet": "Enporzhiañ ur follenn jediñ",
 	"dt_importcsv_badheader": "Fazi : titl ar bann $1, \"$2\", a rank bezañ \"$3\", \"$4\" pe gant ar stumm \"anv_ar_patrom[anv_ar_vaezienn]\"",
+	"action-datatransferimport": "enporzhiañ roadennoù",
 	"right-datatransferimport": "Enporzhiañ roadennoù",
 	"dt_filetype_spreadsheet": "follenn jediñ"
 }
