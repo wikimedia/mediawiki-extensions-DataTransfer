@@ -45,7 +45,7 @@ class DTImportSpreadsheet extends DTImportCSV {
 			return $this->msg( 'emptyfile' )->text();
 		}
 
-		$filename = wfTempDir() . '/' . time() . '.xslx';
+		$filename = wfTempDir() . '/' . time() . '.xlsx';
 		file_put_contents( $filename, $excelFileString );
 
 		if ( class_exists( 'PhpOffice\PhpSpreadsheet\Spreadsheet' ) ) {
