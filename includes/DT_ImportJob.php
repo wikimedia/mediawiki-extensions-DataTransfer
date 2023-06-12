@@ -60,7 +60,7 @@ class DTImportJob extends Job {
 				$existingText = ContentHandler::getContentText( $wikiPage->getContent() );
 				$text = $existingText . "\n" . $text;
 			} elseif ( $for_pages_that_exist == 'merge' ) {
-				$existingPageStructure = DTPageStructure::newFromTitle( $this->title );
+				$existingPageStructure = DTPageStructure::newFromTitle( $this->title, false );
 				$newPageStructure = new DTPageStructure;
 				$newPageStructure->parsePageContents( $text );
 				$existingPageStructure->mergeInPageStructure( $newPageStructure );

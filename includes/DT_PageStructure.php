@@ -12,15 +12,17 @@ use MediaWiki\MediaWikiServices;
 class DTPageStructure {
 	private $mPageTitle;
 	private $mComponents = [];
+	private $mParseWikitext;
 
 	function addComponent( $dtPageComponent ) {
 		$this->mComponents[] = $dtPageComponent;
 		DTPageComponent::$mFreeTextIDCounter = 1;
 	}
 
-	public static function newFromTitle( $pageTitle ) {
+	public static function newFromTitle( $pageTitle, $parseWikitext = true ) {
 		$pageStructure = new DTPageStructure();
 		$pageStructure->mPageTitle = $pageTitle;
+		$pageStructure->mParseWikitext = $parseWikitext;
 
 		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
 			// MW 1.36+
@@ -67,16 +69,20 @@ class DTPageStructure {
 		// escape out tables
 		$page_contents = str_replace( '{|', '&#123;|', $page_contents );
 		$page_contents = str_replace( '|}', '|&#125;', $page_contents );
+
 		// Replace any links in the content with dummy names
 		// to avoid parsing of internal link content. These
 		// dummies are replaced back later.
-		$linkPattern = '/\[+[^\]]*\]+/';
-		$linksInContent = [];
-		preg_match_all( $linkPattern, $page_contents, $linksInContent );
-		for ( $i = 0; $i < count( $linksInContent ); $i++ ) {
-			$page_contents = str_replace( $linksInContent[$i], "dummyLink$i", $page_contents );
+		if ( $this->mParseWikitext ) {
+			$linkPattern = '/\[+[^\]]*\]+/';
+			$linksInContent = [];
+			preg_match_all( $linkPattern, $page_contents, $linksInContent );
+			for ( $i = 0; $i < count( $linksInContent ); $i++ ) {
+				$page_contents = str_replace( $linksInContent[$i], "dummyLink$i", $page_contents );
+			}
 		}
-		// traverse the page contents, one character at a time
+
+		// Traverse the page contents, one character at a time.
 		$uncompleted_curly_brackets = 0;
 		$free_text = "";
 		$template_name = "";
@@ -140,10 +146,12 @@ class DTPageStructure {
 						if ( $c == "|" || $c == "}" ) {
 							if ( $field_has_name ) {
 								// Replace back the dummy links and escaped symbols with actual ones.
-								$dummyLinkPattern = '/dummyLink(\d+)/';
-								if ( preg_match( $dummyLinkPattern, $field_value, $dummy ) ) {
-									$linkNum = $dummy[1];
-									$field_value = str_replace( $dummy[0], $linksInContent[0][$linkNum], $field_value );
+								if ( $this->mParseWikitext ) {
+									$dummyLinkPattern = '/dummyLink(\d+)/';
+									if ( preg_match( $dummyLinkPattern, $field_value, $dummy ) ) {
+										$linkNum = $dummy[1];
+										$field_value = str_replace( $dummy[0], $linksInContent[0][$linkNum], $field_value );
+									}
 								}
 								$field_value = str_replace( '&#123;', '{', $field_value );
 								$field_value = str_replace( '&#125;', '}', $field_value );
@@ -253,7 +261,7 @@ class DTPageStructure {
 
 		$bodyXML = '';
 		foreach ( $this->mComponents as $pageComponent ) {
-			$bodyXML .= $pageComponent->toXML( $isSimplified );
+			$bodyXML .= $pageComponent->toXML( $isSimplified, $this->mParseWikitext );
 		}
 		$articleID = $this->mPageTitle->getArticleID();
 		$pageName = $this->mPageTitle->getText();

@@ -80,7 +80,7 @@ class DTPageComponent {
 		}
 	}
 
-	public function toXML( $isSimplified ) {
+	public function toXML( $isSimplified, $parseWikitext ) {
 		global $wgDataTransferViewXMLParseFields;
 		global $wgDataTransferViewXMLParseFreeText;
 		global $wgTitle;
@@ -101,9 +101,9 @@ class DTPageComponent {
 				if ( is_array( $fieldValue ) ) {
 					$fieldValueXML = '';
 					foreach ( $fieldValue as $subComponent ) {
-						$fieldValueXML .= $subComponent->toXML( $isSimplified );
+						$fieldValueXML .= $subComponent->toXML( $isSimplified, $parseWikitext );
 					}
-				} elseif ( $wgDataTransferViewXMLParseFields ) {
+				} elseif ( $wgDataTransferViewXMLParseFields && $parseWikitext ) {
 					// Avoid table of contents and "edit" links
 					$fieldValue = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, ParserOptions::newFromAnon() )->getText();
 				}
@@ -136,7 +136,7 @@ class DTPageComponent {
 			}
 		} else {
 			$free_text_str = str_replace( ' ', '_', wfMessage( 'dt_xml_freetext' )->inContentLanguage()->text() );
-			if ( $wgDataTransferViewXMLParseFreeText ) {
+			if ( $wgDataTransferViewXMLParseFreeText && $parseWikitext ) {
 				$freeText = $this->mFreeText;
 				// Undo the escaping that happened before.
 				$freeText = str_replace( [ '&#123;', '&#125;' ], [ '{', '}' ], $freeText );
