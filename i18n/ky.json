@@ -4,6 +4,9 @@
 			"Bosogo"
 		]
 	},
+	"dt_viewxml_categories": "Категориялар",
+	"dt_viewxml_namespaces": "Аталыш мейкиндиктери",
+	"dt_xml_namespace": "Аталыш мейкиндиги",
 	"dt_xml_pages": "Барактар",
 	"dt_xml_page": "Барак",
 	"dt_xml_template": "Калып",
