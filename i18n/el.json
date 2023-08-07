@@ -7,12 +7,14 @@
 			"Nikosgranturismogt",
 			"Omnipaedista",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Geraki",
+			"NikosLikomitros"
 		]
 	},
 	"viewxml": "Προβολή XML",
 	"dt_viewxml_categories": "Κατηγορίες",
-	"dt_viewxml_namespaces": "Περιοχές ονομάτων",
+	"dt_viewxml_namespaces": "Ονοματοχώροι",
 	"dt_xml_namespace": "Ονοματοχώρος",
 	"dt_xml_pages": "Σελίδες",
 	"dt_xml_page": "Σελίδα",
