@@ -68,7 +68,7 @@
 		"source": "https://phabricator.wikimedia.org/diffusion/EDTR/extension-datatransfer.git"
 	},
 	"require": {
-		"composer/installers": "1.*,>=1.0.1",
+		"composer/installers": "^2|^1.0.1",
 		"phpoffice/phpspreadsheet": "1.19.0"
 	},
 	"require-dev": {
