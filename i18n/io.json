@@ -11,6 +11,7 @@
 	"dt_xml_pages": "Pagini",
 	"dt_xml_page": "Pagino",
 	"dt_xml_template": "Shablono",
+	"dt_xml_field": "Skribo-loko",
 	"dt_xml_name": "Nomo",
 	"dt_xml_title": "Titulo",
 	"dt_import_editsummary": "{{ucfirst:$1}} importacar",
