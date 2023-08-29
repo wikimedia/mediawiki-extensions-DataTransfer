@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"ZlyiLev",
 			"Тест"
 		]
 	},
+	"datatransfer-desc": "Дазваляе імпартаваць і экспартаваць даныя, якія змяшчаюцца ў выкліках шаблонаў",
 	"dt_viewxml_categories": "Катэгорыі",
-	"dt_xml_template": "Шаблон"
+	"dt_xml_template": "Шаблон",
+	"dt_import_mergeintoexisting": "Перазапісваць толькі палі, што змяшчаюцца ў файле"
 }
