@@ -37,6 +37,7 @@
 	"importcsv": "Importación en CSV",
 	"importspreadsheet": "Importar folla de cálculo",
 	"dt_importcsv_badheader": "Erro: a cabeceira da columna $1, \"$2\", debe ser un \"$3\", \"$4\" ou do formulario \"template_name[field_name]\"",
+	"action-datatransferimport": "importar datos",
 	"right-datatransferimport": "Importar datos",
 	"dt_filetype_spreadsheet": "folla de cálculo"
 }
