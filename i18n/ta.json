@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"ElangoRamanujam",
+			"Fahimrazick",
 			"Karthi.dr",
 			"Shanmugamp7",
 			"TRYPPN",
@@ -33,5 +34,5 @@
 	"dt_import_editsummary": "{{ucfirst:$1}} இறக்குமதி",
 	"dt_import_importing": "இறக்குமதியாகிறது...",
 	"dt_import_success": "$2 கோப்பிலிருந்து $1 {{PLURAL:$1|பக்கம்|பக்கங்கள்}} உருவாக்கப்படும்.",
-	"right-datatransferimport": "தரவுகளை ஏற்றுமதி செய்யவும்"
+	"right-datatransferimport": "தரவுகளை இறக்குமதி செய்"
 }
