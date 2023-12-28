@@ -22,14 +22,24 @@ class DTViewXML extends SpecialPage {
 		$this->doSpecialViewXML( $query );
 	}
 
+	private static function getReadDB() {
+		$lbFactory =  MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		if ( method_exists( $lbFactory, 'getReplicaDatabase' ) ) {
+			// MW 1.40+
+			return $lbFactory->getReplicaDatabase();
+		} else {
+			return $lbFactory->getMainLB()->getMaintenanceConnectionRef( DB_REPLICA );
+		}
+	}
+
 	static function getCategoriesList() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getReadDB();
 		$categories = $dbr->selectFieldValues( 'categorylinks', 'DISTINCT cl_to' );
 		return $categories;
 	}
 
 	static function getNamespacesList() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getReadDB();
 		$namespaces = $dbr->selectFieldValues( 'page', 'DISTINCT page_namespace' );
 		return $namespaces;
 	}
