@@ -40,7 +40,8 @@ class DTViewXML extends SpecialPage {
 	 * on SMW's SMWInlineQuery::includeSubcategories()
 	 */
 	static function getPagesForCategory( $top_category, $num_levels ) {
-		if ( 0 == $num_levels ) { return $top_category;
+		if ( 0 == $num_levels ) {
+			return $top_category;
 		}
 
 		$db = wfGetDB( DB_REPLICA );
@@ -184,8 +185,8 @@ class DTViewXML extends SpecialPage {
 				foreach ( $cats as $cat => $val ) {
 					if ( $simplified_format ) {
 						$text .= '<' . str_replace( ' ', '_', $cat ) . ">\n";
-
-					} else { $text .= "<$category_label $name_str=\"$cat\">\n";
+					} else {
+						$text .= "<$category_label $name_str=\"$cat\">\n";
 					}
 					$titles = self::getPagesForCategory( $cat, 10 );
 					foreach ( $titles as $title ) {
@@ -217,8 +218,8 @@ class DTViewXML extends SpecialPage {
 					}
 					if ( $simplified_format ) {
 						$text .= '</' . str_replace( ' ', '_', $ns_name ) . ">\n";
-
-					} else { $text .= "</$namespace_str>\n";
+					} else {
+						$text .= "</$namespace_str>\n";
 					}
 				}
 			}
@@ -264,7 +265,8 @@ END;
 					$nsName = $this->msg( 'blanknamespace' )->escaped();
 				} else {
 					$nsName = htmlspecialchars( $contLang->getFormattedNsText( $nsCode ) );
-					if ( $nsName === '' ) { continue;
+					if ( $nsName === '' ) {
+						continue;
 					}
 				}
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
