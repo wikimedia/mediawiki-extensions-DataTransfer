@@ -24,12 +24,7 @@ class DTPageStructure {
 		$pageStructure->mPageTitle = $pageTitle;
 		$pageStructure->mParseWikitext = $parseWikitext;
 
-		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
-			// MW 1.36+
-			$wiki_page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $pageTitle );
-		} else {
-			$wiki_page = WikiPage::factory( $pageTitle );
-		}
+		$wiki_page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $pageTitle );
 		$page_contents = ContentHandler::getContentText( $wiki_page->getContent() );
 
 		$pageStructure->parsePageContents( $page_contents );

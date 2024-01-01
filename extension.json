@@ -1,6 +1,6 @@
 {
 	"name": "Data Transfer",
-	"version": "1.5.1",
+	"version": "1.6-alpha",
 	"author": [
 		"Yaron Koren",
 		"..."
@@ -10,7 +10,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.37.0"
 	},
 	"GroupPermissions": {
 		"sysop": {

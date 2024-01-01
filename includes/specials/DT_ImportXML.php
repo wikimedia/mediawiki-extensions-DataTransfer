@@ -74,12 +74,7 @@ class DTImportXML extends SpecialPage {
 			$job_params['slot'] = $page->getSlot();
 			$jobs[] = new DTImportJob( $title, $job_params );
 		}
-		if ( method_exists( MediaWikiServices::class, 'getJobQueueGroup' ) ) {
-			// MW 1.37+
-			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
-		} else {
-			JobQueueGroup::singleton()->push( $jobs );
-		}
+		MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 
 		$text .= $this->msg( 'dt_import_success' )->numParams( count( $jobs ) )->params( 'XML' )
 			->parseAsBlock();
