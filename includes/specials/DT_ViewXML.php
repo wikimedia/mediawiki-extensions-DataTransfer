@@ -54,7 +54,7 @@ class DTViewXML extends SpecialPage {
 			return $top_category;
 		}
 
-		$db = wfGetDB( DB_REPLICA );
+		$db = self::getReadDB();
 		$fname = "getPagesForCategory";
 		$categories = [ $top_category ];
 		$checkcategories = [ $top_category ];
@@ -93,7 +93,7 @@ class DTViewXML extends SpecialPage {
 	}
 
 	static function getPagesForNamespace( $namespace ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getReadDB();
 		$titleIDs = $dbr->selectFieldValues( 'page', 'page_id', [ 'page_namespace' => $namespace ], __METHOD__ );
 		$titles = [];
 		foreach ( $titleIDs as $titleID ) {
