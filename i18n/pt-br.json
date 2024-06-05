@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			555,
 			"C.R.",
 			"Eduardo Addad de Oliveira",
 			"Eduardo.mps",
@@ -10,8 +11,7 @@
 			"Jaideraf",
 			"Smmvinicius",
 			"V6rg",
-			"Vinickw",
-			555
+			"Vinickw"
 		]
 	},
 	"datatransfer-desc": "Permite a importação e exportação de dados contidos em chamadas de predefinições",
