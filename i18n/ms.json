@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Hakimi97"
 		]
 	},
 	"datatransfer-desc": "Membolehkan pengimportan dan pengeksportan data yang terkandung dalam panggilan tempat",
@@ -11,7 +12,7 @@
 	"dt_viewxml_namespaces": "Ruang nama",
 	"dt_viewxml_simplifiedformat": "Format ringkas",
 	"dt_xml_namespace": "Ruang nama",
-	"dt_xml_pages": "Halaman",
+	"dt_xml_pages": "Laman",
 	"dt_xml_page": "Laman",
 	"dt_xml_template": "Templat",
 	"dt_xml_field": "Medan",
