@@ -48,7 +48,7 @@ class DTImportJob extends Job {
 			$slotRole = SlotRecord::MAIN;
 		}
 
-		$user = User::newFromId( $this->params['user_id'] );
+		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $this->params['user_id'] );
 		$text = $this->params['text'];
 		if ( $this->title->exists() ) {
 			if ( $for_pages_that_exist == 'append' ) {
