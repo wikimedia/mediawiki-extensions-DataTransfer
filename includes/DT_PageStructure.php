@@ -24,10 +24,13 @@ class DTPageStructure {
 		$pageStructure->mPageTitle = $pageTitle;
 		$pageStructure->mParseWikitext = $parseWikitext;
 
-		$wiki_page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $pageTitle );
-		$page_contents = ContentHandler::getContentText( $wiki_page->getContent() );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $pageTitle );
+		$pageContent = $wikiPage->getContent();
+		if ( $pageContent == null || !( $pageContent instanceof TextContent ) ) {
+			return $pageStructure;
+		}
 
-		$pageStructure->parsePageContents( $page_contents );
+		$pageStructure->parsePageContents( $pageContent->getText() );
 
 		// Now, go through the field values and see if any of them
 		// hold template calls - if any of them do, parse the value

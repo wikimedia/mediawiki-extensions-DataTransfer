@@ -52,8 +52,10 @@ class DTImportJob extends Job {
 		$text = $this->params['text'];
 		if ( $this->title->exists() ) {
 			if ( $for_pages_that_exist == 'append' ) {
-				$existingText = ContentHandler::getContentText( $wikiPage->getContent() );
-				$text = $existingText . "\n" . $text;
+				$pageContent = $wikiPage->getContent();
+				if ( $pageContent !== null && $pageContent instanceof TextContent ) {
+					$text = $pageContent->getText() . "\n" . $text;
+				}
 			} elseif ( $for_pages_that_exist == 'merge' ) {
 				$existingPageStructure = DTPageStructure::newFromTitle( $this->title, false );
 				$newPageStructure = new DTPageStructure;
