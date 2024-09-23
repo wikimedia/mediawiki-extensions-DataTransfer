@@ -69,7 +69,7 @@
 	},
 	"require": {
 		"composer/installers": "^2|^1.0.1",
-		"phpoffice/phpspreadsheet": "1.19.0"
+		"phpoffice/phpspreadsheet": "1.29.1"
 	},
 	"require-dev": {
 		"mediawiki/minus-x": "1.1.3",
