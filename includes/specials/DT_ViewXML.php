@@ -247,8 +247,8 @@ class DTViewXML extends SpecialPage {
 	<input type="hidden" name="title" value="$special_namespace:ViewXML">
 
 END;
-			$text .= "<p>" . $this->msg( 'dt_viewxml_docu' )->text() . "</p>\n";
-			$text .= "<h2>" . $this->msg( 'dt_viewxml_categories' )->text() . "</h2>\n";
+			$text .= "<p>" . $this->msg( 'dt_viewxml_docu' )->escaped() . "</p>\n";
+			$text .= "<h2>" . $this->msg( 'dt_viewxml_categories' )->escaped() . "</h2>\n";
 			$categories = self::getCategoriesList();
 			$linkRenderer = $this->getLinkRenderer();
 			foreach ( $categories as $category ) {
@@ -257,7 +257,7 @@ END;
 				$link = $linkRenderer->makeKnownLink( $title, $title->getText() );
 				$text .= " $link<br />\n";
 			}
-			$text .= "<h2>" . $this->msg( 'dt_viewxml_namespaces' )->text() . "</h2>\n";
+			$text .= "<h2>" . $this->msg( 'dt_viewxml_namespaces' )->escaped() . "</h2>\n";
 			$namespaces = self::getNamespacesList();
 			foreach ( $namespaces as $nsCode ) {
 				if ( $nsCode === '0' ) {
@@ -270,7 +270,7 @@ END;
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
-			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . $this->msg( 'dt_viewxml_simplifiedformat' )->text() . "</label></p>\n";
+			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . $this->msg( 'dt_viewxml_simplifiedformat' )->escaped() . "</label></p>\n";
 			$text .= DTUtils::printSubmitButton( 'viewxml' );
 			$text .= "</form>\n";
 
