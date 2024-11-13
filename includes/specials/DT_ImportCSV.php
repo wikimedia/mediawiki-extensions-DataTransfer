@@ -93,7 +93,7 @@ class DTImportCSV extends SpecialPage {
 		$formText .= "\t" . Html::rawElement(
 			'p',
 			null,
-			$this->msg( 'dt_import_encodingtype', 'CSV' )->text() . " " . $encodingSelectText
+			$this->msg( 'dt_import_encodingtype', 'CSV' )->escaped() . " " . $encodingSelectText
 		) . "\n";
 		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		$formText .= DTUtils::printExistingPagesHandling();
@@ -226,7 +226,7 @@ class DTImportCSV extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page->getName() );
 			if ( $title === null ) {
-				$text .= '<p>' . $this->msg( 'img-auth-badtitle', $page->getName() )->text() . "</p>\n";
+				$text .= '<p>' . $this->msg( 'img-auth-badtitle', $page->getName() )->escaped() . "</p>\n";
 				continue;
 			}
 			$jobParams['text'] = $page->createText();
