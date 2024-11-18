@@ -41,6 +41,15 @@ class DTImportCSV extends SpecialPage {
 	}
 
 	protected function importFromUploadAndModifyPages() {
+		$editToken = $this->getRequest()->getVal( 'wpEditToken' );
+		if ( !$this->getContext()->getCsrfTokenSet()->matchToken( $editToken ) ) {
+			// @todo - ideally, this should output a prefilled form with a new
+			// edit token ready to go for more convenient resubmitting. This
+			// would be best done by outputting the form using Codex, OOUI or
+			// HTMLForm.
+			return $this->msg( 'import-token-mismatch' )->parse();
+		}
+
 		$text = DTUtils::printImportingMessage();
 		$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
 
@@ -89,6 +98,7 @@ class DTImportCSV extends SpecialPage {
 		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		$formText .= DTUtils::printExistingPagesHandling();
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
+		$formText .= DTUtils::printEditTokenInput( $this->getContext()->getCsrfTokenSet() );
 		$formText .= DTUtils::printSubmitButton();
 		$text = "\t" . Html::rawElement( 'form',
 			[
