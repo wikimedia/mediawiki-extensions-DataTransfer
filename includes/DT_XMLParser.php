@@ -57,7 +57,7 @@ class DTXMLParser {
 		// $this->debug( "in_start $name" );
 		$pages_str = str_replace( ' ', '_', wfMessage( 'dt_xml_pages' )->inContentLanguage()->text() );
 		if ( $name != $pages_str ) {
-			print( "Expected '$pages_str', got '$name'" );
+			$this->throwXMLerror( "Expected '$pages_str', got '$name'" );
 		}
 		xml_set_element_handler( $parser, "in_pages", "out_pages" );
 	}
