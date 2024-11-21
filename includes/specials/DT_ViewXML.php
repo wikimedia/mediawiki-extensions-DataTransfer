@@ -251,15 +251,9 @@ class DTViewXML extends SpecialPage {
 			print $text;
 		} else {
 			// Set 'title' as hidden field, in case there's no URL niceness.
-			$mw_namespace_labels = $contLang->getNamespaces();
-			$special_namespace = $mw_namespace_labels[NS_SPECIAL];
-			$text = <<<END
-	<form action="" method="get">
-	<input type="hidden" name="title" value="$special_namespace:ViewXML">
-
-END;
-			$text .= "<p>" . $this->msg( 'dt_viewxml_docu' )->escaped() . "</p>\n";
-			$text .= "<h2>" . $this->msg( 'dt_viewxml_categories' )->escaped() . "</h2>\n";
+			$text = Html::hidden( 'title', $this->getPageTitle()->getFullText() ) . "\n";
+			$text .= Html::element( 'p',  null, $this->msg( 'dt_viewxml_docu' )->text() ) . "\n";
+			$text .= Html::element( 'h2', null, $this->msg( 'dt_viewxml_categories' )->text() ) . "\n";
 			$categories = self::getCategoriesList();
 			$linkRenderer = $this->getLinkRenderer();
 			foreach ( $categories as $category ) {
@@ -282,9 +276,11 @@ END;
 				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
-			$text .= "<br /><p><label><input type=\"checkbox\" name=\"simplified_format\" /> " . $this->msg( 'dt_viewxml_simplifiedformat' )->escaped() . "</label></p>\n";
+			$simplifiedFormatCheckbox = Html::check( 'simplified_format' );
+			$text .= "<br /><p><label>$simplifiedFormatCheckbox " . $this->msg( 'dt_viewxml_simplifiedformat' )->escaped() . "</label></p>\n";
 			$text .= DTUtils::printSubmitButton( 'viewxml' );
-			$text .= "</form>\n";
+
+			$text = Html::rawElement( 'form', null, $text );
 
 			$out->addHTML( $text );
 		}
