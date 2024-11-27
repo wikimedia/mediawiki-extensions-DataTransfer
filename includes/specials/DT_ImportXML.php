@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionStatus;
 
 /**
  * Lets the user import an XML file to turn into wiki pages
@@ -23,12 +24,18 @@ class DTImportXML extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
-		$out = $this->getOutput();
-		$out->enableOOUI();
 
-		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
+		// We call isDefinitelyAllowed() here because, unlike other
+		// permission checks, this one also checks whether the user is
+		// currently blocked.
+		$status = PermissionStatus::newEmpty();
+		$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
+		if ( !$status->isGood() ) {
 			throw new PermissionsError( 'datatransferimport' );
 		}
+
+		$out = $this->getOutput();
+		$out->enableOOUI();
 
 		$request = $this->getRequest();
 		if ( $request->wasPosted() && $request->getCheck( 'import_file' ) ) {

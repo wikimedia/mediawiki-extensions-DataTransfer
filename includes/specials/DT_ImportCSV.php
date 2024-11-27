@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionStatus;
 
 /**
  * Lets the user import a CSV file to turn into wiki pages
@@ -23,13 +24,19 @@ class DTImportCSV extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
+
+		// We call isDefinitelyAllowed() here because, unlike other
+		// permission checks, this one also checks whether the user is
+		// currently blocked.
+		$status = PermissionStatus::newEmpty();
+		$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
+		if ( !$status->isGood() ) {
+			throw new PermissionsError( 'datatransferimport' );
+		}
+
 		$out = $this->getOutput();
 		$out->enableOOUI();
 		$out->addModuleStyles( 'ext.datatransfer' );
-
-		if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
-			throw new PermissionsError( 'datatransferimport' );
-		}
 
 		if ( $this->getRequest()->getCheck( 'import_file' ) ) {
 			$text = $this->importFromUploadAndModifyPages();
