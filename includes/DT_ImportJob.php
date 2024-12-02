@@ -49,6 +49,12 @@ class DTImportJob extends Job {
 		}
 
 		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $this->params['user_id'] );
+		// Exit if this is a blocked user (must have been blocked very recently, i.e.
+		// after the job was created).
+		if ( !$user->definitelyCan( 'edit', $this->title ) ) {
+			return true;
+		}
+
 		$text = $this->params['text'];
 		if ( $this->title->exists() ) {
 			if ( $for_pages_that_exist == 'append' ) {
