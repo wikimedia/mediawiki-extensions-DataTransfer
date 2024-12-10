@@ -123,7 +123,7 @@ class DTImportCSV extends SpecialPage {
 		}
 
 		if ( $csvString == '' ) {
-			return $this->msg( 'emptyfile' )->text();
+			return $this->msg( 'emptyfile' )->escaped();
 		}
 
 		// Get rid of the "byte order mark", if it's there - this is
@@ -191,7 +191,7 @@ class DTImportCSV extends SpecialPage {
 			&& !in_array( $headerVal, $slotLabels )
 			&& $headerVal !== ''
 			&& !preg_match( '/^[^\[\]]+\[[^\[\]]+]$/', $headerVal ) ) {
-				$errorMsg = $this->msg( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->text();
+				$errorMsg = $this->msg( 'dt_importcsv_badheader', $i, $headerVal, $titleLabels[0], $freeTextLabels[0] )->escaped();
 				return $errorMsg;
 			}
 		}
