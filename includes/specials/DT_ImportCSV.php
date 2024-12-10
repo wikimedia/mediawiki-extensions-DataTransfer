@@ -38,7 +38,7 @@ class DTImportCSV extends SpecialPage {
 		$out->enableOOUI();
 		$out->addModuleStyles( 'ext.datatransfer' );
 
-		if ( $this->getRequest()->getCheck( 'import_file' ) ) {
+		if ( $this->getRequest()->wasPosted() && $this->getRequest()->getCheck( 'import_file' ) ) {
 			$text = $this->importFromUploadAndModifyPages();
 		} else {
 			$text = $this->printForm();
