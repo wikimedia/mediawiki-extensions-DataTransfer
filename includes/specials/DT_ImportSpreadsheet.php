@@ -43,7 +43,7 @@ class DTImportSpreadsheet extends DTImportCSV {
 		}
 
 		if ( $excelFileString == '' ) {
-			return $this->msg( 'emptyfile' )->text();
+			return $this->msg( 'emptyfile' )->escaped();
 		}
 
 		$filename = wfTempDir() . '/' . time() . '.xlsx';
