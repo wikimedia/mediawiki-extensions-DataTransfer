@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bgo eiu"
+			"Bgo eiu",
+			"Cabal"
 		]
 	},
-	"dt_viewxml_categories": "ਸ਼੍ਰੇਣੀਆਂ"
+	"dt_viewxml_categories": "ਸ਼੍ਰੇਣੀਆਂ",
+	"dt_xml_template": "ਫਰਮਾ"
 }
