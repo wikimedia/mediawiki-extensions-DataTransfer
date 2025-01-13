@@ -31,7 +31,17 @@ class DTImportXML extends SpecialPage {
 		}
 
 		$request = $this->getRequest();
-		if ( $request->getCheck( 'import_file' ) ) {
+		if ( $request->wasPosted() && $request->getCheck( 'import_file' ) ) {
+			$editToken = $request->getVal( 'wpEditToken' );
+			if ( !$this->getContext()->getCsrfTokenSet()->matchToken( $editToken ) ) {
+				// @todo - ideally, this should output a prefilled form with
+				// a new edit token ready to go for more convenient resubmitting.
+				// This would be best done by outputting the form using Codex,
+				// OOUI or HTMLForm.
+				$text = $this->msg( 'import-token-mismatch' )->parse();
+				$out->addHTML( $text );
+				return;
+			}
 			$text = DTUtils::printImportingMessage();
 			$uploadResult = ImportStreamSource::newFromUpload( "file_name" );
 			$source = $uploadResult->value;
@@ -42,6 +52,7 @@ class DTImportXML extends SpecialPage {
 			$formText = DTUtils::printFileSelector( $this->msg( 'dt_filetype_xml' )->text() );
 			$formText .= DTUtils::printExistingPagesHandling();
 			$formText .= DTUtils::printImportSummaryInput( $this->msg( 'dt_filetype_xml' )->text() );
+			$formText .= DTUtils::printEditTokenInput( $this->getContext()->getCsrfTokenSet() );
 			$formText .= DTUtils::printSubmitButton();
 			$text = "\t" . Xml::tags( 'form',
 				[

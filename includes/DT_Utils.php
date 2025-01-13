@@ -61,6 +61,10 @@ class DTUtils {
 			wfMessage( 'dt_import_summarydesc' )->text() . "\n" .
 			$importSummaryText ) . "\n";
 	}
+ 
+	static function printEditTokenInput( $csrfTokenSet ) {
+		return Html::hidden( 'wpEditToken', $csrfTokenSet->getToken() );
+	}
 
 	static function printSubmitButton( $buttonMsg = null ) {
 		if ( $buttonMsg == null ) {
