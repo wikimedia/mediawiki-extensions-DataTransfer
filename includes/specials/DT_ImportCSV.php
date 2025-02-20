@@ -28,10 +28,17 @@ class DTImportCSV extends SpecialPage {
 		// We call isDefinitelyAllowed() here because, unlike other
 		// permission checks, this one also checks whether the user is
 		// currently blocked.
-		$status = PermissionStatus::newEmpty();
-		$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
-		if ( !$status->isGood() ) {
-			throw new PermissionsError( 'datatransferimport' );
+		if ( method_exists( $this->getAuthority(), 'isDefinitelyAllowed' ) ) {
+			// MW 1.41+
+			$status = PermissionStatus::newEmpty();
+			$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
+			if ( !$status->isGood() ) {
+				throw new PermissionsError( 'datatransferimport' );
+			}
+		} else {
+			if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
+				throw new PermissionsError( 'datatransferimport' );
+			}
 		}
 
 		$out = $this->getOutput();
