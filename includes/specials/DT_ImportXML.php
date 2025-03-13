@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionStatus;
+use MediaWiki\Title\Title;
 
 /**
  * Lets the user import an XML file to turn into wiki pages

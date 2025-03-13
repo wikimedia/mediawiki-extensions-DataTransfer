@@ -1,10 +1,12 @@
 <?php
-
 /**
  * Utility functions for the Data Transfer extension.
  *
  * @author Yaron Koren
  */
+
+use MediaWiki\Html\Html;
+
 class DTUtils {
 
 	static function printImportingMessage() {

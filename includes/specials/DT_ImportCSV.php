@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionStatus;
+use MediaWiki\Title\Title;
 
 /**
  * Lets the user import a CSV file to turn into wiki pages
