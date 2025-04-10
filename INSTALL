@@ -1,4 +1,4 @@
-[[Data Transfer 1.6.2]]
+[[Data Transfer 1.6.3]]
 
 Contents:
 * Disclaimer
@@ -12,7 +12,7 @@ For a proper legal disclaimer, see the file "COPYING".
 
 == Requirements ==
 
-This extension requires MediaWiki 1.37 or greater.
+This extension requires MediaWiki 1.40 or greater.
 
 == Installation ==
 
