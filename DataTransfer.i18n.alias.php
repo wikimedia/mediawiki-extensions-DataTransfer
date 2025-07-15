@@ -396,16 +396,26 @@ $specialPageAliases['vi'] = [
 	'ViewXML' => [ 'Xem_XML' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'ImportCSV' => [ 'ImportCSV' ],
+	'ImportXML' => [ 'ImportXML' ],
+	'ImportSpreadsheet' => [ 'ImportSpreadsheet' ],
+	'ViewXML' => [ 'ViewXML' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'ImportCSV' => [ '导入CSV' ],
 	'ImportXML' => [ '导入XML' ],
+	'ImportSpreadsheet' => [ '导入表格', '导入电子表格' ],
 	'ViewXML' => [ '查看XML' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'ImportCSV' => [ '匯入CSV' ],
 	'ImportXML' => [ '匯入XML' ],
+	'ImportSpreadsheet' => [ '匯入試算表', '匯入電子試算表' ],
 	'ViewXML' => [ '檢視XML' ],
 ];
