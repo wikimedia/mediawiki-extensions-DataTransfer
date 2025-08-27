@@ -5,7 +5,8 @@
 			"Kaustubh",
 			"Rajat11",
 			"Sfic",
-			"Siddhartha Ghai"
+			"Siddhartha Ghai",
+			"Saurmandal"
 		]
 	},
 	"datatransfer-desc": "टेम्प्लेट कॉल में उपलब्ध डाटाकी आयात-निर्यात करने की अनुमति देता हैं",
@@ -25,5 +26,6 @@
 	"dt_xml_freetext": "मुक्त पाठ",
 	"dt_import_skipexisting": "छोड़ें",
 	"dt_import_editsummary": "{{ucfirst:$1}} आयात",
-	"right-datatransferimport": "डेटा आयात करें"
+	"action-datatransferimport": "डेटा आयात करने",
+	"right-datatransferimport": "डेटा आयात करना"
 }
