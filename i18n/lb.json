@@ -27,7 +27,7 @@
 	"dt_import_selectfile": "Sicht de(n) $1-Fichier eraus fir z'importéieren:",
 	"dt_import_encodingtype": "Encoding-Typ:",
 	"dt_import_forexisting": "Fir Säiten, déi et scho gëtt:",
-	"dt_import_overwriteexisting": "Den Inhalt den et gëtt iwwerschreiwen",
+	"dt_import_overwriteexisting": "Besteeënden Inhalt iwwerschreiwen",
 	"dt_import_mergeintoexisting": "Nëmme Felder iwwerschreiwen déi am Fichier dra sinn",
 	"dt_import_skipexisting": "Iwwersprangen",
 	"dt_import_appendtoexisting": "Bei den aktuellen Inhalt derbäisetzen",
