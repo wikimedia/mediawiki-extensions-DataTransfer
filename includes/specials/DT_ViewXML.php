@@ -30,7 +30,19 @@ class DTViewXML extends SpecialPage {
 
 	static function getCategoriesList() {
 		$dbr = self::getReadDB();
-		$categories = $dbr->selectFieldValues( 'categorylinks', 'DISTINCT cl_to' );
+
+		// true for MW 1.45+
+		$useTargetID = !$dbr->fieldExists( 'categorylinks', 'cl_to' );
+
+		if ( $useTargetID ) {
+			$categories = $dbr->selectFieldValues( [ 'categorylinks', 'linktarget' ],
+				'DISTINCT lt_title', '', 'getCategoriesList', [],
+				[ 'linktarget' => [ 'JOIN', 'cl_target_id = lt_id' ] ]
+			);
+		} else {
+			$categories = $dbr->selectFieldValues( 'categorylinks', 'DISTINCT cl_to' );
+		}
+
 		return $categories;
 	}
 
@@ -51,21 +63,35 @@ class DTViewXML extends SpecialPage {
 		}
 
 		$db = self::getReadDB();
+
+		// true for MW 1.45+
+		$useTargetID = !$db->fieldExists( 'categorylinks', 'cl_to' );
+
 		$fname = "getPagesForCategory";
 		$categories = [ $top_category ];
 		$checkcategories = [ $top_category ];
 		$titles = [];
+		$tables = [ 'page', 'categorylinks' ];
+		if ( $useTargetID ) {
+			$tables[] = 'linktarget';
+		}
+		$fields = [ 'page_id', 'page_title', 'page_namespace' ];
+		$joinConds = [];
+		$joinConds['categorylinks'] = [ 'JOIN', 'page_id = cl_from' ];
+		if ( $useTargetID ) {
+			$joinConds['linktarget'] = [ 'JOIN', 'cl_target_id = lt_id' ];
+		}
+
 		for ( $level = $num_levels; $level > 0; $level-- ) {
 			$newcategories = [];
 			foreach ( $checkcategories as $category ) {
-				$res = $db->select( // make the query
-					[ 'categorylinks', 'page' ],
-					[ 'page_id', 'page_title', 'page_namespace' ],
-					[ 'cl_from = page_id',
-						'cl_to = ' . $db->addQuotes( $category )
-					],
-					$fname
-				);
+				if ( $useTargetID ) {
+					$whereConds = [ 'lt_title' => $db->addQuotes( $category ) ];
+				} else {
+					$whereConds = [ 'cl_to' => $db->addQuotes( $category ) ];
+				}
+				$res = $db->select( $tables, $fields, $whereConds, $fname,
+					$options = [], $joinConds );
 				foreach ( $res as $row ) {
 					$page_namespace = $row->page_namespace;
 					if ( $page_namespace == NS_CATEGORY ) {
