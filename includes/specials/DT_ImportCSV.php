@@ -108,7 +108,7 @@ class DTImportCSV extends SpecialPage {
 			"\n" . $utf8OptionText . $utf16OptionText . "\t" ) . "\n\t";
 		$formText .= "\t" . Html::rawElement(
 			'p',
-			null,
+			[],
 			$this->msg( 'dt_import_encodingtype', 'CSV' )->escaped() . " " . $encodingSelectText
 		) . "\n";
 		$formText .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";

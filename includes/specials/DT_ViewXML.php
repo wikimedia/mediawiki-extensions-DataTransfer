@@ -274,8 +274,8 @@ class DTViewXML extends SpecialPage {
 		} else {
 			// Set 'title' as hidden field, in case there's no URL niceness.
 			$text = Html::hidden( 'title', $this->getPageTitle()->getFullText() ) . "\n";
-			$text .= Html::element( 'p',  null, $this->msg( 'dt_viewxml_docu' )->text() ) . "\n";
-			$text .= Html::element( 'h2', null, $this->msg( 'dt_viewxml_categories' )->text() ) . "\n";
+			$text .= Html::element( 'p',  [], $this->msg( 'dt_viewxml_docu' )->text() ) . "\n";
+			$text .= Html::element( 'h2', [], $this->msg( 'dt_viewxml_categories' )->text() ) . "\n";
 			$categories = self::getCategoriesList();
 			$linkRenderer = $this->getLinkRenderer();
 			foreach ( $categories as $category ) {
@@ -302,7 +302,7 @@ class DTViewXML extends SpecialPage {
 			$text .= "<br /><p><label>$simplifiedFormatCheckbox " . $this->msg( 'dt_viewxml_simplifiedformat' )->escaped() . "</label></p>\n";
 			$text .= DTUtils::printSubmitButton( 'viewxml' );
 
-			$text = Html::rawElement( 'form', null, $text );
+			$text = Html::rawElement( 'form', [], $text );
 
 			$out->addHTML( $text );
 		}

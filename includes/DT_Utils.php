@@ -10,11 +10,11 @@ use MediaWiki\Html\Html;
 class DTUtils {
 
 	static function printImportingMessage() {
-		return "\t" . Html::element( 'p', null, wfMessage( 'dt_import_importing' )->text() ) . "\n";
+		return "\t" . Html::element( 'p', [], wfMessage( 'dt_import_importing' )->text() ) . "\n";
 	}
 
 	static function printFileSelector( $fileType ) {
-		$text = "\n\t" . Html::element( 'p', null, wfMessage( 'dt_import_selectfile', $fileType )->text() ) . "\n";
+		$text = "\n\t" . Html::element( 'p', [], wfMessage( 'dt_import_selectfile', $fileType )->text() ) . "\n";
 
 		// Unfortunately, the PHP version of this widget contains no
 		// custom formatting - it's identical to the browser's
@@ -33,18 +33,18 @@ class DTUtils {
 		}
 		$text = "\t" . Html::input( 'pagesThatExist', $option, 'radio', $radioButtonAttrs ) .
 			"\t" . wfMessage( $optionMsg )->escaped() . "<br />" . "\n";
-		$text = Html::rawElement( 'label', null, $text ) . "\n";
+		$text = Html::rawElement( 'label', [], $text ) . "\n";
 		return $text;
 	}
 
 	static function printExistingPagesHandling() {
-		$text = "\t" . Html::element( 'p', null, wfMessage( 'dt_import_forexisting' )->text() ) . "\n";
+		$text = "\t" . Html::element( 'p', [], wfMessage( 'dt_import_forexisting' )->text() ) . "\n";
 		$existingPagesText =
 			self::printImportRadioButton( 'overwrite', 'dt_import_overwriteexisting', true ) .
 			self::printImportRadioButton( 'merge', 'dt_import_mergeintoexisting' ) .
 			self::printImportRadioButton( 'skip', 'dt_import_skipexisting' ) .
 			self::printImportRadioButton( 'append', 'dt_import_appendtoexisting' );
-		$text .= "\t" . Html::rawElement( 'p', null, $existingPagesText ) . "\n";
+		$text .= "\t" . Html::rawElement( 'p', [], $existingPagesText ) . "\n";
 		$text .= "\t" . '<hr style="margin: 10px 0 10px 0" />' . "\n";
 		return $text;
 	}
@@ -59,7 +59,7 @@ class DTUtils {
 				'class' => 'mw-summary',
 			]
 		) . "\n";
-		return "\t" . Html::rawElement( 'p', null,
+		return "\t" . Html::rawElement( 'p', [],
 			wfMessage( 'dt_import_summarydesc' )->escaped() . "\n" .
 			$importSummaryText ) . "\n";
 	}
@@ -79,6 +79,6 @@ class DTUtils {
 			'id' => 'import_file',
 			'flags' => [ 'primary', 'progressive' ]
 		] );
-		return "\t" . Html::rawElement( 'p', null, $formSubmitButton ) . "\n";
+		return "\t" . Html::rawElement( 'p', [], $formSubmitButton ) . "\n";
 	}
 }

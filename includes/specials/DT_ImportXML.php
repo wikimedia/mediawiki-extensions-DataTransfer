@@ -70,7 +70,7 @@ class DTImportXML extends SpecialPage {
 			$formText .= DTUtils::printImportSummaryInput( $this->msg( 'dt_filetype_xml' )->text() );
 			$formText .= DTUtils::printEditTokenInput( $this->getContext()->getCsrfTokenSet() );
 			$formText .= DTUtils::printSubmitButton();
-			$text = "\t" . Xml::tags( 'form',
+			$text = "\t" . Html::rawElement( 'form',
 				[
 					'enctype' => 'multipart/form-data',
 					'action' => '',

@@ -6,6 +6,8 @@
  * @ingroup DataTransfer
  */
 
+use MediaWiki\Html\Html;
+
 class DTImportSpreadsheet extends DTImportCSV {
 
 	public function __construct( $name = 'ImportSpreadsheet' ) {
@@ -24,7 +26,7 @@ class DTImportSpreadsheet extends DTImportCSV {
 		$formText .= DTUtils::printImportSummaryInput( $this->getFiletype() );
 		$formText .= DTUtils::printEditTokenInput( $this->getContext()->getCsrfTokenSet() );
 		$formText .= DTUtils::printSubmitButton();
-		$text = "\t" . Xml::tags( 'form',
+		$text = "\t" . Html::rawElement( 'form',
 			[
 				'enctype' => 'multipart/form-data',
 				'action' => '',
