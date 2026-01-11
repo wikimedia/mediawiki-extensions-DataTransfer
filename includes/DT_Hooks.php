@@ -5,13 +5,13 @@
  * @author Yaron Koren
  * @ingroup DataTransfer
  */
-class DTHooks {
+class DTHooks implements AdminLinksHook {
 
 	/**
 	 * Add links to the 'AdminLinks' special page, defined by the Admin Links
 	 * extension
 	 */
-	public static function addToAdminLinks( $admin_links_tree ) {
+	public function onAdminLinks( ALTree &$admin_links_tree ) {
 		$import_export_section = $admin_links_tree->getSection( wfMessage( 'adminlinks_importexport' )->text() );
 		$main_row = $import_export_section->getRow( 'main' );
 		$main_row->addItem( ALItem::newFromSpecialPage( 'ViewXML' ) );

@@ -61,8 +61,13 @@
 		"localBasePath": "",
 		"remoteExtPath": "DataTransfer"
 	},
+	"HookHandlers": {
+		"adminlinks": {
+			"class": "DTHooks"
+		}
+	},
 	"Hooks": {
-		"AdminLinks": "DTHooks::addToAdminLinks"
+		"AdminLinks": "adminlinks"
 	},
 	"config": {
 		"DataTransferViewXMLParseFields": false,
