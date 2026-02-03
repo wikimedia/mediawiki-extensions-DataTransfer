@@ -28,7 +28,7 @@
 	"dt_xml_freetext": "Teks Bebas",
 	"dt_xml_slot": "Slot",
 	"importxml": "Impor XML",
-	"dt_import_selectfile": "Pilih berkas $1 untuk di impor:",
+	"dt_import_selectfile": "Pilih berkas $1 untuk diimpor:",
 	"dt_import_encodingtype": "Tipe penyandian:",
 	"dt_import_forexisting": "Untuk halaman yang sudah ada:",
 	"dt_import_overwriteexisting": "Menimpa konten yang ada",
