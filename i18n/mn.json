@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chinneeb"
+			"Chinneeb",
+			"Zorigt"
 		]
 	},
 	"dt_viewxml_categories": "Ангиллууд",
-	"dt_viewxml_namespaces": "Нэрний зайнууд",
-	"dt_xml_namespace": "Нэрний зай",
+	"dt_viewxml_namespaces": "Нэрийн зайнууд",
+	"dt_xml_namespace": "Нэрийн зай",
 	"dt_xml_page": "Хуудас"
 }
