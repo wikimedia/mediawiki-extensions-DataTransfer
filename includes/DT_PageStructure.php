@@ -97,6 +97,7 @@ class DTPageStructure {
 					$uncompleted_curly_brackets++;
 					$free_text = trim( $free_text );
 					if ( $free_text != "" ) {
+						$free_text = str_replace( [ '&#123;', '&#125;' ], [ '{', '}' ], $free_text );
 						$freeTextComponent = DTPageComponent::newFreeText( $free_text );
 						$this->addComponent( $freeTextComponent );
 						$free_text = "";
