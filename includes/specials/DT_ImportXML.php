@@ -17,7 +17,7 @@ class DTImportXML extends SpecialPage {
 	 * Constructor
 	 */
 	public function __construct( $name = 'ImportXML' ) {
-		parent::__construct( $name, 'datatransferimport' );
+		parent::__construct( $name );
 	}
 
 	public function doesWrites() {

@@ -17,7 +17,7 @@ class DTImportCSV extends SpecialPage {
 	 * Constructor
 	 */
 	public function __construct( $name = 'ImportCSV' ) {
-		parent::__construct( $name, 'datatransferimport' );
+		parent::__construct( $name );
 	}
 
 	public function doesWrites() {
