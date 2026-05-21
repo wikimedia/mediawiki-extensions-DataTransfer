@@ -81,6 +81,9 @@ class DTPageStructure {
 		}
 
 		// Traverse the page contents, one character at a time.
+		$curTemplate = null;
+		$creating_template_name = false;
+		$creating_field_name = false;
 		$uncompleted_curly_brackets = 0;
 		$free_text = "";
 		$template_name = "";
@@ -265,7 +268,7 @@ class DTPageStructure {
 		$articleID = $this->mPageTitle->getArticleID();
 		$pageName = $this->mPageTitle->getText();
 		if ( $isSimplified ) {
-			return Xml::tags( $page_str, null, Xml::tags( $id_str, null, $articleID ) . Xml::tags( $title_str, null, $pageName ) . $bodyXML );
+			return Xml::tags( $page_str, null, Xml::tags( $id_str, null, (string)$articleID ) . Xml::tags( $title_str, null, $pageName ) . $bodyXML );
 		} else {
 			return Xml::tags( $page_str, [ $id_str => $articleID, $title_str => $pageName ], $bodyXML );
 		}

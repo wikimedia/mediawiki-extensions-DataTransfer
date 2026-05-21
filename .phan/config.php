@@ -6,29 +6,17 @@ $cfg['suppress_issue_types'] = array_merge(
 	$cfg['suppress_issue_types'],
 	[
 		// Suppress issue types that currently exist in the codebase.
-		// This means that Phan initially won't do much, but it allows for
-		// checks to be incrementally fixed and enabled without massive changes.
-		'MediaWikiNoEmptyIfDefined',
 		'PhanEmptyFQSENInCallable',
 		'PhanNonClassMethodCall',
 		'PhanParamTooFewInPHPDoc',
-		'PhanParamTooMany',
-		'PhanPossiblyUndeclaredVariable',
-		'PhanRedundantCondition',
 		'PhanTypeArraySuspiciousNullable',
-		'PhanTypeMismatchArgument',
 		'PhanTypeMismatchArgumentInternal',
-		'PhanTypeMismatchArgumentInternalProbablyReal',
 		'PhanTypeMismatchArgumentNullable',
 		'PhanTypeMismatchArgumentNullableInternal',
-		'PhanTypeMismatchArgumentProbablyReal',
 		'PhanTypeMismatchDimFetch',
-		'PhanTypeMismatchDimFetchNullable',
-		'PhanTypeSuspiciousStringExpression',
 		'PhanUndeclaredClassMethod',
 		'PhanUndeclaredFunctionInCallable',
 		'PhanUndeclaredMethod',
-		'PhanUndeclaredVariable',
 		'SecurityCheck-XSS'
 	]
 );

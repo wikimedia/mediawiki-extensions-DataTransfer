@@ -27,10 +27,6 @@ class DTImportJob extends Job {
 		}
 
 		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $this->title );
-		if ( !$wikiPage ) {
-			$this->error = 'dtImport: Wiki page not found "' . $this->title->getPrefixedDBkey() . '"';
-			return false;
-		}
 
 		$for_pages_that_exist = $this->params['for_pages_that_exist'];
 		if ( $for_pages_that_exist == 'skip' && $this->title->exists() ) {

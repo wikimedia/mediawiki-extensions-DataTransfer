@@ -96,10 +96,10 @@ class DTPageComponent {
 
 			$bodyXML = '';
 			foreach ( $this->mFields as $fieldName => $fieldValue ) {
+				$fieldValueXML = '';
 				// If this field itself holds template calls,
 				// get the XML for those calls.
 				if ( is_array( $fieldValue ) ) {
-					$fieldValueXML = '';
 					foreach ( $fieldValue as $subComponent ) {
 						$fieldValueXML .= $subComponent->toXML( $isSimplified, $parseWikitext );
 					}

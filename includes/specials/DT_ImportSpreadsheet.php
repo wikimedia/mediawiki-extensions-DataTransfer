@@ -69,7 +69,7 @@ class DTImportSpreadsheet extends DTImportCSV {
 
 		if ( class_exists( 'PhpOffice\PhpSpreadsheet\Spreadsheet' ) ) {
 			$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load( $filename );
-		} elseif ( class_exists( 'PHPExcel' ) ) {
+		} else {
 			$spreadsheet = PHPExcel_IOFactory::load( $filename );
 		}
 

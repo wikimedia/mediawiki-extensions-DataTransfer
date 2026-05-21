@@ -95,6 +95,7 @@ class DTXMLParser {
 	function in_category( $parser, $name, $attribs ) {
 		$page_str = str_replace( ' ', '_', wfMessage( 'dt_xml_page' )->inContentLanguage()->text() );
 		if ( $name == $page_str ) {
+			$title_str = str_replace( ' ', '_', wfMessage( 'dt_xml_title' )->inContentLanguage()->text() );
 			if ( array_key_exists( $title_str, $attribs ) ) {
 				$this->mCurPage = new DTWikiPage( $attribs[$title_str] );
 				xml_set_element_handler( $parser, "in_page", "out_page" );

@@ -21,7 +21,7 @@ class DTViewXML extends SpecialPage {
 
 	function execute( $query ) {
 		$this->setHeaders();
-		$this->doSpecialViewXML( $query );
+		$this->doSpecialViewXML();
 	}
 
 	private static function getReadDB() {
@@ -184,7 +184,7 @@ class DTViewXML extends SpecialPage {
 		$cats = $request->getArray( 'categories' );
 		$nses = $request->getArray( 'namespaces' );
 		$requestedTitles = $request->getVal( 'titles' );
-		if ( !empty( $cats ) || !empty( $nses ) || $requestedTitles != null ) {
+		if ( $cats !== null || $nses !== null || $requestedTitles != null ) {
 			$form_submitted = true;
 		}
 
@@ -279,7 +279,7 @@ class DTViewXML extends SpecialPage {
 			$categories = self::getCategoriesList();
 			$linkRenderer = $this->getLinkRenderer();
 			foreach ( $categories as $category ) {
-				$text .= Html::input( "categories[$category]", null, 'checkbox' );
+				$text .= Html::input( "categories[$category]", '', 'checkbox' );
 				$title = Title::makeTitle( NS_CATEGORY, $category );
 				$link = $linkRenderer->makeKnownLink( $title, $title->getText() );
 				$text .= " $link<br />\n";
@@ -295,7 +295,7 @@ class DTViewXML extends SpecialPage {
 						continue;
 					}
 				}
-				$text .= Html::input( "namespaces[$nsCode]", null, 'checkbox' );
+				$text .= Html::input( "namespaces[$nsCode]", '', 'checkbox' );
 				$text .= ' ' . str_replace( '_', ' ', $nsName ) . "<br />\n";
 			}
 			$simplifiedFormatCheckbox = Html::check( 'simplified_format' );
