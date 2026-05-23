@@ -79,6 +79,6 @@ class DTUtils {
 			'id' => 'import_file',
 			'flags' => [ 'primary', 'progressive' ]
 		] );
-		return "\t" . Html::rawElement( 'p', [], $formSubmitButton ) . "\n";
+		return "\t" . Html::rawElement( 'p', [], (string)$formSubmitButton ) . "\n";
 	}
 }
