@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"datatransfer-desc": "Waxay oggolaanaysaa soo dejinta iyo dhoofinta xogta ku jirta wicitaannada tusmada.",
+	"viewxml": "Eeg XML",
+	"dt_viewxml_docu": "Fadlan ka dooro qaybaha iyo magacyada soo socda si aad ugu aragto qaabka XML.",
+	"dt_viewxml_categories": "Qaybaha",
+	"dt_viewxml_namespaces": "Meesha magaca",
+	"dt_viewxml_simplifiedformat": "Qaab la fududeeyay",
+	"dt_xml_namespace": "Meesha magaca",
+	"dt_xml_pages": "Bogagga",
+	"dt_xml_page": "Bogga",
+	"dt_xml_template": "Tusmo",
+	"dt_xml_field": "Goob",
+	"dt_xml_name": "Magaca",
+	"dt_xml_title": "Cinwaanka",
+	"dt_xml_id": "Aqoonsi",
+	"dt_xml_freetext": "Qoraal Bilaash ah",
+	"dt_xml_slot": "Boos",
+	"importxml": "Soo dejiso XML",
+	"dt_import_selectfile": "Fadlan dooro faylka $1 ee la soo gelinayo:",
+	"dt_import_encodingtype": "Nooca xarfaha:",
+	"dt_import_forexisting": "Bogagga hore u jira:",
+	"dt_import_overwriteexisting": "Ku beddel waxa hore u jiray",
+	"dt_import_mergeintoexisting": "Ku beddel kaliya goobaha ku jira faylka",
+	"dt_import_skipexisting": "Ka bood",
+	"dt_import_appendtoexisting": "Ku dar waxa hore u jiray",
+	"dt_import_summarydesc": "Soo koobidda soo gelinta:",
+	"dt_import_editsummary": "{{ucfirst:$1}} soo dejin",
+	"dt_import_importing": "Dhoofinta...",
+	"dt_import_success": "$1 {{PLURAL:$1|bog|bogag}} ayaa laga abuuri doonaa faylka $2.",
+	"importcsv": "Soo geli CSV",
+	"importspreadsheet": "Soo geli jadwal",
+	"dt_importcsv_badheader": "Cilad: cinwaanka tiirka $1, '$2', waa inuu noqdaa '$3', '$4' ama uu noqdaa qaabka 'magaca_template[magaca_field-ka]'",
+	"action-datatransferimport": "Soo geli xog",
+	"right-datatransferimport": "Soo geli xog",
+	"dt_filetype_spreadsheet": "Jadwal xogeed"
+}
