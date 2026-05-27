@@ -86,9 +86,9 @@ class DTViewXML extends SpecialPage {
 			$newcategories = [];
 			foreach ( $checkcategories as $category ) {
 				if ( $useTargetID ) {
-					$whereConds = [ 'lt_title' => $db->addQuotes( $category ) ];
+					$whereConds = [ 'lt_title' => $category ];
 				} else {
-					$whereConds = [ 'cl_to' => $db->addQuotes( $category ) ];
+					$whereConds = [ 'cl_to' => $category ];
 				}
 				$res = $db->select( $tables, $fields, $whereConds, $fname,
 					$options = [], $joinConds );
