@@ -28,12 +28,6 @@ class DTXMLParser {
 
 		# case folding violates XML standard, turn it off
 		xml_parser_set_option( $parser, XML_OPTION_CASE_FOLDING, false );
-
-		if ( PHP_VERSION_ID < 80000 ) {
-			// MW <1.42
-			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions.xml_set_object
-			xml_set_object( $parser, $this );
-		}
 		xml_set_element_handler( $parser, "in_start", "" );
 
 		$offset = 0; // for context extraction on error reporting
@@ -45,12 +39,6 @@ class DTXMLParser {
 			}
 			$offset += strlen( $chunk );
 		} while ( $chunk !== false && !$this->mSource->atEnd() );
-
-		if ( PHP_VERSION_ID < 80000 ) {
-			// MW <1.42
-			// phpcs:ignore MediaWiki.Usage.ForbiddenFunctions.xml_parser_free
-			xml_parser_free( $parser );
-		}
 	}
 
 	function donothing( $parser, $x, $y = "" ) {

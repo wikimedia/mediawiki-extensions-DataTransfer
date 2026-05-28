@@ -19,20 +19,10 @@ class DTImportSpreadsheet extends DTImportCSV {
 			return '<div class="error">You must have the PhpSpreadsheet or PHPExcel library installed to run this page.</div>';
 		}
 
-		// We call isDefinitelyAllowed() here because, unlike other
-		// permission checks, this one also checks whether the user is
-		// currently blocked.
-		if ( method_exists( $this->getAuthority(), 'isDefinitelyAllowed' ) ) {
-			// MW 1.41+
-			$status = PermissionStatus::newEmpty();
-			$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
-			if ( !$status->isGood() ) {
-				throw new PermissionsError( 'datatransferimport' );
-			}
-		} else {
-			if ( !$this->getUser()->isAllowed( 'datatransferimport' ) ) {
-				throw new PermissionsError( 'datatransferimport' );
-			}
+		$status = PermissionStatus::newEmpty();
+		$this->getAuthority()->isDefinitelyAllowed( 'datatransferimport', $status );
+		if ( !$status->isGood() ) {
+			throw new PermissionsError( 'datatransferimport' );
 		}
 
 		$this->getOutput()->enableOOUI();
