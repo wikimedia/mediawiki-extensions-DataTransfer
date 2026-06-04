@@ -8,7 +8,8 @@
 			"Manco Capac",
 			"MuratTheTurkish",
 			"Srhat",
-			"Vito Genovese"
+			"Vito Genovese",
+			"HakanIST"
 		]
 	},
 	"datatransfer-desc": "Şablon çağrılarında içerilen verilerin içe ve dışa aktarımına izin verir",
@@ -26,6 +27,7 @@
 	"dt_xml_title": "Başlık",
 	"dt_xml_id": "Kimlik",
 	"dt_xml_freetext": "Özgür Metin",
+	"dt_xml_slot": "Slot",
 	"importxml": "XML'yi içe aktar",
 	"dt_import_selectfile": "Lütfen içe aktarmak için $1 dosyasını seçin:",
 	"dt_import_encodingtype": "Kodlama türü:",
