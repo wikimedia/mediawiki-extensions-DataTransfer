@@ -11,16 +11,17 @@
 			"Jaideraf",
 			"Smmvinicius",
 			"V6rg",
-			"Vinickw"
+			"Vinickw",
+			"EGobi"
 		]
 	},
 	"datatransfer-desc": "Permite a importação e exportação de dados contidos em chamadas de predefinições",
 	"viewxml": "Ver XML",
 	"dt_viewxml_docu": "Selecione entre as categorias e espaços nominais a seguir para ver em formato XML.",
 	"dt_viewxml_categories": "Categorias",
-	"dt_viewxml_namespaces": "Namespaces",
+	"dt_viewxml_namespaces": "Espaços nominais",
 	"dt_viewxml_simplifiedformat": "Formato simplificado",
-	"dt_xml_namespace": "Namespace",
+	"dt_xml_namespace": "Espaço nominal",
 	"dt_xml_pages": "Páginas",
 	"dt_xml_page": "Página",
 	"dt_xml_template": "Predefinição",
