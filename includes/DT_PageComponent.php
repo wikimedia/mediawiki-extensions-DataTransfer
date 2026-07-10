@@ -105,7 +105,7 @@ class DTPageComponent {
 					}
 				} elseif ( $wgDataTransferViewXMLParseFields && $parseWikitext ) {
 					// Avoid table of contents and "edit" links
-					$fieldValue = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, ParserOptions::newFromAnon() )->getText();
+					$fieldValue = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $fieldValue, $wgTitle, ParserOptions::newFromAnon() )->getContentHolderText();
 				}
 
 				if ( $isSimplified ) {
@@ -146,7 +146,7 @@ class DTPageComponent {
 					$freeText = $mw->replace( '', $freeText );
 				}
 				// Avoid "edit" links.
-				$freeText = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $freeText, $wgTitle, ParserOptions::newFromAnon() )->getText();
+				$freeText = $parser->parse( "__NOTOC__ __NOEDITSECTION__\n" . $freeText, $wgTitle, ParserOptions::newFromAnon() )->getContentHolderText();
 			} else {
 				$freeText = $this->mFreeText;
 			}
