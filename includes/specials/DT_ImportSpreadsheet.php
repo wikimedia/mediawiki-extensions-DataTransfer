@@ -7,6 +7,7 @@
  */
 
 use MediaWiki\Html\Html;
+use MediaWiki\Permissions\PermissionStatus;
 
 class DTImportSpreadsheet extends DTImportCSV {
 
