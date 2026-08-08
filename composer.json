@@ -92,6 +92,9 @@
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true
+		},
+		"audit": {
+			"block-insecure": false
 		}
 	}
 }
