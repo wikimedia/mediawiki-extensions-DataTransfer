@@ -8,7 +8,8 @@
 			"Prima klasy4na",
 			"Vlad5250",
 			"Ата",
-			"Тест"
+			"Тест",
+			"Movses"
 		]
 	},
 	"datatransfer-desc": "Дозволяє імпортувати та експортувати дані, які містяться в викликах шаблонів",
@@ -26,6 +27,7 @@
 	"dt_xml_title": "Заголовок",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Вільний текст",
+	"dt_xml_slot": "Слот",
 	"importxml": "Імпорт XML",
 	"dt_import_selectfile": "Будь ласка, виберіть файл $1 для імпорту:",
 	"dt_import_encodingtype": "Тип кодування:",
