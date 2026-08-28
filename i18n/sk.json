@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Helix84",
-			"Luky001"
+			"Luky001",
+			"Wizzard"
 		]
 	},
 	"datatransfer-desc": "Umožňuje import a export údajov obsiahnutých v bunkách šablón",
@@ -20,13 +21,23 @@
 	"dt_xml_title": "Nadpis",
 	"dt_xml_id": "ID",
 	"dt_xml_freetext": "Voľný text",
+	"dt_xml_slot": "Slot",
 	"importxml": "Importovať XML",
 	"dt_import_selectfile": "Prosím, vyberte $1 súbor, ktorý chcete importovať:",
 	"dt_import_encodingtype": "Typ kódovania:",
+	"dt_import_forexisting": "Pre stránky, ktoré už existujú:",
+	"dt_import_overwriteexisting": "Prepísať existujúci obsah",
+	"dt_import_mergeintoexisting": "Prepísať len polia obsiahnuté v súbore",
+	"dt_import_skipexisting": "Preskočiť",
+	"dt_import_appendtoexisting": "Pripojiť k existujúcemu obsahu",
+	"dt_import_summarydesc": "Zhrnutie importu:",
 	"dt_import_editsummary": "{{ucfirst:$1}} import",
 	"dt_import_importing": "Prebieha import...",
 	"dt_import_success": "Z $2 súboru sa {{PLURAL:$1|importuje $1 stránka|importujú $1 stránky|importuje $1 stránok}}.",
 	"importcsv": "Import CSV",
+	"importspreadsheet": "Importovať tabuľku",
 	"dt_importcsv_badheader": "Chyba: stĺpec $1 hlavičky, „$2“ musí mať hodnotu buď „$3“, „$4“ alebo byť v tvare „názov_šablóny[názov_poľa]“",
-	"right-datatransferimport": "Importovať údaje"
+	"action-datatransferimport": "importovať údaje",
+	"right-datatransferimport": "Importovať údaje",
+	"dt_filetype_spreadsheet": "tabuľky"
 }
